@@ -16,6 +16,8 @@
 
 ## 欢迎赞助
 
+你的支持是这个项目维护下去的坚实动力。
+
 ## 许可协议
 
 * Jasmine 主题使用 [GPL V3.0](https://github.com/liaocp666/theme-jasmine/blob/main/LICENSE) 协议开源。
