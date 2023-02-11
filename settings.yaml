@@ -1,0 +1,4 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: theme-jasmine-setting
