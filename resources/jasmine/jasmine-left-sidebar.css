@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+#left-sidebar {
+    min-height: calc(100vh - 70px);
+    position: relative;
+}
+
+#left-sidebar .logo {
+    overflow: hidden;
+}
+
+#left-sidebar .logo img {
+    border-radius: 5px;
+}
+
+#left-sidebar .jasmine-nav a, #left-sidebar .action a {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #000000;
+}
+
+#left-sidebar .jasmine-nav a:hover, #left-sidebar .action a:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#left-sidebar .jasmine-nav i, #left-sidebar .action {
+    font-size: 18px;
+}
+
+#left-sidebar .action {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}

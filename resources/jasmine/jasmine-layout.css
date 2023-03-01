@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+#layout {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+}
+
+#layout .layout-wrap {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+#layout #middle {
+    border-left: 2px solid rgb(242, 242, 242);
+    border-right: 2px solid rgb(242, 242, 242);
+    min-height: 100%;
+}
