@@ -16,3 +16,9 @@
     border-right: 2px solid rgb(242, 242, 242);
     min-height: 100%;
 }
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1200px;
+    }
+}
