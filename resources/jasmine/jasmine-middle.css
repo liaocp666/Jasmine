@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+#middle {
+    padding: 0 1.5rem;
+}
+
+#middle .jasmine-navbar {
+    border-bottom: 1px solid #ededed;
+}
+
+#middle .menu .nav-link, #middle .action .nav-link {
+    color: #000000;
+    padding: 0.25rem 1rem;
+    border: 1px solid #d3d3d3;
+}
+
+#middle .menu .nav-link:hover, #middle .action .nav-link:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+}
+
+#middle .menu .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+}
+
+#middle .menu .nav-pills .nav-link, #middle .action .nav-pills .nav-link {
+    border-radius: 1rem;
+}
+
+#middle .menu .nav-item {
+    padding: 0 .5rem;
+}
+
+#middle .menu .nav-item:first-child {
+    padding-left: 0;
+}
