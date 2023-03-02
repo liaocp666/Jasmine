@@ -11,7 +11,7 @@
 #middle .menu .nav-link, #middle .action .nav-link {
     color: #000000;
     padding: 0.25rem 1rem;
-    border: 1px solid #d3d3d3;
+        border: 1px solid rgba(0,0,0,.125);
 }
 
 #middle .menu .nav-link:hover, #middle .action .nav-link:hover {

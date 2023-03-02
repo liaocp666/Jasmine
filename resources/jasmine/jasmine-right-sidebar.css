@@ -33,7 +33,7 @@
 #hot-tags .nav-link {
     color: rgba(0, 0, 0, 0.55);
     padding: 0.1rem 0.7rem;
-    border: 1px solid #d3d3d3;
+        border: 1px solid rgba(0,0,0,.125);
     font-size: 14px;
 }
 

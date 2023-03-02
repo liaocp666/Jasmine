@@ -42,5 +42,16 @@
 
 #content p {
     color: rgba(0, 0, 0, 0.84);
-    text-indent:2em;
+    text-indent: 2em;
+}
+
+.socialize .btn {
+    color: rgba(0, 0, 0, 0.84);
+}
+
+.socialize .btn-light {
+    background-color: rgb(242, 242, 242);
+    border: 1px solid rgb(242, 242, 242);
+    border-radius: 2rem;
+    padding: 0.575rem 2rem;
 }
