@@ -4,3 +4,12 @@ body {
     background-color: rgb(242, 242, 242);
     font-family: Arial, sans-serif;
 }
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000000;
+}

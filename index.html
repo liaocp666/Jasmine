@@ -7,7 +7,7 @@
     <title>Jasmine Theme</title>
     <link href="./resources/bootstrap/bootstrap.min.css" type="text/css"
           rel="stylesheet"/>
-    <link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap-icons/1.8.1/font/bootstrap-icons.css"
+    <link href="https://cdn.staticfile.org/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"
           type="text/css" rel="stylesheet"/>
     <link href="./resources/jasmine/jasmine.css" type="text/css" rel="stylesheet">
 </head>
@@ -98,20 +98,20 @@
                         </div>
                         <div id="sticky" class="pb-4 mb-5">
                             <div class="row">
-                                <div class="col-6 mb-4">
+                                <div class="col-6 mb-5">
                                     <div class="item d-flex">
                                         <div class="thumbnail">
                                             <a href="">
-                                                <img width="130" height="100" src="./resources/thumbnails/1.jpg" alt="">
+                                                <img width="130" height="90" src="./resources/thumbnails/1.jpg" alt="">
                                             </a>
                                         </div>
-                                        <div class="content">
-                                            <div class="title">
+                                        <div class="content d-flex flex-column justify-content-between">
+                                            <div class="title py-1">
                                                 <a href="">
-                                                    <h2 class="fs-5">醉美故里枣花香</h2>
+                                                    <h2 class="fs-6 fw-bolder">醉美故里枣花香</h2>
                                                 </a>
                                             </div>
-                                            <div class="excerpt">
+                                            <div class="excerpt py-1">
                                                 <p>
                                                     在我工作的大院里，长着10多棵枣树。每到枣花盛开的季节，满院子都弥漫着枣花绵绵悠长的清香，如窖藏多年的老酒，醇厚绵柔甘洌。闻着这些熟悉的芳香，我情不自禁地想起在红枣树下度过的清纯时光，思绪也随之飘向了故乡。</p>
                                             </div>
@@ -122,16 +122,16 @@
                                     <div class="item d-flex">
                                         <div class="thumbnail">
                                             <a href="">
-                                                <img width="130" height="100" src="./resources/thumbnails/2.jpg" alt="">
+                                                <img width="130" height="90" src="./resources/thumbnails/2.jpg" alt="">
                                             </a>
                                         </div>
-                                        <div class="content">
-                                            <div class="title">
+                                        <div class="content d-flex flex-column justify-content-between">
+                                            <div class="title py-1">
                                                 <a href="">
-                                                    <h2 class="fs-5">远去的村庄</h2>
+                                                    <h2 class="fs-6 fw-bolder">远去的村庄</h2>
                                                 </a>
                                             </div>
-                                            <div class="excerpt">
+                                            <div class="excerpt py-1">
                                                 <p>
                                                     夕阳从淡蓝的天空慢慢退去，满目的灯盏，慰藉着我迷茫的张望，这是来自我心灵深处的追寻，我在追寻自己记忆深处那永远的乡村，它是我今生埋在心底的最美的地方。
                                                 </p>
@@ -143,16 +143,16 @@
                                     <div class="item d-flex">
                                         <div class="thumbnail">
                                             <a href="">
-                                                <img width="130" height="100" src="./resources/thumbnails/3.jpg" alt="">
+                                                <img width="130" height="90" src="./resources/thumbnails/3.jpg" alt="">
                                             </a>
                                         </div>
-                                        <div class="content">
-                                            <div class="title">
+                                        <div class="content d-flex flex-column justify-content-between">
+                                            <div class="title py-1">
                                                 <a href="">
-                                                    <h2 class="fs-5">童年时，我们一起走过的夏天</h2>
+                                                    <h2 class="fs-6 fw-bolder">童年时，我们一起走过的夏天</h2>
                                                 </a>
                                             </div>
-                                            <div class="excerpt">
+                                            <div class="excerpt py-1">
                                                 <p>
                                                     童年时，我们一起走过的夏天
                                                     作者: 张军霞2023年02月23日优美散文
@@ -166,16 +166,16 @@
                                     <div class="item d-flex">
                                         <div class="thumbnail">
                                             <a href="">
-                                                <img width="130" height="100" src="./resources/thumbnails/4.jpg" alt="">
+                                                <img width="130" height="90" src="./resources/thumbnails/4.jpg" alt="">
                                             </a>
                                         </div>
-                                        <div class="content">
-                                            <div class="title">
+                                        <div class="content d-flex flex-column justify-content-between">
+                                            <div class="title py-1">
                                                 <a href="">
-                                                    <h2 class="fs-5">故乡的炊烟</h2>
+                                                    <h2 class="fs-6 fw-bolder">故乡的炊烟</h2>
                                                 </a>
                                             </div>
-                                            <div class="excerpt">
+                                            <div class="excerpt py-1">
                                                 <p>
                                                     乡的炊烟，总是伴着日出日落的脚步袅袅升起。</p>
                                             </div>
@@ -501,8 +501,118 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
-                    右边栏
+                <div class="col-3" id="right-sidebar-sticky">
+                    <div id="right-sidebar" class="pt-5">
+                        <div class="row">
+                            <div class="col-12 pb-4 mb-5 widget">
+                                <div id="blogger">
+                                    <div class="d-flex align-content-center align-items-center align-self-center justify-content-center">
+                                        <div class="mt-1">
+                                            <img class="avatar" width="50" height="50"
+                                                 src="https://q1.qlogo.cn/g?b=qq&nk=2964556627&s=640" alt="">
+                                        </div>
+                                        <div class="blogger ms-3">
+                                            <div class="name">
+                                                <p class="fw-bolder my-1">暮城留风</p>
+                                            </div>
+                                            <div class="recommend">
+                                                <p class="my-1">清风以北过南巷，南巷故人不知归</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 pb-5 mb-5 widget">
+                                <div id="hot-posts">
+                                    <div class="title mb-3">
+                                        <h3 class="fs-6 fw-bolder"><i class="bi bi-bar-chart-line-fill"></i>&nbsp;热门文章
+                                        </h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <a href="">
+                                                醉美故里枣花香</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="">童年时，我们一起走过的夏天</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="">远去的村庄</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="">
+                                                童年时，我们一起走过的夏天</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="">故乡的炊烟</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 pb-5 mb-5 widget">
+                                <div id="hot-comments">
+                                    <div class="title mb-3">
+                                        <h3 class="fs-6 fw-bolder"><i class="bi bi-chat-square-heart-fill"></i>&nbsp;最新评论
+                                        </h3>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <a href="">
+                                                用户A：醉美故里枣花香</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="">童年时，我们一起走过的夏天</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="">远去的村庄</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="">
+                                                童年时，我们一起走过的夏天</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="">故乡的炊烟</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 pb-5 mb-5 widget">
+                                <div id="hot-tags">
+                                    <div class="title mb-3">
+                                        <h3 class="fs-6 fw-bolder"><i class="bi bi-bookmark-heart-fill"></i>&nbsp;热门标签
+                                        </h3>
+                                    </div>
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Java</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">设计模式</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">MySQL</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">微服务</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">年度总结</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="footer" class="text-center">
+                    <i class="bi bi-c-circle-fill"></i>&nbsp;2023&nbsp;Jasmine Theme. Theme <a href="">Jasmine</a> by <a
+                        href="">Kent Liao</a>
                 </div>
             </div>
         </div>
@@ -511,9 +621,13 @@
 <script src="./resources/jquery/jquery.min.js" type="application/javascript"></script>
 <script src="./resources/jquery/jquery.sticky-sidebar.min.js" type="application/javascript"></script>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('#left-sidebar-sticky').stickySidebar({
             topSpacing: 70
+        });
+    })
+    $(document).ready(function () {
+        $('#right-sidebar-sticky').stickySidebar({
         });
     })
 </script>

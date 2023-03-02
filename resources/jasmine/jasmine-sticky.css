@@ -4,13 +4,12 @@
     border-bottom: 1px solid #ededed;
 }
 
-#sticky a {
-    color: #000000;
-    text-decoration: none;
-}
-
 #sticky .thumbnail {
     padding-right: 0.5rem;
+}
+
+#sticky .thumbnail img {
+    border-radius: 5px;
 }
 
 #sticky h2 {
@@ -26,6 +25,7 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     margin-bottom: 0;
+    font-size: 14px;
 }

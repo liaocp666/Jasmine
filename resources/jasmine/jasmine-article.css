@@ -1,12 +1,11 @@
 @charset "UTF-8";
 
-#article a {
-    color: #000000;
-    text-decoration: none;
-}
-
 #article .thumbnail {
     padding-right: 1rem;
+}
+
+#article .thumbnail img {
+    border-radius: 5px;
 }
 
 #article h2 {
