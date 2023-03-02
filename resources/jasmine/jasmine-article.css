@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+#article a {
+    color: #000000;
+    text-decoration: none;
+}
+
+#article .thumbnail {
+    padding-right: 1rem;
+}
+
+#article h2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#article .excerpt p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+#article .excerpt p, #article .meta {
+    color: rgba(0, 0, 0, 0.55);
+}
+
+#article .meta {
+    font-size: 14px;
+}
+
+#article .meta .middotDivider:before {
+    content: "\00B7";
+}
