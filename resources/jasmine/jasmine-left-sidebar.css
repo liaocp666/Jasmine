@@ -2,7 +2,6 @@
 
 #left-sidebar {
     min-height: calc(100vh - 70px);
-    position: relative;
 }
 
 #left-sidebar .logo {
@@ -26,11 +25,4 @@
 
 #left-sidebar .jasmine-nav i, #left-sidebar .action {
     font-size: 18px;
-}
-
-#left-sidebar .action {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
 }

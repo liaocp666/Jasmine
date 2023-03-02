@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+#pagination a {
+    color: #000000;
+}
+
+#pagination .page-link:hover {
+    background-color: #000000;
+    color: #ffffff;
+}

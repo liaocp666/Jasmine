@@ -16,8 +16,8 @@
     <div class="container">
         <div class="layout-wrap">
             <div class="row g-0">
-                <div class="col-1">
-                    <div id="left-sidebar" class="pt-5 text-center">
+                <div class="col-1" id="left-sidebar-sticky">
+                    <div id="left-sidebar" class="pt-5 text-center d-flex flex-column justify-content-between">
                         <div class="list">
                             <div class="logo mb-5">
                                 <a href="" title="">
@@ -49,20 +49,20 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="action">
-                                <ul class="nav flex-column align-content-center">
-                                    <li class="nav-item mb-2">
-                                        <a href="" class="nav-link">
-                                            <i class="bi bi-moon-stars-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item mb-2">
-                                        <a href="" class="nav-link">
-                                            <i class="bi bi-arrow-up-circle-fill"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                        </div>
+                        <div class="action">
+                            <ul class="nav flex-column align-content-center">
+                                <li class="nav-item mb-2">
+                                    <a href="" class="nav-link">
+                                        <i class="bi bi-moon-stars-fill"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-2">
+                                    <a href="" class="nav-link">
+                                        <i class="bi bi-arrow-up-circle-fill"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -74,16 +74,13 @@
                                     <div class="menu">
                                         <ul class="nav nav-pills">
                                             <li class="nav-item">
-                                                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                                                <a class="nav-link active" aria-current="page" href="#">生活</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">Link</a>
+                                                <a class="nav-link" href="#">技术</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">Link</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link">Disabled</a>
+                                                <a class="nav-link" href="#">其他</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -187,7 +184,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="article">
+                        <div id="article" class="mb-5">
                             <div class="row">
                                 <div class="col">
                                     <div class="item d-flex mb-5">
@@ -493,6 +490,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="pagination" class="mb-5">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="">加载更多文章</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
                 <div class="col-3">
@@ -502,5 +508,14 @@
         </div>
     </div>
 </div>
+<script src="./resources/jquery/jquery.min.js" type="application/javascript"></script>
+<script src="./resources/jquery/jquery.sticky-sidebar.min.js" type="application/javascript"></script>
+<script>
+    $(document).ready(function(){
+        $('#left-sidebar-sticky').stickySidebar({
+            topSpacing: 70
+        });
+    })
+</script>
 </body>
 </html>
