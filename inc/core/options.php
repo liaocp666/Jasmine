@@ -7,10 +7,6 @@ use Utils\Helper;
 use Widget\Notice;
 use Widget\Options;
 
-$options = null;
-
-Options::alloc()->to($options);
-
 /**
  * 主题配置
  * @param $form
@@ -30,6 +26,9 @@ function themeConfig($form)
 
     $middleTopMenu = new Textarea('middleTopMenu', null, null, '中间头部菜单', '参考文档：<a href="" target="_blank">《中间头部菜单》</a>');
     $form->addInput($middleTopMenu);
+
+    $stickyPost = new Text('stickyPost', null, null, '置顶文章', '格式：文章的ID || 文章的ID || 文章的ID （中间使用两个竖杠分隔）');
+    $form->addInput($stickyPost);
 
     backupThemeData();
 }
