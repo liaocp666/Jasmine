@@ -16,7 +16,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <?php if (!empty(getLeftSidebarMenu())): ?>
                         <?php foreach (getLeftSidebarMenu() as $menu): ?>
                             <li class="nav-item mb-3">
-                                <a href="<?php echo $menu['url']; ?>" class="nav-link" target="<?php echo ($menu['newTab']) ? '_blank' : '_self' ?>" title="<?php echo $menu['name']; ?>">
+                                <a href="<?php echo $menu['url']; ?>"
+                                   class="nav-link"
+                                   target="<?php echo ($menu['newTab']) ? '_blank' : '_self' ?>"
+                                   title="<?php echo $menu['name']; ?>"
+                                   data-bs-toggle="tooltip"
+                                   data-bs-title="<?php echo $menu['name']; ?>"
+                                   data-bs-placement="right">
                                     <i class="<?php echo $menu['icon']; ?>"></i>
                                 </a>
                             </li>

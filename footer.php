@@ -21,6 +21,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js" type="application/javascript"></script>
 <script src="https://cdn.staticfile.org/sticky-sidebar/3.3.1/sticky-sidebar.min.js"
         type="application/javascript"></script>
+<script src="https://cdn.staticfile.org/bootstrap/5.2.3/js/bootstrap.bundle.min.js" type="application/javascript"></script>
 <script>
     $(document).ready(function () {
         new StickySidebar('#left-sidebar-sticky', {
@@ -36,7 +37,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 $('.jasmine-navbar').removeClass('jasmine-navbar-sticky')
             }
         })
-
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     })
 </script>
 </body>
