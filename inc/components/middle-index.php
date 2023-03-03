@@ -41,7 +41,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                             <div class="title">
                                 <a href="<?php $this->permalink() ?>" title="<?php $this->title() ?>">
                                     <h2 class="fs-5">
-                                        <?php $this->title() ?></h2>
+                                        <?php $this->title() ?>
+                                    </h2>
                                 </a>
                             </div>
                             <div class="excerpt">
@@ -49,13 +50,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                             </div>
                             <div class="meta d-flex justify-content-between">
                                 <div class="left">
-                                                    <span>
-                                                        <a href="">散文</a>
-                                                    </span>
-                                    <span class="middotDivider"></span>
                                     <span>
-                                                    发表于 X 日前
-                                                    </span>
+                                        <?php $this->category('<span class="middotDivider"></span>', true, '无'); ?>
+                                    </span>
+                                    <span class="middotDivider"></span>
+                                    <span><?php echo humanizedDate($this->created); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -73,11 +72,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         </div>
         <div id="pagination" class="mb-5">
             <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="">加载更多文章</a>
-                    </li>
-                </ul>
+                <?php $this->pageNav('‹', '›',1,'...',array('wrapTag' => 'ul', 'wrapClass' => 'pagination justify-content-center','itemTag' => 'li','currentClass' => 'page-current',)); ?>
             </nav>
         </div>
     </div>

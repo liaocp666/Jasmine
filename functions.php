@@ -113,3 +113,91 @@ function getThumbnail(string $cid, string $defaultThumbnail): string
     }
     return $defaultThumbnail;
 }
+
+/**
+ * 人性化日期
+ * @param $created 日期
+ * @return string   xx 前
+ */
+function humanizedDate(int $created)
+{
+    if (Helper::options()->timeFormat != '') {
+        return date(Helper::options()->timeFormat, $created);
+    } else {
+        //计算时间差
+        $diff = time() - $created;
+        $d = floor($diff / 3600 / 24);
+
+        $Y = date('Y', $created);
+
+        //输出时间
+        if (date('Y-m-d', $created) == date('Y-m-d')) {
+            return '今天';
+        } elseif ($d == 1) {
+            return '昨天';
+        } elseif ($d == 2) {
+            return '前天';
+        } elseif ($d <= 31) {
+            return $d . ' 天前';
+        } elseif ($Y == date('Y')) {
+            return date('m-d', $created);
+        } else {
+            return date('Y-m-d', $created);
+        }
+    }
+}
+
+/**
+ * 获取热门文章
+ * @param $limit    页数
+ * @param $order    排序
+ */
+function hotPosts($limit = 7, $order = 'created')
+{
+    $db = Typecho_Db::get();
+    $options = Helper::options();
+    $posts = $db->fetchAll($db->select()->from('table.contents')
+        ->where('type = ? AND status = ? AND created < ?', 'post', 'publish', $options->time)
+        ->order($order, Typecho_Db::SORT_DESC)
+        ->limit($limit), array(Typecho_Widget::widget('Widget_Abstract_Contents'), 'filter'));
+    return $posts;
+}
+
+class Widget_Comments_Recent extends Widget_Abstract_Comments
+{
+    public function __construct($request, $response, $params = NULL)
+    {
+        parent::__construct($request, $response, $params);
+        $this->parameter->setDefault(array('pageSize' => 7, 'parentId' => 0));
+    }
+
+    public function execute()
+    {
+        $select = $this->select()->limit($this->parameter->pageSize)
+            ->where('table.comments.status = ?', 'approved')
+            ->order('table.comments.coid', Typecho_Db::SORT_DESC);
+        if ($this->parameter->parentId) {
+            $select->where('cid = ?', $this->parameter->parentId);
+        }
+        if ($this->options->commentsShowCommentOnly) {
+            $select->where('type = ?', 'comment');
+        }
+        $select->where('ownerId <> authorId');
+        $this->db->fetchAll($select, array($this, 'push'));
+    }
+}
+
+/**
+ * 获取版权日期
+ */
+function getCopyrightDate(): string
+{
+    $text = '';
+    if (!empty(getOptions()->startDate)) {
+        $startDate = date_create(getOptions()->startDate);
+        $text .= date_format($startDate, 'Y');
+        $text .= " - ";
+    }
+    $text .= date('Y', time());
+    return $text;
+}

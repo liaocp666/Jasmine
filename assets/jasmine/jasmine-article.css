@@ -60,3 +60,7 @@
     border-radius: 2rem;
     padding: 0.575rem 2rem;
 }
+
+#article .middotDivider {
+    padding: 0 0.2rem;
+}

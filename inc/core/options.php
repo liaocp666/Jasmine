@@ -30,6 +30,15 @@ function themeConfig($form)
     $stickyPost = new Text('stickyPost', null, null, '置顶文章', '格式：文章的ID || 文章的ID || 文章的ID （中间使用两个竖杠分隔）');
     $form->addInput($stickyPost);
 
+    $stickyPost = new Text('stickyPost', null, null, '置顶文章', '格式：文章的ID || 文章的ID || 文章的ID （中间使用两个竖杠分隔）');
+    $form->addInput($stickyPost);
+
+    $authorRecommend = new Text('authorRecommend', null, null, '作者介绍', '使用简短的话，介绍下自己');
+    $form->addInput($authorRecommend);
+
+    $startDate = new Text('startDate', null, null, '建站日期', '格式：2008-08-08');
+    $form->addInput($startDate);
+
     backupThemeData();
 }
 

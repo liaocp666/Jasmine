@@ -7,17 +7,17 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <div class="col-12 pb-4 mb-5 widget">
                 <div id="blogger">
                     <div
-                        class="d-flex align-content-center align-items-center align-self-center justify-content-center">
+                        class="d-flex align-content-center align-items-center align-self-center justify-content-start">
                         <div class="mt-1">
                             <img class="avatar" width="50" height="50"
                                  src="https://q1.qlogo.cn/g?b=qq&nk=2964556627&s=640" alt="">
                         </div>
                         <div class="blogger ms-3">
                             <div class="name">
-                                <p class="my-1">暮城留风</p>
+                                <p class="my-1"><?php $this->author->screenName() ?></p>
                             </div>
                             <div class="recommend">
-                                <p class="my-1">清风以北过南巷，南巷故人不知归</p>
+                                <p class="my-1"><?php $this->options->authorRecommend(); ?></p>
                             </div>
                         </div>
                     </div>
@@ -26,27 +26,16 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <div class="col-12 pb-5 mb-5 widget">
                 <div id="hot-posts">
                     <div class="title mb-3">
-                        <h3 class="fs-6"><i class="bi bi-bar-chart-line-fill"></i>&nbsp;热门文章
-                        </h3>
+                        <h3 class="fs-6"><i class="bi bi-bar-chart-line-fill"></i>&nbsp;热门文章</h3>
                     </div>
                     <ul class="list-group list-group-flush">
+                        <?php if(!empty($posts = hotPosts())): ?>
+                        <?php foreach (hotPosts() as $post): ?>
                         <li class="list-group-item">
-                            <a href="">
-                                醉美故里枣花香</a>
+                            <a href=""><?php echo $post['title']; ?></a>
                         </li>
-                        <li class="list-group-item">
-                            <a href="">童年时，我们一起走过的夏天</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="">远去的村庄</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="">
-                                童年时，我们一起走过的夏天</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="">故乡的炊烟</a>
-                        </li>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
@@ -57,23 +46,18 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         </h3>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <a href="">
-                                用户A：醉美故里枣花香</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="">童年时，我们一起走过的夏天</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="">远去的村庄</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="">
-                                童年时，我们一起走过的夏天</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="">故乡的炊烟</a>
-                        </li>
+                        <?php $this->widget('Widget_Comments_Recent', array())->to($newComments); ?>
+                        <?php if($newComments->have()): ?>
+                            <?php while($newComments->next()): ?>
+                                <li class="list-group-item">
+                                    <a href="<?php $newComments->permalink(); ?>" title="<?php $newComments->excerpt(35, '...'); ?>"><?php echo $newComments->author; ?>: <?php $newComments->excerpt(35, '...'); ?></a>
+                                </li>
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                            <li class="list-group-item">
+                                <a href="">暂无回复</a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
@@ -84,21 +68,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         </h3>
                     </div>
                     <ul class="nav nav-pills">
+                        <?php $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1&limit=15')->to($tags); ?>
+                        <?php if($tags->have()): ?>
+                        <?php while ($tags->next()): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Java</a>
+                            <a class="nav-link" href="<?php $tags->permalink(); ?>" title="<?php $tags->name(); ?>"><?php $tags->name(); ?></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">设计模式</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">MySQL</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">微服务</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">年度总结</a>
-                        </li>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>

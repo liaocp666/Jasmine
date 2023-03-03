@@ -52,3 +52,15 @@
 #middle .menu .nav-item:first-child {
     padding-left: 0;
 }
+
+#pagination .page-current a {
+    background-color: #000000;
+    color: #FFFFFF !important;
+}
+
+#pagination a {
+    padding: 0.3rem 0.7rem;
+    background-color: rgb(242, 242, 242);
+    margin: 0 0.5rem;
+    border-radius: 5px;
+}
