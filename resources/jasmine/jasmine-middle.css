@@ -6,12 +6,27 @@
 
 #middle .jasmine-navbar {
     border-bottom: 1px solid #ededed;
+    transition: 100ms;
+    top: -100px;
+}
+
+#middle .jasmine-navbar-sticky {
+    position: sticky;
+    top: -1px;
+    transition: 100ms;
+    padding: 1rem 1.5rem !important;
+    margin-bottom: 7rem !important;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.5rem);
+    background: rgb(255 255 255 / 80%);
 }
 
 #middle .menu .nav-link, #middle .action .nav-link {
     color: #000000;
     padding: 0.25rem 1rem;
-        border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, .125);
 }
 
 #middle .menu .nav-link:hover, #middle .action .nav-link:hover {

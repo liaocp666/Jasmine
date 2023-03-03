@@ -67,8 +67,8 @@
                     </div>
                 </div>
                 <div class="col-8">
-                    <div id="middle" class="pt-5">
-                        <div class="jasmine-navbar pb-5 mb-5">
+                    <div id="middle">
+                        <div class="jasmine-navbar pt-5 pb-5 mb-5">
                             <div class="row">
                                 <div class="col-10">
                                     <div class="menu">
@@ -153,7 +153,9 @@
                                                 一片枣林，支撑起一个村子，守住一个思念。它们为房舍院落遮阴纳凉，也为农户增加了一笔养家糊口的收入，更为远方的游子植入了悠悠的乡愁。</p>
                                         </div>
                                         <div class="socialize m-auto">
-                                            <button type="button" class="btn btn-light"><i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;(0)</button>
+                                            <button type="button" class="btn btn-light"><i
+                                                    class="bi bi-hand-thumbs-up-fill"></i>&nbsp;(0)
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -282,15 +284,23 @@
     </div>
 </div>
 <script src="./resources/jquery/jquery.min.js" type="application/javascript"></script>
-<script src="./resources/jquery/jquery.sticky-sidebar.min.js" type="application/javascript"></script>
+<script src="./resources/sticky-sidebar/sticky-sidebar.min.js" type="application/javascript"></script>
 <script>
     $(document).ready(function () {
-        $('#left-sidebar-sticky').stickySidebar({
-            topSpacing: 70
-        });
-    })
-    $(document).ready(function () {
-        $('#right-sidebar-sticky').stickySidebar({});
+        new StickySidebar('#left-sidebar-sticky', {
+            topSpacing: 70,
+            resizeSensor: true
+        })
+        new StickySidebar('#right-sidebar-sticky', {})
+        new StickySidebar('#right-sidebar-sticky', {})
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 150) {
+                $('.jasmine-navbar').addClass('jasmine-navbar-sticky')
+            } else {
+                $('.jasmine-navbar').removeClass('jasmine-navbar-sticky')
+            }
+        })
+
     })
 </script>
 </body>
