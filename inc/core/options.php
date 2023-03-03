@@ -1,0 +1,97 @@
+<?php
+
+use Typecho\Common;
+use Typecho\Widget\Helper\Form\Element\Text;
+use Typecho\Widget\Helper\Form\Element\Textarea;
+use Utils\Helper;
+use Widget\Notice;
+use Widget\Options;
+
+$options = null;
+
+Options::alloc()->to($options);
+
+/**
+ * 主题配置
+ * @param $form
+ * @return void
+ */
+function themeConfig($form)
+{
+    echo '<div id="jasmine-check-update" class="update-check message success">正在检查更新……</div>';
+    echo '<script>var jasmineVersion = "' . getThemeVersion() . '"</script>';
+    echo '<script src="' . Helper::options()->themeUrl . '/inc/core/check_update.js"></script>';
+
+    $logoUrl = new Text('logoUrl', null, null, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
+    $form->addInput($logoUrl);
+
+    $leftSidebarMenu = new Textarea('leftSidebarMenu', null, null, '左边栏菜单', '参考文档：<a href="" target="_blank">《左边栏菜单》</a>');
+    $form->addInput($leftSidebarMenu);
+
+    $middleTopMenu = new Textarea('middleTopMenu', null, null, '中间头部菜单', '参考文档：<a href="" target="_blank">《中间头部菜单》</a>');
+    $form->addInput($middleTopMenu);
+
+    backupThemeData();
+}
+
+/**
+ * 备份主题数据
+ * @return void
+ */
+function backupThemeData()
+{
+    $name = "jasmine";
+    $db = Typecho_Db::get();
+    $hasBackup = $db->fetchRow($db->select()->from('table.options')->where('name = ?', 'theme:' . $name . '_backup'));
+    if (isset($_POST['type'])) {
+        if ($_POST["type"] == "创建备份") {
+            $value = $db->fetchRow($db->select()->from('table.options')->where('name = ?', 'theme:' . $name))['value'];
+            if ($db->fetchRow($db->select()->from('table.options')->where('name = ?', 'theme:' . $name . '_backup'))) {
+                $db->query($db->update('table.options')->rows(array('value' => $value))->where('name = ?', 'theme:' . $name . '_backup'));
+                Notice::alloc()->set('备份更新成功', 'success');
+                Options::alloc()->response->redirect(Common::url('options-theme.php', Options::alloc()->adminUrl));
+                ?>
+            <?php } else { ?>
+                <?php
+                if ($value) {
+                    $db->query($db->insert('table.options')->rows(array('name' => 'theme:' . $name . '_backup', 'user' => '0', 'value' => $value)));
+                    Notice::alloc()->set('备份成功', 'success');
+                    Options::alloc()->response->redirect(Common::url('options-theme.php', Options::alloc()->adminUrl));
+                    ?>
+                <?php }
+            }
+        }
+        if ($_POST["type"] == "还原备份") {
+            if ($db->fetchRow($db->select()->from('table.options')->where('name = ?', 'theme:' . $name . '_backup'))) {
+                $_value = $db->fetchRow($db->select()->from('table.options')->where('name = ?', 'theme:' . $name . '_backup'))['value'];
+                $db->query($db->update('table.options')->rows(array('value' => $_value))->where('name = ?', 'theme:' . $name));
+                Notice::alloc()->set('备份还原成功', 'success');
+                Options::alloc()->response->redirect(Common::url('options-theme.php', Options::alloc()->adminUrl));
+                ?>
+            <?php } else {
+                Notice::alloc()->set('无备份数据，请先创建备份', 'error');
+                Options::alloc()->response->redirect(Common::url('options-theme.php', Options::alloc()->adminUrl));
+                ?>
+            <?php } ?>
+        <?php } ?>
+        <?php if ($_POST["type"] == "删除备份") {
+            if ($db->fetchRow($db->select()->from('table.options')->where('name = ?', 'theme:' . $name . '_backup'))) {
+                $db->query($db->delete('table.options')->where('name = ?', 'theme:' . $name . '_backup'));
+                Notice::alloc()->set('删除备份成功', 'success');
+                Options::alloc()->response->redirect(Common::url('options-theme.php', Options::alloc()->adminUrl));
+                ?>
+            <?php } else {
+                Notice::alloc()->set('无备份数据，无法删除', 'success');
+                Options::alloc()->response->redirect(Common::url('options-theme.php', Options::alloc()->adminUrl));
+                ?>
+            <?php } ?>
+        <?php } ?>
+    <?php } ?>
+
+</form>
+    <?php
+    echo '<br/><div class="message error">请先保存设置，再创建备份！<br/><br/><form class="backup" action="?jasmine_backup" method="post">
+    <input type="submit" name="type" class="btn primary" value="创建备份" />
+    <input type="submit" name="type" class="btn primary" value="还原备份" />
+    <input type="submit" name="type" class="btn primary" value="删除备份" /></form></div>';
+}
