@@ -78,16 +78,9 @@ function getDb()
  */
 function getStickyPost()
 {
-    $db = Typecho_Db::get();
     $sticky_text = getOptions()->stickyPost;
     $sticky_cids = explode('||', strtr($sticky_text, ' ', ''));
-    $sticky_posts = $db->fetchAll($db->select()->from('table.contents')
-        ->where('status = ?', 'publish')
-        ->where('type = ?', 'post')
-        ->where('cid in ?', $sticky_cids)
-        ->order('cid', Typecho_Db::SORT_ASC)
-    );
-    return $sticky_posts;
+    return $sticky_cids;
 }
 
 /**
@@ -103,19 +96,6 @@ function getFieldByCidAndName($cid, $filedName)
             ->where('cid = ? and name = ?', $cid, $filedName)
     );
     return $field;
-}
-
-/**
- * 获取摘要
- * @param $text         文本
- * @param $num          字数
- * @param $appendText   拼接内容
- * @return array|string|string[]|null
- */
-function getExcerpt($text, $num, $appendText)
-{
-    $text = Common::subStr(strip_tags($text), 0, $num, $appendText);
-    return $text;
 }
 
 /**
