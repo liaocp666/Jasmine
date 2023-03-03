@@ -11,7 +11,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                             <?php if (!empty(getMiddleTopMenu())): ?>
                                 <?php foreach (getMiddleTopMenu() as $menu): ?>
                                     <li class="nav-item">
-                                        <a class="nav-link" aria-current="page" href="<?php echo $menu['url']; ?>" target="<?php echo ($menu['newTab']) ? '_blank' : '_self' ?>"><?php echo $menu['name']; ?></a>
+                                        <a class="nav-link" aria-current="page" href="<?php echo $menu['url']; ?>" target="<?php echo ($menu['newTab']) ? '_blank' : '_self' ?>" title="<?php echo $menu['name']; ?>"><?php echo $menu['name']; ?></a>
                                     </li>
                                 <?php endforeach; ?>
                             <?php else: ?>
@@ -61,7 +61,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         </div>
                         <?php if ($thumbnail = getThumbnail($this->cid, '')): ?>
                         <div class="thumbnail">
-                            <a href="">
+                            <a href="" title="<?php $this->title() ?>">
                                 <img width="170" height="130" src="<?php echo $thumbnail; ?>" alt="<?php $this->title() ?>">
                             </a>
                         </div>

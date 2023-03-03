@@ -8,13 +8,13 @@ if (!empty($cids = getStickyPost())) : ?>
                 <div class="col-6 mb-5">
                     <div class="item d-flex">
                         <div class="thumbnail">
-                            <a href="">
+                            <a href="" title="<?php $item->title() ?>">
                                 <img width="130" height="90" src="<?php echo getThumbnail($item->cid, $this->options->themeUrl . '/assets/thumbnails/1.jpg'); ?>" alt="<?php echo $post['cid'];?>">
                             </a>
                         </div>
                         <div class="content d-flex flex-column justify-content-between">
                             <div class="title py-1">
-                                <a href="">
+                                <a href="" title="<?php $this->title() ?>">
                                     <h2 class="fs-6"><?php $item->title(); ?></h2>
                                 </a>
                             </div>

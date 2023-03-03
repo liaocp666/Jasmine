@@ -6,7 +6,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="list">
             <div class="logo mb-5">
                 <?php if ($this->options->logoUrl): ?>
-                    <a href="<?php $this->options->siteUrl(); ?>">
+                    <a href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title() ?>">
                         <img src="<?php echo $this->options->logoUrl;?>" alt="<?php $this->options->title() ?>" width="50" height="50">
                     </a>
                 <?php endif; ?>
@@ -16,7 +16,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <?php if (!empty(getLeftSidebarMenu())): ?>
                         <?php foreach (getLeftSidebarMenu() as $menu): ?>
                             <li class="nav-item mb-3">
-                                <a href="<?php echo $menu['url']; ?>" class="nav-link" target="<?php echo ($menu['newTab']) ? '_blank' : '_self' ?>">
+                                <a href="<?php echo $menu['url']; ?>" class="nav-link" target="<?php echo ($menu['newTab']) ? '_blank' : '_self' ?>" title="<?php echo $menu['name']; ?>">
                                     <i class="<?php echo $menu['icon']; ?>"></i>
                                 </a>
                             </li>

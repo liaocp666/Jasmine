@@ -1,7 +1,7 @@
 <?php
 /**
  * 简洁、美观、响应式的 Typecho 主题。
- * Github：<a href="https://github.com/liaocp666/Jasmine" target="_blank">https://github.com/liaocp666/Jasmine</a>
+ * Github：<a href="https://github.com/liaocp666/Jasmine" target="_blank" title="Jasmine Github Repo">https://github.com/liaocp666/Jasmine</a>
  *
  * @package jasmine
  * @author Kent Liao
