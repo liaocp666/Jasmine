@@ -15,4 +15,4 @@ $this->need('header.php');
 $this->need('inc/components/left-sidebar.php');
 $this->need('inc/components/middle-index.php');
 $this->need('inc/components/right-sidebar.php');
-
+$this->need('footer.php');
