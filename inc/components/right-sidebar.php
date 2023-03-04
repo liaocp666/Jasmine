@@ -1,7 +1,7 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
-<div class="col-3" id="right-sidebar-sticky">
+<div class="col-lg-3 d-none d-lg-block" id="right-sidebar-sticky">
     <div id="right-sidebar" class="pt-5">
         <div class="row">
             <div class="col-12 pb-4 mb-5 widget">

@@ -2,6 +2,16 @@
 
 #sticky {
     border-bottom: 1px solid #ededed;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+#sticky .col-md-12 {
+    margin-bottom: 2rem;
+}
+
+#sticky .col-md-12:last-child {
+    margin-bottom: 1rem;
 }
 
 #sticky .thumbnail {

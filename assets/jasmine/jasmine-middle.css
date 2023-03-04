@@ -1,13 +1,16 @@
 @charset "UTF-8";
 
 #middle {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
 }
 
 #middle .jasmine-navbar {
     border-bottom: 1px solid #ededed;
     transition: 100ms;
     top: -100px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 #middle .jasmine-navbar-sticky {
@@ -98,4 +101,9 @@
 
 #search input::placeholder {
     font-size: 14px;
+}
+
+.list-group-item.active {
+    background-color: #000;
+    border-color: #000;
 }

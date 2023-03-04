@@ -1,7 +1,7 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
-<div class="col-1" id="left-sidebar-sticky">
+<div class="col-lg-1 d-none d-lg-block" id="left-sidebar-sticky">
     <div id="left-sidebar" class="pt-5 text-center d-flex flex-column justify-content-between position-relative">
         <div class="list">
             <div class="logo mb-5">

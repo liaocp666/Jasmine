@@ -23,7 +23,7 @@ a:hover {
 
 #layout {
     position: absolute;
-    padding-top: 70px;
+    padding-top: calc(1.5rem * .5);
     width: 100%;
 }
 
@@ -33,8 +33,6 @@ a:hover {
 }
 
 #layout #middle {
-    border-left: 2px solid rgb(242, 242, 242);
-    border-right: 2px solid rgb(242, 242, 242);
     min-height: 100%;
 }
 
@@ -45,5 +43,30 @@ a:hover {
 @media (min-width: 1400px) {
     .container {
         max-width: 1200px;
+    }
+}
+
+@media (min-width: 992px) {
+    #layout {
+        padding-top: 70px !important;
+    }
+
+    #middle {
+        padding: 0 1.5rem !important;
+        border-left: 2px solid rgb(242, 242, 242);
+        border-right: 2px solid rgb(242, 242, 242);
+    }
+
+    #middle .jasmine-navbar {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+        margin-bottom: 3rem !important;
+    }
+    #sticky {
+        padding-bottom: 1.5rem!important;
+        margin-bottom: 3rem!important;
+    }
+    #sticky .col-ld-6 {
+        margin-bottom: 3rem!important;
     }
 }

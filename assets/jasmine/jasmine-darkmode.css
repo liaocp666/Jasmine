@@ -21,7 +21,7 @@ body.darkmode-active {
     color: #dedede;
 }
 
-.darkmode-active #layout #middle, .darkmode-active #layout #middle .jasmine-navbar, .darkmode-active #right-sidebar .widget {
+.darkmode-active #layout #middle, .darkmode-active #layout #middle .jasmine-navbar, .darkmode-active #right-sidebar .widget, .darkmode-active #sticky {
     border-color: #666666;
 }
 
@@ -33,7 +33,7 @@ body.darkmode-active {
     color: #dedede;
 }
 
-.darkmode-active #article .excerpt p, .darkmode-active #article .meta {
+.darkmode-active #article .excerpt p, .darkmode-active #article .meta, .darkmode-active #sticky .excerpt p {
     color: #a5a9c3;
 }
 
@@ -49,8 +49,8 @@ body.darkmode-active {
     color: #dedede;
 }
 
-.darkmode-active #right-sidebar .list-group-item a {
-    color: #a5a9c3;
+.darkmode-active .list-group-item a,.darkmode-active #mobileNavbar a {
+    color: #a5a9c3 !important;
 }
 
 .darkmode-active #hot-tags .nav-link {
@@ -63,4 +63,17 @@ body.darkmode-active {
 
 .darkmode-active #footer {
     color: #a5a9c3;
+}
+
+.darkmode-active #mobileNavbar {
+    background-color: #0a0c19;
+}
+
+.darkmode-active #mobileNavbar .list-group {
+    background-color: #161829;
+}
+
+.darkmode-active #mobileNavbar .btn-close {
+    color: #FFFFFF;
+    font-weight: bolder;
 }
