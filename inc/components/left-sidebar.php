@@ -36,7 +36,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="action">
             <ul class="nav flex-column align-content-center">
                 <li class="nav-item mb-2">
-                    <a href="" class="nav-link">
+                    <a href="javascript::darkmodeToggle()" class="nav-link" id="darkmode-button">
                         <i class="bi bi-moon-stars-fill"></i>
                     </a>
                 </li>

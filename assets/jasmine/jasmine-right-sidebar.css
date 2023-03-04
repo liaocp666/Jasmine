@@ -33,14 +33,12 @@
 #hot-tags .nav-link {
     color: rgba(0, 0, 0, 0.55);
     padding: 0.1rem 0.7rem;
-        border: 1px solid rgba(0,0,0,.125);
     font-size: 14px;
 }
 
 #hot-tags .nav-link:hover {
     background-color: #000000;
     color: #ffffff;
-    border: 1px solid #000000;
 }
 
 #hot-tags .nav-pills .nav-link.active, .nav-pills .show > .nav-link {

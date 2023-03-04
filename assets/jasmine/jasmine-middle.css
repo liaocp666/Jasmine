@@ -27,13 +27,11 @@
 #middle .menu .nav-link, #middle .action .nav-link {
     color: #000000;
     padding: 0.25rem 1rem;
-    border: 1px solid rgba(0, 0, 0, .125);
 }
 
 #middle .menu .nav-link:hover, #middle .action .nav-link:hover {
     background-color: #000000;
     color: #ffffff;
-    border: 1px solid #000000;
 }
 
 #middle .menu .nav-pills .nav-link.active, .nav-pills .show > .nav-link {

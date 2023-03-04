@@ -1,5 +1,24 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'HarmonyOS-Sans';
+    src: url('../font/HarmonyOS-Sans.woff2') format("truetype");
+}
+
+body {
+    background-color: rgb(242, 242, 242);
+    font-family: 'HarmonyOS-Sans', sans-serif;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000000;
+}
+
 #layout {
     position: absolute;
     padding-top: 70px;
@@ -15,6 +34,10 @@
     border-left: 2px solid rgb(242, 242, 242);
     border-right: 2px solid rgb(242, 242, 242);
     min-height: 100%;
+}
+
+.list-group-item {
+    background: rgba(0, 0, 0, 0);
 }
 
 @media (min-width: 1400px) {

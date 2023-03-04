@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+.darkmode-active a {
+    color: #dedede;
+    text-decoration: none;
+}
+
+.darkmode-active a:hover {
+    color: #dedede;
+}
+
+body.darkmode-active {
+    background-color: #0a0c19;
+}
+
+.darkmode-active #layout .layout-wrap {
+    background-color: #161829;
+}
+
+.darkmode-active #left-sidebar .jasmine-nav a, .darkmode-active #left-sidebar .action a {
+    color: #dedede;
+}
+
+.darkmode-active #layout #middle, .darkmode-active #layout #middle .jasmine-navbar, .darkmode-active #right-sidebar .widget {
+    border-color: #666666;
+}
+
+.darkmode-active #layout #middle .jasmine-navbar.jasmine-navbar-sticky {
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.darkmode-active #middle .menu .nav-link, .darkmode-active #middle .action .nav-link {
+    color: #dedede;
+}
+
+.darkmode-active #article .excerpt p, .darkmode-active #article .meta {
+    color: #a5a9c3;
+}
+
+.darkmode-active #blogger .name {
+    color: #dedede;
+}
+
+.darkmode-active #blogger .recommend {
+    color: #a5a9c3;
+}
+
+.darkmode-active #right-sidebar .title {
+    color: #dedede;
+}
+
+.darkmode-active #right-sidebar .list-group-item a {
+    color: #a5a9c3;
+}
+
+.darkmode-active #hot-tags .nav-link {
+    color: #a5a9c3;
+}
+
+.darkmode-active #middle .jasmine-navbar-sticky {
+    background-color: rgba(27, 29, 48, 0.8);
+}
+
+.darkmode-active #footer {
+    color: #a5a9c3;
+}
