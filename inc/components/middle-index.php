@@ -36,8 +36,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <div class="row">
                 <?php while ($this->next()): ?>
                 <div class="col-12">
-                    <div class="item d-flex mb-5 justify-content-between">
-                        <div class="content d-flex flex-column justify-content-between">
+                    <div class="item d-flex mb-5 justify-content-between position-relative">
+                        <div class="content d-flex flex-column justify-content-between position-relative">
                             <div class="title">
                                 <a href="<?php $this->permalink() ?>" title="<?php $this->title() ?>">
                                     <h2 class="fs-5">
@@ -48,7 +48,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                             <div class="excerpt">
                                 <p><?php $this->excerpt(500, ''); ?></p>
                             </div>
-                            <div class="meta d-flex justify-content-between">
+                            <div class="meta d-flex justify-content-between position-relative">
                                 <div class="left">
                                     <span>
                                         <?php $this->category('<span class="middotDivider"></span>', true, '无'); ?>

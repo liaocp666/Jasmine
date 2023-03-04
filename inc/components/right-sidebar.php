@@ -7,7 +7,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <div class="col-12 pb-4 mb-5 widget">
                 <div id="blogger">
                     <div
-                        class="d-flex align-content-center align-items-center align-self-center justify-content-start">
+                        class="d-flex position-relative align-content-center align-items-center align-self-center justify-content-start">
                         <div class="mt-1">
                             <img class="avatar" width="50" height="50"
                                  src="https://q1.qlogo.cn/g?b=qq&nk=2964556627&s=640" alt="">
