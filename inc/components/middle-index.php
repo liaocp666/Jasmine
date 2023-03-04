@@ -9,13 +9,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <div class="menu">
                         <ul class="nav nav-pills" id="jasmine-wrap">
                             <li class="nav-item">
-                                <a class="nav-link <?php echo isActiveMenu($this) ?>" aria-current="page" href="<?php $this->options->siteUrl(); ?>" title="首页">首页</a>
+                                <a class="nav-link <?php if($this->is('index')) echo 'active' ?>" aria-current="page" href="<?php $this->options->siteUrl(); ?>" title="首页">首页</a>
                             </li>
-                            <?php $this->widget('Jasmine_Meta_Row')->to($categorys);?>
+                            <?php $this->widget('Jasmine_Meta_Row')->to($categorys); ?>
                             <?php if ($categorys->have()): ?>
                                 <?php while($categorys->next()): ?>
                                     <li class="nav-item">
-                                        <a class="nav-link" aria-current="page" href="<?php $categorys->permalink()?>" title="<?php $categorys->name();?>"><?php $categorys->name();?></a>
+                                        <a class="nav-link <?php echo isActiveMenu($this, $categorys->slug); ?>" aria-current="page" href="<?php $categorys->permalink(); ?>" title="<?php $categorys->name(); ?>"><?php $categorys->name(); ?></a>
                                     </li>
                                 <?php endwhile; ?>
                             <?php endif; ?>
@@ -31,7 +31,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <div class="action float-end">
                         <ul class="nav nav-pills">
                             <li class="nav-item">
-                                <a href="" class="nav-link"><i class="bi bi-search"></i></a>
+                                <a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModalModal"><i class="bi bi-search"></i></a>
                             </li>
                         </ul>
                     </div>

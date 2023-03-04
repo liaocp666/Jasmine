@@ -234,10 +234,12 @@ class Jasmine_Meta_Row extends Rows
  * @param $self
  * @return string
  */
-function isActiveMenu($self): string
+function isActiveMenu($self, $slug): string
 {
-    if ($self->is('index')) {
-        return 'active';
+    if ($self->is('category') || $self->is('post')) {
+        if ($self->category === $slug) {
+            return 'active';
+        }
     }
     return '';
 }
