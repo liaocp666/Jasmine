@@ -54,9 +54,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             }
         })
 
-        function darkmodeToggle() {
-            darkmode.toggle()
-        }
+        $('#backToTop').on('click', function () {
+            $("html, body").animate({scrollTop: 0}, 100);
+        })
+
     })
 </script>
 </body>
