@@ -24,11 +24,8 @@ function themeConfig($form)
     $leftSidebarMenu = new Textarea('leftSidebarMenu', null, null, '左边栏菜单', '参考文档：<a href="" target="_blank">《左边栏菜单》</a>');
     $form->addInput($leftSidebarMenu);
 
-    $middleTopMenu = new Textarea('middleTopMenu', null, null, '中间头部菜单', '参考文档：<a href="" target="_blank">《中间头部菜单》</a>');
-    $form->addInput($middleTopMenu);
-
-    $stickyPost = new Text('stickyPost', null, null, '置顶文章', '格式：文章的ID || 文章的ID || 文章的ID （中间使用两个竖杠分隔）');
-    $form->addInput($stickyPost);
+    $middleTopCategoryIds = new Text('middleTopCategoryIds', null, null, '中间头部菜单', '格式：分类的ID || 分类的ID || 分类的ID （中间使用两个竖杠分隔）');
+    $form->addInput($middleTopCategoryIds);
 
     $stickyPost = new Text('stickyPost', null, null, '置顶文章', '格式：文章的ID || 文章的ID || 文章的ID （中间使用两个竖杠分隔）');
     $form->addInput($stickyPost);

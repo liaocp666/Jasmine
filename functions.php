@@ -1,7 +1,9 @@
 <?php
 
 use Typecho\Common;
+use Typecho\Db;
 use Utils\Helper;
+use Widget\Metas\Category\Rows;
 use Widget\Options;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
@@ -81,6 +83,12 @@ function getStickyPost(): array
     $sticky_text = getOptions()->stickyPost;
     $sticky_cids = explode('||', strtr($sticky_text, ' ', ''));
     return $sticky_cids;
+}
+
+function getMiddleTopCategoryIds(): array
+{
+    $middleTopCategoryIds = getOptions()->middleTopCategoryIds;
+    return array_map('intval', explode('||', strtr($middleTopCategoryIds, ' ', '')));
 }
 
 /**
@@ -200,4 +208,36 @@ function getCopyrightDate(): string
     }
     $text .= date('Y', time());
     return $text;
+}
+
+class Jasmine_Meta_Row extends Rows
+{
+
+    public function __construct($request, $response, $params = NULL)
+    {
+        parent::__construct($request, $response, $params);
+    }
+
+    /**
+     * 执行函数
+     *
+     * @throws Db\Exception
+     */
+    public function execute()
+    {
+        $this->stack = $this->getCategories(getMiddleTopCategoryIds());
+    }
+}
+
+/**
+ * 判断当前是菜单否激活
+ * @param $self
+ * @return string
+ */
+function isActiveMenu($self): string
+{
+    if ($self->is('index')) {
+        return 'active';
+    }
+    return '';
 }

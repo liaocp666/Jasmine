@@ -7,13 +7,20 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <div class="row">
                 <div class="col-10">
                     <div class="menu">
-                        <ul class="nav nav-pills">
-                            <?php if (!empty(getMiddleTopMenu())): ?>
-                                <?php foreach (getMiddleTopMenu() as $menu): ?>
+                        <ul class="nav nav-pills" id="jasmine-wrap">
+                            <li class="nav-item">
+                                <a class="nav-link <?php echo isActiveMenu($this) ?>" aria-current="page" href="<?php $this->options->siteUrl(); ?>" title="首页">首页</a>
+                            </li>
+                            <?php $this->widget('Jasmine_Meta_Row')->to($categorys);?>
+                            <?php if ($categorys->have()): ?>
+                                <?php while($categorys->next()): ?>
                                     <li class="nav-item">
-                                        <a class="nav-link" aria-current="page" href="<?php echo $menu['url']; ?>" target="<?php echo ($menu['newTab']) ? '_blank' : '_self' ?>" title="<?php echo $menu['name']; ?>"><?php echo $menu['name']; ?></a>
+                                        <a class="nav-link" aria-current="page" href="<?php $categorys->permalink()?>" title="<?php $categorys->name();?>"><?php $categorys->name();?></a>
                                     </li>
-                                <?php endforeach; ?>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                            <?php if (!empty(getMiddleTopMenu())): ?>
+
                             <?php else: ?>
                                 <p>点击设置菜单“<a style="color: orange" href="<?php echo $this->options->siteUrl(); ?>admin/options-theme.php">设置外观 -> 中间头部菜单</a>”</p>
                             <?php endif; ?>
