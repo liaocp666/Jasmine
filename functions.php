@@ -76,7 +76,7 @@ function getDb()
 /**
  * 获取置顶文章
  */
-function getStickyPost()
+function getStickyPost(): array
 {
     $sticky_text = getOptions()->stickyPost;
     $sticky_cids = explode('||', strtr($sticky_text, ' ', ''));
