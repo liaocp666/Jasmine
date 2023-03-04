@@ -63,3 +63,39 @@
     margin: 0 0.5rem;
     border-radius: 5px;
 }
+
+#search {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#search svg {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#search a:focus ~ input {
+    width: 100px !important;
+}
+
+#search input {
+    vertical-align: middle;
+    display: inline-block;
+    width: 0;
+    transition: 0.5s;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#search input:focus {
+    width: 120px;
+    border: 0 !important;
+    outline-style: none;
+}
+
+#search input::placeholder {
+    font-size: 14px;
+}

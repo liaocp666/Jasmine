@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <div id="middle">
         <div class="jasmine-navbar pt-5 pb-5 mb-5">
             <div class="row">
-                <div class="col-10">
+                <div class="col-9">
                     <div class="menu">
                         <ul class="nav nav-pills" id="jasmine-wrap">
                             <li class="nav-item">
@@ -27,11 +27,18 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         </ul>
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                     <div class="action float-end">
                         <ul class="nav nav-pills">
-                            <li class="nav-item">
-                                <a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModalModal"><i class="bi bi-search"></i></a>
+                            <li class="nav-item d-flex">
+                                <form method="post" action="" id="search">
+                                    <label for="search" class="d-flex">
+                                        <a href="javascript:void(0)" class="me-1">
+                                            <i class="bi bi-search"></i>
+                                        </a>
+                                        <input id="search-input" type="text" name="s" type="search" required="true" autocomplete="off" placeholder="Search"/>
+                                    </label>
+                                </form>
                             </li>
                         </ul>
                     </div>

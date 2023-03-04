@@ -30,4 +30,7 @@ $(document).ready(function () {
     $('#backToTop').on('click', function () {
         $("html, body").animate({scrollTop: 0}, 100);
     })
+    $('#search').on('click', function () {
+        $('#search-input').focus()
+    })
 })
