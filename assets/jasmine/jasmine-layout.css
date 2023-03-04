@@ -13,10 +13,12 @@ body {
 a {
     color: #000000;
     text-decoration: none;
+    transition: 100ms;
 }
 
 a:hover {
     color: #000000;
+    transition: 100ms;
 }
 
 #layout {
