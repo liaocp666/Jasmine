@@ -5,7 +5,7 @@ if ($cids = getStickyPost()): ?>
         <div class="row">
             <?php foreach ($cids as $cid) : ?>
             <?php $this->widget('Widget_Archive@jasmine'.$cid, 'pageSize=1&type=post', 'cid='.$cid)->to($item); ?>
-                <div class="col-ld-6 col-md-12">
+                <div class="col-md-6">
                     <div class="item d-flex">
                         <div class="thumbnail">
                             <a href="<?php $item->permalink(); ?>" title="<?php $item->title(); ?>">
