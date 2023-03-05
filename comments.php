@@ -39,9 +39,9 @@ function threadedComments($comments, $options)
                                 </span>
                             <?php } ?>
                         </div>
-                        <a href="">
+                        <div class="comments-reply">
                             <?php $comments->reply(); ?>
-                        </a>
+                        </div>
                     </div>
                     <div class="comment-content">
                         <?php $comments->content(); ?>
@@ -97,8 +97,10 @@ function threadedComments($comments, $options)
                                      alt="<?php $this->user->screenName(); ?>">
                                 <div class="d-flex flex-column">
                                     <span><?php $this->user->screenName(); ?></span>
-                                    <a class="link-warning" href="<?php $this->options->logoutUrl(); ?>"
-                                       title="注销">注销</a>
+                                    <span>
+                                        <a class="a-btn btn" href="<?php $this->options->logoutUrl(); ?>"
+                                           title="注销">注销</a>
+                                    </span>
                                 </div>
                             </div>
                             <div>
