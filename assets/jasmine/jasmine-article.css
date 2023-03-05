@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+#article {
+    border-bottom: 1px solid #ededed;
+}
+
 #article .thumbnail {
     padding-left: 1rem;
 }

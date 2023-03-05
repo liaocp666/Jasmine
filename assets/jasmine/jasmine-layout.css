@@ -40,6 +40,15 @@ a:hover {
     background: rgba(0, 0, 0, 0);
 }
 
+.form-control {
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+}
+
 @media (min-width: 1400px) {
     .container {
         max-width: 1200px;
@@ -68,5 +77,8 @@ a:hover {
     }
     #sticky .col-md-6 {
         margin-bottom: 3rem!important;
+    }
+    #article {
+        padding-bottom: 2rem;
     }
 }

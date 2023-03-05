@@ -17,12 +17,8 @@ require_once 'inc/core/index.php';
  */
 function themeInit($archive)
 {
-    //暴力解决访问加密文章会被 pjax 刷新页面的问题
-    if ($archive->hidden) header('HTTP/1.1 200 OK');
     //评论回复楼层最高999层.这个正常设置最高只有7层
     Helper::options()->commentsMaxNestingLevels = 999;
-    //强制评论关闭反垃圾保护
-    Helper::options()->commentsAntiSpam = true;
     //将最新的评论展示在前
     Helper::options()->commentsOrder = 'DESC';
     //关闭检查评论来源URL与文章链接是否一致判断
@@ -146,6 +142,9 @@ function humanizedDate(int $created)
         } elseif ($d == 2) {
             return '前天';
         } elseif ($d <= 31) {
+            if ($d == 0) {
+                return '今天';
+            }
             return $d . ' 天前';
         } elseif ($Y == date('Y')) {
             return date('m-d', $created);
@@ -242,4 +241,32 @@ function isActiveMenu($self, $slug): string
         }
     }
     return '';
+}
+
+/**
+ * 获取评论头像
+ * @param $mail 邮箱
+ */
+function getAvatarByMail($mail)
+{
+    $gravatarsUrl = 'https://cravatar.cn/avatar/';
+    $mailLower = strtolower($mail);
+    $md5MailLower = md5($mailLower);
+    $qqMail = str_replace('@qq.com', '', $mailLower);
+    if (strstr($mailLower, "qq.com") && is_numeric($qqMail) && strlen($qqMail) < 11 && strlen($qqMail) > 4) {
+        return 'https://thirdqq.qlogo.cn/g?b=qq&nk=' . $qqMail . '&s=100';
+    } else {
+        return $gravatarsUrl . $md5MailLower . '?d=mm';
+    }
+}
+
+function CommentAuthor($obj, $autoLink = NULL, $noFollow = NULL) {
+    $options = Helper::options();
+    $autoLink = $autoLink ? $autoLink : $options->commentsShowUrl;
+    $noFollow = $noFollow ? $noFollow : $options->commentsUrlNofollow;
+    if ($obj->url && $autoLink) {
+        echo '<a href="'.$obj->url.'"'.($noFollow ? ' rel="external nofollow"' : NULL).(strstr($obj->url, $options->index) == $obj->url ? NULL : ' target="_blank"').'>'.$obj->author.'</a>';
+    } else {
+        echo $obj->author;
+    }
 }
