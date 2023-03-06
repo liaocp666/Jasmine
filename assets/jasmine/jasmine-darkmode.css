@@ -110,6 +110,10 @@ body.darkmode-active {
     color: #dedede;
 }
 
-.btn-dark {
-    background-color: #000000;
+.btn-dark, .text-bg-dark {
+    background-color: #000000 !important;
+}
+
+.darkmode-active #page-archives a {
+    color: #dedede !important;
 }

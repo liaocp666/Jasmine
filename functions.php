@@ -50,14 +50,6 @@ function getLeftSidebarMenu()
 }
 
 /**
- * 获取中间头部菜单
- */
-function getMiddleTopMenu()
-{
-    return json_decode(getOptions()->middleTopMenu, true);
-}
-
-/**
  * 获取 Options
  * @return Options
  */
@@ -295,4 +287,30 @@ function CommentAt($coid)
             ->where('coid = ? AND status = ?', $parent, 'approved'));
         echo '<span class="comment-at">@' . $arow['author'] . '</span>';
     }
+}
+
+/**
+ * 获胜文章归档
+ * @param $widget
+ * @return array
+ */
+function getArchives($widget)
+{
+    $db = Typecho_Db::get();
+    $rows = $db->fetchAll($db->select()
+        ->from('table.contents')
+        ->order('table.contents.created', Typecho_Db::SORT_DESC)
+        ->where('table.contents.type = ?', 'post')
+        ->where('table.contents.status = ?', 'publish'));
+
+    $stat = array();
+    foreach ($rows as $row) {
+        $row = $widget->filter($row);
+        $arr = array(
+            'title' => $row['title'],
+            'permalink' => $row['permalink']
+        );
+        $stat[date('Y', $row['created'])][$row['created']] = $arr;
+    }
+    return $stat;
 }

@@ -108,3 +108,12 @@
     background-color: #000;
     border-color: #000;
 }
+
+#page-archives a {
+    color: #000000;
+}
+
+#page-archives ol {
+    list-style: none;
+    padding-left: 0;
+}

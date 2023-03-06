@@ -13,9 +13,6 @@
                                 <a class="nav-link <?php echo isActiveMenu($this, $categorys->slug); ?>" aria-current="page" href="<?php $categorys->permalink(); ?>" title="<?php $categorys->name(); ?>"><?php $categorys->name(); ?></a>
                             </li>
                         <?php endwhile; ?>
-                    <?php endif; ?>
-                    <?php if (!empty(getMiddleTopMenu())): ?>
-
                     <?php else: ?>
                         <p>点击设置菜单“<a style="color: orange" href="<?php echo $this->options->siteUrl(); ?>admin/options-theme.php">设置外观 -> 中间头部菜单</a>”</p>
                     <?php endif; ?>
@@ -79,9 +76,6 @@
                                             <a class="nav-link" aria-current="page" href="<?php $categorys->permalink(); ?>" title="<?php $categorys->name(); ?>"><?php $categorys->name(); ?></a>
                                         </li>
                                     <?php endwhile; ?>
-                                <?php endif; ?>
-                                <?php if (!empty(getMiddleTopMenu())): ?>
-
                                 <?php else: ?>
                                     <p>点击设置菜单“<a style="color: orange" href="<?php echo $this->options->siteUrl(); ?>admin/options-theme.php">设置外观 -> 中间头部菜单</a>”</p>
                                 <?php endif; ?>
