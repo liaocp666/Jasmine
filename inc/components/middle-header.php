@@ -22,13 +22,15 @@
         <div class="col-3 d-none d-lg-block">
             <div class="action float-end">
                 <ul class="nav nav-pills">
-                    <li class="nav-item d-flex">
-                        <form method="post" action="" id="search">
+                    <li class="nav-item d-flex" itemscope itemtype="https://schema.org/WebSite">
+                        <meta itemprop="url" content="<?php $this->options->siteUrl(); ?>"/>
+                        <form method="post" action="" id="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                            <meta itemprop="target" content="<?php $this->options->siteUrl(); ?>search/{s}/"/>
                             <label for="search" class="d-flex">
                                 <a href="javascript:void(0)" class="me-1">
                                     <i class="bi bi-search"></i>
                                 </a>
-                                <input id="search-input" type="text" name="s" type="search" required="true" autocomplete="off" placeholder="Search"/>
+                                <input itemprop="query-input" id="search-input" type="text" name="s" type="search" required="true" autocomplete="off" placeholder="Search"/>
                             </label>
                         </form>
                     </li>

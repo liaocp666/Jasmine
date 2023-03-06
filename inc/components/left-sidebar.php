@@ -4,13 +4,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <div class="col-lg-1 d-none d-lg-block" id="left-sidebar-sticky">
     <div id="left-sidebar" class="pt-5 text-center d-flex flex-column justify-content-between position-relative">
         <div class="list">
-            <div class="logo mb-5">
+            <div class="logo mb-5" itemscope itemtype="https://schema.org/Organization">
                 <?php if ($this->options->logoUrl): ?>
-                    <a href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title() ?>"
+                    <a itemprop="url" href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title() ?>"
                        data-bs-toggle="tooltip"
                        data-bs-title="<?php $this->options->title() ?>"
                        data-bs-placement="right">
-                        <img src="<?php echo $this->options->logoUrl;?>" alt="<?php $this->options->title() ?>" width="50" height="50">
+                        <img itemprop="logo" src="<?php echo $this->options->logoUrl;?>" alt="<?php $this->options->title() ?>" width="50" height="50">
                     </a>
                 <?php endif; ?>
                 <?php if ($this->is('index')): ?>
