@@ -20,7 +20,7 @@ function threadedComments($comments, $options)
     $comments->alt(' comment-odd', ' comment-even');
     echo $commentClass;
     ?>">
-        <div class="d-flex flex-start mb-3">
+        <div class="d-flex flex-start mb-3 comment-main">
             <img class="rounded shadow-1-strong me-2" width="50" height="50"
                  src="<?php echo getAvatarByMail($comments->mail); ?>"
                  alt="<?php $comments->author; ?>">
@@ -42,7 +42,7 @@ function threadedComments($comments, $options)
                             <?php } ?>
                         </div>
                         <div class="comments-reply">
-                            <?php $comments->reply(); ?>
+                            <?php $comments->reply('回复'); ?>
                         </div>
                     </div>
                     <div class="comment-content">

@@ -6,7 +6,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="list">
             <div class="logo mb-5">
                 <?php if ($this->options->logoUrl): ?>
-                    <a href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title() ?>">
+                    <a href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title() ?>"
+                       data-bs-toggle="tooltip"
+                       data-bs-title="<?php $this->options->title() ?>"
+                       data-bs-placement="right">
                         <img src="<?php echo $this->options->logoUrl;?>" alt="<?php $this->options->title() ?>" width="50" height="50">
                     </a>
                 <?php endif; ?>
@@ -36,12 +39,18 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="action">
             <ul class="nav flex-column align-content-center">
                 <li class="nav-item mb-2">
-                    <a href="javascript:void(0);" class="nav-link" id="darkmode-button">
+                    <a href="javascript:void(0);" class="nav-link" id="darkmode-button"
+                       data-bs-toggle="tooltip"
+                       data-bs-title="切换主题"
+                       data-bs-placement="right">
                         <i class="bi bi-moon-stars-fill"></i>
                     </a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="javascript:void(0);" class="nav-link" id="backToTop">
+                    <a href="javascript:void(0);" class="nav-link" id="backToTop"
+                       data-bs-toggle="tooltip"
+                       data-bs-title="返回顶部"
+                       data-bs-placement="right">
                         <i class="bi bi-arrow-up-circle-fill"></i>
                     </a>
                 </li>
