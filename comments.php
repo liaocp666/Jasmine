@@ -27,12 +27,14 @@ function threadedComments($comments, $options)
             <div class="flex-grow-1 flex-shrink-1">
                 <div>
                     <div class="d-flex justify-content-between align-items-center">
-                        <div><span class="author-name"><?php CommentAuthor($comments); ?></span>
-                            <span class="small"> - <?php echo humanizedDate($comments->created); ?>
+                        <div><span class="author-name">
+                                <?php CommentAuthor($comments); ?>
+                                <?php if ($comments->authorId == $comments->ownerId) { ?>
+                                    <span class="small author-icon">(作者)&nbsp;</span>
+                                <?php } ?>
                             </span>
-                            <?php if ($comments->authorId == $comments->ownerId) { ?>
-                                <span class="small author-icon"> - 作者</span>
-                            <?php } ?>
+                            <span class="small"> <?php echo CommentAt($comments->coid) ?> - <?php echo humanizedDate($comments->created); ?>
+                            </span>
                             <?php if ($comments->status == 'waiting') { ?>
                                 <span class="small">
                                     - 您的评论正等待审核！

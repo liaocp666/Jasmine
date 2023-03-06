@@ -260,6 +260,13 @@ function getAvatarByMail($mail)
     }
 }
 
+/**
+ * 评论作者
+ * @param $obj
+ * @param $autoLink
+ * @param $noFollow
+ * @return void
+ */
 function CommentAuthor($obj, $autoLink = NULL, $noFollow = NULL)
 {
     $options = Helper::options();
@@ -269,5 +276,23 @@ function CommentAuthor($obj, $autoLink = NULL, $noFollow = NULL)
         echo '<a href="' . $obj->url . '"' . ($noFollow ? ' rel="external nofollow"' : NULL) . (strstr($obj->url, $options->index) == $obj->url ? NULL : ' target="_blank"') . '>' . $obj->author . '</a>';
     } else {
         echo $obj->author;
+    }
+}
+
+/**
+ * 评论添加 @
+ * @param $coid
+ * @return void
+ */
+function CommentAt($coid)
+{
+    $db = Typecho_Db::get();
+    $prow = $db->fetchRow($db->select('parent')->from('table.comments')
+        ->where('coid = ? AND status = ?', $coid, 'approved'));
+    $parent = $prow['parent'];
+    if ($prow && $parent != '0') {
+        $arow = $db->fetchRow($db->select('author')->from('table.comments')
+            ->where('coid = ? AND status = ?', $parent, 'approved'));
+        echo '<span class="comment-at">@' . $arow['author'] . '</span>';
     }
 }

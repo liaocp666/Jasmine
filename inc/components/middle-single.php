@@ -45,7 +45,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         </div>
                         <?php if($this->is('post')): ?>
                         <div class="post-tags mb-3">
-                            <i class="bi bi-tags-fill"></i> <?php $this->tags(', ', true, 'none'); ?>
+                            <i class="bi bi-tags-fill"></i> <?php $this->tags(', ', true, '暂无标签'); ?>
                         </div>
                         <?php endif; ?>
                     </div>
