@@ -25,6 +25,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         type="application/javascript"></script>
 <script src="https://cdn.staticfile.org/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
         type="application/javascript"></script>
+<script src="https://cdn.staticfile.org/smoothscroll/1.4.10/SmoothScroll.min.js" type="text/javascript"></script>
 <script src="<?php $this->options->themeUrl('assets/darken/darken.umd.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('assets/jasmine/jasmine.js'); ?>"></script>
 <script>
