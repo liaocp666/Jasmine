@@ -39,6 +39,10 @@ function themeFields(Typecho_Widget_Helper_Layout $layout)
     $layout->addItem($excerpt);
     $commentShow = new Typecho_Widget_Helper_Form_Element_Select('commentShow', array('0' => '显示', '1' => '隐藏'), '0', '是否显示评论列表');
     $layout->addItem($commentShow);
+    $keyword = new Typecho_Widget_Helper_Form_Element_Textarea('keyword', NULL, NULL, _t('keywords关键词'), _t('多个关键词用英文下逗号隔开'));
+    $layout->addItem($keyword);
+    $description = new Typecho_Widget_Helper_Form_Element_Textarea('description', NULL, NULL, _t('description描述'), _t('简单一句话描述'));
+    $layout->addItem($description);
 }
 
 /**
