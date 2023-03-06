@@ -1,7 +1,10 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
-<div class="col-lg-8 col-md-12">
+<div class="col-lg-8 col-md-12"
+     data-prismjs-copy="点击复制"
+     data-prismjs-copy-error="按Ctrl+C复制"
+     data-prismjs-copy-success="文本已复制！">
     <div id="middle">
         <?php $this->need('inc/components/middle-header.php'); ?>
         <div id="article" class="mb-5">
@@ -16,11 +19,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                                     </div>
                                     <div class="meta d-flex justify-content-between mb-3">
                                         <div class="left">
-                                            <?php if($this->is('post')): ?>
-                                            <span>
+                                            <?php if ($this->is('post')): ?>
+                                                <span>
                                                 <?php $this->category('<span class="middotDivider"></span>', true, '无'); ?>
                                             </span>
-                                            <span class="middotDivider"></span>
+                                                <span class="middotDivider"></span>
                                             <?php endif; ?>
                                             <span><?php echo humanizedDate($this->created); ?></span>
                                         </div>
@@ -29,7 +32,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                                 <?php if ($thumbnail = getThumbnail($this->cid, '')): ?>
                                     <div class="thumbnail d-none d-lg-block">
                                         <a href="" title="<?php $this->title() ?>">
-                                            <img width="170" height="130" src="<?php echo $thumbnail; ?>" alt="<?php $this->title() ?>">
+                                            <img width="170" height="130" src="<?php echo $thumbnail; ?>"
+                                                 alt="<?php $this->title() ?>">
                                         </a>
                                     </div>
                                 <?php endif; ?>
@@ -43,10 +47,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                                     class="bi bi-hand-thumbs-up-fill"></i>&nbsp;(0)
                             </button>
                         </div>
-                        <?php if($this->is('post')): ?>
-                        <div class="post-tags mb-3">
-                            <i class="bi bi-tags-fill"></i> <?php $this->tags(', ', true, '暂无标签'); ?>
-                        </div>
+                        <?php if ($this->is('post')): ?>
+                            <div class="post-tags mb-3">
+                                <i class="bi bi-tags-fill"></i> <?php $this->tags(', ', true, '暂无标签'); ?>
+                            </div>
                         <?php endif; ?>
                     </div>
                 </div>
