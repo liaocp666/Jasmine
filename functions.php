@@ -33,15 +33,15 @@ function themeInit($archive)
  */
 function themeFields(Typecho_Widget_Helper_Layout $layout)
 {
-    $banner = new Typecho_Widget_Helper_Form_Element_Text('banner', NULL, NULL, _t('缩略图'), _t('输入一个图片 url，作为缩略图显示在文章列表，没有则不显示'));
+    $banner = new Typecho_Widget_Helper_Form_Element_Text('thumbnail', NULL, NULL, _t('缩略图'), _t('输入一个图片 url，作为缩略图显示在文章列表，没有则不显示'));
     $layout->addItem($banner);
     $excerpt = new Typecho_Widget_Helper_Form_Element_Text('excerpt', NULL, NULL, _t('文章摘要'), _t('输入一段文本来自定义摘要。'));
     $layout->addItem($excerpt);
     $commentShow = new Typecho_Widget_Helper_Form_Element_Select('commentShow', array('0' => '显示', '1' => '隐藏'), '0', '是否显示评论列表');
     $layout->addItem($commentShow);
-    $keyword = new Typecho_Widget_Helper_Form_Element_Textarea('keyword', NULL, NULL, _t('keywords关键词'), _t('多个关键词用英文下逗号隔开'));
+    $keyword = new Typecho_Widget_Helper_Form_Element_Textarea('keyword', NULL, NULL, _t('SEO 关键词'), _t('多个关键词用英文下逗号隔开'));
     $layout->addItem($keyword);
-    $description = new Typecho_Widget_Helper_Form_Element_Textarea('description', NULL, NULL, _t('description描述'), _t('简单一句话描述'));
+    $description = new Typecho_Widget_Helper_Form_Element_Textarea('description', NULL, NULL, _t('SEO 描述'), _t('简单一句话描述'));
     $layout->addItem($description);
 }
 
