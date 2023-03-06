@@ -117,3 +117,12 @@ body.darkmode-active {
 .darkmode-active #page-archives a {
     color: #dedede !important;
 }
+
+.darkmode-active :not(pre)>code[class*=language-], pre[class*=language-] {
+    background: #0a0c19 !important;
+}
+
+.darkmode-active code[class*=language-], pre[class*=language-] {
+    color: #a5a9c3 !important;
+    text-shadow: none;
+}
