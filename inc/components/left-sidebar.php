@@ -13,6 +13,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         <img src="<?php echo $this->options->logoUrl;?>" alt="<?php $this->options->title() ?>" width="50" height="50">
                     </a>
                 <?php endif; ?>
+                <?php if ($this->is('index')): ?>
+                    <div class="d-none">
+                        <h1><?php $this->options->title(); ?></h1>
+                        <p><?php $this->options->description(); ?></p>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="jasmine-nav">
                 <ul class="nav flex-column align-content-center">
