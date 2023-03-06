@@ -28,12 +28,12 @@ function threadedComments($comments, $options)
                 <div>
                     <div class="d-flex justify-content-between align-items-center">
                         <div><span class="author-name">
-                                <?php CommentAuthor($comments); ?>
+                                <?php getCommentAuthor($comments); ?>
                                 <?php if ($comments->authorId == $comments->ownerId) { ?>
                                     <span class="small author-icon">(作者)&nbsp;</span>
                                 <?php } ?>
                             </span>
-                            <span class="small"> <?php echo CommentAt($comments->coid) ?> - <?php echo humanizedDate($comments->created); ?>
+                            <span class="small"> <?php echo getCommentAt($comments->coid) ?> - <?php echo getHumanizedDate($comments->created); ?>
                             </span>
                             <?php if ($comments->status == 'waiting') { ?>
                                 <span class="small">

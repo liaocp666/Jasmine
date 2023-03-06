@@ -25,7 +25,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                                             </span>
                                                 <span class="middotDivider"></span>
                                             <?php endif; ?>
-                                            <span><?php echo humanizedDate($this->created); ?></span>
+                                            <span><?php echo getHumanizedDate($this->created); ?></span>
                                             <span class="d-none" itemprop="author" itemscope itemtype="https://schema.org/Person">
                                                 <meta itemprop="url" content="<?php $this->author->permalink(); ?>"/>
                                                 <a itemprop="url" href="<?php $this->author->permalink(); ?>">

@@ -29,7 +29,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                                         <?php $this->category('<span class="middotDivider"></span>', true, '无'); ?>
                                     </span>
                                     <span class="middotDivider"></span>
-                                    <span><?php echo humanizedDate($this->created); ?></span>
+                                    <span><?php echo getHumanizedDate($this->created); ?></span>
                                 </div>
                                 <span class="d-none" itemprop="author" itemscope itemtype="https://schema.org/Person">
                                     <meta itemprop="url" content="<?php $this->author->permalink(); ?>"/>

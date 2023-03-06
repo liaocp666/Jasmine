@@ -1,7 +1,12 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
-// 工具类
 require_once 'utils.php';
 
-// 设置外观
 require_once 'options.php';
+
+require_once 'meta.php';
+
+require_once 'post.php';
+
+require_once 'comment.php';

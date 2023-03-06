@@ -29,8 +29,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         <h3 class="fs-6"><i class="bi bi-bar-chart-line-fill"></i>&nbsp;热门文章</h3>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <?php if(!empty($posts = hotPosts())): ?>
-                        <?php foreach (hotPosts() as $post): ?>
+                        <?php if(!empty($posts = getHotPosts())): ?>
+                        <?php foreach (getHotPosts() as $post): ?>
                         <li class="list-group-item">
                             <a href=""><?php echo $post['title']; ?></a>
                         </li>

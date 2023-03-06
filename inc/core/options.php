@@ -7,6 +7,8 @@ use Utils\Helper;
 use Widget\Notice;
 use Widget\Options;
 
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  * 主题配置
  * @param $form
