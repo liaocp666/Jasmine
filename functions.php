@@ -260,12 +260,13 @@ function getAvatarByMail($mail)
     }
 }
 
-function CommentAuthor($obj, $autoLink = NULL, $noFollow = NULL) {
+function CommentAuthor($obj, $autoLink = NULL, $noFollow = NULL)
+{
     $options = Helper::options();
     $autoLink = $autoLink ? $autoLink : $options->commentsShowUrl;
     $noFollow = $noFollow ? $noFollow : $options->commentsUrlNofollow;
     if ($obj->url && $autoLink) {
-        echo '<a href="'.$obj->url.'"'.($noFollow ? ' rel="external nofollow"' : NULL).(strstr($obj->url, $options->index) == $obj->url ? NULL : ' target="_blank"').'>'.$obj->author.'</a>';
+        echo '<a href="' . $obj->url . '"' . ($noFollow ? ' rel="external nofollow"' : NULL) . (strstr($obj->url, $options->index) == $obj->url ? NULL : ' target="_blank"') . '>' . $obj->author . '</a>';
     } else {
         echo $obj->author;
     }
