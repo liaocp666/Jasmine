@@ -77,3 +77,39 @@ body.darkmode-active {
     color: #FFFFFF;
     font-weight: bolder;
 }
+
+.darkmode-active .title {
+    color: #dedede;
+}
+
+.darkmode-active #content p {
+    color: #dedede;
+}
+
+.darkmode-active #article {
+    border-color: #666666;
+}
+
+.darkmode-active #comments .small {
+    color: #a5a9c3;
+}
+
+.darkmode-active .comment-content p {
+    color: #a5a9c3 !important;
+}
+
+.darkmode-active #comments .comment-body:not(.comment-children .comment-body) {
+    border-color: #666666;
+}
+
+.darkmode-active #comments .img-thumbnail {
+    border-color: #666666;
+}
+
+.darkmode-active .post-tags {
+    color: #dedede;
+}
+
+.btn-dark {
+    background-color: #000000;
+}
