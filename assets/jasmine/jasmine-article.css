@@ -67,3 +67,11 @@
 #article .middotDivider {
     padding: 0 0.2rem;
 }
+
+#content h2 {
+    font-size: 1.7rem!important;
+}
+
+#content h3 {
+    font-size: 1.65rem!important;
+}

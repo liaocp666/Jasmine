@@ -15,7 +15,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="left-head">
                                     <div class="title mb-4">
-                                        <h1 class="fs-3" itemprop="headline"><?php $this->title() ?></h1>
+                                        <h1 class="fs-3 fw-semibold" itemprop="headline"><?php $this->title() ?></h1>
                                     </div>
                                     <div class="meta d-flex justify-content-between mb-3">
                                         <div class="left">
