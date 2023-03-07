@@ -4,7 +4,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <div class="col-lg-8 col-md-12">
     <div id="middle">
         <?php $this->need('inc/components/middle-header.php'); ?>
-        <?php if($this->is('home')): ?>
+        <?php if($this->is('index') && $this->_currentPage == 1): ?>
         <?php $this->need('inc/components/sticky.php'); ?>
         <?php endif; ?>
         <div id="article" class="mb-5">

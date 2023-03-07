@@ -1,6 +1,7 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-if ($cids = getStickyPost()): ?>
+$cids = getStickyPost();
+if (null != $cids): ?>
     <div id="sticky">
         <div class="row">
             <?php foreach ($cids as $cid) : ?>
