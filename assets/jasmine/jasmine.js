@@ -36,4 +36,10 @@ $(document).ready(function () {
     $('#mobile-darkmode-button').on('click', function () {
         darkmode.toggle()
     })
+    var tables = $('table')
+    if (tables) {
+        $.each(tables, function () {
+            $(this).addClass('table')
+        })
+    }
 })
