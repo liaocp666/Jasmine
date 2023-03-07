@@ -40,6 +40,12 @@ function themeConfig($form)
     $startDate = new Text('startDate', null, null, '建站日期', '格式：2008-08-08');
     $form->addInput($startDate);
 
+    $customStyle = new Textarea('customStyle', null, null, '自定义样式', '不需要添加 &lt;style&gt; 标签');
+    $form->addInput($customStyle);
+
+    $customScript = new Textarea('customScript', null, null, '自定义脚本', '不需要添加 &lt;script&gt; 标签');
+    $form->addInput($customScript);
+
     backupThemeData();
 }
 
