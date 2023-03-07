@@ -118,11 +118,11 @@ body.darkmode-active {
     color: #dedede !important;
 }
 
-.darkmode-active :not(pre)>code[class*=language-], pre[class*=language-] {
+.darkmode-active :not(pre)>code[class*=language-],.darkmode-active  pre[class*=language-] {
     background: #0a0c19 !important;
 }
 
-.darkmode-active code[class*=language-], pre[class*=language-] {
+.darkmode-active code[class*=language-],.darkmode-active  pre[class*=language-] {
     color: #a5a9c3 !important;
     text-shadow: none;
 }
