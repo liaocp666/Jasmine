@@ -6,7 +6,7 @@ if (document.getElementById('jasmine-check-update')) {
     ajax.onreadystatechange = function () {
         if (ajax.readyState == 4 && ajax.status == 200) {
             var obj = JSON.parse(ajax.responseText);
-            if (versionCompare(obj.tag_name, jasmineVersion)) {
+            if (versionCompare(jasmineVersion, obj.tag_name) == -1) {
                 container.innerHTML =
                     '<h2>🎉 发现新版本！</h2>' +
                     '<a href="' + obj.assets[0].browser_download_url + '">点击下载（'+ obj.tag_name +'）</a>';
@@ -19,8 +19,8 @@ if (document.getElementById('jasmine-check-update')) {
 
 /**
  * 比较版本号
- * @param preVersion        下个版本
- * @param lastVersion       上个版本
+ * @param preVersion        前版本
+ * @param lastVersion       最版本
  * @returns {number}
  */
 function versionCompare(preVersion = '', lastVersion = '') {
