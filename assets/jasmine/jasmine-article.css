@@ -75,3 +75,7 @@
 #content h3 {
     font-size: 1.65rem!important;
 }
+
+#content a {
+    text-decoration: underline;
+}
