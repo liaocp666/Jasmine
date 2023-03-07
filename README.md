@@ -6,6 +6,14 @@
 
 [南巷清风](https://www.liaocp.cn/)
 
+**主题仓库**
+
+如果觉得主题还不错，请帮忙点个 start 😁。
+
+[Github](https://github.com/liaocp666/Jasmine)  | [Gitee](https://gitee.com/LiaoChunping/Jasmine)
+
+**预览图**
+
 ![主题图片](./docs/theme.png)
 
 ## 主题亮点
