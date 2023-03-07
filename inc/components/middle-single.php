@@ -49,11 +49,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         <div id="content" class="mb-3" itemprop="articleBody">
                             <?php $this->content(); ?>
                         </div>
-                        <!--<div class="socialize m-auto mb-3">
+                        <div class="socialize m-auto mb-3">
                             <button type="button" class="btn btn-light"><i
                                     class="bi bi-hand-thumbs-up-fill"></i>&nbsp;(0)
                             </button>
-                        </div>-->
+                        </div>
                         <?php if ($this->is('post')): ?>
                             <div class="post-tags mb-3">
                                 <i class="bi bi-tags-fill"></i> <?php $this->tags(', ', true, '暂无标签'); ?>
