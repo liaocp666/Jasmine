@@ -122,7 +122,7 @@
 
 * Jasmine 主题使用 [GPL V3.0](https://github.com/liaocp666/theme-jasmine/blob/main/LICENSE) 协议开源。
 
-* 您必需遵守此协议进行二次开发等。
+* 您必需遵守此协议进行二次开发。
 
 * **您可以删除页脚的作者信息。**
 
