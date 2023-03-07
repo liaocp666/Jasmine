@@ -34,6 +34,8 @@
     margin-top: 0.55rem;
     margin-bottom: 0;
     color: rgba(0, 0, 0, 0.55);
+    word-wrap:break-word;
+    word-break:break-all;
 }
 
 #comments .comment-body:not(.comment-children .comment-body) {
