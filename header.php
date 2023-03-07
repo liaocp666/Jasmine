@@ -35,8 +35,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <link rel="icon" type="image/ico" href="<?php $this->options->siteUrl();?>favicon.ico">
     <link href="https://cdn.staticfile.org/bootstrap/5.2.3/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
     <link href="https://cdn.staticfile.org/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" type="text/css" rel="stylesheet"/>
-    <link href="<?php $this->options->themeUrl('assets/jasmine/jasmine.css'); ?>" type="text/css" rel="stylesheet">
     <link href="<?php $this->options->themeUrl('assets/prism/prism.css'); ?>" type="text/css" rel="stylesheet">
+    <link href="<?php $this->options->themeUrl('assets/jasmine/jasmine.css'); ?>" type="text/css" rel="stylesheet">
     <?php $this->header('description=&generator=&pingback=&template=&xmlrpc=&wlw=&commentReply=&keywords='); ?>
     <style>
         <?php $this->options->customStyle(); ?>
