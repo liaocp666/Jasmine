@@ -30,7 +30,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <script src="<?php $this->options->themeUrl('assets/darken/darken.umd.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('assets/jasmine/jasmine.js'); ?>"></script>
 <script>
-    <?php $this->options->customStyle(); ?>
+    <?php $this->options->customScript(); ?>
 </script>
 </body>
 </html>

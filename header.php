@@ -39,7 +39,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <link href="<?php $this->options->themeUrl('assets/prism/prism.css'); ?>" type="text/css" rel="stylesheet">
     <?php $this->header('description=&generator=&pingback=&template=&xmlrpc=&wlw=&commentReply=&keywords='); ?>
     <style>
-        <?php $this->options->customScript(); ?>
+        <?php $this->options->customStyle(); ?>
     </style>
 </head>
 <body>
