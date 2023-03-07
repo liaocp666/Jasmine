@@ -40,6 +40,9 @@ function themeConfig($form)
     $startDate = new Text('startDate', null, null, '建站日期', '格式：2008-08-08');
     $form->addInput($startDate);
 
+    $icpCode = new Text('icpCode', null, null, 'ICP 备案号', '网站备案号');
+    $form->addInput($icpCode);
+
     $customStyle = new Textarea('customStyle', null, null, '自定义样式', '不需要添加 &lt;style&gt; 标签');
     $form->addInput($customStyle);
 

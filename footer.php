@@ -15,6 +15,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <a href="https://github.com/liaocp666" target="_blank" title="Kent Liao">Kent Liao</a>
                 </p>
                 <p>Powered by <a href="https://typecho.org/" title="Tyecho" target="_blank">Typecho</a></p>
+                <?php if(!empty($this->options->icpCode)): ?>
+                    <p><a href="https://beian.miit.gov.cn/" target="_blank"><?php $this->options->icpCode(); ?></a></p>
+                <?php endif; ?>
             </div>
         </div>
     </div>
