@@ -3,7 +3,7 @@
  * 简洁、美观、响应式的 Typecho 主题。
  * Github：<a href="https://github.com/liaocp666/Jasmine" target="_blank" title="Jasmine Github Repo">https://github.com/liaocp666/Jasmine</a>
  *
- * @package jasmine
+ * @package Jasmine
  * @author Kent Liao
  * @version 1.0.0
  * @link https://www.liaocp.cn/
