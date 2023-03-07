@@ -25,7 +25,7 @@ function themeConfig($form)
     $logoUrl = new Text('logoUrl', null, null, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
     $form->addInput($logoUrl);
 
-    $leftSidebarMenu = new Textarea('leftSidebarMenu', null, null, '左边栏菜单', '参考文档：<a href="https://github.com/liaocp666/Jasmine/tree/1.0.2#%E5%B7%A6%E8%BE%B9%E6%A0%8F%E8%8F%9C%E5%8D%95" target="_blank">《左边栏菜单》</a>');
+    $leftSidebarMenu = new Textarea('leftSidebarMenu', null, null, '左边栏菜单', '参考文档：<a href="https://github.com/liaocp666/Jasmine#%E5%B7%A6%E8%BE%B9%E6%A0%8F%E8%8F%9C%E5%8D%95" target="_blank">《左边栏菜单》</a>');
     $form->addInput($leftSidebarMenu);
 
     $middleTopCategoryIds = new Text('middleTopCategoryIds', null, null, '中间头部菜单', '格式：分类的ID || 分类的ID || 分类的ID （中间使用两个竖杠分隔）');
