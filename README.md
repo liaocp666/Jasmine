@@ -37,6 +37,7 @@
 1. 下载主题压缩包 [Jasmine.zip](https://github.com/liaocp666/Jasmine/archive/refs/heads/main.zip)
 2. 解压下载文件，并将文件夹重命名为 `jasmine`
 3. 上传至 `usr/themes/` 目录下
+4. 启用此主题
 
 ### 更新
 
