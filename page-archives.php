@@ -1,6 +1,6 @@
 <?php
 /**
- * 归档
+ * 归档页面
  *
  * @package custom
  */
