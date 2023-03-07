@@ -126,3 +126,36 @@ body.darkmode-active {
     color: #a5a9c3 !important;
     text-shadow: none;
 }
+
+.darkmode-active .heti table {
+    border-color: #666666;
+}
+
+.darkmode-active .heti mark {
+    background-color: hsla(58deg, 100%, 15%, 0.88);
+}
+
+.darkmode-active .heti sup:target,
+.darkmode-active .heti sup a:target {
+    background-color: hsl(210deg, 40%, 38%);
+}
+
+.darkmode-active .heti u[title] {
+    border-block-end-color: hsla(0deg, 0%, 100%, 0.54);
+}
+
+.darkmode-active .heti blockquote {
+    background-color: hsla(0deg, 0%, 100%, 0.054);
+}
+
+.darkmode-active .heti hr {
+    background-color: hsl(0deg, 0%, 25%);
+}
+
+.darkmode-active .heti pre {
+    background-color: hsla(0deg, 0%, 100%, 0.054);
+}
+
+.darkmode-active #content {
+    color: #dedede;
+}

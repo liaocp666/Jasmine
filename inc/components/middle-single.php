@@ -46,7 +46,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <div id="content" class="mb-3" itemprop="articleBody">
+                        <div id="content" class="mb-3 heti" itemprop="articleBody">
                             <?php $this->content(); ?>
                         </div>
                         <!--<div class="socialize m-auto mb-3">
