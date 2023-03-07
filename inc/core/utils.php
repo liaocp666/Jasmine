@@ -35,6 +35,9 @@ function getLeftSidebarMenu()
 function getStickyPost(): array
 {
     $sticky_text = getOptions()->stickyPost;
+    if (empty($sticky_text)) {
+        return [];
+    }
     $sticky_cids = explode('||', strtr($sticky_text, ' ', ''));
     return $sticky_cids;
 }
