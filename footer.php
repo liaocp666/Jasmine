@@ -12,7 +12,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     &nbsp;<?php $this->options->title() ?>. All Rights Reserved.</p>
                 <p>
                     Theme <a href="https://github.com/liaocp666/Jasmine" title="Jasmine" target="_blank">Jasmine</a> by
-                    <a href="https://github.com/liaocp666" target="_blank" title="Kent Liao">Kent Liao</a>
+                    <a href="https://www.liaocp.cn/" target="_blank" title="Kent Liao">Kent Liao</a>
                 </p>
                 <p>Powered by <a href="https://typecho.org/" title="Tyecho" target="_blank">Typecho</a></p>
                 <?php if(!empty($this->options->icpCode)): ?>
