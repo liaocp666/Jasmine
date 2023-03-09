@@ -133,17 +133,17 @@
 
 新建独立页面，模板选择`随机文章`。
 
-## 主题贡献
+## 主题交流
 
 欢迎对主题进行报告错误、修复问题、提高代码质量或提交新功能。
 
+> 欢迎进群交流主题、Typecho 等相关问题。
+> QQ 群：[539165194](https://qm.qq.com/cgi-bin/qm/qr?k=oXM0EmLxXmgKfE1UDRlBY-g7Rkrx30oL&jump_from=webapi&authKey=uQdwWraveNKYBm/BQs88WXkNagEUr9tCkf/gbdQ9FasOviKYVhUd/wUME0q0AtnI)
+
+
 ## 赞助支持
 
-您的赞助支持是这个项目维护下去的坚实动力。
-
-| 微信 | 支付宝                       |
-|-----------------|---------------------------|
-| ![微信](./docs/wxpay.png) | ![支付宝](./docs/alipay.png) |
+您的 start 是这个项目维护下去的坚实动力。
 
 ## 许可协议
 
