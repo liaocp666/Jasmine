@@ -27,7 +27,7 @@
                         <form method="post" action="" id="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                             <meta itemprop="target" content="<?php $this->options->siteUrl(); ?>search/{s}/"/>
                             <label for="search" class="d-flex">
-                                <a href="javascript:void(0)" class="me-1">
+                                <a href="javascript:void(0)" class="me-1" title="搜索">
                                     <i class="bi bi-search"></i>
                                 </a>
                                 <input itemprop="query-input" id="search-input" type="text" name="s" type="search" required="true" autocomplete="off" placeholder="Search"/>
@@ -47,12 +47,12 @@
                     <?php endif; ?>
                 </div>
                 <div class="mobile-action d-flex">
-                    <form method="post" action="" id="search">
+                    <form method="post" action="" id="search-mobile">
                         <label for="search" class="d-flex">
-                            <a href="javascript:void(0)" class="me-1">
+                            <a href="javascript:void(0)" class="me-1" title="搜索">
                                 <i class="bi bi-search"></i>
                             </a>
-                            <input id="search-input" type="text" name="s" type="search" required="true" autocomplete="off" placeholder="Search"/>
+                            <input id="search-input-mobile" type="text" name="s" type="search" required="true" autocomplete="off" placeholder="Search"/>
                         </label>
                     </form>
                     <a href="javascript:void(0);" class="nav-link mx-3" id="mobile-darkmode-button">

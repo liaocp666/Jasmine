@@ -33,6 +33,9 @@ $(document).ready(function () {
     $('#search').on('click', function () {
         $('#search-input').focus()
     })
+    $('#search-mobile').on('click', function () {
+        $('#search-input-mobile').focus()
+    })
     $('#mobile-darkmode-button').on('click', function () {
         darkmode.toggle()
     })

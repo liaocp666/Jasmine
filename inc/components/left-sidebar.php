@@ -6,11 +6,15 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="list">
             <div class="logo mb-5" itemscope itemtype="https://schema.org/Organization">
                 <?php if ($this->options->logoUrl): ?>
-                    <a itemprop="url" href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title() ?>"
+                    <a itemprop="url" href="<?php $this->options->siteUrl(); ?>"
+                       title="<?php $this->options->title() ?>"
                        data-bs-toggle="tooltip"
                        data-bs-title="<?php $this->options->title() ?>"
                        data-bs-placement="right">
-                        <img class="lazyload" itemprop="logo" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-original="<?php echo $this->options->logoUrl;?>" alt="<?php $this->options->title() ?>" width="50" height="50">
+                        <img class="lazyload" itemprop="logo"
+                             src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                             data-original="<?php echo $this->options->logoUrl; ?>"
+                             alt="<?php $this->options->title() ?>" width="50" height="50">
                     </a>
                 <?php endif; ?>
                 <?php if ($this->is('index')): ?>
@@ -37,7 +41,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                             </li>
                         <?php endforeach; ?>
                     <?php else: ?>
-                        <p>点击设置菜单“<a style="color: orange" href="<?php echo $this->options->siteUrl(); ?>admin/options-theme.php">设置外观 -> 左边栏菜单</a>”</p>
+                        <p>点击设置菜单“<a style="color: orange"
+                                           href="<?php echo $this->options->siteUrl(); ?>admin/options-theme.php">设置外观
+                                -> 左边栏菜单</a>”</p>
                     <?php endif; ?>
                 </ul>
             </div>
@@ -48,7 +54,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <a href="javascript:void(0);" class="nav-link" id="darkmode-button"
                        data-bs-toggle="tooltip"
                        data-bs-title="切换主题"
-                       data-bs-placement="right">
+                       data-bs-placement="right"
+                       title="切换主题"
+                    >
                         <i class="bi bi-moon-stars-fill"></i>
                     </a>
                 </li>
@@ -56,8 +64,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <a href="javascript:void(0);" class="nav-link" id="backToTop"
                        data-bs-toggle="tooltip"
                        data-bs-title="返回顶部"
-                       data-bs-placement="right">
-                        <i class="bi bi-arrow-up-circle-fill"></i>
+                       data-bs-placement="right"
+                       title="返回顶部"><i class="bi bi-arrow-up-circle-fill"></i>
                     </a>
                 </li>
             </ul>

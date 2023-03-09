@@ -68,24 +68,24 @@
     border-radius: 5px;
 }
 
-#search {
+#search, #search-mobile {
     position: relative;
     display: inline-block;
     overflow: hidden;
     cursor: pointer;
 }
 
-#search svg {
+#search svg, #search-mobile svg {
     position: relative;
     cursor: pointer;
     display: inline-block;
 }
 
-#search a:focus ~ input {
+#search a:focus ~ input, #search-mobile a:focus ~ input {
     width: 100px !important;
 }
 
-#search input {
+#search input, #search-mobile input {
     vertical-align: middle;
     display: inline-block;
     width: 0;
@@ -94,13 +94,13 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
-#search input:focus {
+#search input:focus, #search-mobile input:focus {
     width: 120px;
     border: 0 !important;
     outline-style: none;
 }
 
-#search input::placeholder {
+#search input::placeholder, #search-mobile input::placeholder {
     font-size: 14px;
 }
 
