@@ -33,7 +33,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         <?php if(!empty($posts = getHotPosts())): ?>
                         <?php foreach (getHotPosts() as $post): ?>
                         <li class="list-group-item">
-                            <a href=""><?php echo $post['title']; ?></a>
+                            <a href="<?php echo $post['permalink']; ?>" title="<?php echo $post['title']; ?>"><?php echo $post['title']; ?></a>
                         </li>
                         <?php endforeach; ?>
                         <?php endif; ?>
