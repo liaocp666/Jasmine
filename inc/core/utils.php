@@ -75,6 +75,9 @@ function getFieldByCidAndName($cid, $filedName)
 function getThumbnail(string $cid, string $defaultThumbnail): string
 {
     $filed = getFieldByCidAndName($cid, 'thumbnail');
+    if (empty($defaultThumbnail)) {
+        return $defaultThumbnail;
+    }
     $thumbnail = $filed[$filed['type'] . '_value'];
     // 使用自定义字段，设置缩略图
     if (!empty($thumbnail)) {
