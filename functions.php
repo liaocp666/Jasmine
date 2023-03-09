@@ -4,6 +4,8 @@ use Utils\Helper;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
+error_reporting(0);
+
 require_once 'inc/core/index.php';
 
 /**
