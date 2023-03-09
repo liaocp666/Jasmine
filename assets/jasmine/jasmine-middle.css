@@ -111,6 +111,7 @@
 
 #page-archives a {
     color: #000000;
+    text-decoration: none !important;
 }
 
 #page-archives ol {
