@@ -75,7 +75,7 @@ function getFieldByCidAndName($cid, $filedName)
 function getThumbnail(string $cid, string $defaultThumbnail): string
 {
     $filed = getFieldByCidAndName($cid, 'thumbnail');
-    if (empty($defaultThumbnail)) {
+    if (empty($filed)) {
         return $defaultThumbnail;
     }
     $thumbnail = $filed[$filed['type'] . '_value'];
