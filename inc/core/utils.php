@@ -160,3 +160,23 @@ function getThemeVersion()
     $info = Plugin::parseInfo(Helper::options()->themeFile(Helper::options()->theme, 'index.php'));
     return $info['version'];
 }
+
+/**
+ * 处理正文
+ * @param $content
+ * @return array|string|string[]|null
+ */
+function handleContent($content) {
+    return imageLazyLoad($content);
+}
+
+/**
+ * 图片懒加载
+ * @param $content
+ * @return array|string|string[]|null
+ */
+function imageLazyLoad($content) {
+    $pattern = '/<img(.*?)src(.*?)=(.*?)"(.*?)">/i';
+    $replacement = '<img$1data-original$3="$4"$5 class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=">';
+    return preg_replace($pattern, $replacement, $content);
+}

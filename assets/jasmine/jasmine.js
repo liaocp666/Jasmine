@@ -36,4 +36,6 @@ $(document).ready(function () {
     $('#mobile-darkmode-button').on('click', function () {
         darkmode.toggle()
     })
+    // 图片懒加载
+    $("img.lazyload").lazyload();
 })

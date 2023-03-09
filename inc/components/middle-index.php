@@ -42,8 +42,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         <?php if ($thumbnail = getThumbnail($this->cid, '')): ?>
                         <div class="thumbnail d-none d-lg-block">
                             <meta itemprop="image" content="<?php echo $thumbnail; ?>" />
-                            <a href="" title="<?php $this->title() ?>">
-                                <img width="170" height="130" src="<?php echo $thumbnail; ?>" alt="<?php $this->title() ?>">
+                            <a href="<?php $this->permalink() ?>" title="<?php $this->title() ?>">
+                                <img class="lazyload" data-original="<?php echo $thumbnail; ?>" width="170" height="130" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" alt="<?php $this->title() ?>">
                             </a>
                         </div>
                         <?php endif; ?>

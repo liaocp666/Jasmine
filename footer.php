@@ -30,8 +30,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         type="application/javascript"></script>
 <script src="https://cdn.staticfile.org/smoothscroll/1.4.10/SmoothScroll.min.js" type="text/javascript"></script>
 <script src="<?php $this->options->themeUrl('assets/prism/prism.js'); ?>" type="text/javascript"></script>
-<script src="<?php $this->options->themeUrl('assets/darken/darken.umd.js'); ?>"></script>
-<script src="<?php $this->options->themeUrl('assets/jasmine/jasmine.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('assets/darken/darken.umd.js'); ?>" type="text/javascript"></script>
+<script src="https://cdn.staticfile.org/jquery.lazyload/1.9.1/jquery.lazyload.min.js" type="text/javascript"></script>
+<script src="<?php $this->options->themeUrl('assets/jasmine/jasmine.js'); ?>" type="text/javascript"></script>
 <script>
     <?php $this->options->customScript(); ?>
 </script>

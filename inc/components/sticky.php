@@ -10,7 +10,7 @@ if (null != $cids): ?>
                     <div class="item d-flex">
                         <div class="thumbnail">
                             <a href="<?php $item->permalink(); ?>" title="<?php $item->title(); ?>">
-                                <img width="130" height="90" src="<?php echo getThumbnail($item->cid, $this->options->themeUrl . '/assets/thumbnails/1.jpg'); ?>" alt="<?php echo $post['cid'];?>">
+                                <img class="lazyload" data-original="<?php echo getThumbnail($item->cid,'data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs='); ?>" width="130" height="90" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" alt="<?php echo $post['cid'];?>">
                             </a>
                         </div>
                         <div class="content d-flex flex-column justify-content-between">

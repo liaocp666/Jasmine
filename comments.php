@@ -21,8 +21,9 @@ function threadedComments($comments, $options)
     echo $commentClass;
     ?>">
         <div class="d-flex flex-start mb-3 comment-main">
-            <img class="rounded shadow-1-strong me-2" width="50" height="50"
-                 src="<?php echo getAvatarByMail($comments->mail); ?>"
+            <img class="rounded shadow-1-strong me-2 lazyload" width="50" height="50"
+                 data-original="<?php echo getAvatarByMail($comments->mail); ?>"
+                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
                  alt="<?php $comments->author; ?>">
             <div class="flex-grow-1 flex-shrink-1">
                 <div>
