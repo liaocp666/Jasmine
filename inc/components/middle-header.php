@@ -27,9 +27,9 @@
                         <form method="post" action="" id="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                             <meta itemprop="target" content="<?php $this->options->siteUrl(); ?>search/{s}/"/>
                             <label for="search" class="d-flex">
-                                <a href="javascript:void(0)" class="me-1" title="搜索">
+                                <span class="me-1" title="搜索">
                                     <i class="bi bi-search"></i>
-                                </a>
+                                </span>
                                 <input itemprop="query-input" id="search-input" type="text" name="s" type="search" required="true" autocomplete="off" placeholder="Search"/>
                             </label>
                         </form>
@@ -49,43 +49,44 @@
                 <div class="mobile-action d-flex">
                     <form method="post" action="" id="search-mobile">
                         <label for="search" class="d-flex">
-                            <a href="javascript:void(0)" class="me-1" title="搜索">
+                            <span class="me-1" title="搜索">
                                 <i class="bi bi-search"></i>
-                            </a>
+                            </span>
                             <input id="search-input-mobile" type="text" name="s" type="search" required="true" autocomplete="off" placeholder="Search"/>
                         </label>
                     </form>
-                    <a href="javascript:void(0);" class="nav-link mx-3" id="mobile-darkmode-button">
+                    <span class="nav-link mx-3" id="mobile-darkmode-button">
                         <i class="bi bi-moon-stars"></i>
-                    </a>
-                    <a data-bs-toggle="offcanvas" href="#mobileNavbar" role="button" aria-controls="mobileNavbar">
+                    </span>
+                    <span data-bs-toggle="offcanvas" data-bs-target="#mobileNavbar" aria-controls="mobileNavbar" role="button" aria-controls="mobileNavbar">
                         <i class="bi bi-layout-text-sidebar-reverse"></i>
-                    </a>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavbar" aria-labelledby="mobileNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
-                            <a type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></a>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="list-group">
-                                <li class="list-group-item <?php if($this->is('index')) echo 'active' ?>">
-                                    <a class="nav-link" aria-current="page" href="<?php $this->options->siteUrl(); ?>" title="首页">首页</a>
-                                </li>
-                                <?php $this->widget('Jasmine_Meta_Row')->to($categorys); ?>
-                                <?php if ($categorys->have()): ?>
-                                    <?php while($categorys->next()): ?>
-                                        <li class="list-group-item <?php echo isActiveMenu($this, $categorys->slug); ?>">
-                                            <a class="nav-link" aria-current="page" href="<?php $categorys->permalink(); ?>" title="<?php $categorys->name(); ?>"><?php $categorys->name(); ?></a>
-                                        </li>
-                                    <?php endwhile; ?>
-                                <?php else: ?>
-                                    <p>点击设置菜单“<a style="color: orange" href="<?php echo $this->options->siteUrl(); ?>admin/options-theme.php">设置外观 -> 中间头部菜单</a>”</p>
-                                <?php endif; ?>
-                            </ul>
-                        </div>
-                    </div>
+                    </span>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavbar" aria-labelledby="mobileNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="list-group">
+            <li class="list-group-item <?php if($this->is('index')) echo 'active' ?>">
+                <a class="nav-link" aria-current="page" href="<?php $this->options->siteUrl(); ?>" title="首页">首页</a>
+            </li>
+            <?php $this->widget('Jasmine_Meta_Row')->to($categorys); ?>
+            <?php if ($categorys->have()): ?>
+                <?php while($categorys->next()): ?>
+                    <li class="list-group-item <?php echo isActiveMenu($this, $categorys->slug); ?>">
+                        <a class="nav-link" aria-current="page" href="<?php $categorys->permalink(); ?>" title="<?php $categorys->name(); ?>"><?php $categorys->name(); ?></a>
+                    </li>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <p>点击设置菜单“<a style="color: orange" href="<?php echo $this->options->siteUrl(); ?>admin/options-theme.php">设置外观 -> 中间头部菜单</a>”</p>
+            <?php endif; ?>
+        </ul>
     </div>
 </div>

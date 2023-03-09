@@ -51,22 +51,22 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="action">
             <ul class="nav flex-column align-content-center">
                 <li class="nav-item mb-2">
-                    <a href="javascript:void(0);" class="nav-link" id="darkmode-button"
+                    <span role="button" class="nav-link" id="darkmode-button"
                        data-bs-toggle="tooltip"
                        data-bs-title="切换主题"
                        data-bs-placement="right"
                        title="切换主题"
                     >
                         <i class="bi bi-moon-stars-fill"></i>
-                    </a>
+                    </span>
                 </li>
                 <li class="nav-item mb-2">
-                    <a href="javascript:void(0);" class="nav-link" id="backToTop"
+                    <span role="button" class="nav-link" id="backToTop"
                        data-bs-toggle="tooltip"
                        data-bs-title="返回顶部"
                        data-bs-placement="right"
                        title="返回顶部"><i class="bi bi-arrow-up-circle-fill"></i>
-                    </a>
+                    </span>
                 </li>
             </ul>
         </div>

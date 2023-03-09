@@ -12,15 +12,17 @@
     border-radius: 5px;
 }
 
-#left-sidebar .jasmine-nav a, #left-sidebar .action a {
+#left-sidebar .jasmine-nav a, #left-sidebar .action span {
     padding: 5px 10px;
     border-radius: 5px;
     color: #000000;
+    cursor: pointer;
 }
 
-#left-sidebar .jasmine-nav a:hover, #left-sidebar .action a:hover {
+#left-sidebar .jasmine-nav a:hover, #left-sidebar .action span:hover {
     background-color: #000000;
     color: #ffffff;
+    cursor: pointer;
 }
 
 #left-sidebar .jasmine-nav i, #left-sidebar .action {

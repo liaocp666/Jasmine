@@ -159,3 +159,7 @@ body.darkmode-active {
 .darkmode-active #content {
     color: #dedede;
 }
+
+.darkmode-active #left-sidebar .action span, .darkmode-active #middle .mobile-action span {
+    color: #dedede;
+}
