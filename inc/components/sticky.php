@@ -15,7 +15,7 @@ if (null != $cids): ?>
                         </div>
                         <div class="content d-flex flex-column justify-content-between">
                             <div class="title py-1">
-                                <a href="<?php $item->permalink(); ?>" title="<?php $this->title(); ?>">
+                                <a href="<?php $item->permalink(); ?>" title="<?php $item->title(); ?>">
                                     <h2 class="fs-6"><?php $item->title(); ?></h2>
                                 </a>
                             </div>
