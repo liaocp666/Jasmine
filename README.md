@@ -1,5 +1,7 @@
 # Jasmine
 
+![typecho version](https://img.shields.io/badge/typecho-%3E%3D1.2.0-orange) ![Jasmine version](https://img.shields.io/github/v/release/liaocp666/Jasmine?include_prereleases)
+
 🌼 Jasmine，一款 Typecho 主题。专为博客类网站开发，响应式设计，在移动端也有不错体验。主要使用白、灰、黑三种配色，整体简洁、精致、美观。
 
 > 欢迎进群交流主题、Typecho 等相关问题。
