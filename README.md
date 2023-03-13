@@ -40,9 +40,9 @@
 
 ### 环境
 
-* PHP 7+ （建议）
-* MySQL（建议）
-* Typecho 1.1+（建议）
+* PHP 7+
+* MySQL
+* Typecho 1.1+
 
 ### 安装
 
