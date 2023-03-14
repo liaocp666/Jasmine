@@ -2,6 +2,8 @@
 
 #left-sidebar {
     min-height: calc(100vh - 70px);
+    position: sticky !important;
+    top: 70px;
 }
 
 #left-sidebar .logo {

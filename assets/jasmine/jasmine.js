@@ -1,13 +1,7 @@
 $(document).ready(function () {
     // 粘滞
-    var leftSidebarSticky = new StickySidebar('#left-sidebar-sticky', {
-        topSpacing: 70,
-        resizeSensor: true
-    })
-    new StickySidebar('#right-sidebar-sticky', {})
     new StickySidebar('#right-sidebar-sticky', {})
     $(window).scroll(function () {
-        leftSidebarSticky.updateSticky();
         if ($(document).scrollTop() > 150) {
             $('.jasmine-navbar').addClass('jasmine-navbar-sticky')
         } else {
