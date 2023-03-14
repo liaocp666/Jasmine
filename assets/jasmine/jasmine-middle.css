@@ -6,7 +6,7 @@
 
 #middle .jasmine-navbar {
     border-bottom: 1px solid #ededed;
-    transition: 100ms;
+    transition: margin 100ms;
     top: -100px;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -17,7 +17,7 @@
 #middle .jasmine-navbar-sticky {
     position: sticky;
     top: -1px;
-    transition: 100ms;
+    transition: margin 100ms;
     padding: 1rem 1.5rem !important;
     margin-bottom: 7rem !important;
     margin-left: -1.5rem;
