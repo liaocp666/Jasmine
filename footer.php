@@ -34,5 +34,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <script>
     <?php $this->options->customScript(); ?>
 </script>
+<?php $this->footer(); ?>
 </body>
 </html>
