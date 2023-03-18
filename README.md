@@ -6,9 +6,7 @@
 
 > 您的 start 是这个项目维护下去的坚实动力。
 > 
-> 欢迎进群交流主题、Typecho 等相关问题。
-> 
-> QQ 群：[539165194](https://qm.qq.com/cgi-bin/qm/qr?k=oXM0EmLxXmgKfE1UDRlBY-g7Rkrx30oL&jump_from=webapi&authKey=uQdwWraveNKYBm/BQs88WXkNagEUr9tCkf/gbdQ9FasOviKYVhUd/wUME0q0AtnI)
+> 欢迎进群交流主题、Typecho 等相关问题。 QQ 群：[539165194](https://qm.qq.com/cgi-bin/qm/qr?k=oXM0EmLxXmgKfE1UDRlBY-g7Rkrx30oL&jump_from=webapi&authKey=uQdwWraveNKYBm/BQs88WXkNagEUr9tCkf/gbdQ9FasOviKYVhUd/wUME0q0AtnI)
 
 **主题预览**
 
