@@ -121,3 +121,7 @@
     list-style: none;
     padding-left: 0;
 }
+
+#content li p {
+    margin-bottom: 0px;
+}
