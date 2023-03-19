@@ -38,7 +38,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                                 <?php if ($thumbnail = getThumbnail($this->cid, '')): ?>
                                     <div class="thumbnail d-none d-lg-block">
                                         <meta itemprop="image" content="<?php echo $thumbnail; ?>" />
-                                        <a href="" title="<?php $this->title() ?>">
+                                        <a href="<?php $this->permalink() ?>" title="<?php $this->title() ?>">
                                             <img width="170" height="130" src="<?php echo $thumbnail; ?>"
                                                  alt="<?php $this->title() ?>">
                                         </a>
