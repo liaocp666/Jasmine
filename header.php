@@ -33,6 +33,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             'author' => _t('%s 发布的文章')
         ], '', ' - '); ?><?php $this->options->title(); ?></title>
     <link rel="icon" type="image/ico" href="<?php $this->options->siteUrl();?>favicon.ico">
+    <link rel="dns-prefetch" href="https://cdn.staticfile.org" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link href="https://cdn.staticfile.org/bootstrap/5.2.3/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
     <link href="https://cdn.staticfile.org/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" type="text/css" rel="stylesheet"/>
     <link href="<?php $this->options->themeUrl('assets/prism/prism.css'); ?>" type="text/css" rel="stylesheet" />
