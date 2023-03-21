@@ -6,7 +6,7 @@
  *
  * @package Jasmine
  * @author Kent Liao
- * @version 1.3.7
+ * @version 1.3.8
  * @link https://www.liaocp.cn/
  */
 
