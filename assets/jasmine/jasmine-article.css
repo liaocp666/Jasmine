@@ -10,6 +10,7 @@
 
 #article .thumbnail img {
     border-radius: 5px;
+    object-fit: cover;
 }
 
 #article h2 {
