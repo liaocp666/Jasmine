@@ -9,7 +9,8 @@ if (document.getElementById('jasmine-check-update')) {
             if (versionCompare(jasmineVersion, obj.tag_name) == -1) {
                 container.innerHTML =
                     '<h2>🎉 发现新版本！</h2>' +
-                    '<a href="' + obj.assets[0].browser_download_url + '">点击下载（'+ obj.tag_name +'）</a>';
+                    '<a href="' + obj.assets[0].browser_download_url + '">点击下载（'+ obj.tag_name +'）</a><br/><h3>更新日志</h3>' +
+                    '<p style="white-space: pre-wrap;">' + obj.body + '</p>';
             } else {
                 container.innerHTML = '您目前使用的是最新版主题。';
             }
