@@ -30,8 +30,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         <h3 class="fs-6"><i class="bi bi-bar-chart-line-fill"></i>&nbsp;热门文章</h3>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <?php if(!empty($posts = getHotPosts())): ?>
-                        <?php foreach (getHotPosts() as $post): ?>
+                        <?php $posts = getHotPosts(); ?>
+                        <?php if(!empty($posts)): ?>
+                        <?php foreach ($posts as $post): ?>
                         <li class="list-group-item">
                             <a href="<?php echo $post['permalink']; ?>" title="<?php echo $post['title']; ?>"><?php echo $post['title']; ?></a>
                         </li>

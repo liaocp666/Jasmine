@@ -7,13 +7,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * @param $limit    页数
  * @param $order    排序
  */
-function getHotPosts($limit = 7, $order = 'created')
+function getHotPosts($limit = 7)
 {
     $db = Typecho_Db::get();
     $options = Helper::options();
     $posts = $db->fetchAll($db->select()->from('table.contents')
         ->where('type = ? AND status = ? AND created < ?', 'post', 'publish', $options->time)
-        ->order($order, Typecho_Db::SORT_DESC)
+        ->order('table.contents.commentsNum', Typecho_Db::SORT_DESC)
         ->limit($limit), array(Typecho_Widget::widget('Widget_Abstract_Contents'), 'filter'));
     return $posts;
 }
