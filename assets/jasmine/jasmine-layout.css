@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'HarmonyOS-Sans';
-    src: url('https://cdn.jsdelivr.net/gh/liaocp666/Jasmine/assets/font/HarmonyOS-Sans.woff2') format("truetype");
+    src: url('../font/HarmonyOS-Sans.woff2') format("truetype");
     font-display: swap;
 }
 
