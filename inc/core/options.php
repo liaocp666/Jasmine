@@ -28,7 +28,7 @@ function themeConfig($form)
     $leftSidebarMenu = new Textarea('leftSidebarMenu', null, null, '左边栏菜单', '参考文档：<a href="https://github.com/liaocp666/Jasmine/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3#%E5%B7%A6%E8%BE%B9%E6%A0%8F%E8%8F%9C%E5%8D%95" target="_blank">《左边栏菜单》</a>');
     $form->addInput($leftSidebarMenu);
 
-    $middleTopCategoryIds = new Text('middleTopCategoryIds', null, null, '中间头部菜单', '格式：分类的ID || 分类的ID || 分类的ID （中间使用两个竖杠分隔）');
+    $middleTopCategoryIds = new Text('middleTopCategoryIds', null, null, '中间头部菜单', '填入下列分类括号中的数字，格式：数字 || 数字 || 数字 （中间使用两个竖杠分隔）<br/>' . getCategoryies());
     $form->addInput($middleTopCategoryIds);
 
     $stickyPost = new Text('stickyPost', null, null, '置顶文章', '格式：文章的ID || 文章的ID || 文章的ID （中间使用两个竖杠分隔）');
@@ -60,7 +60,6 @@ function backupThemeData()
 {
     $name = "jasmine";
     $db = Typecho_Db::get();
-    $hasBackup = $db->fetchRow($db->select()->from('table.options')->where('name = ?', 'theme:' . $name . '_backup'));
     if (isset($_POST['type'])) {
         if ($_POST["type"] == "创建备份") {
             $value = $db->fetchRow($db->select()->from('table.options')->where('name = ?', 'theme:' . $name))['value'];
@@ -112,4 +111,18 @@ function backupThemeData()
     <input type="submit" name="type" class="btn primary" value="创建备份" />
     <input type="submit" name="type" class="btn primary" value="还原备份" />
     <input type="submit" name="type" class="btn primary" value="删除备份" /></form></div>';
+}
+
+/**
+ * 输出所有分类
+ * @return void
+ */
+function getCategoryies() {
+    $db = Typecho_Db::get();
+    $prow = $db->fetchAll($db->select()->from('table.metas')->where('type = ?', 'category'));
+    $text = '';
+    foreach ($prow as $item) {
+        $text .= ($item['name'] . '(' . $item['mid'] . ')' . '&nbsp;&nbsp;&nbsp;&nbsp;');
+    }
+    return $text;
 }
