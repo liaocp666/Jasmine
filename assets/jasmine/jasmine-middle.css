@@ -71,7 +71,6 @@
 #search, #search-mobile {
     position: relative;
     display: inline-block;
-    overflow: hidden;
 }
 
 #search span, #search-mobile span {
