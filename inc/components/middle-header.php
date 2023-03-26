@@ -73,7 +73,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <ul class="list-group">
+        <ul class="list-group mb-5">
             <li class="list-group-item <?php if($this->is('index')) echo 'active' ?>">
                 <a class="nav-link" aria-current="page" href="<?php $this->options->siteUrl(); ?>" title="首页">首页</a>
             </li>
@@ -86,6 +86,16 @@
                 <?php endwhile; ?>
             <?php else: ?>
                 <p>点击设置菜单“<a style="color: orange" href="<?php echo $this->options->siteUrl(); ?>admin/options-theme.php">设置外观 -> 中间头部菜单</a>”</p>
+            <?php endif; ?>
+        </ul>
+        <ul class="list-group">
+            <?php $menus = getLeftSidebarMenu(); ?>
+            <?php if (!empty($menus)): ?>
+            <?php foreach ($menus as $menu): ?>
+                <li class="list-group-item">
+                    <a class="nav-link" aria-current="page" href="<?php echo $menu['url']; ?>" title="<?php echo $menu['name']; ?>"><?php echo $menu['name']; ?></a>
+                </li>
+            <?php endforeach; ?>
             <?php endif; ?>
         </ul>
     </div>
