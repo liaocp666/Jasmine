@@ -64,7 +64,7 @@ function threadedComments($comments, $options)
         <?php $this->comments()->to($comments); ?>
         <?php if ($this->allow('comment')): ?>
             <div id="<?php $this->respondId(); ?>" class="respond mb-5">
-                <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form" class="mb-3">
+                <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form" class="mb-3" data-no-instant>
                     <?php if (!$this->user->hasLogin()): ?>
                         <div class="d-flex flex-row gap-2 mb-2">
                             <input name="author" type="text" class="form-control" placeholder="昵称" required

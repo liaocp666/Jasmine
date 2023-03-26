@@ -27,10 +27,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <script src="https://cdn.staticfile.org/sticky-sidebar/3.3.1/sticky-sidebar.min.js" defer type="application/javascript"></script>
 <script src="https://cdn.staticfile.org/bootstrap/5.2.3/js/bootstrap.bundle.min.js" defer type="application/javascript"></script>
 <script src="https://cdn.staticfile.org/smoothscroll/1.4.10/SmoothScroll.min.js" defer type="text/javascript"></script>
-<script src="<?php $this->options->themeUrl('assets/prism/prism.js'); ?>" defer type="text/javascript"></script>
+<script src="<?php $this->options->themeUrl('assets/prism/prism.js'); ?>" defer type="text/javascript" data-no-instant></script>
 <script src="<?php $this->options->themeUrl('assets/darken/darken.umd.js'); ?>" defer type="text/javascript"></script>
 <script src="https://cdn.staticfile.org/jquery.lazyload/1.9.1/jquery.lazyload.min.js" defer type="text/javascript"></script>
-<script src="<?php $this->options->themeUrl('assets/jasmine/jasmine.js'); ?>" defer type="text/javascript"></script>
+<script src="https://cdn.staticfile.org/instantclick/3.1.0/instantclick.min.js" type="text/javascript"></script>
+<script src="<?php $this->options->themeUrl('assets/jasmine/jasmine.js'); ?>" defer type="text/javascript" data-no-instant></script>
 <script>
     <?php $this->options->customScript(); ?>
 </script>

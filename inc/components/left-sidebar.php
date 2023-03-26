@@ -11,9 +11,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                        data-bs-toggle="tooltip"
                        data-bs-title="<?php $this->options->title() ?>"
                        data-bs-placement="right">
-                        <img class="lazyload" itemprop="logo"
-                             src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-                             data-original="<?php echo $this->options->logoUrl; ?>"
+                        <img itemprop="logo"
+                             src="<?php echo $this->options->logoUrl; ?>"
                              alt="<?php $this->options->title() ?>" width="50" height="50">
                     </a>
                 <?php endif; ?>
