@@ -26,8 +26,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
             <div class="jasmine-nav">
                 <ul class="nav flex-column align-content-center">
-                    <?php if (!empty(getLeftSidebarMenu())): ?>
-                        <?php foreach (getLeftSidebarMenu() as $menu): ?>
+                    <?php $menus = getLeftSidebarMenu(); ?>
+                    <?php if (!empty($menus)): ?>
+                        <?php foreach ($menus as $menu): ?>
                             <li class="nav-item mb-3">
                                 <a href="<?php echo $menu['url']; ?>"
                                    class="nav-link"
