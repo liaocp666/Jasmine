@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function jasmine () {
     // 粘滞
     new StickySidebar('#right-sidebar-sticky', {})
     $(window).scroll(function () {
@@ -36,8 +36,12 @@ $(document).ready(function () {
     })
     // 图片懒加载
     $("img.lazyload").lazyload();
+}
 
+$(document).ready(function () {
+    jasmine();
     InstantClick.on('change', function(isInitialLoad) {
+        jasmine();
         if (isInitialLoad === false) {
             $("img.lazyload").lazyload();
             if (typeof _hmt !== 'undefined') {
