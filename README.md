@@ -58,5 +58,5 @@
 
 如果觉得主题制作的不错，不如请作者喝杯咖啡~~
 
-![赞赏](https://www.liaocp.cn/wx_pay.jpg)
+![赞赏码](https://www.liaocp.cn/wx_pay.jpg)
 
