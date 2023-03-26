@@ -20,8 +20,8 @@
     transition: margin 100ms;
     padding: 1rem 1.5rem !important;
     margin-bottom: 7rem !important;
-    margin-left: -2rem;
-    margin-right: -2rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
     backdrop-filter: blur(0.5rem);
     -webkit-backdrop-filter: blur(0.5rem);
     background: rgba(255, 255, 255, 0.8);
