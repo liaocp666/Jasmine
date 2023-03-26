@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
-@import "jasmine-layout.css";
-@import "jasmine-left-sidebar.css";
-@import "jasmine-middle.css";
-@import "jasmine-sticky.css";
-@import "jasmine-article.css";
-@import "jasmine-pagination.css";
-@import "jasmine-right-sidebar.css";
-@import "jasmine-footer.css";
-@import "jasmine-comments.css";
-@import "jasmine-darkmode.css";
+@import "jasmine-layout.css?version=1.4.0";
+@import "jasmine-left-sidebar.css?version=1.4.0";
+@import "jasmine-middle.css?version=1.4.0";
+@import "jasmine-sticky.css?version=1.4.0";
+@import "jasmine-article.css?version=1.4.0";
+@import "jasmine-pagination.css?version=1.4.0";
+@import "jasmine-right-sidebar.css?version=1.4.0";
+@import "jasmine-footer.css?version=1.4.0";
+@import "jasmine-comments.css?version=1.4.0";
+@import "jasmine-darkmode.css?version=1.4.0";
