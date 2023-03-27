@@ -4,13 +4,15 @@
 
 🌼 Jasmine，一款 Typecho 主题。专为博客类网站开发，响应式设计，在移动端也有不错体验。主要使用白、灰、黑三种配色，整体简洁、精致、美观。
 
+> 如果觉得主题还不错，请帮忙点个 start 😁
+> 
 > 您的 start 是这个项目维护下去的坚实动力。
 > 
 > 欢迎进群交流主题、Typecho 等相关问题。 QQ 群：[539165194](https://qm.qq.com/cgi-bin/qm/qr?k=oXM0EmLxXmgKfE1UDRlBY-g7Rkrx30oL&jump_from=webapi&authKey=uQdwWraveNKYBm/BQs88WXkNagEUr9tCkf/gbdQ9FasOviKYVhUd/wUME0q0AtnI)
 
 **主题下载**
 
-[jasmine](https://github.com/liaocp666/Jasmine/releases/latest/download/jasmine.zip)
+[jasmine.zip](https://github.com/liaocp666/Jasmine/releases/latest/download/jasmine.zip)
 
 **主题预览**
 
@@ -18,9 +20,7 @@
 
 **主题仓库**
 
-如果觉得主题还不错，请帮忙点个 start 😁。
-
-[Github](https://github.com/liaocp666/Jasmine)  | [Gitee](https://gitee.com/LiaoChunping/Jasmine)
+[Github](https://github.com/liaocp666/Jasmine)  | [Gitee（国内）](https://gitee.com/LiaoChunping/Jasmine)
 
 **预览图**
 
@@ -47,7 +47,7 @@
 
 ## 主题交流
 
-您可以在[ QQ 群](https://qm.qq.com/cgi-bin/qm/qr?k=oXM0EmLxXmgKfE1UDRlBY-g7Rkrx30oL&jump_from=webapi&authKey=uQdwWraveNKYBm/BQs88WXkNagEUr9tCkf/gbdQ9FasOviKYVhUd/wUME0q0AtnI)或当前平台对主题进行报告错误（Issues）、修复问题(Pull requests)、提高代码质量或提交新功能。
+您可以在[ QQ 群 ](https://qm.qq.com/cgi-bin/qm/qr?k=oXM0EmLxXmgKfE1UDRlBY-g7Rkrx30oL&jump_from=webapi&authKey=uQdwWraveNKYBm/BQs88WXkNagEUr9tCkf/gbdQ9FasOviKYVhUd/wUME0q0AtnI)或当前平台对主题进行报告错误（Issues）、修复问题(Pull requests)。
 
 ## 许可协议
 
