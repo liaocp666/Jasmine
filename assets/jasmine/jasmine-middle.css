@@ -124,3 +124,24 @@
 #content li p {
     margin-bottom: 0px;
 }
+
+#shuoshuo {
+    background-color: rgb(242, 242, 242);
+    padding: 0 1rem;
+    position: relative;
+    border-radius: 5px;
+}
+
+#shuoshuo:after {
+    content: '';
+    position: absolute;
+    border: 15px solid;
+    border-color: transparent transparent rgb(242, 242, 242) transparent;
+    left: 5px;
+    top: -23px;
+}
+
+#shuoshuo img {
+    max-width: 100%;
+    display: block;
+}

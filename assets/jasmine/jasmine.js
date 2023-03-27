@@ -58,5 +58,5 @@ $(document).ready(function () {
             }
         }
     });
-    InstantClick.init();
+    InstantClick.init(50);
 })
