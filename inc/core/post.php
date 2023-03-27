@@ -52,17 +52,18 @@ class Widget_Post_Random extends Widget_Abstract_Contents
         parent::__construct($request, $response, $params);
         $this->parameter->setDefault(array('pageSize' => 1, 'parentId' => 0, 'ignoreAuthor' => false, 'mid' => 0, 'cid' => 0));
     }
+
     public function execute()
     {
         $adapterName = $this->db->getAdapterName();//兼容非MySQL数据库
-        if($adapterName == 'pgsql' || $adapterName == 'Pdo_Pgsql' || $adapterName == 'Pdo_SQLite' || $adapterName == 'SQLite'){
+        if ($adapterName == 'pgsql' || $adapterName == 'Pdo_Pgsql' || $adapterName == 'Pdo_SQLite' || $adapterName == 'SQLite') {
             $order_by = 'RANDOM()';
-        }else{
+        } else {
             $order_by = 'RAND()';
         }
-        $select  = $this->select()->from('table.contents')
+        $select = $this->select()->from('table.contents')
             ->join('table.relationships', 'table.contents.cid = table.relationships.cid');
-        if($this->parameter->mid>0){
+        if ($this->parameter->mid > 0) {
             $select->where('table.relationships.mid = ?', $this->parameter->mid);
         }
         $select->where('table.contents.cid <> ?', $this->parameter->cid)
@@ -72,4 +73,20 @@ class Widget_Post_Random extends Widget_Abstract_Contents
             ->order($order_by);
         $this->db->fetchAll($select, array($this, 'push'));
     }
+}
+
+/**
+ * 当前文章分类是否为说说分类
+ * @return false
+ */
+function isShuoShuoType($cid)
+{
+    $shuoshuoCategoryId = getOptions()->shuoshuoCategoryId;
+    if (empty($shuoshuoCategoryId)) {
+        print_r($shuoshuoCategoryId);
+        return false;
+    }
+    $db = getDb();
+    $row = $db->fetchRow($db->select()->from('table.relationships')->where('table.relationships.cid = ? and table.relationships.mid = ?', $cid, $shuoshuoCategoryId));
+    return !empty($row);
 }

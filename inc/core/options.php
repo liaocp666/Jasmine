@@ -31,6 +31,9 @@ function themeConfig($form)
     $middleTopCategoryIds = new Text('middleTopCategoryIds', null, null, '中间头部菜单', '填入下列分类括号中的数字，格式：数字 || 数字 || 数字 （中间使用两个竖杠分隔）<br/>' . getCategoryies());
     $form->addInput($middleTopCategoryIds);
 
+    $shuoshuoCategoryId = new Text('shuoshuoCategoryId', null, null, '说说分类', '填入下列分类括号中的数字<br/>' . getCategoryies());
+    $form->addInput($shuoshuoCategoryId);
+
     $stickyPost = new Text('stickyPost', null, null, '置顶文章', '格式：文章的ID || 文章的ID || 文章的ID （中间使用两个竖杠分隔）');
     $form->addInput($stickyPost);
 
