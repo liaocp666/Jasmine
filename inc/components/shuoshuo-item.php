@@ -1,7 +1,7 @@
-<div class="content d-flex flex-column justify-content-between position-relative">
+<div class="content d-flex flex-column justify-content-between position-relative w-100">
     <div class="title mb-3">
         <div
-            class="d-flex position-relative align-content-center align-items-center align-self-center justify-content-start">
+            class="d-flex position-relative align-content-center align-items-center align-self-center justify-content-start w-100">
             <div class="mt-1">
                 <img class="rounded shadow-1-strong" width="42" height="42"
                      src="<?php echo getAvatarByMail($this->author->mail); ?>"
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div id="shuoshuo" class="shuoshuo heti" itemprop="abstract">
+    <div id="shuoshuo" class="shuoshuo heti w-100" itemprop="abstract">
         <p><?php $this->content(); ?></p>
     </div>
 </div>
