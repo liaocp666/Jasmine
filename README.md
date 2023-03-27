@@ -10,6 +10,10 @@
 > 
 > 欢迎进群交流主题、Typecho 等相关问题。 QQ 群：[539165194](https://qm.qq.com/cgi-bin/qm/qr?k=oXM0EmLxXmgKfE1UDRlBY-g7Rkrx30oL&jump_from=webapi&authKey=uQdwWraveNKYBm/BQs88WXkNagEUr9tCkf/gbdQ9FasOviKYVhUd/wUME0q0AtnI)
 
+**预览图**
+
+![主题图片](./docs/theme.png)
+
 **主题下载**
 
 [jasmine.zip](https://github.com/liaocp666/Jasmine/releases/latest/download/jasmine.zip)
@@ -22,9 +26,6 @@
 
 [Github](https://github.com/liaocp666/Jasmine)  | [Gitee（国内）](https://gitee.com/LiaoChunping/Jasmine)
 
-**预览图**
-
-![主题图片](./docs/theme.png)
 
 ## 主题亮点
 
