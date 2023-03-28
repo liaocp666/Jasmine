@@ -3,6 +3,7 @@
 use Typecho\Common;
 use Typecho\Widget\Helper\Form\Element\Text;
 use Typecho\Widget\Helper\Form\Element\Textarea;
+use Typecho\Widget\Helper\Form\Element\Radio;
 use Utils\Helper;
 use Widget\Notice;
 use Widget\Options;
@@ -36,6 +37,12 @@ function themeConfig($form)
 
     $stickyPost = new Text('stickyPost', null, null, '置顶文章', '格式：文章的ID || 文章的ID || 文章的ID （中间使用两个竖杠分隔）');
     $form->addInput($stickyPost);
+
+    $pjaxLoadPage = new Radio('pjaxLoadPage', array(
+        '0' => _t('关闭'),
+        '1' => _t('开启')
+    ), '0', _t('开启无刷新加载页面'), _t('默认为关闭'));
+    $form->addInput($pjaxLoadPage);
 
     $authorRecommend = new Text('authorRecommend', null, null, '作者介绍', '使用简短的话，介绍下自己');
     $form->addInput($authorRecommend);

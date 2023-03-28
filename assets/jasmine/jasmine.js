@@ -40,23 +40,4 @@ function jasmine () {
 
 $(document).ready(function () {
     jasmine();
-    InstantClick.on('change', function(isInitialLoad) {
-        jasmine();
-        if (isInitialLoad === false) {
-            $("img.lazyload").lazyload();
-            if (typeof _hmt !== 'undefined') {
-                _hmt.push(['_trackPageview', location.pathname + location.search])
-            }
-            if (typeof MathJax !== 'undefined') {
-                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-            }
-            if (typeof ga !== 'undefined') {
-                ga('send', 'pageview', location.pathname + location.search);
-            }
-            if (typeof Prism !== 'undefined') {
-                Prism.highlightAll(true,null);
-            }
-        }
-    });
-    InstantClick.init(50);
 })

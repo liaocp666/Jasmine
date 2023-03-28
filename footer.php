@@ -30,11 +30,33 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <script src="<?php $this->options->themeUrl('assets/prism/prism.js'); ?>" defer type="text/javascript" data-no-instant></script>
 <script src="<?php $this->options->themeUrl('assets/darken/darken.umd.js'); ?>" defer type="text/javascript"></script>
 <script src="https://cdn.staticfile.org/jquery.lazyload/1.9.1/jquery.lazyload.min.js" defer type="text/javascript"></script>
-<script src="https://cdn.staticfile.org/instantclick/3.1.0/instantclick.min.js" type="text/javascript"></script>
-<script src="<?php $this->options->themeUrl('assets/jasmine/jasmine.js?version=1.5.0'); ?>" defer type="text/javascript" data-no-instant></script>
+<script src="<?php $this->options->themeUrl('assets/jasmine/jasmine.js?version=1.5.1'); ?>" defer type="text/javascript" data-no-instant></script>
 <script>
     <?php $this->options->customScript(); ?>
 </script>
+<?php if(getOptions() -> pjaxLoadPage): ?>
+    <script src="https://cdn.staticfile.org/instantclick/3.1.0/instantclick.min.js" type="text/javascript"></script>
+    <script data-no-instant>
+        InstantClick.on('change', function(isInitialLoad) {
+            if (isInitialLoad === false) {
+                jasmine();
+                if (typeof _hmt !== 'undefined') {
+                    _hmt.push(['_trackPageview', location.pathname + location.search])
+                }
+                if (typeof MathJax !== 'undefined') {
+                    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+                }
+                if (typeof ga !== 'undefined') {
+                    ga('send', 'pageview', location.pathname + location.search);
+                }
+                if (typeof Prism !== 'undefined') {
+                    Prism.highlightAll(true,null);
+                }
+            }
+        });
+        InstantClick.init(50);
+    </script>
+<?php endif; ?>
 <?php $this->footer(); ?>
 </body>
 </html>
