@@ -18,6 +18,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 <?php if(!empty($this->options->icpCode)): ?>
                     <p><a href="https://beian.miit.gov.cn/" target="_blank"><?php $this->options->icpCode(); ?></a></p>
                 <?php endif; ?>
+                <?php
+                    $custom_footer = __DIR__ . '/custom_footer.php';
+                    if (file_exists($custom_footer)) {
+                        include $custom_footer;
+                    }
+                ?>
             </div>
         </div>
     </div>
