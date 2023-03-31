@@ -24,6 +24,9 @@ function themeInit($archive)
     // 强制开启评论markdown
     Helper::options()->commentsMarkdown = '1';
     Helper::options()->commentsHTMLTagAllowed .= '<img class src alt><div class>';
+    if (getOptions() -> pjaxLoadPage) {
+        Helper::options()->commentsAntiSpam = false;
+    }
 }
 
 /**
