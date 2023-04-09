@@ -105,14 +105,11 @@ function getHumanizedDate(int $created)
         //输出时间
         if (date('Y-m-d', $created) == date('Y-m-d')) {
             return '今天';
-        } elseif ($d == 1) {
+        } elseif ($d <= 1) {
             return '昨天';
         } elseif ($d == 2) {
             return '前天';
         } elseif ($d <= 31) {
-            if ($d == 0) {
-                return '今天';
-            }
             return $d . ' 天前';
         } elseif ($Y == date('Y')) {
             return date('m-d', $created);
