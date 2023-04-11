@@ -17,7 +17,7 @@ body.darkmode-active {
     background-color: #161829;
 }
 
-.darkmode-active #left-sidebar .jasmine-nav a, .darkmode-active #left-sidebar .action a {
+.darkmode-active #left-sidebar .jasmine-nav a, .darkmode-active #left-sidebar .action a, .darkmode-active #layout #middle #search i {
     color: #dedede;
 }
 
