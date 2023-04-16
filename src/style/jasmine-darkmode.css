@@ -163,3 +163,16 @@ body.darkmode-active {
 .darkmode-active #left-sidebar .action span, .darkmode-active #middle .mobile-action span {
     color: #dedede;
 }
+
+.darkmode-active #shuoshuo {
+    background-color: #0a0c19;
+    color: #dedede;
+}
+
+.darkmode-active #shuoshuo::after {
+    border-bottom-color: #0a0c19;
+}
+
+.darkmode-active .shuoshuo-meta-time {
+    color: #a5a9c3;
+}

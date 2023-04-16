@@ -145,3 +145,8 @@
     max-width: 100%;
     display: block;
 }
+
+.shuoshuo-meta-time {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.55);
+}

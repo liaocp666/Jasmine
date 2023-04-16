@@ -8,10 +8,10 @@
                      alt="<?php $this->author->screenName(); ?>">
             </div>
             <div class="blogger ms-2">
-                <div class="name">
+                <div class="name shuoshuo-meta">
                     <div class="my-1 d-flex flex-column align-self-center justify-content-start">
-                        <span><?php $this->author->screenName(); ?></span>
-                        <span style="font-size: 14px;color: rgba(0, 0, 0, 0.55)"><?php echo getHumanizedDate($this->created); ?></span>
+                        <span class="shuoshuo-meta-author"><?php $this->author->screenName(); ?></span>
+                        <span class="shuoshuo-meta-time"><?php echo getHumanizedDate($this->created); ?></span>
                     </div>
                 </div>
             </div>
