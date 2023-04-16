@@ -19,7 +19,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <p><a href="https://beian.miit.gov.cn/" target="_blank"><?php $this->options->icpCode(); ?></a></p>
                 <?php endif; ?>
                 <?php
-                    $custom_footer = __DIR__ . '/custom_footer.php';
+                    $custom_footer = __DIR__ . '/custom/footer.php';
                     if (file_exists($custom_footer)) {
                         include $custom_footer;
                     }

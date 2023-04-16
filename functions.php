@@ -41,3 +41,9 @@ function themeFields(Typecho_Widget_Helper_Layout $layout)
     $description = new Typecho_Widget_Helper_Form_Element_Textarea('description', NULL, NULL, _t('SEO 描述'), _t('简单一句话描述'));
     $layout->addItem($description);
 }
+
+
+$custom_functions = __DIR__ . '/custom/functions.php';
+if (file_exists($custom_functions)) {
+    include_once $custom_functions;
+}
