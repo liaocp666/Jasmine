@@ -36,7 +36,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <script src="<?php $this->options->themeUrl('assets/prism/prism.js'); ?>" defer type="text/javascript" data-no-instant></script>
 <script src="<?php $this->options->themeUrl('assets/darken/darken.umd.js'); ?>" defer type="text/javascript"></script>
 <script src="https://cdn.staticfile.org/jquery.lazyload/1.9.1/jquery.lazyload.min.js" defer type="text/javascript"></script>
-<script src="<?php $this->options->themeUrl('assets/jasmine/jasmine.js?v=1.6.2'); ?>" defer type="text/javascript" data-no-instant></script>
+<script src="<?php $this->options->themeUrl('assets/jasmine/jasmine.js?v=1.6.3'); ?>" defer type="text/javascript" data-no-instant></script>
 <script>
     <?php $this->options->customScript(); ?>
 </script>
