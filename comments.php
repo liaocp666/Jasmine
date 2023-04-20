@@ -42,7 +42,7 @@ function threadedComments($comments, $options)
                                 </span>
                             <?php } ?>
                         </div>
-                        <div class="comments-reply">
+                        <div class="comments-reply" data-no-instant>
                             <?php $comments->reply('回复'); ?>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ function threadedComments($comments, $options)
     </li>
 <?php } ?>
 <div class="col-12">
-    <div id="comments">
+    <div id="comments" data-no-instant>
         <?php $this->comments()->to($comments); ?>
         <?php if ($this->allow('comment')): ?>
             <div id="<?php $this->respondId(); ?>" class="respond mb-5">
