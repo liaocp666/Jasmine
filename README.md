@@ -7,11 +7,9 @@
 
 <a href="#项目说明">项目说明</a>
   <span> · </span>
-    <a href="https://github.com/liaocp666/Jasmine/releases/latest/download/jasmine.zip">主题下载</a>
+    <a href="#主题下载">主题下载</a>
   <span> · </span>
     <a href="#主题文档">主题文档</a>
-  <span> · </span>
-    <a href="#主题交流">主题交流</a>
   <span> · </span>
     <a href="#许可协议">许可协议</a>
   <span> · </span>
@@ -56,10 +54,6 @@ Jasmine 是 Typecho 的一款主题。专为博客类网站开发，在简洁的
 ## 主题文档
 
 [Github](https://github.com/liaocp666/Jasmine/wiki) | [Gitee（国内）](https://gitee.com/LiaoChunping/Jasmine/wikis/pages)
-
-## 主题交流
-
-您可以在[ QQ 群 ](https://qm.qq.com/cgi-bin/qm/qr?k=oXM0EmLxXmgKfE1UDRlBY-g7Rkrx30oL&jump_from=webapi&authKey=uQdwWraveNKYBm/BQs88WXkNagEUr9tCkf/gbdQ9FasOviKYVhUd/wUME0q0AtnI)或当前平台对主题进行报告错误（Issues）、修复问题(Pull requests)。
 
 ## 许可协议
 
