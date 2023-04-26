@@ -134,6 +134,18 @@ function getCopyrightDate(): string
     return $text;
 }
 
+/**
+ * 获取作者头像
+ * @package 邮箱
+ * @return 头像地址
+ */
+function getAuthorAvatar ($mail) {
+    $authorAvatar = getOptions()->authorAvatar;
+    if (!empty($authorAvatar)) {
+        return $authorAvatar;
+    }
+    return getAvatarByMail($mail);
+}
 
 /**
  * 获取评论头像
@@ -141,10 +153,6 @@ function getCopyrightDate(): string
  */
 function getAvatarByMail($mail)
 {
-    $authorAvatar = getOptions()->authorAvatar;
-    if (!empty($authorAvatar)) {
-        return $authorAvatar;
-    }
     $gravatarsUrl = 'https://cravatar.cn/avatar/';
     $mailLower = strtolower($mail);
     $md5MailLower = md5($mailLower);

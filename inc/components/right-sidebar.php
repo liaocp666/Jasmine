@@ -10,7 +10,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         class="d-flex position-relative align-content-center align-items-center align-self-center justify-content-start">
                         <div class="mt-1">
                             <img class="avatar lazyload" width="50" height="50"
-                                 src="<?php echo getAvatarByMail($this->author->mail) ?>" alt="<?php $this->author->screenName(); ?>"
+                                 src="<?php echo getAuthorAvatar($this->author->mail) ?>" alt="<?php $this->author->screenName(); ?>"
                             />
                         </div>
                         <div class="blogger ms-3">
