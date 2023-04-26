@@ -44,6 +44,9 @@ function themeConfig($form)
     ), '0', _t('开启无刷新加载页面'), _t('默认为关闭'));
     $form->addInput($pjaxLoadPage);
 
+    $authorAvatar = new Text('authorAvatar', null, null, '作者头像', '填写图片地址，用于显示右侧作者头像');
+    $form->addInput($authorAvatar);
+
     $authorRecommend = new Text('authorRecommend', null, null, '作者介绍', '使用简短的话，介绍下自己');
     $form->addInput($authorRecommend);
 

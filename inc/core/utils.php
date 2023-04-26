@@ -141,6 +141,10 @@ function getCopyrightDate(): string
  */
 function getAvatarByMail($mail)
 {
+    $authorAvatar = getOptions()->authorAvatar;
+    if (isset($authorAvatar)) {
+        return $authorAvatar;
+    }
     $gravatarsUrl = 'https://cravatar.cn/avatar/';
     $mailLower = strtolower($mail);
     $md5MailLower = md5($mailLower);
