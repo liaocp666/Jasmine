@@ -4,7 +4,7 @@
             class="d-flex position-relative align-content-center align-items-center align-self-center justify-content-start w-100">
             <div class="mt-1">
                 <img class="rounded shadow-1-strong" width="42" height="42"
-                     src="<?php echo getAvatarByMail($this->author->mail); ?>"
+                     src="<?php echo getAvatarByMail($this->author->mail, true); ?>"
                      alt="<?php $this->author->screenName(); ?>">
             </div>
             <div class="blogger ms-2">

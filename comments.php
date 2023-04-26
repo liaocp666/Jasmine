@@ -21,10 +21,17 @@ function threadedComments($comments, $options)
     echo $commentClass;
     ?>">
         <div class="d-flex flex-start mb-3 comment-main">
-            <img class="rounded shadow-1-strong me-2 lazyload" width="50" height="50"
-                 data-original="<?php echo getAvatarByMail($comments->mail); ?>"
-                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-                 alt="<?php $comments->author; ?>">
+            <?php if ($comments->authorId == $comments->ownerId) { ?>
+                <img class="rounded shadow-1-strong me-2 lazyload" width="50" height="50"
+                     data-original="<?php echo getAvatarByMail($comments->mail, true); ?>"
+                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                     alt="<?php $comments->author; ?>">
+            <?php } else { ?>
+                <img class="rounded shadow-1-strong me-2 lazyload" width="50" height="50"
+                     data-original="<?php echo getAvatarByMail($comments->mail); ?>"
+                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                     alt="<?php $comments->author; ?>">
+            <?php } ?>
             <div class="flex-grow-1 flex-shrink-1">
                 <div>
                     <div class="d-flex justify-content-between align-items-center">
@@ -92,7 +99,7 @@ function threadedComments($comments, $options)
                         <div class="comments-curren-user d-flex align-items-center align-content-center">
                             <?php if ($this->user->hasLogin()): ?>
                                 <img class="img-thumbnail rounded me-1" width="50" height="50"
-                                     src="<?php echo getAvatarByMail($this->user->mail); ?>"
+                                     src="<?php echo getAvatarByMail($this->user->mail, true); ?>"
                                      alt="<?php $this->user->screenName(); ?>">
                                 <div class="d-flex flex-column">
                                     <span><?php $this->user->screenName(); ?></span>
