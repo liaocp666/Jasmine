@@ -11,8 +11,12 @@ function getHotPosts($limit = 7)
 {
     $db = Typecho_Db::get();
     $options = Helper::options();
-    $posts = $db->fetchAll($db->select()->from('table.contents')
-        ->where('type = ? AND status = ? AND created < ?', 'post', 'publish', $options->time)
+    $posts = $db->fetchAll($db->select('DISTINCT table.contents.cid, table.contents.*')->from('table.contents')
+        ->join('table.relationships', 'table.contents.cid = table.relationships.cid')
+        ->join('table.metas', 'table.metas.mid = table.relationships.mid')
+        ->where('table.relationships.mid <> ?', getOptions()->shuoshuoCategoryId)
+        ->where('table.metas.type = ?', 'category')
+        ->where('table.contents.type = ? AND table.contents.status = ? AND table.contents.created < ?', 'post', 'publish', $options->time)
         ->order('table.contents.commentsNum', Typecho_Db::SORT_DESC)
         ->limit($limit), array(Typecho_Widget::widget('Widget_Abstract_Contents'), 'filter'));
     return $posts;
