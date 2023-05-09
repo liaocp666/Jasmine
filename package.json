@@ -1,26 +1,44 @@
 {
-  "name": "moli",
-  "private": true,
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite build --watch",
-    "build": "tsc && vite build",
-    "lint": "eslint ./src --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
-    "prettier": "prettier --write ./src/**/*.{js,ts,css,html} ./index.html"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.59.2",
-    "@typescript-eslint/parser": "^5.59.2",
-    "@vitejs/plugin-vue": "^4.1.0",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.40.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "postcss": "^8.4.23",
-    "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8",
-    "tailwindcss": "^3.3.2",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.2"
-  }
+    "name": "Jasmine",
+    "private": true,
+    "version": "2.0.0",
+    "description": "Jasmine Theme",
+    "scripts": {
+        "dev": "vite build --watch",
+        "build": "tsc && vite build",
+        "lint": "eslint ./src --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
+        "prettier": "prettier --write ./src/**/*.{js,ts,json,css,html} ./index.html"
+    },
+    "keywords": [
+        "Jasmine",
+        "Jasmine Theme",
+        "typecho",
+        "typecho-theme"
+    ],
+    "homepage": "https://github.com/liaocp666/Jasmine",
+    "author": {
+        "name": "Kent Liao",
+        "email": "2964556627@qq.com",
+        "url": "https://github.com/liaocp666"
+    },
+    "license": "GPL-3.0",
+    "repository": {
+        "directory": "https://github.com/liaocp666/Jasmine",
+        "type": "git"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.59.2",
+        "@typescript-eslint/parser": "^5.59.2",
+        "@vitejs/plugin-vue": "^4.1.0",
+        "autoprefixer": "^10.4.14",
+        "eslint": "^8.40.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "postcss": "^8.4.23",
+        "prettier": "^2.8.8",
+        "prettier-plugin-tailwindcss": "^0.2.8",
+        "tailwindcss": "^3.3.2",
+        "typescript": "^5.0.4",
+        "vite": "^4.3.2"
+    }
 }
