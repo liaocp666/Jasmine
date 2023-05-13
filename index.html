@@ -7,12 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>南巷清风</title>
   <link type="text/css" rel="stylesheet" href="./assets/dist/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <script src="https://npm.elemecdn.com/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 </head>
 
 <body class="bg-stone-100">
   <div class="flex flex-row mt-20 bg-white md:max-w-[1200px] mx-auto rounded">
-    <div class="basis-1/12 flex flex-wrap flex-col gap-y-10">
+    <div class="basis-1/12 flex flex-wrap flex-col gap-y-8 min-h-screen">
       <div></div>
       <div class="flex justify-center">
         <a href="/">
@@ -23,27 +27,32 @@
         <ul class="flex flex-wrap flex-col gap-y-3 content-center">
           <li>
             <a href="">
-              <iconify-icon icon="tabler:home" class="text-2xl hover:bg-black hover:text-white py-2 px-3 rounded hover:shadow-lg"></iconify-icon>
+              <iconify-icon icon="tabler:home"
+                class="text-2xl hover:bg-black hover:text-white py-2 px-3 rounded hover:shadow-lg"></iconify-icon>
             </a>
           </li>
           <li>
             <a href="">
-              <iconify-icon icon="tabler:user-circle" class="text-2xl hover:bg-black hover:text-white py-2 px-3 rounded hover:shadow-lg"></iconify-icon>
+              <iconify-icon icon="tabler:user-circle"
+                class="text-2xl hover:bg-black hover:text-white py-2 px-3 rounded hover:shadow-lg"></iconify-icon>
             </a>
           </li>
           <li>
             <a href="">
-              <iconify-icon icon="tabler:archive" class="text-2xl hover:bg-black hover:text-white py-2 px-3 rounded hover:shadow-lg"></iconify-icon>
+              <iconify-icon icon="tabler:archive"
+                class="text-2xl hover:bg-black hover:text-white py-2 px-3 rounded hover:shadow-lg"></iconify-icon>
             </a>
           </li>
           <li>
             <a href="">
-              <iconify-icon icon="tabler:link" class="text-2xl hover:bg-black hover:text-white py-2 px-3 rounded hover:shadow-lg"></iconify-icon>
+              <iconify-icon icon="tabler:link"
+                class="text-2xl hover:bg-black hover:text-white py-2 px-3 rounded hover:shadow-lg"></iconify-icon>
             </a>
           </li>
           <li>
             <a href="">
-              <iconify-icon icon="tabler:arrows-random" class="text-2xl hover:bg-black hover:text-white py-2 px-3 rounded hover:shadow-lg"></iconify-icon>
+              <iconify-icon icon="tabler:arrows-random"
+                class="text-2xl hover:bg-black hover:text-white py-2 px-3 rounded hover:shadow-lg"></iconify-icon>
             </a>
           </li>
           <li>
@@ -52,19 +61,33 @@
         <ul class="flex flex-wrap flex-col gap-y-2 content-center">
           <li>
             <a href="">
-              <iconify-icon icon="tabler:sun-moon" class="text-2xl hover:bg-black hover:text-white py-1 px-2 rounded"></iconify-icon>
+              <iconify-icon icon="tabler:sun-moon"
+                class="text-2xl hover:bg-black hover:text-white py-1 px-2 rounded"></iconify-icon>
             </a>
           </li>
           <li>
             <a href="">
-              <iconify-icon icon="tabler:arrow-bar-to-up" class="text-2xl hover:bg-black hover:text-white py-1 px-2 rounded"></iconify-icon>
+              <iconify-icon icon="tabler:arrow-bar-to-up"
+                class="text-2xl hover:bg-black hover:text-white py-1 px-2 rounded"></iconify-icon>
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <div class="basis-8/12 min-h-screen border-x-2 border-stone-100">
-      中间
+    <div class="basis-8/12 border-x-2 border-stone-100 flex flex-col px-5">
+      <div class="flex justify-between h-28 border-b-2 border-stone-100">
+        <ul class="flex items-center nav gap-x-3">
+          <li>
+            <a href="/" class="active px-4 py-1 rounded-full">首页</a>
+          </li>
+          <li>
+            <a href="/" class="px-4 py-1 rounded-full hover:text-white hover:bg-black">技术</a>
+          </li>
+        </ul>
+        <div>
+          搜索
+        </div>
+      </div>
     </div>
     <div class="basis-3/12">
       右侧
