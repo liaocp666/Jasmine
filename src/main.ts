@@ -1,5 +1,7 @@
 import "./style/tailwind.css";
+import "../node_modules/github-markdown-css"
 import "./style/style.css";
+
 import StickySidebar from "../node_modules/sticky-sidebar";
 
 const onScroll = () => {
