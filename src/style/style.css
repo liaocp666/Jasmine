@@ -10,33 +10,34 @@
 }
 
 #page-nav li {
-    border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 #page-nav li a {
-    display: block;
-    padding: 0.1rem 0.6rem;
-    background-color: #f2f2f2;
-    border-radius: .25rem;
-    color: #000;
+  display: block;
+  padding: 0.1rem 0.6rem;
+  background-color: #f2f2f2;
+  border-radius: 0.25rem;
+  color: #000;
 }
 
 #page-nav .active a {
-    background-color: #000000;
-    color: #FFFFFF;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .markdown-body {
-    font-family: "HarmonyOS-Sans", sans-serif;
+  font-family: "HarmonyOS-Sans", sans-serif;
 }
 
-.markdown-body h2, .markdown-body h1 {
-    border-bottom: 0
+.markdown-body h2,
+.markdown-body h1 {
+  border-bottom: 0;
 }
 
 #post-tag a {
-    display: block;
-    padding: 0.1rem 0.6rem;
-    background-color: #f2f2f2;
-    border-radius: 0.25rem;
+  display: block;
+  padding: 0.1rem 0.6rem;
+  background-color: #f2f2f2;
+  border-radius: 0.25rem;
 }

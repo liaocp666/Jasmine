@@ -4,7 +4,9 @@ use Typecho\Plugin;
 use Utils\Helper;
 use Widget\Options;
 
-if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+if (!defined("__TYPECHO_ROOT_DIR__")) {
+  exit();
+}
 
 /**
  * 获取 Options
@@ -12,21 +14,20 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  */
 function getOptions(): Options
 {
-    return Helper::options();
+  return Helper::options();
 }
 
 function getDb()
 {
-    return Typecho_Db::get();
+  return Typecho_Db::get();
 }
-
 
 /**
  * 获取左边栏菜单
  */
 function getLeftSidebarMenu()
 {
-    return json_decode(getOptions()->leftSidebarMenu, true);
+  return json_decode(getOptions()->leftSidebarMenu, true);
 }
 
 /**
@@ -34,12 +35,12 @@ function getLeftSidebarMenu()
  */
 function getStickyPost(): array
 {
-    $sticky_text = getOptions()->stickyPost;
-    if (empty($sticky_text)) {
-        return [];
-    }
-    $sticky_cids = explode('||', strtr($sticky_text, ' ', ''));
-    return $sticky_cids;
+  $sticky_text = getOptions()->stickyPost;
+  if (empty($sticky_text)) {
+    return [];
+  }
+  $sticky_cids = explode("||", strtr($sticky_text, " ", ""));
+  return $sticky_cids;
 }
 
 /**
@@ -48,8 +49,8 @@ function getStickyPost(): array
  */
 function getMiddleTopCategoryIds(): array
 {
-    $middleTopCategoryIds = getOptions()->middleTopCategoryIds;
-    return array_map('intval', explode('||', strtr($middleTopCategoryIds, ' ', '')));
+  $middleTopCategoryIds = getOptions()->middleTopCategoryIds;
+  return array_map("intval", explode("||", strtr($middleTopCategoryIds, " ", "")));
 }
 
 /**
@@ -59,12 +60,14 @@ function getMiddleTopCategoryIds(): array
  */
 function getFieldByCidAndName($cid, $filedName)
 {
-    $db = Typecho_Db::get();
-    $field = $db->fetchRow(
-        $db->select()->from('table.fields')
-            ->where('cid = ? and name = ?', $cid, $filedName)
-    );
-    return $field;
+  $db = Typecho_Db::get();
+  $field = $db->fetchRow(
+    $db
+      ->select()
+      ->from("table.fields")
+      ->where("cid = ? and name = ?", $cid, $filedName)
+  );
+  return $field;
 }
 
 /**
@@ -74,16 +77,16 @@ function getFieldByCidAndName($cid, $filedName)
  */
 function getThumbnail(string $cid, string $defaultThumbnail): string
 {
-    $filed = getFieldByCidAndName($cid, 'thumbnail');
-    if (empty($filed)) {
-        return $defaultThumbnail;
-    }
-    $thumbnail = $filed[$filed['type'] . '_value'];
-    // 使用自定义字段，设置缩略图
-    if (!empty($thumbnail)) {
-        return $thumbnail;
-    }
+  $filed = getFieldByCidAndName($cid, "thumbnail");
+  if (empty($filed)) {
     return $defaultThumbnail;
+  }
+  $thumbnail = $filed[$filed["type"] . "_value"];
+  // 使用自定义字段，设置缩略图
+  if (!empty($thumbnail)) {
+    return $thumbnail;
+  }
+  return $defaultThumbnail;
 }
 
 /**
@@ -93,30 +96,30 @@ function getThumbnail(string $cid, string $defaultThumbnail): string
  */
 function getHumanizedDate(int $created)
 {
-    if (Helper::options()->timeFormat != '') {
-        return date(Helper::options()->timeFormat, $created);
+  if (Helper::options()->timeFormat != "") {
+    return date(Helper::options()->timeFormat, $created);
+  } else {
+    //计算时间差
+    $diff = time() - $created;
+    $d = floor($diff / 3600 / 24);
+
+    $Y = date("Y", $created);
+
+    //输出时间
+    if (date("Y-m-d", $created) == date("Y-m-d")) {
+      return "今天";
+    } elseif ($d <= 1) {
+      return "昨天";
+    } elseif ($d == 2) {
+      return "前天";
+    } elseif ($d <= 31) {
+      return $d . " 天前";
+    } elseif ($Y == date("Y")) {
+      return date("m-d", $created);
     } else {
-        //计算时间差
-        $diff = time() - $created;
-        $d = floor($diff / 3600 / 24);
-
-        $Y = date('Y', $created);
-
-        //输出时间
-        if (date('Y-m-d', $created) == date('Y-m-d')) {
-            return '今天';
-        } elseif ($d <= 1) {
-            return '昨天';
-        } elseif ($d == 2) {
-            return '前天';
-        } elseif ($d <= 31) {
-            return $d . ' 天前';
-        } elseif ($Y == date('Y')) {
-            return date('m-d', $created);
-        } else {
-            return date('Y-m-d', $created);
-        }
+      return date("Y-m-d", $created);
     }
+  }
 }
 
 /**
@@ -124,14 +127,14 @@ function getHumanizedDate(int $created)
  */
 function getCopyrightDate(): string
 {
-    $text = '';
-    if (!empty(getOptions()->startDate)) {
-        $startDate = date_create(getOptions()->startDate);
-        $text .= date_format($startDate, 'Y');
-        $text .= " - ";
-    }
-    $text .= date('Y', time());
-    return $text;
+  $text = "";
+  if (!empty(getOptions()->startDate)) {
+    $startDate = date_create(getOptions()->startDate);
+    $text .= date_format($startDate, "Y");
+    $text .= " - ";
+  }
+  $text .= date("Y", time());
+  return $text;
 }
 
 /**
@@ -141,21 +144,21 @@ function getCopyrightDate(): string
  */
 function getAvatarByMail($mail, $isOwner = false)
 {
-    if ($isOwner) {
-        $authorAvatar = getOptions()->authorAvatar;
-        if (!empty($authorAvatar)) {
-            return $authorAvatar;
-        }
+  if ($isOwner) {
+    $authorAvatar = getOptions()->authorAvatar;
+    if (!empty($authorAvatar)) {
+      return $authorAvatar;
     }
-    $gravatarsUrl = 'https://cravatar.cn/avatar/';
-    $mailLower = strtolower($mail);
-    $md5MailLower = md5($mailLower);
-    $qqMail = str_replace('@qq.com', '', $mailLower);
-    if (strstr($mailLower, "qq.com") && is_numeric($qqMail) && strlen($qqMail) < 11 && strlen($qqMail) > 4) {
-        return 'https://thirdqq.qlogo.cn/g?b=qq&nk=' . $qqMail . '&s=100';
-    } else {
-        return $gravatarsUrl . $md5MailLower . '?d=mm';
-    }
+  }
+  $gravatarsUrl = "https://cravatar.cn/avatar/";
+  $mailLower = strtolower($mail);
+  $md5MailLower = md5($mailLower);
+  $qqMail = str_replace("@qq.com", "", $mailLower);
+  if (strstr($mailLower, "qq.com") && is_numeric($qqMail) && strlen($qqMail) < 11 && strlen($qqMail) > 4) {
+    return "https://thirdqq.qlogo.cn/g?b=qq&nk=" . $qqMail . "&s=100";
+  } else {
+    return $gravatarsUrl . $md5MailLower . "?d=mm";
+  }
 }
 
 /**
@@ -163,8 +166,8 @@ function getAvatarByMail($mail, $isOwner = false)
  */
 function getThemeVersion()
 {
-    $info = Plugin::parseInfo(Helper::options()->themeFile(Helper::options()->theme, 'index.php'));
-    return $info['version'];
+  $info = Plugin::parseInfo(Helper::options()->themeFile(Helper::options()->theme, "index.php"));
+  return $info["version"];
 }
 
 /**
@@ -172,8 +175,9 @@ function getThemeVersion()
  * @param $content
  * @return array|string|string[]|null
  */
-function handleContent($content) {
-    return imageLazyLoad($content);
+function handleContent($content)
+{
+  return imageLazyLoad($content);
 }
 
 /**
@@ -181,8 +185,10 @@ function handleContent($content) {
  * @param $content
  * @return array|string|string[]|null
  */
-function imageLazyLoad($content) {
-    $pattern = '/<img(.*?)src(.*?)=(.*?)"(.*?)">/i';
-    $replacement = '<img$1data-original$3="$4"$5 class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=">';
-    return preg_replace($pattern, $replacement, $content);
+function imageLazyLoad($content)
+{
+  $pattern = '/<img(.*?)src(.*?)=(.*?)"(.*?)">/i';
+  $replacement =
+    '<img$1data-original$3="$4"$5 class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=">';
+  return preg_replace($pattern, $replacement, $content);
 }

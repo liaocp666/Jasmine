@@ -1,4 +1,6 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if (!defined("__TYPECHO_ROOT_DIR__")) {
+  exit();
+} ?>
 
 <?php $menus = getLeftSidebarMenu(); ?>
 <?php if (!empty($menus)): ?>
@@ -6,8 +8,10 @@
     <ul class="flex flex-col flex-wrap content-center gap-y-3">
         <?php foreach ($menus as $menu): ?>
             <li>
-                <a href="<?php echo $menu['url']; ?>" target="<?php echo ($menu['newTab']) ? '_blank' : '_self' ?>" title="<?php echo $menu['name']; ?>">
-                    <iconify-icon icon="<?php echo $menu['icon']; ?>"
+                <a href="<?php echo $menu["url"]; ?>" target="<?php echo $menu["newTab"]
+  ? "_blank"
+  : "_self"; ?>" title="<?php echo $menu["name"]; ?>">
+                    <iconify-icon icon="<?php echo $menu["icon"]; ?>"
                                   class="rounded px-3 py-2 text-2xl hover:bg-black hover:text-white hover:shadow-lg"></iconify-icon>
                 </a>
             </li>

@@ -1,13 +1,15 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if (!defined("__TYPECHO_ROOT_DIR__")) {
+  exit();
+} ?>
 
 <div class="sidebar__right__inner flex flex-col px-5 gap-y-8">
     <div></div>
     <div class="flex gap-x-3 border-b-2 border-stone-100 pb-8">
-        <img src="<?php echo getAvatarByMail($this->author->mail, true) ?>" alt="<?php $this->author->screenName(); ?>"
-             alt="<?php $this->author->screenName() ?>" width="50" height="50"
+        <img src="<?php echo getAvatarByMail($this->author->mail, true); ?>" alt="<?php $this->author->screenName(); ?>"
+             alt="<?php $this->author->screenName(); ?>" width="50" height="50"
              class="rounded">
         <div class="flex flex-col justify-between">
-            <p><?php $this->author->screenName() ?></p>
+            <p><?php $this->author->screenName(); ?></p>
             <p class="line-clamp-2 text-neutral-500 text-sm"><?php $this->options->authorRecommend(); ?></p>
         </div>
     </div>
@@ -21,9 +23,9 @@
             <?php if (!empty($posts)): ?>
                 <?php foreach ($posts as $post): ?>
                     <li>
-                        <a href="<?php echo $post['permalink']; ?>"
+                        <a href="<?php echo $post["permalink"]; ?>"
                            class="line-clamp-2 text-neutral-500 text-sm"
-                           title="<?php echo $post['title']; ?>"><?php echo $post['title']; ?></a>
+                           title="<?php echo $post["title"]; ?>"><?php echo $post["title"]; ?></a>
                     </li>
                 <?php endforeach; ?>
             <?php endif; ?>
@@ -35,14 +37,14 @@
             <span class="font-medium">最新评论</span>
         </div>
         <ul class="flex flex-col gap-y-3 px-1">
-            <?php $this->widget('Widget_Comments_Recent', array())->to($newComments); ?>
+            <?php $this->widget("Widget_Comments_Recent", [])->to($newComments); ?>
             <?php if ($newComments->have()): ?>
                 <?php while ($newComments->next()): ?>
                     <li>
                         <a href="<?php $newComments->permalink(); ?>"
-                           title="<?php $newComments->excerpt(35, '...'); ?>"
+                           title="<?php $newComments->excerpt(35, "..."); ?>"
                            class="line-clamp-2 text-neutral-500 text-sm">
-                            <?php echo $newComments->author; ?>: <?php $newComments->excerpt(35, '...'); ?></a>
+                            <?php echo $newComments->author; ?>: <?php $newComments->excerpt(35, "..."); ?></a>
                     </li>
                 <?php endwhile; ?>
             <?php endif; ?>
@@ -54,7 +56,7 @@
             <span class="font-medium">热门标签</span>
         </div>
         <ul class="flex flex-wrap gap-y-2">
-            <?php $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1&limit=15')->to($tags); ?>
+            <?php $this->widget("Widget_Metas_Tag_Cloud", "ignoreZeroCount=1&limit=15")->to($tags); ?>
             <?php if ($tags->have()): ?>
                 <?php while ($tags->next()): ?>
                     <li>

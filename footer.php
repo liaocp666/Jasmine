@@ -1,4 +1,6 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if (!defined("__TYPECHO_ROOT_DIR__")) {
+  exit();
+} ?>
 
 <div class="flex flex-col mb-16 text-gray-700 text-neutral-500">
     <div class="flex flex-col items-center">
