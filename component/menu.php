@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
-<div id="header-menu" class="flex h-24 justify-between sticky top-0 px-5 mx-[-1.25rem] mt-5"
+<div id="header-menu" class="flex h-20 justify-between sticky top-0 px-5 mx-[-1.25rem] mt-5 py-12"
      style="background-color: rgb(255 255 255 / 90%);">
     <ul class="nav flex items-center gap-x-3">
         <li>
