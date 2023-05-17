@@ -3,16 +3,28 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        font-family: 'Noto Sans SC', sans-serif;
-    }
+  @font-face {
+    font-display: swap;
+    font-family: HarmonyOS-Sans;
+    src: url(./font/HarmonyOS-Sans.woff2) format("truetype");
+  }
+
+  html {
+    font-family: "HarmonyOS-Sans", sans-serif;
+  }
 }
 
 @layer utilities {
-    .min-h-screen {
-        min-height: calc(100vh - 5rem);
-    }
-    .p-tag {
-        padding: 0.25rem 1rem;
-    }
+  .min-h-screen-lesio {
+    min-height: calc(100vh - 5rem);
+  }
+
+  .p-tag {
+    padding: 0.25rem 1rem;
+  }
+
+  .text-md {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }

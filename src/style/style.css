@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 .nav .active {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
+}
+
+.middotDivider {
+  content: "\00B7";
 }

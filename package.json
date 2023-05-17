@@ -1,8 +1,8 @@
 {
-    "name": "Jasmine",
+    "name": "lesio",
     "private": true,
     "version": "2.0.0",
-    "description": "Jasmine Theme",
+    "description": "lesio theme",
     "scripts": {
         "dev": "vite build --watch",
         "build": "tsc && vite build",
@@ -10,12 +10,12 @@
         "prettier": "prettier --write ./src/**/*.{js,ts,json,css,html,php} ./index.html"
     },
     "keywords": [
-        "Jasmine",
-        "Jasmine Theme",
+        "lesio",
+        "lesio heme",
         "typecho",
         "typecho-theme"
     ],
-    "homepage": "https://github.com/liaocp666/Jasmine",
+    "homepage": "https://github.com/liaocp666/lesio",
     "author": {
         "name": "Kent Liao",
         "email": "2964556627@qq.com",
@@ -23,7 +23,7 @@
     },
     "license": "GPL-3.0",
     "repository": {
-        "directory": "https://github.com/liaocp666/Jasmine",
+        "directory": "https://github.com/liaocp666/lesio",
         "type": "git"
     },
     "devDependencies": {
@@ -37,6 +37,7 @@
         "postcss": "^8.4.23",
         "prettier": "^2.8.8",
         "prettier-plugin-tailwindcss": "^0.2.8",
+        "sticky-sidebar": "^3.3.1",
         "tailwindcss": "^3.3.2",
         "typescript": "^5.0.4",
         "vite": "^4.3.2"
