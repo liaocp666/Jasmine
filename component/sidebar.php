@@ -4,7 +4,7 @@
 
 <div class="sidebar__right__inner flex flex-col px-5 gap-y-8">
     <div></div>
-    <div class="flex flex-col gap-y-5">
+    <div class="flex flex-col gap-y-5 border-b-2 border-stone-100 pb-10">
         <div class="flex gap-x-3">
             <img src="<?php echo getAvatarByMail($this->author->mail, true); ?>"
                  alt="<?php $this->author->screenName(); ?>"
