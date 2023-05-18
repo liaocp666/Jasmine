@@ -8,7 +8,7 @@
             <img itemprop="logo"
                  src="<?php echo $this->options->logoUrl; ?>"
                  alt="<?php $this->options->title(); ?>" width="50" height="50"
-                 class="rounded"/>
+                 class="rounded object-cover"/>
         </a>
     </div>
 <?php endif; ?>
