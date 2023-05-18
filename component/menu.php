@@ -2,7 +2,7 @@
     exit();
 } ?>
 
-<div id="header-menu" class="flex justify-between sticky top-0 border-b-2 border-stone-100 py-4"
+<div id="header-menu" class="flex justify-between sticky top-0 border-b-2 border-stone-100 py-4 hidden lg:flex z-50"
      style="background-color: rgb(255 255 255 / 90%);">
     <ul class="nav flex items-center gap-x-3">
         <li>
@@ -35,6 +35,35 @@
         <li>
             <button>
                 <iconify-icon icon="tabler:search"
+                              class="rounded px-3 py-2 text-lg hover:bg-black hover:text-white hover:shadow-lg"></iconify-icon>
+            </button>
+        </li>
+    </ul>
+</div>
+
+<div id="header-menu-mobile" class="lg:hidden flex justify-between sticky top-0 border-b-2 border-stone-100 py-3 z-50"
+     style="background-color: rgb(255 255 255 / 90%);">
+    <ul class="nav flex items-center gap-x-3">
+        <li>
+            <?php $this->need("component/logo.php"); ?>
+        </li>
+    </ul>
+    <ul class="nav flex items-center gap-x-3">
+        <li>
+            <button>
+                <iconify-icon icon="tabler:sun-moon"
+                              class="rounded px-3 py-2 text-lg hover:bg-black hover:text-white hover:shadow-lg"></iconify-icon>
+            </button>
+        </li>
+        <li>
+            <button>
+                <iconify-icon icon="tabler:search"
+                              class="rounded px-3 py-2 text-lg hover:bg-black hover:text-white hover:shadow-lg"></iconify-icon>
+            </button>
+        </li>
+        <li>
+            <button>
+                <iconify-icon icon="tabler:menu-2"
                               class="rounded px-3 py-2 text-lg hover:bg-black hover:text-white hover:shadow-lg"></iconify-icon>
             </button>
         </li>

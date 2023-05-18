@@ -25,10 +25,10 @@
     </div>
     <?php if ($thumbnail = getThumbnail($this->cid, "")): ?>
         <meta itemprop="image" content="<?php echo $thumbnail; ?>"/>
-        <a href="<?php $this->permalink(); ?>" title="<?php $this->title(); ?>" class="w-[170px]">
+        <a href="<?php $this->permalink(); ?>" title="<?php $this->title(); ?>" class="sm:w-[160px] md:w-[170px]">
             <img src="<?php echo $thumbnail; ?>" alt="<?php $this->title(); ?>" width="130"
                  height="90"
-                 class="h-[130px] w-[170px] rounded object-cover"/>
+                 class="h-[130px] md:w-[170px] rounded object-cover sm:w-[160px]"/>
         </a>
     <?php endif; ?>
 </div>
