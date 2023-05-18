@@ -1,17 +1,27 @@
 <?php if (!defined("__TYPECHO_ROOT_DIR__")) {
-  exit();
+    exit();
 } ?>
 
 <div class="sidebar__right__inner flex flex-col px-5 gap-y-8">
     <div></div>
-    <div class="flex gap-x-3 border-b-2 border-stone-100 pb-8">
-        <img src="<?php echo getAvatarByMail($this->author->mail, true); ?>" alt="<?php $this->author->screenName(); ?>"
-             alt="<?php $this->author->screenName(); ?>" width="50" height="50"
-             class="rounded">
-        <div class="flex flex-col justify-between">
-            <p><?php $this->author->screenName(); ?></p>
-            <p class="line-clamp-2 text-neutral-500 text-sm"><?php $this->options->authorRecommend(); ?></p>
+    <div class="flex flex-col gap-y-5">
+        <div class="flex gap-x-3">
+            <img src="<?php echo getAvatarByMail($this->author->mail, true); ?>"
+                 alt="<?php $this->author->screenName(); ?>"
+                 alt="<?php $this->author->screenName(); ?>" width="50" height="50"
+                 class="rounded">
+            <div class="flex flex-col justify-between">
+                <p><?php $this->author->screenName(); ?></p>
+                <p class="line-clamp-2 text-neutral-500 text-sm"><?php $this->options->authorRecommend(); ?></p>
+            </div>
         </div>
+        <?php if ($authorTag = $this->options->authorTag): ?>
+            <ul class="flex flex-wrap gap-x-2 gap-y-2">
+                <?php foreach (explode(',', $authorTag) as $tag): ?>
+                <li class="bg-stone-200 rounded py-1 px-2 text-neutral-500 text-sm"><?php echo $tag; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
     </div>
     <div class="flex flex-col justify-start gap-x-3 border-b-2 border-stone-100 gap-y-4 pb-12 mt-4">
         <div class="flex flex-row items-center">
@@ -81,16 +91,16 @@
                 </li>
             <?php endif; ?>
             <?php if ($this->options->qq): ?>
-            <li class="flex flex-row items-center gap-x-2">
-                <iconify-icon icon="tabler:brand-qq" class="text-gray-800"></iconify-icon>
-                <span class="text-neutral-500 text-sm "><?php $this->options->qq(); ?></span>
-            </li>
+                <li class="flex flex-row items-center gap-x-2">
+                    <iconify-icon icon="tabler:brand-qq" class="text-gray-800"></iconify-icon>
+                    <span class="text-neutral-500 text-sm "><?php $this->options->qq(); ?></span>
+                </li>
             <?php endif; ?>
             <?php if ($this->options->location): ?>
-            <li class="flex flex-row items-center gap-x-2">
-                <iconify-icon icon="tabler:map-pin" class="text-gray-800"></iconify-icon>
-                <span class="text-neutral-500 text-sm "><?php $this->options->location(); ?></span>
-            </li>
+                <li class="flex flex-row items-center gap-x-2">
+                    <iconify-icon icon="tabler:map-pin" class="text-gray-800"></iconify-icon>
+                    <span class="text-neutral-500 text-sm "><?php $this->options->location(); ?></span>
+                </li>
             <?php endif; ?>
             <?php if ($this->options->email): ?>
                 <li class="flex flex-row items-center gap-x-2">

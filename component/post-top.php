@@ -5,7 +5,7 @@
 <?php
 $cids = getStickyPost();
 if (null != $cids): ?>
-    <div class="flex flex-wrap gap-y-12 border-y-2 border-stone-100">
+    <div class="flex flex-wrap gap-y-12 border-b-2 border-stone-100">
         <div class="w-1/2"></div>
         <div class="w-1/2"></div>
         <?php foreach ($cids as $cid): ?>

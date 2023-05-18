@@ -15,9 +15,9 @@
                 <?php $this->need("component/nav.php"); ?>
             </div>
         </div>
-        <div class="flex basis-8/12 flex-col border-x-2 border-stone-100 px-5">
+        <div class="flex basis-8/12 flex-col border-x-2 border-stone-100 p-5">
             <?php $this->need("component/menu.php"); ?>
-            <div class="flex flex-col border-t-2 border-stone-100 gap-y-12">
+            <div class="flex flex-col gap-y-12">
                 <div></div>
                 <?php $this->need("component/post-title.php"); ?>
                 <div class="markdown-body" itemprop="articleBody">
