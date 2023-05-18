@@ -21,9 +21,9 @@
 
 Jasmine 是 Typecho 的一款主题。专为博客类网站开发，在简洁的基础之上，尽量体现出精致与美观。主题整体采用响应式设计，在移动端也有不错体验。除此之外，主题也针对 SEO 、夜间模式、代码高亮等内容也进行了针对性优化，使其简洁但不简陋。
 
-> 如果觉得主题还不错，请帮忙点个 start 。
+> 如果觉得主题还不错，请帮忙点个 star 。
 > 
-> 您的 start 是这个项目维护下去的坚实动力。
+> 您的 star 是这个项目维护下去的坚实动力。
 > 
 > 欢迎进群交流主题、Typecho 等相关问题。 QQ 群：[539165194](https://qm.qq.com/cgi-bin/qm/qr?k=oXM0EmLxXmgKfE1UDRlBY-g7Rkrx30oL&jump_from=webapi&authKey=uQdwWraveNKYBm/BQs88WXkNagEUr9tCkf/gbdQ9FasOviKYVhUd/wUME0q0AtnI)
 
