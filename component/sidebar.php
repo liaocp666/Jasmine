@@ -9,7 +9,7 @@
             <img src="<?php echo getAvatarByMail($this->author->mail, true); ?>"
                  alt="<?php $this->author->screenName(); ?>"
                  alt="<?php $this->author->screenName(); ?>" width="50" height="50"
-                 class="rounded">
+                 class="rounded object-cover">
             <div class="flex flex-col justify-between">
                 <p><?php $this->author->screenName(); ?></p>
                 <p class="line-clamp-2 text-neutral-500 text-sm"><?php $this->options->authorRecommend(); ?></p>
