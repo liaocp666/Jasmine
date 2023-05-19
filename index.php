@@ -15,7 +15,7 @@
                 <?php $this->need("component/nav.php"); ?>
             </div>
         </div>
-        <div class="flex basis-full lg:basis-8/12 flex-col border-x-2 border-stone-100 lg:p-5 lg:px-5 py-2 px-3 pt-2">
+        <div class="flex basis-full lg:basis-8/12 flex-col border-x-2 border-stone-100 lg:pt-5 lg:px-6 py-2 px-3 pt-2">
             <?php $this->need("component/menu.php"); ?>
             <?php if ($this->is("index") && $this->_currentPage == 1): ?>
                 <?php $this->need("component/post-top.php"); ?>
