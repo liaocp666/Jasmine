@@ -12,7 +12,7 @@
             <span class="text-neutral-500 text-sm"><?php echo getHumanizedDate($this->created); ?></span>
         </div>
     </div>
-    <div class="flex markdown-body bg-stone-100 rounded p-5 relative" id="moment">
+    <div class="flex markdown-body !bg-stone-100 rounded p-5 relative" id="moment">
         <?php $this->content(); ?>
     </div>
 </div>

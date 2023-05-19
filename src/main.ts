@@ -1,22 +1,21 @@
 import "./style/tailwind.css";
 import "../node_modules/github-markdown-css";
 import "./style/style.css";
-
 import StickySidebar from "../node_modules/sticky-sidebar";
 
-const onScroll = () => {
-  const headerMenu = document.getElementById("header-menu") as HTMLFormElement;
-  if (window.scrollY > 0) {
-    // headerMenu.classList.add("!py-5");
-  } else {
-    // headerMenu.classList.remove("!py-5");
-  }
-};
-
-window.addEventListener("scroll", onScroll);
-
 window.onload = () => {
-  new StickySidebar("#sidebar-right", {
-    innerWrapperSelector: ".sidebar__right__inner",
-  });
+    new StickySidebar("#sidebar-right", {
+        innerWrapperSelector: ".sidebar__right__inner",
+    });
+
+    Array.from(document.getElementsByClassName("nav-li")).forEach((element:Element) => {
+        element.addEventListener('mouseover', () => {
+            const span:Element = element.getElementsByTagName("span")[0]
+            span.classList.add('!block')
+        })
+        element.addEventListener('mouseout', () => {
+            const span:Element = element.getElementsByTagName("span")[0]
+            span.classList.remove('!block')
+        })
+    })
 };
