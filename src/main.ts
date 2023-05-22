@@ -1,7 +1,22 @@
 import "./style/tailwind.css";
-import "../node_modules/github-markdown-css";
 import "./style/style.css";
 import StickySidebar from "../node_modules/sticky-sidebar";
+
+export function switchDark() {
+    if (localStorage.theme === 'light') {
+        localStorage.theme = 'dark'
+    } else if (localStorage.theme === 'dark') {
+        localStorage.theme = 'light'
+    } else {
+        localStorage.theme = 'light'
+    }
+}
+
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+} else {
+    document.documentElement.classList.remove('dark')
+}
 
 window.onload = () => {
     new StickySidebar("#sidebar-right", {

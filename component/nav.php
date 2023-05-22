@@ -28,10 +28,10 @@
     </ul>
     <ul class="flex flex-col flex-wrap content-center gap-y-2 dark:text-neutral-200">
         <li class="relative nav-li">
-            <a href="">
+            <button onclick="jasmine.switchDark()">
                 <iconify-icon icon="tabler:sun-moon"
                               class="rounded px-2 py-1 text-2xl hover:bg-black hover:text-white"></iconify-icon>
-            </a>
+            </button>
             <span class="bg-black text-white px-2 py-1 absolute w-full rounded top-0 left-[53px] w-max z-50"
                   style="display: none">
                     切换模式

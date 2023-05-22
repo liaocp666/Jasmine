@@ -2,7 +2,7 @@
   exit();
 } ?>
 <!DOCTYPE html>
-<html lang="zh" class="dark">
+<html lang="zh">
 <?php $this->need("header.php"); ?>
 <body class="bg-stone-100 dark:bg-[#0a0c19]">
 <div class="mx-auto md:max-w-[1200px]">
@@ -20,7 +20,7 @@
             <div class="flex flex-col gap-y-12">
                 <div></div>
                 <?php $this->need("component/post-title.php"); ?>
-                <div class="markdown-body dark:!bg-[#161829]" itemprop="articleBody">
+                <div class="markdown-body dark:!bg-[#161829] dark:!bg-[#0d1117] !text-neutral-900 dark:!text-neutral-200" itemprop="articleBody">
                     <?php $this->content(); ?>
                 </div>
                 <div class="flex flex-row gap-x-2 text-neutral-500" id="post-tag">

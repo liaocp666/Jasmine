@@ -2,7 +2,7 @@
   exit();
 } ?>
 <!DOCTYPE html>
-<html lang="zh" class="dark">
+<html lang="zh">
 <?php $this->need("header.php"); ?>
 <body class="bg-stone-100 dark:bg-[#0a0c19]">
 <div class="mx-auto md:max-w-[1200px]">
