@@ -10,8 +10,8 @@ export default defineConfig({
     emptyOutDir: true,
     lib: {
       entry: path.resolve(__dirname, "src/main.ts"),
-      name: "main",
-      fileName: "main",
+      name: "jasmine",
+      fileName: "jasmine",
       formats: ["iife"],
     },
   },

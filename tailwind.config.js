@@ -4,6 +4,5 @@ export default {
     theme: {
         extend: {},
     },
-    plugins: [],
-    safelist: ["bg-block"],
+    plugins: []
 };

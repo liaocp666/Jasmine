@@ -50,3 +50,12 @@
     position: absolute;
     top: -23px;
 }
+
+.dark #post-tag a {
+    background-color: #000;
+    color: #9f9f9f;
+}
+
+.dark #moment:after {
+    border-bottom-color: #0d1117;
+}

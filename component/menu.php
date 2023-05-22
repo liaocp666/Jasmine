@@ -2,8 +2,7 @@
     exit();
 } ?>
 
-<div id="header-menu" class="flex justify-between sticky top-0 border-b-2 border-stone-100 py-4 hidden lg:flex z-50"
-     style="background-color: rgb(255 255 255 / 90%);">
+<div id="header-menu" class="flex justify-between sticky top-0 border-b-2 border-stone-100 py-4 hidden lg:flex z-50 bg-[#ffffffe6] dark:bg-[#1b1d30cc] dark:text-neutral-300 dark:border-neutral-600">
     <ul class="nav flex items-center gap-x-3">
         <li>
             <a title="首页" href="<?php $this->options->siteUrl(); ?>"
@@ -41,8 +40,7 @@
     </ul>
 </div>
 
-<div id="header-menu-mobile" class="lg:hidden flex justify-between sticky top-0 border-b-2 border-stone-100 py-3 z-50"
-     style="background-color: rgb(255 255 255 / 90%);">
+<div id="header-menu-mobile" class="lg:hidden flex justify-between sticky top-0 border-b-2 border-stone-100 py-3 z-50 bg-[#ffffffe6] dark:bg-[#1b1d30cc] dark:text-neutral-300 dark:border-neutral-600">
     <ul class="nav flex items-center gap-x-3">
         <li>
             <?php $this->need("component/logo.php"); ?>

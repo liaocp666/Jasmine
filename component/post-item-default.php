@@ -4,15 +4,15 @@
 
 <div class="flex flex-row" itemscope itemtype="https://schema.org/NewsArticle">
     <div class="mr-3 flex flex-1 flex-col justify-between gap-y-3">
-        <h2 class="line-clamp-1 text-xl" itemprop="headline">
+        <h2 class="line-clamp-1 text-xl dark:text-neutral-200" itemprop="headline">
             <a href="<?php $this->permalink(); ?>"
                title="<?php $this->title(); ?>"><?php $this->title(); ?></a>
         </h2>
-        <p class="line-clamp-2 text-gray-700 text-neutral-500" itemprop="abstract">
+        <p class="line-clamp-2 text-gray-700 text-neutral-500 dark:dark:text-gray-400" itemprop="abstract">
             <a href="<?php $this->permalink(); ?>"
                title="<?php $this->title(); ?>"><?php $this->excerpt(500, ""); ?></a>
         </p>
-        <div>
+        <div class="dark:text-gray-400">
             <?php $this->category("·", true, "无"); ?>
             <span class="text-neutral-500"> · <?php echo getHumanizedDate($this->created); ?></span>
         </div>

@@ -8,14 +8,22 @@ window.onload = () => {
         innerWrapperSelector: ".sidebar__right__inner",
     });
 
-    Array.from(document.getElementsByClassName("nav-li")).forEach((element:Element) => {
+    Array.from(document.getElementsByClassName("nav-li")).forEach((element: Element) => {
         element.addEventListener('mouseover', () => {
-            const span:Element = element.getElementsByTagName("span")[0]
+            const span: Element = element.getElementsByTagName("span")[0]
             span.classList.add('!block')
         })
         element.addEventListener('mouseout', () => {
-            const span:Element = element.getElementsByTagName("span")[0]
+            const span: Element = element.getElementsByTagName("span")[0]
             span.classList.remove('!block')
         })
     })
 };
+
+/**
+ * 返回顶部
+ */
+export function backtop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
