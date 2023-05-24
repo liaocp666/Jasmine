@@ -10,13 +10,18 @@ export function switchDark() {
     } else {
         localStorage.theme = 'light'
     }
+    loadTheme()
 }
 
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-} else {
-    document.documentElement.classList.remove('dark')
+export function loadTheme() {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
 }
+
+loadTheme()
 
 window.onload = () => {
     new StickySidebar("#sidebar-right", {
@@ -42,3 +47,4 @@ export function backtop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+

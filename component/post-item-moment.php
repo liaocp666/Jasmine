@@ -8,7 +8,7 @@
              src="<?php echo getAvatarByMail($this->author->mail, true); ?>"
              alt="<?php $this->author->screenName(); ?>">
         <div class="flex flex-col justify-center">
-            <span><?php $this->author->screenName(); ?></span>
+            <span class="dark:text-neutral-200"><?php $this->author->screenName(); ?></span>
             <span class="text-neutral-500 text-sm"><?php echo getHumanizedDate($this->created); ?></span>
         </div>
     </div>
