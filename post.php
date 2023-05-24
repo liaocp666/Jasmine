@@ -20,14 +20,16 @@
             <div class="flex flex-col gap-y-12">
                 <div></div>
                 <?php $this->need("component/post-title.php"); ?>
-                <div class="markdown-body dark:!bg-[#161829] dark:!bg-[#0d1117] !text-neutral-900 dark:!text-neutral-200" itemprop="articleBody">
+                <div class="markdown-body dark:!bg-[#161829] dark:!bg-[#0d1117] !text-neutral-900 dark:!text-gray-400" itemprop="articleBody">
                     <?php $this->content(); ?>
                 </div>
                 <div class="flex flex-row gap-x-2 text-neutral-500" id="post-tag">
                     <?php $this->tags(" ", true, ""); ?>
                 </div>
-                <div class="border-x-2 border-stone-100"></div>
-                <div></div>
+                <div class="border-b-2 border-stone-100 dark:border-neutral-600"></div>
+                <div>
+                    <?php $this->need('comments.php'); ?>
+                </div>
             </div>
         </div>
         <div class="hidden lg:basis-3/12 lg:block" id="sidebar-right">
