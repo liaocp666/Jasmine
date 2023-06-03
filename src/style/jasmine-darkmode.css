@@ -176,3 +176,7 @@ body.darkmode-active {
 .darkmode-active .shuoshuo-meta-time {
     color: #a5a9c3;
 }
+
+body.darkmode-active #search-input {
+    color: #dedede;
+}
