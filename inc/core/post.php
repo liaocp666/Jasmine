@@ -41,6 +41,7 @@ function getArchives($widget)
     foreach ($rows as $row) {
         $row = $widget->filter($row);
         $arr = array(
+            'cid' => $row['cid'],
             'title' => $row['title'],
             'permalink' => $row['permalink']
         );
