@@ -2,7 +2,7 @@
     exit();
 } ?>
 
-<div id="header-menu" class="sticky top-0 border-b border-stone-100 lg:py-5 bg-[#ffffffe6] dark:bg-[#1b1d30cc] z-[999] dark:border-neutral-600">
+<div id="header-menu" class="sticky top-0 border-b-2 border-stone-100 lg:py-5 bg-[#ffffffe6] dark:bg-[#1b1d30cc] z-[999] dark:border-neutral-600">
     <div id="header-menu-wrap" class="flex justify-between hidden lg:flex z-50 dark:text-neutral-300">
         <ul class="nav flex items-center gap-x-3">
             <li>
@@ -41,7 +41,7 @@
                         <iconify-icon icon="tabler:search"
                                     class="rounded px-1 text-lg"></iconify-icon>
                     </button>
-                    <input class="my-2 w-0 focus:w-32 bg-transparent" itemprop="query-input" id="search-input" type="text" name="s" required="true" autocomplete="off" placeholder="Search">
+                    <input class="transition-all duration-300 my-2 w-0 focus:w-32 bg-transparent" itemprop="query-input" id="search-input" type="text" name="s" required="true" autocomplete="off" placeholder="Search">
                     </label>
                 </form>
             </li>
@@ -107,10 +107,5 @@
                             ? "_blank"
                             : "_self"; ?>" title="<?php echo $menu["name"]; ?>">
                             <?php echo $menu["name"]; ?>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </ul>
-    </div>
+                        </a>border-b
 </div>
