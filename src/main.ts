@@ -2,10 +2,16 @@ import "./style/tailwind.css";
 import "./style/style.css";
 import StickySidebar from "../node_modules/sticky-sidebar";
 
+/**
+ * 点击搜索
+ */
 export function clickSearch () {
     document.getElementById('search-input')?.blur();
 }
 
+/**
+ * 切换暗黑模式
+ */
 export function switchDark() {
     if (localStorage.theme === 'light') {
         localStorage.theme = 'dark'
@@ -17,6 +23,9 @@ export function switchDark() {
     loadTheme()
 }
 
+/**
+ * 加载主题
+ */
 export function loadTheme() {
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark')
@@ -42,6 +51,10 @@ window.onload = () => {
             span.classList.remove('!block')
         })
     })
+
+    document.querySelector("#mobile-menus-bg")?.addEventListener("click", () => {
+        toggleMobileMenu()
+    })
 };
 
 /**
@@ -52,3 +65,17 @@ export function backtop() {
     document.documentElement.scrollTop = 0;
 }
 
+/**
+ * 切换移动端菜单
+ */
+export function toggleMobileMenu() {
+    const isHide: boolean = document.querySelector("#mobile-menus")!.classList.contains('!translate-x-0')
+    console.log('isHide', isHide)
+    if (isHide) {
+        document.querySelector("#mobile-menus-bg")?.classList.remove("!translate-x-0")
+        document.querySelector("#mobile-menus")?.classList.remove("!translate-x-0")
+    } else {
+        document.querySelector("#mobile-menus-bg")?.classList.add("!translate-x-0")
+        document.querySelector("#mobile-menus")?.classList.add("!translate-x-0")
+    }
+}

@@ -69,10 +69,48 @@
             </button>
         </li>
         <li>
-            <button>
+            <button onclick="jasmine.toggleMobileMenu()">
                 <iconify-icon icon="tabler:menu-2"
                               class="rounded px-3 py-2 text-lg hover:bg-black hover:text-white hover:shadow-lg"></iconify-icon>
             </button>
         </li>
     </ul>
+</div>
+
+<div id="mobile-menus-bg" class="fixed top-0 left-0 z-[999] bg-gray-500/50 w-full min-h-screen translate-x-[1000px]"></div>
+<div id="mobile-menus" class="fixed top-0 left-0 z-[1000] translate-x-[1000px] w-4/5">
+    <div class="bg-stone-100 min-h-screen flex flex-col gap-y-14 px-5 pt-14">
+        <ul class="flex flex-col items-center gap-y-3">
+            <li class="bg-white rounded w-full">
+                <a title="首页" href="<?php $this->options->siteUrl(); ?>"
+                class="w-full block px-4 py-2">首页</a>
+            </li>
+            <?php $this->widget("Jasmine_Meta_Row")->to($categorys); ?>
+            <?php if ($categorys->have()): ?>
+                <?php while ($categorys->next()): ?>
+                    <li class="bg-white rounded w-full">
+                        <a href="<?php $categorys->permalink(); ?>"
+                        title="<?php $categorys->name(); ?>"
+                        class="w-full block px-4 py-2">
+                            <?php $categorys->name(); ?>
+                        </a>
+                    </li>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </ul>
+        <ul class="flex flex-col items-center gap-y-3 w-full">
+            <?php $menus = getLeftSidebarMenu(); ?>
+            <?php if (!empty($menus)): ?>
+                <?php foreach ($menus as $menu): ?>
+                    <li class="bg-white rounded w-full">
+                        <a class="w-full block px-4 py-2" href="<?php echo $menu["url"]; ?>" target="<?php echo $menu["newTab"]
+                            ? "_blank"
+                            : "_self"; ?>" title="<?php echo $menu["name"]; ?>">
+                            <?php echo $menu["name"]; ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </ul>
+    </div>
 </div>
