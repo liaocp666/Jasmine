@@ -2,7 +2,7 @@
     exit();
 } ?>
 
-<div id="header-menu" class="sticky top-0 border-b border-stone-100 py-5 bg-[#ffffffe6] dark:bg-[#1b1d30cc] z-[999] dark:border-neutral-600">
+<div id="header-menu" class="sticky top-0 border-b border-stone-100 lg:py-5 bg-[#ffffffe6] dark:bg-[#1b1d30cc] z-[999] dark:border-neutral-600">
     <div id="header-menu-wrap" class="flex justify-between hidden lg:flex z-50 dark:text-neutral-300">
         <ul class="nav flex items-center gap-x-3">
             <li>
