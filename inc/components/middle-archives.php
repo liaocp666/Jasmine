@@ -72,6 +72,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                                 echo '<h2 class="archive-year title fs-4">' . $year . ' 年</h2>';
                                 echo '<ol id="archive-list-' . $year . '" class="archive-list' . $open . '">';
                                 foreach ($posts as $created => $post) {
+                                    if (isShuoShuoType($post['cid'])) {
+                                        continue;
+                                    }
                                     echo '<li class="archive-item"><a href="' . $post['permalink'] . '" class="no-line">
 				<span class="archive-date">' . date('m-d', $created) . '</span> · 
 				' . $post['title'] . '
