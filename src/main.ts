@@ -71,10 +71,10 @@ export function backtop() {
 export function toggleMobileMenu() {
     const isHide: boolean = document.querySelector("#mobile-menus")!.classList.contains('!translate-x-0')
     if (isHide) {
-        document.querySelector("#mobile-menus-bg")?.classList.remove("!translate-x-0")
+        document.querySelector("#mobile-menus-bg")?.classList.add("hidden")
         document.querySelector("#mobile-menus")?.classList.remove("!translate-x-0")
     } else {
-        document.querySelector("#mobile-menus-bg")?.classList.add("!translate-x-0")
+        document.querySelector("#mobile-menus-bg")?.classList.remove("hidden")
         document.querySelector("#mobile-menus")?.classList.add("!translate-x-0")
     }
 }
