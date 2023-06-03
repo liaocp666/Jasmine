@@ -58,3 +58,7 @@
 #comments .comment-level-odd .comment-children {
     padding-left: 0;
 }
+
+#comments .comment-content img {
+    max-width: 100%;
+}
