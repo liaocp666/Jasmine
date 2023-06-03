@@ -4,7 +4,7 @@
 
 <div class="sidebar__right__inner flex flex-col px-5 gap-y-8">
     <div></div>
-    <div class="flex flex-col gap-y-5 border-b-2 border-stone-100 dark:border-neutral-600 pb-10">
+    <div class="flex flex-col gap-y-5 border-b border-stone-100 dark:border-neutral-600 pb-10">
         <div class="flex gap-x-3">
             <img src="<?php echo getAvatarByMail($this->author->mail, true); ?>"
                  alt="<?php $this->author->screenName(); ?>"
@@ -23,7 +23,7 @@
             </ul>
         <?php endif; ?>
     </div>
-    <div class="flex flex-col justify-start gap-x-3 border-b-2 border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
+    <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
         <div class="flex flex-row items-center dark:text-neutral-200">
             <iconify-icon icon="tabler:chart-bar" class="rounded pr-1 text-xl font-medium"></iconify-icon>
             <span class="font-medium">热门文章</span>
@@ -41,7 +41,7 @@
             <?php endif; ?>
         </ul>
     </div>
-    <div class="flex flex-col justify-start gap-x-3 border-b-2 border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
+    <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
         <div class="flex flex-row items-center dark:text-neutral-200">
             <iconify-icon icon="tabler:message" class="rounded pr-1 text-xl font-medium"></iconify-icon>
             <span class="font-medium">最新评论</span>
@@ -60,7 +60,7 @@
             <?php endif; ?>
         </ul>
     </div>
-    <div class="flex flex-col justify-start gap-x-3 border-b-2 border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
+    <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
         <div class="flex flex-row items-center dark:text-neutral-200">
             <iconify-icon icon="tabler:bookmarks" class="rounded pr-1 text-xl font-medium"></iconify-icon>
             <span class="font-medium">热门标签</span>

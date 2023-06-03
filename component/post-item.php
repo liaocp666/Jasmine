@@ -2,7 +2,7 @@
   exit();
 } ?>
 
-<div class="mx-1 flex flex-col gap-y-12 pb-12 border-b-2 border-stone-100 dark:border-neutral-600">
+<div class="mx-1 flex flex-col gap-y-12 pb-12 border-b border-stone-100 dark:border-neutral-600">
     <div></div>
     <?php while ($this->next()): ?>
         <?php if (isShuoShuoType($this->cid)): ?>

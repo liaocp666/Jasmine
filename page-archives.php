@@ -22,7 +22,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
             </div>
         </div>
         <div
-            class="flex basis-full lg:basis-8/12 flex-col border-x-2 border-stone-100 dark:border-neutral-600 lg:pt-5 lg:px-6 pb-10 px-3">
+            class="flex basis-full lg:basis-8/12 flex-col border-x-2 border-stone-100 dark:border-neutral-600 lg:pt-0 lg:px-6 pb-10 px-3">
             <?php $this->need("component/menu.php"); ?>
             <div class="flex flex-col gap-y-12">
                 <div></div>
