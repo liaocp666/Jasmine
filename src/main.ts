@@ -2,6 +2,10 @@ import "./style/tailwind.css";
 import "./style/style.css";
 import StickySidebar from "../node_modules/sticky-sidebar";
 
+export function clickSearch () {
+    document.getElementById('search-input')?.blur();
+}
+
 export function switchDark() {
     if (localStorage.theme === 'light') {
         localStorage.theme = 'dark'

@@ -5,6 +5,10 @@
     color: #fff;
 }
 
+#search-input:focus-visible {
+    outline: none;
+}
+
 .middotDivider {
     content: "\00B7";
 }
