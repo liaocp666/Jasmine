@@ -107,5 +107,10 @@
                             ? "_blank"
                             : "_self"; ?>" title="<?php echo $menu["name"]; ?>">
                             <?php echo $menu["name"]; ?>
-                        </a>border-b
+                        </a>
+                        </li>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </ul>
+    </div>
 </div>
