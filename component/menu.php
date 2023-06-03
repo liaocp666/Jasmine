@@ -41,7 +41,7 @@
                         <iconify-icon icon="tabler:search"
                                     class="rounded px-1 text-lg"></iconify-icon>
                     </button>
-                    <input class="my-2 w-0 focus:w-32" itemprop="query-input" id="search-input" type="text" name="s" required="true" autocomplete="off" placeholder="Search">
+                    <input class="my-2 w-0 focus:w-32 bg-transparent" itemprop="query-input" id="search-input" type="text" name="s" required="true" autocomplete="off" placeholder="Search">
                     </label>
                 </form>
             </li>
