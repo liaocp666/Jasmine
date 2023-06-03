@@ -77,8 +77,8 @@
     </ul>
 </div>
 
-<div id="mobile-menus-bg" class="fixed top-0 left-0 z-[999] bg-gray-500/50 w-full min-h-screen translate-x-[1000px]"></div>
-<div id="mobile-menus" class="fixed top-0 left-0 z-[1000] translate-x-[1000px] w-4/5">
+<div id="mobile-menus-bg" class="lg:hidden fixed top-0 left-0 z-[999] bg-gray-500/50 w-full min-h-screen translate-x-[1000px]"></div>
+<div id="mobile-menus" class="lg:hidden fixed top-0 left-0 z-[1000] translate-x-[1000px] w-4/5">
     <div class="bg-stone-100 min-h-screen flex flex-col gap-y-14 px-5 pt-14">
         <ul class="flex flex-col items-center gap-y-3">
             <li class="bg-white rounded w-full">

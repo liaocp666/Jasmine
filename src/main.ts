@@ -70,7 +70,6 @@ export function backtop() {
  */
 export function toggleMobileMenu() {
     const isHide: boolean = document.querySelector("#mobile-menus")!.classList.contains('!translate-x-0')
-    console.log('isHide', isHide)
     if (isHide) {
         document.querySelector("#mobile-menus-bg")?.classList.remove("!translate-x-0")
         document.querySelector("#mobile-menus")?.classList.remove("!translate-x-0")
