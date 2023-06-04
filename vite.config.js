@@ -7,7 +7,7 @@ import prismjs from "vite-plugin-prismjs";
 export default defineConfig({
   plugins: [
     prismjs({
-      languages: ["Java", "JavaScript", "CSS", "PHP", "Markup", "SQL", "C", "C#", "C++", "YAML", "JSON"],
+      languages: ["java", "javascript", "css", "php", "markup", "sql", "c", "c#", "yaml", "json"],
       plugins: ["line-numbers", "show-language", "copy-to-clipboard"],
       theme: "default",
       css: true,
