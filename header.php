@@ -58,7 +58,9 @@
     <link rel="icon" type="image/ico" href="<?php $this->options->siteUrl(); ?>favicon.ico">
     <?php $this->header("description=&generator=&pingback=&template=&xmlrpc=&wlw=&commentReply=&keywords="); ?>
     <link rel="dns-prefetch" href="https://npm.elemecdn.com" />
-    <link type="text/css" rel="stylesheet" href="<?php $this->options->themeUrl("assets/dist/style.css?v=" . getThemeVersion()); ?>"/>
+    <link type="text/css" rel="stylesheet" href="<?php $this->options->themeUrl(
+      "assets/dist/style.css?v=" . getThemeVersion()
+    ); ?>"/>
     <script src="https://cdn.staticfile.org/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
     <script src="https://npm.elemecdn.com/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
     <script src="<?php $this->options->themeUrl("/assets/dist/jasmine.iife.js?v=" . getThemeVersion()); ?>"></script>

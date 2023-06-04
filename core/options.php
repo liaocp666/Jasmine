@@ -70,7 +70,7 @@ function themeConfig($form)
   );
   $form->addInput($stickyPost);
 
-/*   $pjaxLoadPage = new Radio(
+  /*   $pjaxLoadPage = new Radio(
     "pjaxLoadPage",
     [
       "0" => _t("关闭"),
