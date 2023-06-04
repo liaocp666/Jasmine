@@ -285,7 +285,7 @@
     cursor: pointer;
 }
 
-.markdown-body details:not([open]) > *:not(summary) {
+.markdown-body details:not([open])>*:not(summary) {
     display: none !important;
 }
 
@@ -452,11 +452,11 @@
     content: "";
 }
 
-.markdown-body > *:first-child {
+.markdown-body>*:first-child {
     margin-top: 0 !important;
 }
 
-.markdown-body > *:last-child {
+.markdown-body>*:last-child {
     margin-bottom: 0 !important;
 }
 
@@ -492,11 +492,11 @@
     margin-bottom: 16px;
 }
 
-.markdown-body blockquote > :first-child {
+.markdown-body blockquote> :first-child {
     margin-top: 0;
 }
 
-.markdown-body blockquote > :last-child {
+.markdown-body blockquote> :last-child {
     margin-bottom: 0;
 }
 
@@ -595,7 +595,7 @@
     list-style-type: decimal;
 }
 
-.markdown-body div > ol:not([type]) {
+.markdown-body div>ol:not([type]) {
     list-style-type: decimal;
 }
 
@@ -607,11 +607,11 @@
     margin-bottom: 0;
 }
 
-.markdown-body li > p {
+.markdown-body li>p {
     margin-top: 16px;
 }
 
-.markdown-body li + li {
+.markdown-body li+li {
     margin-top: .25em;
 }
 
@@ -674,7 +674,7 @@
     overflow: hidden;
 }
 
-.markdown-body span.frame > span {
+.markdown-body span.frame>span {
     display: block;
     float: left;
     width: auto;
@@ -702,7 +702,7 @@
     clear: both;
 }
 
-.markdown-body span.align-center > span {
+.markdown-body span.align-center>span {
     display: block;
     margin: 13px auto 0;
     overflow: hidden;
@@ -720,7 +720,7 @@
     clear: both;
 }
 
-.markdown-body span.align-right > span {
+.markdown-body span.align-right>span {
     display: block;
     margin: 13px 0 0;
     overflow: hidden;
@@ -750,7 +750,7 @@
     overflow: hidden;
 }
 
-.markdown-body span.float-right > span {
+.markdown-body span.float-right>span {
     display: block;
     margin: 13px auto 0;
     overflow: hidden;
@@ -784,7 +784,7 @@
     font-size: 100%;
 }
 
-.markdown-body pre > code {
+.markdown-body pre>code {
     padding: 0;
     margin: 0;
     word-break: normal;
@@ -808,7 +808,7 @@
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f6f8fa;
+    background-color: #f6f8fa !important;
     border-radius: 6px;
 }
 
@@ -1048,7 +1048,7 @@
     cursor: pointer;
 }
 
-.markdown-body .task-list-item + .task-list-item {
+.markdown-body .task-list-item+.task-list-item {
     margin-top: 4px;
 }
 
@@ -1294,7 +1294,7 @@
     cursor: pointer;
 }
 
-.dark .markdown-body details:not([open]) > *:not(summary) {
+.dark .markdown-body details:not([open])>*:not(summary) {
     display: none !important;
 }
 
@@ -1461,11 +1461,11 @@
     content: "";
 }
 
-.dark .markdown-body > *:first-child {
+.dark .markdown-body>*:first-child {
     margin-top: 0 !important;
 }
 
-.dark .markdown-body > *:last-child {
+.dark .markdown-body>*:last-child {
     margin-bottom: 0 !important;
 }
 
@@ -1501,11 +1501,11 @@
     margin-bottom: 16px;
 }
 
-.dark .markdown-body blockquote > :first-child {
+.dark .markdown-body blockquote> :first-child {
     margin-top: 0;
 }
 
-.dark .markdown-body blockquote > :last-child {
+.dark .markdown-body blockquote> :last-child {
     margin-bottom: 0;
 }
 
@@ -1604,7 +1604,7 @@
     list-style-type: decimal;
 }
 
-.dark .markdown-body div > ol:not([type]) {
+.dark .markdown-body div>ol:not([type]) {
     list-style-type: decimal;
 }
 
@@ -1616,11 +1616,11 @@
     margin-bottom: 0;
 }
 
-.dark .markdown-body li > p {
+.dark .markdown-body li>p {
     margin-top: 16px;
 }
 
-.dark .markdown-body li + li {
+.dark .markdown-body li+li {
     margin-top: .25em;
 }
 
@@ -1683,7 +1683,7 @@
     overflow: hidden;
 }
 
-.dark .markdown-body span.frame > span {
+.dark .markdown-body span.frame>span {
     display: block;
     float: left;
     width: auto;
@@ -1711,7 +1711,7 @@
     clear: both;
 }
 
-.dark .markdown-body span.align-center > span {
+.dark .markdown-body span.align-center>span {
     display: block;
     margin: 13px auto 0;
     overflow: hidden;
@@ -1729,7 +1729,7 @@
     clear: both;
 }
 
-.dark .markdown-body span.align-right > span {
+.dark .markdown-body span.align-right>span {
     display: block;
     margin: 13px 0 0;
     overflow: hidden;
@@ -1759,7 +1759,7 @@
     overflow: hidden;
 }
 
-.dark .markdown-body span.float-right > span {
+.dark .markdown-body span.float-right>span {
     display: block;
     margin: 13px auto 0;
     overflow: hidden;
@@ -1793,7 +1793,7 @@
     font-size: 100%;
 }
 
-.dark .markdown-body pre > code {
+.dark .markdown-body pre>code {
     padding: 0;
     margin: 0;
     word-break: normal;
@@ -1815,9 +1815,9 @@
 .dark .markdown-body pre {
     padding: 16px;
     overflow: auto;
-    font-size: 85%;
+    font-size: 100%;
     line-height: 1.45;
-    background-color: #161b22;
+    background-color: #161b22 !important;
     border-radius: 6px;
 }
 
@@ -2057,7 +2057,7 @@
     cursor: pointer;
 }
 
-.dark .markdown-body .task-list-item + .task-list-item {
+.dark .markdown-body .task-list-item+.task-list-item {
     margin-top: 4px;
 }
 
@@ -2089,4 +2089,19 @@
 
 .dark .markdown-body ::-webkit-calendar-picker-indicator {
     filter: invert(50%);
+}
+
+/* 代码高亮 */
+code[class*=language-],
+pre[class*=language-] {
+    text-shadow: none !important;
+    color: inherit !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    background: hsla(0, 0%, 100%, 0) !important;
 }

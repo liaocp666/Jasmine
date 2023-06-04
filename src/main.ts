@@ -1,6 +1,7 @@
 import "./style/tailwind.css";
 import "./style/style.css";
 import StickySidebar from "../node_modules/sticky-sidebar";
+import Prism from "prismjs";
 
 /**
  * 点击搜索
@@ -35,6 +36,7 @@ export function loadTheme() {
 }
 
 loadTheme()
+Prism.highlightAll()
 
 window.onload = () => {
     new StickySidebar("#sidebar-right", {
