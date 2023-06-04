@@ -1,5 +1,5 @@
 <?php if (!defined("__TYPECHO_ROOT_DIR__")) {
-    exit();
+  exit();
 } ?>
 
 <?php $menus = getLeftSidebarMenu(); ?>
@@ -9,8 +9,8 @@
         <?php foreach ($menus as $menu): ?>
             <li class="relative nav-li">
                 <a href="<?php echo $menu["url"]; ?>" target="<?php echo $menu["newTab"]
-                    ? "_blank"
-                    : "_self"; ?>" title="<?php echo $menu["name"]; ?>">
+  ? "_blank"
+  : "_self"; ?>" title="<?php echo $menu["name"]; ?>">
                     <iconify-icon icon="<?php echo $menu["icon"]; ?>"
                                   class="rounded px-3 py-2 text-2xl hover:bg-black hover:text-white hover:shadow-lg"></iconify-icon>
                 </a>

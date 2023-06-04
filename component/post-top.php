@@ -1,5 +1,5 @@
 <?php if (!defined("__TYPECHO_ROOT_DIR__")) {
-    exit();
+  exit();
 } ?>
 
 <?php
@@ -37,4 +37,5 @@ if (null != $cids): ?>
         <div class="w-1/2"></div>
     </div>
 <?php endif;
+
 ?>

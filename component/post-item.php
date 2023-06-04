@@ -6,9 +6,9 @@
     <div></div>
     <?php while ($this->next()): ?>
         <?php if (isShuoShuoType($this->cid)): ?>
-            <?php $this->need('component/post-item-moment.php'); ?>
+            <?php $this->need("component/post-item-moment.php"); ?>
         <?php else: ?>
-            <?php $this->need('component/post-item-default.php'); ?>
+            <?php $this->need("component/post-item-default.php"); ?>
         <?php endif; ?>
     <?php endwhile; ?>
 </div>

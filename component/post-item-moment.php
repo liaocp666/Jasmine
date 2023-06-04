@@ -1,5 +1,5 @@
 <?php if (!defined("__TYPECHO_ROOT_DIR__")) {
-    exit();
+  exit();
 } ?>
 
 <div class="flex flex-col gap-y-3" itemscope itemtype="https://schema.org/NewsArticle">

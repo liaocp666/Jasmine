@@ -1,5 +1,5 @@
 <?php if (!defined("__TYPECHO_ROOT_DIR__")) {
-    exit();
+  exit();
 } ?>
 
 <div class="flex flex-row" itemscope itemtype="https://schema.org/NewsArticle">

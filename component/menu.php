@@ -1,5 +1,5 @@
 <?php if (!defined("__TYPECHO_ROOT_DIR__")) {
-    exit();
+  exit();
 } ?>
 
 <div id="header-menu" class="hidden lg:block sticky top-0 border-b border-stone-100 lg:py-5 bg-[#ffffffe6] dark:bg-[#1b1d30cc] z-[999] dark:border-neutral-600">
@@ -8,7 +8,7 @@
             <li>
                 <a title="首页" href="<?php $this->options->siteUrl(); ?>"
                 class="<?php if ($this->is("index")) {
-                    echo "active";
+                  echo "active";
                 } ?> rounded-full px-4 py-2">首页</a>
             </li>
             <?php $this->widget("Jasmine_Meta_Row")->to($categorys); ?>
@@ -18,8 +18,8 @@
                         <a href="<?php $categorys->permalink(); ?>"
                         title="<?php $categorys->name(); ?>"
                         class="<?php echo isActiveMenu(
-                            $this,
-                            $categorys->slug
+                          $this,
+                          $categorys->slug
                         ); ?> rounded-full px-4 py-2 hover:bg-black hover:text-white hover:shadow-lg">
                             <?php $categorys->name(); ?>
                         </a>
@@ -105,9 +105,11 @@
             <?php if (!empty($menus)): ?>
                 <?php foreach ($menus as $menu): ?>
                     <li class="bg-white rounded w-full dark:bg-gray-700 dark:text-neutral-200">
-                        <a class="w-full block px-4 py-2" href="<?php echo $menu["url"]; ?>" target="<?php echo $menu["newTab"]
-                            ? "_blank"
-                            : "_self"; ?>" title="<?php echo $menu["name"]; ?>">
+                        <a class="w-full block px-4 py-2" href="<?php echo $menu["url"]; ?>" target="<?php echo $menu[
+  "newTab"
+]
+  ? "_blank"
+  : "_self"; ?>" title="<?php echo $menu["name"]; ?>">
                             <?php echo $menu["name"]; ?>
                         </a>
                         </li>

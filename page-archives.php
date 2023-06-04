@@ -5,7 +5,7 @@
  * @package custom
  */
 if (!defined("__TYPECHO_ROOT_DIR__")) {
-    exit();
+  exit();
 } ?>
 <!DOCTYPE html>
 <html lang="zh">
@@ -36,7 +36,8 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                     </div>
                 </div>
                 <div class="flex px-3">
-                    <?php $this->widget('Widget_Metas_Tag_Cloud', 'sort=mid&ignoreZeroCount=1&desc=0')->to($tags);
+                    <?php
+                    $this->widget("Widget_Metas_Tag_Cloud", "sort=mid&ignoreZeroCount=1&desc=0")->to($tags);
                     if ($tags->have()): ?>
                         <ul class="flex flex-row flex-wrap gap-y-6 gap-x-8">
                             <?php while ($tags->next()): ?>
@@ -50,7 +51,8 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                                 </li>
                             <?php endwhile; ?>
                         </ul>
-                    <?php endif; ?>
+                    <?php endif;
+                    ?>
                 </div>
                 <div class="mx-1 flex flex-col">
                     <div></div>
@@ -63,7 +65,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                     </div>
                 </div>
                 <div class="flex px-3">
-                    <?php $this->widget('Widget_Metas_Category_List')->to($categories); ?>
+                    <?php $this->widget("Widget_Metas_Category_List")->to($categories); ?>
                     <?php if ($categories->have()): ?>
                         <ul class="flex flex-row flex-wrap gap-y-6 gap-x-8">
                             <?php while ($categories->next()): ?>
@@ -94,18 +96,25 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                     $archives = getArchives($this);
                     $number = 0;
                     foreach ($archives as $year => $posts) {
-                        $open = ($number === 0) ? NULL : ' closed';
-                        echo '<h2 class="archive-year title text-2xl my-2">' . $year . ' 年</h2>';
-                        echo '<ol id="flex flex-col archive-list-' . $year . '" class="archive-list' . $open . '">';
-                        foreach ($posts as $created => $post) {
-                            echo '<li class="archive-item py-1"><a href="' . $post['permalink'] . '" class="no-line">
-				<span class="archive-date">' . date('m-d', $created) . '</span> · 
-				' . $post['title'] . '
+                      $open = $number === 0 ? null : " closed";
+                      echo '<h2 class="archive-year title text-2xl my-2">' . $year . " 年</h2>";
+                      echo '<ol id="flex flex-col archive-list-' . $year . '" class="archive-list' . $open . '">';
+                      foreach ($posts as $created => $post) {
+                        echo '<li class="archive-item py-1"><a href="' .
+                          $post["permalink"] .
+                          '" class="no-line">
+				<span class="archive-date">' .
+                          date("m-d", $created) .
+                          '</span> · 
+				' .
+                          $post["title"] .
+                          '
 				</a></li>';
-                        }
-                        echo '</ol>';
-                        $number++;
-                    } ?>
+                      }
+                      echo "</ol>";
+                      $number++;
+                    }
+                    ?>
                 </div>
             </div>
         </div>

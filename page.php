@@ -28,7 +28,7 @@
                 </div>
                 <div class="border-b-2 border-stone-100 dark:border-neutral-600"></div>
                 <div>
-                    <?php $this->need('comments.php'); ?>
+                    <?php $this->need("comments.php"); ?>
                 </div>
             </div>
         </div>

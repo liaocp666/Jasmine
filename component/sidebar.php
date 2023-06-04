@@ -1,5 +1,5 @@
 <?php if (!defined("__TYPECHO_ROOT_DIR__")) {
-    exit();
+  exit();
 } ?>
 
 <div class="sidebar__right__inner flex flex-col px-5 gap-y-8">
@@ -17,7 +17,7 @@
         </div>
         <?php if ($authorTag = $this->options->authorTag): ?>
             <ul class="flex flex-wrap gap-x-2 gap-y-2">
-                <?php foreach (explode(',', $authorTag) as $tag): ?>
+                <?php foreach (explode(",", $authorTag) as $tag): ?>
                 <li class="bg-stone-200 rounded py-1 px-2 text-neutral-500 text-sm dark:bg-black dark:text-neutral-400"><?php echo $tag; ?></li>
                 <?php endforeach; ?>
             </ul>
