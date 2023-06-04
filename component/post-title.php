@@ -10,10 +10,10 @@
                 <?php $this->title(); ?>
             </h1>
             <div class="dark:text-gray-400">
-                <?php if($this->is('post')): ?>
+                <?php if ($this->is("post")): ?>
                     <?php $this->category("·", true, "无"); ?>
                     <span class="text-neutral-500"> · </span>
-                <?php endif ?>
+                <?php endif; ?>
                 <span class="text-neutral-500"><?php echo getHumanizedDate($this->created); ?></span>
             </div>
             <span class="hidden" itemprop="author" itemscope itemtype="https://schema.org/Person">

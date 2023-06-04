@@ -31,11 +31,11 @@
 }
 
 .dark #page-nav {
-    color: rgb(229, 229, 229);
+  color: rgb(229, 229, 229);
 }
 
 .dark #page-nav a {
-    background-color: rgb(229, 229, 229);
+  background-color: rgb(229, 229, 229);
 }
 
 .markdown-body {
@@ -2113,4 +2113,3 @@ pre[class*="language-"] {
 .style .token.string {
   background: hsla(0, 0%, 100%, 0) !important;
 }
-
