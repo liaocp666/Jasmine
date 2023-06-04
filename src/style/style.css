@@ -404,6 +404,10 @@
   padding-left: 2em;
 }
 
+.markdown-body li {
+  list-style: inherit !important;
+}
+
 .markdown-body ol ol,
 .markdown-body ul ol {
   list-style-type: lower-roman;
