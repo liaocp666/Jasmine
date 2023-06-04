@@ -40,6 +40,7 @@ export function loadTheme() {
 
 loadTheme();
 Prism.highlightAll();
+console.log('%c Jasmine ','background:#000;color:#fff','https://www.liaocp.cn/',);
 
 window.onload = () => {
   new StickySidebar("#sidebar-right", {
