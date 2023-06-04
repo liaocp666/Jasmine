@@ -5,13 +5,16 @@
 <div class="mx-1 flex flex-col">
     <div></div>
     <div class="flex flex-row" itemscope itemtype="https://schema.org/NewsArticle">
-        <div class="mr-3 flex flex-1 flex-col justify-center gap-y-3">
+        <div class="mr-3 flex flex-1 flex-col justify-center gap-y-5">
             <h1 class="text-2xl font-semibold dark:text-neutral-200" itemprop="headline">
                 <?php $this->title(); ?>
             </h1>
             <div class="dark:text-gray-400">
-                <?php $this->category("·", true, "无"); ?>
-                <span class="text-neutral-500"> · <?php echo getHumanizedDate($this->created); ?></span>
+                <?php if($this->is('post')): ?>
+                    <?php $this->category("·", true, "无"); ?>
+                    <span class="text-neutral-500"> · </span>
+                <?php endif ?>
+                <span class="text-neutral-500"><?php echo getHumanizedDate($this->created); ?></span>
             </div>
             <span class="hidden" itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <meta itemprop="url" content="<?php $this->author->permalink(); ?>"/>
