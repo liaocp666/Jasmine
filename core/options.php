@@ -19,11 +19,11 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
  */
 function themeConfig($form)
 {
-  echo '<div class="update-check message success"><h2>欢迎使用 Jasmine ！</h2><br/><a href="https://github.com/liaocp666/Jasmine" target="_blank">主题仓库</a> | <a href="https://github.com/liaocp666/Jasmine#%E4%B8%BB%E9%A2%98%E6%96%87%E6%A1%A3" target="_blank">主题文档</a></div>';
+  echo '<div class="update-check message success"><h2>欢迎使用 Jasmine ！</h2><br/><a href="https://github.com/liaocp666/Jasmine" target="_blank">主题仓库</a> | <a href="https://www.liaocp.cn/archives/272.html" target="_blank">主题文档</a></div>';
 
   echo '<br/><div id="jasmine-check-update" class="update-check message success">正在检查更新……</div>';
   echo '<script>var jasmineVersion = "' . getThemeVersion() . '"</script>';
-  echo '<script src="' . Helper::options()->themeUrl . '/inc/core/check_update.js"></script>';
+  echo '<script src="' . Helper::options()->themeUrl . '/core/check_update.js"></script>';
 
   $logoUrl = new Text(
     "logoUrl",

@@ -1,7 +1,7 @@
 if (document.getElementById("jasmine-check-update")) {
   var container = document.getElementById("jasmine-check-update");
   var ajax = new XMLHttpRequest();
-  ajax.open("get", "https://api.github.com/repos/liaocp666/Jasmine/releases/latest");
+  ajax.open("get", "https://api.kgithub.com/repos/liaocp666/Jasmine/releases/latest");
   ajax.send();
   ajax.onreadystatechange = function () {
     if (ajax.readyState == 4 && ajax.status == 200) {
@@ -9,9 +9,7 @@ if (document.getElementById("jasmine-check-update")) {
       if (versionCompare(jasmineVersion, obj.tag_name) == -1) {
         container.innerHTML =
           "<h2>🎉 发现新版本！</h2>" +
-          '<a href="' +
-          obj.assets[0].browser_download_url +
-          '">点击下载（' +
+          '<a href="https://kgithub.com/liaocp666/Jasmine/releases/latest/download/jasmine.zip">点击下载（' +
           obj.tag_name +
           "）</a><br/><h3>更新日志</h3>" +
           '<p style="white-space: pre-wrap;">' +
