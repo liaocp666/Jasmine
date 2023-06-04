@@ -70,7 +70,7 @@ function themeConfig($form)
   );
   $form->addInput($stickyPost);
 
-  $pjaxLoadPage = new Radio(
+/*   $pjaxLoadPage = new Radio(
     "pjaxLoadPage",
     [
       "0" => _t("关闭"),
@@ -81,7 +81,7 @@ function themeConfig($form)
     _t("默认为关闭")
   );
   $form->addInput($pjaxLoadPage);
-
+ */
   $authorAvatar = new Text("authorAvatar", null, null, "作者头像", "填写图片地址，用于显示右侧作者头像");
   $form->addInput($authorAvatar);
 
