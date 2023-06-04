@@ -405,7 +405,7 @@
 }
 
 .markdown-body li {
-  list-style: inherit !important;
+  list-style: initial !important;
 }
 
 .markdown-body ol ol,
