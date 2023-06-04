@@ -26,8 +26,16 @@
 }
 
 #page-nav .active a {
-  background-color: #000000;
+  background-color: #000000 !important;
   color: #ffffff;
+}
+
+.dark #page-nav {
+    color: rgb(229, 229, 229);
+}
+
+.dark #page-nav a {
+    background-color: rgb(229, 229, 229);
 }
 
 .markdown-body {
@@ -2105,3 +2113,4 @@ pre[class*="language-"] {
 .style .token.string {
   background: hsla(0, 0%, 100%, 0) !important;
 }
+
