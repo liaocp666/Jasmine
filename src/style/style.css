@@ -408,10 +408,6 @@
   padding-left: 2em;
 }
 
-.markdown-body li {
-  list-style: initial !important;
-}
-
 .markdown-body ol ol,
 .markdown-body ul ol {
   list-style-type: lower-roman;
@@ -422,6 +418,15 @@
 .markdown-body ol ul ol,
 .markdown-body ol ol ol {
   list-style-type: lower-alpha;
+}
+
+.markdown-body ul li {
+  list-style-type: disc;
+}
+
+
+.markdown-body ol li {
+  list-style-type: decimal;
 }
 
 .markdown-body dd {
