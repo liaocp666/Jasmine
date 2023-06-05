@@ -51,7 +51,7 @@ function getCommentAt($coid)
         ->from("table.comments")
         ->where("coid = ? AND status = ?", $parent, "approved")
     );
-    echo '<span class="comment-at">@' . $arow["author"] . "</span>";
+    echo '<span class="comment-at float-left mr-1 px-1 text-white bg-black rounded">@' . $arow["author"] . "</span>";
   }
 }
 

@@ -36,16 +36,14 @@ function threadedComments($comments, $options)
             <?php } ?>
             <div class="flex flex-col w-full">
                 <div class="flex justify-between">
-                    <div><span class="author-name dark:text-neutral-200">
+                    <div class="whitespace-nowrap"><span class="author-name dark:text-neutral-200">
                                 <?php getCommentAuthor($comments); ?>
                             <?php if ($comments->authorId == $comments->ownerId) { ?>
                                 <span class="small text-neutral-500 author-icon">(作者)&nbsp;</span>
                             <?php } ?>
                             </span>
                         <span
-                            class="small text-neutral-500 text-sm dark:text-gray-400"> <?php echo getCommentAt(
-                              $comments->coid
-                            ); ?> - <?php echo getHumanizedDate($comments->created); ?>
+                            class="small text-neutral-500 text-sm dark:text-gray-400"> <?php echo getHumanizedDate($comments->created); ?>
                             </span>
                         <?php if ($comments->status == "waiting") { ?>
                             <span class="small dark:text-gray-300">
@@ -53,17 +51,19 @@ function threadedComments($comments, $options)
                                 </span>
                         <?php } ?>
                     </div>
-                    <div class="comments-reply bg-black text-white rounded px-2 text-sm py-1 dark:text-neutral-200" data-no-instant>
+                    <div class="comments-reply bg-black text-white rounded px-2 text-sm py-1 dark:text-neutral-200 whitespace-nowrap" data-no-instant>
                         <?php $comments->reply("回复"); ?>
                     </div>
                 </div>
-                <div class="comment-content text-neutral-500 dark:text-gray-400">
-                    <?php $comments->content(); ?>
+                <div class="comment-content text-neutral-500 dark:text-gray-400 break-all">
+                <?php echo getCommentAt(
+                              $comments->coid
+                            ); ?> <?php $comments->content(); ?>
                 </div>
             </div>
         </div>
         <?php if ($comments->children) { ?>
-            <div class="comment-children pl-[60px]">
+            <div class="comment-children">
                 <?php $comments->threadedComments($options); ?>
             </div>
         <?php } ?>

@@ -82,6 +82,10 @@
   border: 0 !important;
 }
 
+.comment-parent > .comment-children {
+  padding-left: 60px
+}
+
 /* markdown body */
 
 .markdown-body {
