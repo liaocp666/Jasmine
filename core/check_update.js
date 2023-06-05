@@ -1,7 +1,7 @@
 if (document.getElementById("jasmine-check-update")) {
   var container = document.getElementById("jasmine-check-update");
   var ajax = new XMLHttpRequest();
-  ajax.open("get", "https://api.kgithub.com/repos/liaocp666/Jasmine/releases/latest");
+  ajax.open("get", "https://api.github.com/repos/liaocp666/Jasmine/releases/latest");
   ajax.send();
   ajax.onreadystatechange = function () {
     if (ajax.readyState == 4 && ajax.status == 200) {
