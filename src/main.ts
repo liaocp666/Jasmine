@@ -19,7 +19,7 @@ export function switchDark() {
   } else if (localStorage.theme === "dark") {
     localStorage.theme = "light";
   } else {
-    localStorage.theme = "light";
+    localStorage.theme = "dark";
   }
   loadTheme();
 }
