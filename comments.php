@@ -43,7 +43,9 @@ function threadedComments($comments, $options)
                             <?php } ?>
                             </span>
                         <span
-                            class="small text-neutral-500 text-sm dark:text-gray-400"> <?php echo getHumanizedDate($comments->created); ?>
+                            class="small text-neutral-500 text-sm dark:text-gray-400"> <?php echo getHumanizedDate(
+                              $comments->created
+                            ); ?>
                             </span>
                         <?php if ($comments->status == "waiting") { ?>
                             <span class="small dark:text-gray-300">
@@ -56,9 +58,7 @@ function threadedComments($comments, $options)
                     </div>
                 </div>
                 <div class="comment-content text-neutral-500 dark:text-gray-400 break-all">
-                <?php echo getCommentAt(
-                              $comments->coid
-                            ); ?> <?php $comments->content(); ?>
+                <?php echo getCommentAt($comments->coid); ?> <?php $comments->content(); ?>
                 </div>
             </div>
         </div>
