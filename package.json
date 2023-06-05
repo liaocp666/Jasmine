@@ -1,19 +1,49 @@
 {
-    "name": "jasmine",
-    "version": "1.6.3",
-    "description": "Jasmine For Typecho",
-    "main": "index.js",
-    "scripts": {
-        "build": "npx postcss ./src/style/jasmine.css -o ./assets/jasmine/jasmine.css"
-    },
-    "keywords": ["jasmine", "jasmine theme"],
-    "author": "Kent Liao",
-    "license": "GNU General Public License v3.0",
-    "devDependencies": {
-        "autoprefixer": "^10.4.14",
-        "cssnano": "^6.0.0",
-        "postcss": "^8.4.21",
-        "postcss-cli": "^10.1.0",
-        "postcss-import": "^15.1.0"
-    }
+  "name": "jasmine",
+  "private": true,
+  "version": "2.0.0",
+  "description": "jasmine theme",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc && vite build",
+    "lint": "eslint ./src --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
+    "prettier": "prettier --write ./**/*.{js,ts,json,css,html,php}"
+  },
+  "keywords": [
+    "jasmine",
+    "jasmine heme",
+    "typecho",
+    "typecho-theme"
+  ],
+  "homepage": "https://github.com/liaocp666/jasmine",
+  "author": {
+    "name": "Kent Liao",
+    "email": "2964556627@qq.com",
+    "url": "https://github.com/liaocp666"
+  },
+  "license": "GPL-3.0",
+  "repository": {
+    "directory": "https://github.com/liaocp666/jasmine",
+    "type": "git"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.19.4",
+    "@types/prismjs": "^1.26.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "postcss": "^8.4.23",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "sticky-sidebar": "^3.3.1",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.2",
+    "vite-plugin-prismjs": "^0.0.8",
+    "prismjs": "^1.29.0"
+  }
 }

@@ -1,118 +1,135 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+<?php if (!defined("__TYPECHO_ROOT_DIR__")) {
+  exit();
+}
+
 function threadedComments($comments, $options)
 {
-    $commentClass = '';
-    if ($comments->authorId) {
-        if ($comments->authorId == $comments->ownerId) {
-            $commentClass .= ' comment-by-author';
-        } else {
-            $commentClass .= ' comment-by-user';
-        }
-    }
-    ?>
-    <li id="<?php $comments->theId(); ?>" class="comment-body<?php
-    if ($comments->levels > 0) {
-        echo ' comment-child';
-        $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
+  $commentClass = "";
+  if ($comments->authorId) {
+    if ($comments->authorId == $comments->ownerId) {
+      $commentClass .= " comment-by-author";
     } else {
-        echo ' comment-parent';
+      $commentClass .= " comment-by-user";
     }
-    $comments->alt(' comment-odd', ' comment-even');
-    echo $commentClass;
-    ?>">
-        <div class="d-flex flex-start mb-3 comment-main">
+  }
+  ?>
+    <li id="<?php $comments->theId(); ?>"
+        class="flex flex-col gap-y-4 py-7 border-b-2 border-stone-100 dark:border-neutral-600 comment-body<?php
+        if ($comments->levels > 0) {
+          echo " comment-child";
+          $comments->levelsAlt(" comment-level-odd", " comment-level-even");
+        } else {
+          echo " comment-parent";
+        }
+        $comments->alt(" comment-odd", " comment-even");
+        echo $commentClass;
+        ?>">
+        <div class="flex w-full gap-x-2 grow">
             <?php if ($comments->authorId == $comments->ownerId) { ?>
-                <img class="rounded shadow-1-strong me-2 lazyload" width="50" height="50"
-                     data-original="<?php echo getAvatarByMail($comments->mail, true); ?>"
-                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                <img class="rounded w-[50px] h-[50px] object-cover" width="50" height="50"
+                     src="<?php echo getAvatarByMail($comments->mail, true); ?>"
                      alt="<?php $comments->author; ?>">
             <?php } else { ?>
-                <img class="rounded shadow-1-strong me-2 lazyload" width="50" height="50"
-                     data-original="<?php echo getAvatarByMail($comments->mail); ?>"
-                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                <img class="rounded w-[50px] h-[50px] object-cover" width="50" height="50"
+                     src="<?php echo getAvatarByMail($comments->mail); ?>"
                      alt="<?php $comments->author; ?>">
             <?php } ?>
-            <div class="flex-grow-1 flex-shrink-1">
-                <div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div><span class="author-name">
+            <div class="flex flex-col w-full">
+                <div class="flex justify-between">
+                    <div class="whitespace-nowrap"><span class="author-name dark:text-neutral-200">
                                 <?php getCommentAuthor($comments); ?>
-                                <?php if ($comments->authorId == $comments->ownerId) { ?>
-                                    <span class="small author-icon">(作者)&nbsp;</span>
-                                <?php } ?>
+                            <?php if ($comments->authorId == $comments->ownerId) { ?>
+                                <span class="small text-neutral-500 author-icon">(作者)&nbsp;</span>
+                            <?php } ?>
                             </span>
-                            <span class="small"> <?php echo getCommentAt($comments->coid) ?> - <?php echo getHumanizedDate($comments->created); ?>
+                        <span
+                            class="small text-neutral-500 text-sm dark:text-gray-400"> <?php echo getHumanizedDate(
+                              $comments->created
+                            ); ?>
                             </span>
-                            <?php if ($comments->status == 'waiting') { ?>
-                                <span class="small">
+                        <?php if ($comments->status == "waiting") { ?>
+                            <span class="small dark:text-gray-300">
                                     - 您的评论正等待审核！
                                 </span>
-                            <?php } ?>
-                        </div>
-                        <div class="comments-reply" data-no-instant>
-                            <?php $comments->reply('回复'); ?>
-                        </div>
+                        <?php } ?>
                     </div>
-                    <div class="comment-content">
-                        <?php $comments->content(); ?>
+                    <div class="comments-reply bg-black text-white rounded px-2 text-sm py-1 dark:text-neutral-200 whitespace-nowrap" data-no-instant>
+                        <?php $comments->reply("回复"); ?>
                     </div>
+                </div>
+                <div class="comment-content text-neutral-500 dark:text-gray-400 break-all">
+                <?php echo getCommentAt($comments->coid); ?> <?php $comments->content(); ?>
                 </div>
             </div>
         </div>
         <?php if ($comments->children) { ?>
-            <div class="comment-children d-flex flex-start">
+            <div class="comment-children">
                 <?php $comments->threadedComments($options); ?>
             </div>
         <?php } ?>
     </li>
-<?php } ?>
-<div class="col-12">
+<?php
+}
+?>
+<div class="">
     <div id="comments" data-no-instant>
         <?php $this->comments()->to($comments); ?>
-        <?php if ($this->allow('comment')): ?>
-            <div id="<?php $this->respondId(); ?>" class="respond mb-5">
-                <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form" class="mb-3" data-no-instant>
+        <?php if ($this->allow("comment")): ?>
+            <div id="<?php $this->respondId(); ?>" class="respond">
+                <form method="post" action="<?php $this->commentUrl(); ?>" id="comment-form" role="form"
+                      class="flex flex-col gap-y-2"
+                      data-no-instant>
                     <?php if (!$this->user->hasLogin()): ?>
-                        <div class="d-flex flex-row gap-2 mb-2">
-                            <input name="author" type="text" class="form-control" placeholder="昵称" required
-                                   value="<?php $this->remember('author'); ?>" required/>
-                            <input name="mail" type="email" class="form-control" placeholder="邮箱" required
-                                   value="<?php $this->remember('mail'); ?>" <?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>/>
-                            <input type="url" name="url" id="url" class="form-control"
+                        <div class="flex flex-row md:flex-nowrap flex-wrap w-full gap-x-2 gap-y-2">
+                            <input name="author" type="text"
+                                   class="dark:!bg-[#0d1117] dark:border-black dark:!text-gray-400 basis-full md:basis-2/6 border-[#ced4da] border rounded px-2 py-2"
+                                   placeholder="昵称" required
+                                   value="<?php $this->remember("author"); ?>" required/>
+                            <input name="mail" type="email"
+                                   class="dark:!bg-[#0d1117] dark:border-black dark:!text-gray-400 basis-full md:basis-2/6 border-[#ced4da] border rounded px-2 py-2"
+                                   placeholder="邮箱" required
+                                   value="<?php $this->remember("mail"); ?>" <?php if (
+  $this->options->commentsRequireMail
+): ?> required<?php endif; ?>/>
+                            <input type="url" name="url" id="url"
+                                   class="dark:!bg-[#0d1117] dark:border-black dark:!text-gray-400 basis-full md:basis-2/6 border-[#ced4da] border rounded px-2 py-2"
                                    placeholder="网址"
-                                   value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
-                            <?php $security = $this->widget('Widget_Security'); ?>
+                                   value="<?php $this->remember("url"); ?>"<?php if (
+  $this->options->commentsRequireURL
+): ?> required<?php endif; ?> />
+                            <?php $security = $this->widget("Widget_Security"); ?>
                             <input type="hidden" name="_"
-                                   value="<?php echo $security->getToken($this->request->getReferer()) ?>"/>
+                                   value="<?php echo $security->getToken($this->request->getReferer()); ?>"/>
                         </div>
                     <?php endif; ?>
-                    <div class="d-flex mb-3">
-                        <div class="form-floating w-100">
-                            <textarea rows="8" cols="50" name="text" id="textarea"
-                                      class="form-control comments-textarea"
+                    <div class="basis-full">
+                            <textarea rows="6" cols="40" name="text" id="textarea"
+                                      class="w-full border-[#ced4da] border rounded px-2 py-2 dark:!bg-[#0d1117] dark:border-black dark:!text-gray-400"
                                       required
-                                      placeholder="请输入评论内容"><?php $this->remember('text'); ?></textarea>
-                            <label for="floatingTextarea">请输入评论内容</label>
-                        </div>
+                                      placeholder="请输入评论内容"><?php $this->remember("text"); ?></textarea>
                     </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="comments-curren-user d-flex align-items-center align-content-center">
+                    <div class="flex justify-between items-center">
+                        <div class="comments-curren-user flex gap-x-2">
                             <?php if ($this->user->hasLogin()): ?>
                                 <img class="img-thumbnail rounded me-1" width="50" height="50"
                                      src="<?php echo getAvatarByMail($this->user->mail, true); ?>"
                                      alt="<?php $this->user->screenName(); ?>">
-                                <div class="d-flex flex-column">
+                                <div class="flex flex-col">
                                     <span><?php $this->user->screenName(); ?></span>
                                     <span>
-                                        <a class="a-btn btn" href="<?php $this->options->logoutUrl(); ?>"
+                                        <a class="bg-black text-white rounded px-1 text-sm dark:text-neutral-200"
+                                           href="<?php $this->options->logoutUrl(); ?>"
                                            title="注销">注销</a>
                                     </span>
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <div class="d-flex gap-2 align-content-end justify-content-end">
+                        <div class="">
                             <?php $comments->cancelReply(); ?>
-                            <button type="submit" class="btn btn-dark btn-sm"><?php _e('提交评论'); ?></button>
+                            <button type="submit"
+                                    class="bg-black text-white rounded px-2 py-1 ml-2 dark:text-neutral-200"><?php _e(
+                                      "提交评论"
+                                    ); ?></button>
                         </div>
                     </div>
                 </form>
@@ -121,7 +138,7 @@ function threadedComments($comments, $options)
 
         <?php if ($comments->have()): ?>
             <?php $comments->listComments(); ?>
-            <?php $comments->pageNav('上一页', '下一页', 0, '..'); ?>
+            <?php $comments->pageNav("上一页", "下一页", 0, ".."); ?>
         <?php endif; ?>
     </div>
 </div>

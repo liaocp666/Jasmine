@@ -1,11 +1,9 @@
-const config = {
-    plugins: [
-        require('postcss-import'),
-        require('autoprefixer'),
-        require('cssnano')({
-            preset: 'default',
-        })
-    ]
-}
+/** postcss config */
+const postcssConfig = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
 
-module.exports = config
+module.exports = postcssConfig;

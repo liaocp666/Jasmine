@@ -71,4 +71,3 @@ Jasmine 是 Typecho 的一款主题。专为博客类网站开发，在简洁的
 
 ![wx_pay](https://user-images.githubusercontent.com/27202776/227807562-5340971b-a292-4c70-afbb-1a7d242e46db.jpg)
 
-
