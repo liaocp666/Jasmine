@@ -12,3 +12,6 @@
     </div>
 </div>
 <?php $this->footer(); ?>
+<script>
+    <?php $this->options->customScript(); ?>
+</script>
