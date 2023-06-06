@@ -8,7 +8,7 @@
             <a href="<?php $this->permalink(); ?>"
                title="<?php $this->title(); ?>"><?php $this->title(); ?></a>
         </h2>
-        <p class="line-clamp-2 text-gray-700 text-neutral-500 dark:dark:text-gray-400" itemprop="abstract">
+        <p class="line-clamp-2 text-gray-700 text-neutral-500 dark:dark:text-gray-400 break-all" itemprop="abstract">
             <a href="<?php $this->permalink(); ?>"
                title="<?php $this->title(); ?>"><?php $this->excerpt(500, ""); ?></a>
         </p>
