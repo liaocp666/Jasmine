@@ -29,9 +29,9 @@
         </ul>
         <ul class="nav flex items-center gap-x-3">
             <li itemscope="" itemtype="https://schema.org/WebSite">
-                <meta itemprop="url" content="https://www.liaocp.cn/">
+                <meta itemprop="url" content="<?php $this->options->siteUrl(); ?>">
                 <form method="post" action="" id="search" itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction">
-                    <meta itemprop="target" content="https://www.liaocp.cn/search/{s}/">
+                    <meta itemprop="target" content="<?php $this->options->siteUrl(); ?>search/{s}/">
                     <label for="search" class="flex flex-row">
                     <button class="my-2 pt-2" onclick="jasmine.clickSearch()">
                         <iconify-icon icon="tabler:search"
@@ -60,7 +60,7 @@
         </li>
         <li>
             <form method="post" action="" id="search" itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction">
-                <meta itemprop="target" content="https://www.liaocp.cn/search/{s}/">
+                <meta itemprop="target" content="<?php $this->options->siteUrl(); ?>search/{s}/">
                 <label for="search" class="flex flex-row">
                 <button class="" onclick="jasmine.clickSearch()">
                     <iconify-icon icon="tabler:search"
