@@ -11,3 +11,4 @@ cp LICENSE jasmine
 cp RAEDME.md jasmine
 cp screenshot.png jasmine
 zip -r jasmine.zip jasmine
+rm -rf jasmine
