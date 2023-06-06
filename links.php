@@ -40,7 +40,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
 							</div>
 						</a>'); }
 						else {
-							echo 'Links 插件未启用，若要使用友情连接功能，请安装并启用 Links 插件。';
+							echo 'Links 插件未启用，若要使用友情链接功能，请安装并启用 Links 插件。';
 						}?>
 					</div>
 					<div class="markdown-body dark:!bg-[#161829] dark:!bg-[#0d1117] !text-neutral-900 dark:!text-gray-400" itemprop="articleBody">
