@@ -43,7 +43,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
 							</div>
 						</a>');
      } else {
-       echo '<span class="col-span-3"> <a class="text-orange-400" href="https://github.com/he0119/typecho-links" target="_blank">Links 插件</a> 未启用，若要使用友情链接功能，请先安装并启用。</span>';
+       echo '<span class="col-span-3"> <a class="text-orange-400" href="https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Links.zip" target="_blank">Links 插件</a> 未启用，若要使用友情链接功能，请先安装并启用。</span>';
      } ?>
 					</div>
 					<div class="border-b-2 border-stone-100 dark:border-neutral-600"></div>
