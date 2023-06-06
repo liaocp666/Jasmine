@@ -75,7 +75,7 @@ function getFieldByCidAndName($cid, $filedName)
  * @param $cid      文章 id
  * @return string   图片 url
  */
-function getThumbnail(string $cid, string $defaultThumbnail): string
+function getThumbnail($cid, $defaultThumbnail): string
 {
   $filed = getFieldByCidAndName($cid, "thumbnail");
   if (empty($filed)) {
