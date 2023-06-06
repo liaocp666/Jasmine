@@ -26,28 +26,25 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
 			<div class="flex flex-col gap-y-12">
 				<div></div>
 				<?php $this->need("component/post-title.php"); ?>
-				<div class="links-container container-fluid">
+				<div class="markdown-body dark:!bg-[#161829] dark:!bg-[#0d1117] !text-neutral-900 dark:!text-gray-400" itemprop="articleBody">
+				<?php $this->content(); ?>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 					<?php if(isPluginAvailable('Links')) {
-						Links_Plugin::output('<a href="{url}" target="_blank" title="{title}" class="links-item" no-linkTarget>
-							<div class="links-content">
-								<section class="links-avatar">
-									<img src="{image}"class="links-img lazy" />
+						Links_Plugin::output('<a href="{url}" target="_blank" title="{title}">
+							<div class="transition flex gap-x-2 p-4 border border-stone-100 hover:border-stone-300 dark:border-neutral-600 rounded shadow">
+								<section class="w-14 h-14 min-w-fit min-h-fit">
+									<img src="{image}"class="w-14 h-14 min-w-fit min-h-fit rounded-full" />
 								</section>
-								<section class="links-profile">
-									<h4 class="links-name">{name}</h4>
-									<p class="links-description">{title}</p>
+								<section class="flex flex-col justify-center gap-y-2">
+									<h4 class="text-sm">{name}</h4>
+									<p class="line-clamp-1 text-neutral-500 text-sm dark:text-gray-350">{title}</p>
 								</section>
 							</div>
 						</a>'); }
 						else {
-							echo 'Links 插件未启用，若要使用友情链接功能，请安装并启用 Links 插件。';
+							echo '<span class="col-span-3"> <a class="text-orange-400" href="https://github.com/he0119/typecho-links" target="_blank">Links 插件</a> 未启用，若要使用友情链接功能，请先安装并启用。</span>';
 						}?>
-					</div>
-					<div class="markdown-body dark:!bg-[#161829] dark:!bg-[#0d1117] !text-neutral-900 dark:!text-gray-400" itemprop="articleBody">
-						<?php $this->content(); ?>
-					</div>
-					<div class="flex flex-row gap-x-2 text-neutral-500" id="post-tag">
-						<?php $this->tags(" ", true, ""); ?>
 					</div>
 					<div class="border-b-2 border-stone-100 dark:border-neutral-600"></div>
 					<div>
