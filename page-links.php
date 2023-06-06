@@ -37,7 +37,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
 									<img src="{image}"class="w-14 h-14 min-w-fit min-h-fit rounded-full" />
 								</section>
 								<section class="flex flex-col justify-center gap-y-2">
-									<h4 class="text-sm">{name}</h4>
+									<h4 class="text-sm dark:text-neutral-200">{name}</h4>
 									<p class="line-clamp-1 text-neutral-500 text-sm dark:text-gray-350">{title}</p>
 								</section>
 							</div>
