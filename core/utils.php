@@ -193,13 +193,13 @@ function imageLazyLoad($content)
   return preg_replace($pattern, $replacement, $content);
 }
 /**
-  * 判断插件是否可用 add by Meteor
-  * 
-  * @return bool
-  */
-function isPluginAvailable($name) 
+ * 判断插件是否可用 add by Meteor
+ *
+ * @return bool
+ */
+function isPluginAvailable($name)
 {
-    $plugins = Typecho_Plugin::export();
-    $plugins = $plugins['activated'];
-    return is_array($plugins) && array_key_exists($name, $plugins);
+  $plugins = Typecho_Plugin::export();
+  $plugins = $plugins["activated"];
+  return is_array($plugins) && array_key_exists($name, $plugins);
 }
