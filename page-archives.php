@@ -42,7 +42,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                         <ul class="flex flex-row flex-wrap gap-y-6 gap-x-8">
                             <?php while ($tags->next()): ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php $tags->permalink(); ?>" rel="tag"
+                                    <a class="nav-link dark:text-gray-400" href="<?php $tags->permalink(); ?>" rel="tag"
                                        title="<?php $tags->name(); ?>">
                                         <?php $tags->name(); ?>
                                         <span
@@ -70,7 +70,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                         <ul class="flex flex-row flex-wrap gap-y-6 gap-x-8">
                             <?php while ($categories->next()): ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php $categories->permalink(); ?>" rel="tag"
+                                    <a class="nav-link dark:text-gray-400" href="<?php $categories->permalink(); ?>" rel="tag"
                                        title="<?php $categories->name(); ?>">
                                         <?php $categories->name(); ?>
                                         <span
@@ -97,12 +97,12 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                     $number = 0;
                     foreach ($archives as $year => $posts) {
                       $open = $number === 0 ? null : " closed";
-                      echo '<h2 class="archive-year title text-2xl my-2">' . $year . " 年</h2>";
+                      echo '<h2 class="archive-year title text-2xl my-2 dark:text-neutral-300">' . $year . " 年</h2>";
                       echo '<ol id="flex flex-col archive-list-' . $year . '" class="archive-list' . $open . '">';
                       foreach ($posts as $created => $post) {
                         echo '<li class="archive-item py-1"><a href="' .
                           $post["permalink"] .
-                          '" class="no-line">
+                          '" class="no-line dark:text-gray-400">
 				<span class="archive-date">' .
                           date("m-d", $created) .
                           '</span> · 
