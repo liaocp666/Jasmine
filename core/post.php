@@ -35,7 +35,7 @@ function getHotPosts($limit = 7)
 }
 
 /**
- * 获胜文章归档
+ * 获取文章归档
  * @param $widget
  * @return array
  */
@@ -55,6 +55,7 @@ function getArchives($widget)
   foreach ($rows as $row) {
     $row = $widget->filter($row);
     $arr = [
+      "cid" => $row["cid"],
       "title" => $row["title"],
       "permalink" => $row["permalink"],
     ];

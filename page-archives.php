@@ -100,6 +100,9 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                       echo '<h2 class="archive-year title text-2xl my-2 dark:text-neutral-300">' . $year . " 年</h2>";
                       echo '<ol id="flex flex-col archive-list-' . $year . '" class="archive-list' . $open . '">';
                       foreach ($posts as $created => $post) {
+                        if (isShuoShuoType($post['cid'])) {
+                            continue;
+                        }
                         echo '<li class="archive-item py-1"><a href="' .
                           $post["permalink"] .
                           '" class="no-line dark:text-gray-400">
