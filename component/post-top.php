@@ -23,7 +23,7 @@ if (null != $cids): ?>
                     </a>
                 <?php endif; ?>
                 <div class="flex flex-1 flex-col justify-between overflow-hidden break-words mr-3">
-                    <h2 class="line-clamp-1 text-lg jasmine-link-color-hover text-black">
+                    <h2 class="line-clamp-1 text-lg jasmine-link-color-hover text-black dark:text-neutral-200">
                         <a href="<?php $item->permalink(); ?>"
                            title="<?php $item->title(); ?>"><?php $item->title(); ?></a>
                     </h2>

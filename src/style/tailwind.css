@@ -55,10 +55,11 @@
 
   .jasmine-link-color {
     color: var(--link-color);
-    @apply dark:text-neutral-200 dark:hover:text-neutral-200;
+    @apply dark:text-neutral-200;
   }
 
   .jasmine-link-color-hover:hover {
     color: var(--link-hover-color);
+    @apply dark:text-neutral-200;
   }
 }
