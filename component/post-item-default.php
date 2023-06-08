@@ -4,11 +4,11 @@
 
 <div class="flex flex-row" itemscope itemtype="https://schema.org/NewsArticle">
     <div class="mr-3 flex flex-1 flex-col justify-between gap-y-3">
-        <h2 class="jasmine-link-color line-clamp-1 text-xl " itemprop="headline">
+        <h2 class="jasmine-link-color line-clamp-1 text-xl jasmine-letter-spacing" itemprop="headline">
             <a href="<?php $this->permalink(); ?>"
                title="<?php $this->title(); ?>"><?php $this->title(); ?></a>
         </h2>
-        <p class="line-clamp-2   dark:dark:text-gray-400 break-all" itemprop="abstract">
+        <p class="line-clamp-2 jasmine-letter-spacing dark:dark:text-gray-400 break-all" itemprop="abstract">
             <a href="<?php $this->permalink(); ?>"
                title="<?php $this->title(); ?>"><?php $this->excerpt(500, ""); ?></a>
         </p>

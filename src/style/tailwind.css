@@ -23,6 +23,10 @@
     font-size: 1rem;
     line-height: 1.5rem;
   }
+
+  .jasmine-letter-spacing {
+    letter-spacing: 0.03em;
+  }
 }
 
 @layer components {

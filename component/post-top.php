@@ -27,7 +27,7 @@ if (null != $cids): ?>
                         <a href="<?php $item->permalink(); ?>"
                            title="<?php $item->title(); ?>"><?php $item->title(); ?></a>
                     </h2>
-                    <p class="line-clamp-2  overflow-hidden break-all dark:text-gray-400">
+                    <p class="line-clamp-2 jasmine-letter-spacing overflow-hidden break-all dark:text-gray-400">
                         <a href="<?php $item->permalink(); ?>"><?php echo $item->excerpt(500, ""); ?></a>
                     </p>
                 </div>
