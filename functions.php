@@ -2,6 +2,8 @@
   exit();
 }
 
+error_reporting(E_ERROR);
+
 require_once "core/index.php";
 
 /**
