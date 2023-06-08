@@ -117,7 +117,7 @@ function threadedComments($comments, $options)
                                 <div class="flex flex-col">
                                     <span class=""><?php $this->user->screenName(); ?></span>
                                     <span>
-                                        <a class="bg-black text-white rounded px-1 text-sm "
+                                        <a class="jasmine-primary-bg text-white rounded px-1 text-sm "
                                            href="<?php $this->options->logoutUrl(); ?>"
                                            title="注销">注销</a>
                                     </span>

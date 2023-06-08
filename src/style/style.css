@@ -136,7 +136,7 @@
 
 .markdown-body a {
   background-color: transparent;
-  color: #0969da;
+  color: var(--link-hover-color);
   text-decoration: none;
 }
 

@@ -34,7 +34,7 @@
                 <?php foreach ($posts as $post): ?>
                     <li>
                         <a href="<?php echo $post["permalink"]; ?>"
-                           class="line-clamp-2  text-sm dark:text-gray-400 hover:text-black"
+                           class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500"
                            title="<?php echo $post["title"]; ?>"><?php echo $post["title"]; ?></a>
                     </li>
                 <?php endforeach; ?>
@@ -53,7 +53,7 @@
                     <li>
                         <a href="<?php $newComments->permalink(); ?>"
                            title="<?php $newComments->excerpt(35, "..."); ?>"
-                           class="line-clamp-2  text-sm dark:text-gray-400 hover:text-black">
+                           class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500">
                             <?php echo $newComments->author; ?>: <?php $newComments->excerpt(35, "..."); ?></a>
                     </li>
                 <?php endwhile; ?>

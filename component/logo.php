@@ -10,7 +10,7 @@
                  alt="<?php $this->options->title(); ?>" width="50" height="50"
                  class="rounded object-cover"/>
         </a>
-        <span class="bg-black text-white px-2 py-1 absolute w-full rounded top-[5px] left-[90px] w-max"
+        <span class="jasmine-primary-bg text-white px-2 py-1 absolute w-full rounded top-[5px] left-[90px] w-max"
               style="display: none">
                     <?php $this->options->title(); ?>
                 </span>

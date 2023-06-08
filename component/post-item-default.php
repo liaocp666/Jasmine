@@ -4,7 +4,7 @@
 
 <div class="flex flex-row" itemscope itemtype="https://schema.org/NewsArticle">
     <div class="mr-3 flex flex-1 flex-col justify-between gap-y-3">
-        <h2 class="jasmine-link-color line-clamp-1 text-xl jasmine-letter-spacing" itemprop="headline">
+        <h2 class="jasmine-link-color-hover text-black line-clamp-1 text-xl jasmine-letter-spacing" itemprop="headline">
             <a href="<?php $this->permalink(); ?>"
                title="<?php $this->title(); ?>"><?php $this->title(); ?></a>
         </h2>

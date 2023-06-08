@@ -44,14 +44,21 @@
   }
 
   .jasmine-primary-bg {
-    @apply bg-black;
+    background-color: var(--primary-bg);
+    @apply dark:bg-black;
   }
 
-  .jasmine-primary-bg-hover {
-    @apply hover:bg-black;
+  .jasmine-primary-bg-hover:hover {
+    background-color: var(--primary-bg);
+    @apply dark:hover:bg-black;
   }
 
   .jasmine-link-color {
-    @apply text-black hover:text-black dark:text-neutral-200 dark:hover:text-neutral-200;
+    color: var(--link-color);
+    @apply dark:text-neutral-200 dark:hover:text-neutral-200;
+  }
+
+  .jasmine-link-color-hover:hover {
+    color: var(--link-hover-color);
   }
 }

@@ -35,7 +35,7 @@
                     <label for="search" class="flex flex-row">
                     <button class="my-2 pt-2" onclick="jasmine.clickSearch()">
                         <iconify-icon icon="tabler:search"
-                                    class="rounded px-1 text-lg"></iconify-icon>
+                                    class="rounded px-1 text-lg jasmine-link-color"></iconify-icon>
                     </button>
                     <input class=" duration-300 my-2 w-0 focus:w-32 bg-transparent" itemprop="query-input" id="search-input" type="text" name="s" required="true" autocomplete="off" placeholder="Search">
                     </label>

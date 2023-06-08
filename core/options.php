@@ -25,6 +25,21 @@ function themeConfig($form)
   echo '<script>var jasmineVersion = "' . getThemeVersion() . '"</script>';
   echo '<script src="' . Helper::options()->themeUrl . '/core/check_update.js"></script>';
 
+  $themeColor = new Radio(
+    "themeColor",
+    [
+      "0" => _t("厚黑"),
+      "1" => _t("瓷青"),
+      "2" => _t("流金"),
+      "3" => _t("天蓝"),
+      "4" => _t("朱红"),
+    ],
+    "0",
+    _t("选择主题颜色配置"),
+    _t("")
+  );
+  $form->addInput($themeColor);
+
   $logoUrl = new Text(
     "logoUrl",
     null,
