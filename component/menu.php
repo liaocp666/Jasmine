@@ -9,7 +9,7 @@
                 <a title="首页" href="<?php $this->options->siteUrl(); ?>"
                 class="<?php if ($this->is("index")) {
                   echo "jasmine-primary-bg shadow-lg !text-white";
-                } ?> text-black rounded-full px-4 py-2">首页</a>
+                } ?> text-black dark:text-white rounded-full px-4 py-2">首页</a>
             </li>
             <?php $this->widget("Jasmine_Meta_Row")->to($categorys); ?>
             <?php if ($categorys->have()): ?>
