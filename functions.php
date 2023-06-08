@@ -17,14 +17,14 @@ function themeInit($archive)
   Helper::options()->commentsMaxNestingLevels = 999;
   //将最新的评论展示在前
   Helper::options()->commentsOrder = "DESC";
-  //关闭检查评论来源URL与文章链接是否一致判断
-  Helper::options()->commentsCheckReferer = false;
+  // 关闭检查评论来源URL与文章链接是否一致判断
+  // Helper::options()->commentsCheckReferer = false;
   // 强制开启评论markdown
-  Helper::options()->commentsMarkdown = "1";
-  Helper::options()->commentsHTMLTagAllowed .= "<img class src alt><div class>";
-  if (getOptions()->pjaxLoadPage) {
-    Helper::options()->commentsAntiSpam = false;
-  }
+  // Helper::options()->commentsMarkdown = "1";
+  // Helper::options()->commentsHTMLTagAllowed .= "<img class src alt><div class>";
+  // if (getOptions()->pjaxLoadPage) {
+  //   Helper::options()->commentsAntiSpam = false;
+  // }
 }
 
 /**
