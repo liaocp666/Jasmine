@@ -28,3 +28,4 @@ dist
 .vscode
 jasmine
 jasmine.zip
+package-lock.json
