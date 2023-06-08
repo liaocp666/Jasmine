@@ -11,20 +11,20 @@
                  alt="<?php $this->author->screenName(); ?>" width="50" height="50"
                  class="rounded object-cover">
             <div class="flex flex-col justify-between">
-                <p class="dark:text-neutral-200"><?php $this->author->screenName(); ?></p>
-                <p class="line-clamp-2 text-neutral-500 text-sm dark:text-gray-400"><?php $this->options->authorRecommend(); ?></p>
+                <p class=" jasmine-primary-color"><?php $this->author->screenName(); ?></p>
+                <p class="line-clamp-2  text-sm dark:text-gray-400"><?php $this->options->authorRecommend(); ?></p>
             </div>
         </div>
         <?php if ($authorTag = $this->options->authorTag): ?>
             <ul class="flex flex-wrap gap-x-2 gap-y-2">
                 <?php foreach (explode(",", $authorTag) as $tag): ?>
-                <li class="bg-stone-200 rounded py-1 px-2 text-neutral-500 text-sm dark:bg-black dark:text-neutral-400"><?php echo $tag; ?></li>
+                <li class="bg-stone-200 rounded py-1 px-2  text-sm dark:bg-black dark:text-neutral-400"><?php echo $tag; ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
     </div>
     <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
-        <div class="flex flex-row items-center dark:text-neutral-200">
+        <div class="flex flex-row items-center  jasmine-primary-color">
             <iconify-icon icon="tabler:chart-bar" class="rounded pr-1 text-xl font-medium"></iconify-icon>
             <span class="font-medium">热门文章</span>
         </div>
@@ -34,7 +34,7 @@
                 <?php foreach ($posts as $post): ?>
                     <li>
                         <a href="<?php echo $post["permalink"]; ?>"
-                           class="line-clamp-2 text-neutral-500 text-sm dark:text-gray-400 hover:text-black"
+                           class="line-clamp-2  text-sm dark:text-gray-400 hover:text-black"
                            title="<?php echo $post["title"]; ?>"><?php echo $post["title"]; ?></a>
                     </li>
                 <?php endforeach; ?>
@@ -42,7 +42,7 @@
         </ul>
     </div>
     <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
-        <div class="flex flex-row items-center dark:text-neutral-200">
+        <div class="flex flex-row items-center  jasmine-primary-color">
             <iconify-icon icon="tabler:message" class="rounded pr-1 text-xl font-medium"></iconify-icon>
             <span class="font-medium">最新评论</span>
         </div>
@@ -53,7 +53,7 @@
                     <li>
                         <a href="<?php $newComments->permalink(); ?>"
                            title="<?php $newComments->excerpt(35, "..."); ?>"
-                           class="line-clamp-2 text-neutral-500 text-sm dark:text-gray-400 hover:text-black">
+                           class="line-clamp-2  text-sm dark:text-gray-400 hover:text-black">
                             <?php echo $newComments->author; ?>: <?php $newComments->excerpt(35, "..."); ?></a>
                     </li>
                 <?php endwhile; ?>
@@ -61,7 +61,7 @@
         </ul>
     </div>
     <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
-        <div class="flex flex-row items-center dark:text-neutral-200">
+        <div class="flex flex-row items-center  jasmine-primary-color">
             <iconify-icon icon="tabler:bookmarks" class="rounded pr-1 text-xl font-medium"></iconify-icon>
             <span class="font-medium">热门标签</span>
         </div>
@@ -72,18 +72,18 @@
                     <li>
                         <a href="<?php $tags->permalink(); ?>"
                            title="<?php $tags->name(); ?>"
-                           class="text-neutral-500 dark:text-gray-400 text-sm rounded-full px-3 py-1 hover:bg-black hover:text-white"><?php $tags->name(); ?></a>
+                           class=" dark:text-gray-400 text-sm rounded-full px-3 py-1 jasmine-primary-bg-hover hover:text-white"><?php $tags->name(); ?></a>
                     </li>
                 <?php endwhile; ?>
             <?php endif; ?>
         </ul>
     </div>
     <div class="flex flex-col justify-start gap-x-3 gap-y-4 pb-12 mt-4">
-        <div class="flex flex-row items-center dark:text-neutral-200">
+        <div class="flex flex-row items-center  jasmine-primary-color">
             <iconify-icon icon="tabler:chart-arcs" class="rounded pr-1 text-xl font-medium"></iconify-icon>
             <span class="font-medium">关于站长</span>
         </div>
-        <ul class="flex flex-col gap-y-3 text-neutral-500 px-1 text-neutral-500 dark:text-gray-400">
+        <ul class="flex flex-col gap-y-3  px-1  dark:text-gray-400">
             <?php if ($this->options->wx): ?>
                 <li class="flex flex-row items-center gap-x-2">
                     <iconify-icon icon="tabler:brand-wechat" class="text-gray-800 dark:text-gray-300"></iconify-icon>

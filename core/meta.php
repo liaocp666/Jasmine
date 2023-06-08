@@ -33,7 +33,7 @@ function isActiveMenu($self, $slug): string
 {
   if ($self->is("category") || $self->is("post")) {
     if ($self->category === $slug) {
-      return "active";
+      return "jasmine-primary-bg shadow-lg !text-white";
     }
   }
   return "";

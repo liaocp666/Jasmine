@@ -36,14 +36,14 @@ function threadedComments($comments, $options)
             <?php } ?>
             <div class="flex flex-col w-full">
                 <div class="flex justify-between">
-                    <div class="whitespace-nowrap"><span class="author-name dark:text-neutral-200">
+                    <div class="whitespace-nowrap"><span class="author-name ">
                                 <?php getCommentAuthor($comments); ?>
                             <?php if ($comments->authorId == $comments->ownerId) { ?>
-                                <span class="small text-neutral-500 author-icon">(作者)&nbsp;</span>
+                                <span class="small  author-icon">(作者)&nbsp;</span>
                             <?php } ?>
                             </span>
                         <span
-                            class="small text-neutral-500 text-sm dark:text-gray-400"> <?php echo getHumanizedDate(
+                            class="small  text-sm dark:text-gray-400"> <?php echo getHumanizedDate(
                               $comments->created
                             ); ?>
                             </span>
@@ -53,11 +53,11 @@ function threadedComments($comments, $options)
                                 </span>
                         <?php } ?>
                     </div>
-                    <div class="comments-reply bg-black text-white rounded px-2 text-sm py-1 dark:text-neutral-200 whitespace-nowrap" data-no-instant>
+                    <div class="comments-reply bg-black text-white rounded px-2 text-sm py-1  whitespace-nowrap" data-no-instant>
                         <?php $comments->reply("回复"); ?>
                     </div>
                 </div>
-                <div class="comment-content text-neutral-500 dark:text-gray-400 break-all">
+                <div class="comment-content  dark:text-gray-400 break-all">
                 <?php echo getCommentAt($comments->coid); ?> <?php $comments->content(); ?>
                 </div>
             </div>
@@ -115,9 +115,9 @@ function threadedComments($comments, $options)
                                      src="<?php echo getAvatarByMail($this->user->mail, true); ?>"
                                      alt="<?php $this->user->screenName(); ?>">
                                 <div class="flex flex-col">
-                                    <span class="dark:text-neutral-200"><?php $this->user->screenName(); ?></span>
+                                    <span class=""><?php $this->user->screenName(); ?></span>
                                     <span>
-                                        <a class="bg-black text-white rounded px-1 text-sm dark:text-neutral-200"
+                                        <a class="bg-black text-white rounded px-1 text-sm "
                                            href="<?php $this->options->logoutUrl(); ?>"
                                            title="注销">注销</a>
                                     </span>
@@ -127,7 +127,7 @@ function threadedComments($comments, $options)
                         <div class="">
                             <?php $comments->cancelReply(); ?>
                             <button type="submit"
-                                    class="bg-black text-white rounded px-2 py-1 ml-2 dark:text-neutral-200"><?php _e(
+                                    class="bg-black text-white rounded px-2 py-1 ml-2 "><?php _e(
                                       "提交评论"
                                     ); ?></button>
                         </div>

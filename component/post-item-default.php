@@ -4,17 +4,17 @@
 
 <div class="flex flex-row" itemscope itemtype="https://schema.org/NewsArticle">
     <div class="mr-3 flex flex-1 flex-col justify-between gap-y-3">
-        <h2 class="line-clamp-1 text-xl dark:text-neutral-200" itemprop="headline">
+        <h2 class="jasmine-link-color line-clamp-1 text-xl " itemprop="headline">
             <a href="<?php $this->permalink(); ?>"
                title="<?php $this->title(); ?>"><?php $this->title(); ?></a>
         </h2>
-        <p class="line-clamp-2 text-gray-700 text-neutral-500 dark:dark:text-gray-400 break-all" itemprop="abstract">
+        <p class="line-clamp-2   dark:dark:text-gray-400 break-all" itemprop="abstract">
             <a href="<?php $this->permalink(); ?>"
                title="<?php $this->title(); ?>"><?php $this->excerpt(500, ""); ?></a>
         </p>
         <div class="dark:text-gray-400">
-            <?php $this->category("·", true, "无"); ?>
-            <span class="text-neutral-500"> · <?php echo getHumanizedDate($this->created); ?></span>
+            <span class="jasmine-link-color"><?php $this->category("·", true, "无"); ?></span>
+            <span> · <?php echo getHumanizedDate($this->created); ?></span>
         </div>
         <span class="hidden" itemprop="author" itemscope itemtype="https://schema.org/Person">
                                 <meta itemprop="url" content="<?php $this->author->permalink(); ?>"/>
