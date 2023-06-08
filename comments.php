@@ -115,7 +115,7 @@ function threadedComments($comments, $options)
                                      src="<?php echo getAvatarByMail($this->user->mail, true); ?>"
                                      alt="<?php $this->user->screenName(); ?>">
                                 <div class="flex flex-col">
-                                    <span><?php $this->user->screenName(); ?></span>
+                                    <span class="dark:text-neutral-200"><?php $this->user->screenName(); ?></span>
                                     <span>
                                         <a class="bg-black text-white rounded px-1 text-sm dark:text-neutral-200"
                                            href="<?php $this->options->logoutUrl(); ?>"
