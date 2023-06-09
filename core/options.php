@@ -67,6 +67,24 @@ function themeConfig($form)
   );
   $form->addInput($leftSidebarMenu);
 
+  $switchDarkIconDesktop = new Text(
+    "switchDarkIconDesktop",
+    null,
+    null,
+    "桌面切换深浅模式按钮图标",
+    '参考：<a href="https://github.com/liaocp666/Jasmine/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3#%E5%B7%A6%E8%BE%B9%E6%A0%8F%E8%8F%9C%E5%8D%95" target="_blank">《左边栏菜单》</a>，填入一个icon值'
+  );
+  $form->addInput($switchDarkIconDesktop);
+
+  $switchDarkIconPhone = new Text(
+    "switchDarkIconPhone",
+    null,
+    null,
+    "手机切换深浅模式按钮图标",
+    '参考：<a href="https://github.com/liaocp666/Jasmine/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3#%E5%B7%A6%E8%BE%B9%E6%A0%8F%E8%8F%9C%E5%8D%95" target="_blank">《左边栏菜单》</a>，填入一个icon值'
+  );
+  $form->addInput($switchDarkIconPhone);
+
   $middleTopCategoryIds = new Text(
     "middleTopCategoryIds",
     null,

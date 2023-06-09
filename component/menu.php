@@ -54,7 +54,7 @@
     <ul class="nav flex items-center gap-x-3">
         <li>
             <button onclick="jasmine.switchDark()">
-                <iconify-icon icon="tabler:sun-moon"
+                <iconify-icon icon="<?php $this->options->switchDarkIconPhone(); ?>"
                               class="rounded px-3 py-2 text-lg"></iconify-icon>
             </button>
         </li>
