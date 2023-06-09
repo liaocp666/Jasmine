@@ -21,7 +21,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                     <div></div>
                     <div class="flex flex-row" itemscope itemtype="https://schema.org/NewsArticle">
                         <div class="mr-3 flex flex-1 flex-col justify-center gap-y-3">
-                            <h2 class="text-3xl font-semibold " itemprop="headline">
+                            <h2 class="text-3xl font-semibold jasmine-primary-color" itemprop="headline">
                                 标签
                             </h2>
                         </div>
@@ -50,7 +50,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                     <div></div>
                     <div class="flex flex-row" itemscope itemtype="https://schema.org/NewsArticle">
                         <div class="mr-3 flex flex-1 flex-col justify-center gap-y-3">
-                            <h2 class="text-3xl font-semibold " itemprop="headline">
+                            <h2 class="text-3xl font-semibold jasmine-primary-color" itemprop="headline">
                                 分类
                             </h2>
                         </div>
@@ -77,7 +77,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                     <div></div>
                     <div class="flex flex-row" itemscope itemtype="https://schema.org/NewsArticle">
                         <div class="mr-3 flex flex-1 flex-col justify-center gap-y-3">
-                            <h2 class="text-3xl font-semibold " itemprop="headline">
+                            <h2 class="text-3xl font-semibold jasmine-primary-color" itemprop="headline">
                                 文章
                             </h2>
                         </div>
@@ -89,8 +89,8 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                     $number = 0;
                     foreach ($archives as $year => $posts) {
                       $open = $number === 0 ? null : " closed";
-                      echo '<h2 class="archive-year title text-2xl my-2 dark:text-neutral-300">' . $year . " 年</h2>";
-                      echo '<ol id="flex flex-col archive-list-' . $year . '" class="archive-list' . $open . '">';
+                      echo '<h2 class="archive-year title text-2xl my-2 dark:text-neutral-300 jasmine-primary-color">' . $year . " 年</h2>";
+                      echo '<ol id="flex flex-col archive-list-' . $year . '" class="archive-list jasmine-primary-color' . $open . '">';
                       foreach ($posts as $created => $post) {
                         if (isShuoShuoType($post["cid"])) {
                           continue;
