@@ -11,4 +11,4 @@ require_once "meta.php";
 
 require_once "post.php";
 
-require_once "comment.php";
+require_once "common.php";
