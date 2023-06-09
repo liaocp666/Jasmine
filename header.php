@@ -90,6 +90,7 @@
         }
       <?php endif; ?>
     </style>
+    <link rel="shoucut icon" href="<?php $this->options->logoUrl(); ?>">
     <link type="text/css" rel="stylesheet" href="<?php $this->options->themeUrl(
       "assets/dist/style.css?v=" . getThemeVersion()
     ); ?>"/>
