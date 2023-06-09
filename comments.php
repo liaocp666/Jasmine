@@ -80,19 +80,19 @@ function threadedComments($comments, $options)
                       class="flex flex-col gap-y-2"
                       data-no-instant>
                     <?php if (!$this->user->hasLogin()): ?>
-                        <div class="flex flex-row md:flex-nowrap flex-wrap w-full gap-x-2 gap-y-2">
+                        <div class="flex flex-row md:flex-nowrap flex-wrap w-full gap-x-2 gap-y-2 grid grid-cols-3">
                             <input name="author" type="text"
-                                   class="dark:!bg-[#0d1117] dark:border-black dark:!text-gray-400 basis-full md:basis-2/6 border-[#ced4da] border rounded px-2 py-2"
+                                   class="dark:!bg-[#0d1117] dark:border-black dark:!text-gray-400 col-span-3 md:col-span-1 border-[#ced4da] border rounded px-2 py-2"
                                    placeholder="昵称" required
                                    value="<?php $this->remember("author"); ?>" required/>
                             <input name="mail" type="email"
-                                   class="dark:!bg-[#0d1117] dark:border-black dark:!text-gray-400 basis-full md:basis-2/6 border-[#ced4da] border rounded px-2 py-2"
+                                   class="dark:!bg-[#0d1117] dark:border-black dark:!text-gray-400 col-span-3 md:col-span-1 border-[#ced4da] border rounded px-2 py-2"
                                    placeholder="邮箱" required
                                    value="<?php $this->remember("mail"); ?>" <?php if (
   $this->options->commentsRequireMail
 ): ?> required<?php endif; ?>/>
                             <input type="url" name="url" id="url"
-                                   class="dark:!bg-[#0d1117] dark:border-black dark:!text-gray-400 basis-full md:basis-2/6 border-[#ced4da] border rounded px-2 py-2"
+                                   class="dark:!bg-[#0d1117] dark:border-black dark:!text-gray-400 col-span-3 md:col-span-1 border-[#ced4da] border rounded px-2 py-2"
                                    placeholder="网址"
                                    value="<?php $this->remember("url"); ?>"<?php if (
   $this->options->commentsRequireURL
