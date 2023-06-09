@@ -25,7 +25,7 @@
     <ul class="flex flex-col flex-wrap content-center gap-y-2 ">
         <li class="relative nav-li">
             <button onclick="jasmine.switchDark()">
-                <iconify-icon icon="tabler:sun-moon"
+                <iconify-icon icon="<?php $this->options->switchDarkIconDesktop(); ?>"
                               class="rounded px-2 py-1 text-2xl jasmine-primary-bg-hover hover:text-white"></iconify-icon>
             </button>
             <span class="jasmine-primary-bg text-white px-2 py-1 absolute w-full rounded top-0 left-[53px] w-max z-50"
