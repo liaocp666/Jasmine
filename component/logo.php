@@ -4,7 +4,7 @@
 
 <?php if ($this->options->logoUrl): ?>
     <div class="flex justify-center relative nav-li">
-        <a itemprop="url" href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title(); ?>">
+        <a itemprop="url" href="<?php $this->options->siteUrl(); ?>">
             <img itemprop="logo"
                  src="<?php echo $this->options->logoUrl; ?>"
                  alt="<?php $this->options->title(); ?>" width="50" height="50"
@@ -12,7 +12,7 @@
         </a>
         <span class="jasmine-primary-bg text-white px-2 py-1 absolute w-full rounded top-[5px] left-[90px] w-max"
               style="display: none">
-                    <?php $this->options->title(); ?>
+                    <?php $this->options->logoText(); ?>
                 </span>
     </div>
 <?php endif; ?>

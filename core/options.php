@@ -49,6 +49,15 @@ function themeConfig($form)
   );
   $form->addInput($logoUrl);
 
+  $logoText = new Text(
+    "logoText",
+    null,
+    null,
+    _t("站点 LOGO 鼠标悬停时显示内容"),
+    _t("在这里填入一个文字, 以使鼠标悬停在网站标题 LOGO 时显示该文字")
+  );
+  $form->addInput($logoText);
+
   $leftSidebarMenu = new Textarea(
     "leftSidebarMenu",
     null,
