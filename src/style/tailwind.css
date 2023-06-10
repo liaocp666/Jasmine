@@ -35,7 +35,7 @@
 @layer components {
   .jasmine-body {
     font-family: "HarmonyOS-Sans", sans-serif;
-    @apply m-2 bg-stone-100 text-neutral-500 transition delay-300 ease-linear dark:bg-[#0a0c19] dark:text-gray-400 md:max-w-[1200px] lg:mx-auto lg:my-16;
+    @apply m-2 bg-stone-100 text-neutral-500 dark:bg-[#0a0c19] dark:text-gray-400 md:max-w-[1200px] lg:mx-auto lg:my-16;
   }
 
   .jasmine-container {
