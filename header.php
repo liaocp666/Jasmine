@@ -55,7 +55,6 @@
     );
     $this->options->title();
     ?></title>
-    <link rel="icon" type="image/ico" href="<?php $this->options->siteUrl(); ?>favicon.ico">
     <?php $this->header("description=&generator=&pingback=&template=&xmlrpc=&wlw=&commentReply=&keywords="); ?>
     <link rel="dns-prefetch" href="https://npm.elemecdn.com" />
     <style>
@@ -90,10 +89,14 @@
         }
       <?php endif; ?>
     </style>
-    <link rel="shoucut icon" href="<?php $this->options->logoUrl(); ?>">
     <link type="text/css" rel="stylesheet" href="<?php $this->options->themeUrl(
       "assets/dist/style.css?v=" . getThemeVersion()
     ); ?>"/>
+    <?php if (getOptions()->icon): ?>
+      <link rel="shoucut icon" href="<?php $this->options->icon() ?>">
+    <?php else: ?>
+      <link rel="shoucut icon" href="<?php $this->options->siteUrl() ?>favcion.ico">
+    <?php endif; ?>
     <script src="https://cdn.staticfile.org/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
     <script src="https://npm.elemecdn.com/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
     <script src="<?php $this->options->themeUrl("/assets/dist/jasmine.iife.js?v=" . getThemeVersion()); ?>"></script>
