@@ -8,6 +8,9 @@
     font-family: HarmonyOS-Sans;
     src: url(./font/HarmonyOS-Sans.woff2) format("truetype");
   }
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @layer utilities {
