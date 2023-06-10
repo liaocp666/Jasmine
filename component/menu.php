@@ -45,7 +45,7 @@
     </div>  
 </div>
 
-<div id="header-menu-mobile" class="lg:hidden flex justify-between sticky top-0 border-b border-stone-100 py-3 z-50 bg-[#ffffffe6] dark:bg-[#1b1d30cc] dark:text-neutral-300 dark:border-neutral-600">
+<div id="header-menu-mobile" class="jasmine-primary-color lg:hidden flex justify-between sticky top-0 border-b border-stone-100 py-3 z-50 bg-[#ffffffe6] dark:bg-[#1b1d30cc] dark:text-neutral-300 dark:border-neutral-600">
     <ul class="nav flex items-center gap-x-3">
         <li>
             <?php $this->need("component/logo.php"); ?>
@@ -81,7 +81,7 @@
 
 <div id="mobile-menus-bg" class="lg:hidden hidden fixed top-0 left-0 z-[999] bg-gray-500/50 dark:bg-[#0a0c19]/50 w-full min-h-screen "></div>
 <div id="mobile-menus" class="lg:hidden fixed top-0 left-0 z-[1000] translate-x-[-1000px] w-4/5  duration-300">
-    <div class="bg-stone-100 min-h-screen flex flex-col gap-y-14 px-5 pt-14 dark:bg-[#161829]">
+    <div class="jasmine-primary-color bg-stone-100 min-h-screen flex flex-col gap-y-14 px-5 pt-14 dark:bg-[#161829]">
         <ul class="flex flex-col items-center gap-y-3">
             <li class="bg-white rounded w-full dark:bg-gray-700 ">
                 <a title="首页" href="<?php $this->options->siteUrl(); ?>"
