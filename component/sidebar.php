@@ -41,26 +41,7 @@
             <?php endif; ?>
         </ul>
     </div>
-    <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
-        <div class="flex flex-row items-center  jasmine-primary-color">
-            <iconify-icon icon="tabler:message" class="rounded pr-1 text-xl font-medium"></iconify-icon>
-            <span class="font-medium">最新评论</span>
-        </div>
-        <ul class="flex flex-col gap-y-3 px-1">
-            <?php $this->widget("Widget_Comments_Recent", [])->to($newComments); ?>
-            <?php if ($newComments->have()): ?>
-                <?php while ($newComments->next()): ?>
-                    <li>
-                        <a href="<?php $newComments->permalink(); ?>"
-                           title="<?php $newComments->excerpt(35, "..."); ?>"
-                           class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500">
-                            <?php echo $newComments->author; ?>: <?php $newComments->excerpt(35, "..."); ?></a>
-                    </li>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </ul>
-    </div>
-  <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
+<div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
         <div class="flex flex-row items-center  jasmine-primary-color">
             <iconify-icon icon="tabler:briefcase" class="rounded pr-1 text-xl font-medium"></iconify-icon>
             <span class="font-medium">热门分类</span>
