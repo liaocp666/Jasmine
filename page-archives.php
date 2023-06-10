@@ -89,8 +89,14 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
                     $number = 0;
                     foreach ($archives as $year => $posts) {
                       $open = $number === 0 ? null : " closed";
-                      echo '<h2 class="archive-year title text-2xl my-2 dark:text-neutral-300 jasmine-primary-color">' . $year . " 年</h2>";
-                      echo '<ol id="flex flex-col archive-list-' . $year . '" class="archive-list jasmine-primary-color' . $open . '">';
+                      echo '<h2 class="archive-year title text-2xl my-2 dark:text-neutral-300 jasmine-primary-color">' .
+                        $year .
+                        " 年</h2>";
+                      echo '<ol id="flex flex-col archive-list-' .
+                        $year .
+                        '" class="archive-list jasmine-primary-color' .
+                        $open .
+                        '">';
                       foreach ($posts as $created => $post) {
                         if (isShuoShuoType($post["cid"])) {
                           continue;
