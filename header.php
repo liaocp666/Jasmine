@@ -102,5 +102,6 @@
     <script src="<?php $this->options->themeUrl("/assets/dist/jasmine.iife.js?v=" . getThemeVersion()); ?>"></script>
     <style>
         <?php $this->options->customStyle(); ?>
+        <?php $this->options->customFooterStyle(); ?>
     </style>
 </head>
