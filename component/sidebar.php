@@ -4,6 +4,7 @@
 
 <div class="sidebar__right__inner flex flex-col px-5 gap-y-8">
     <div></div>
+    <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "Author", true)): ?>
     <div class="flex flex-col gap-y-5 border-b border-stone-100 dark:border-neutral-600 pb-10">
         <div class="flex gap-x-3">
             <img src="<?php echo getAvatarByMail($this->author->mail, true); ?>"
@@ -23,7 +24,8 @@
             </ul>
         <?php endif; ?>
     </div>
-    <?php if(getOptions()->hotArticle != "0"): ?>
+    <?php endif; ?>
+    <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "PopularArticles", true)): ?>
       <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
           <div class="flex flex-row items-center  jasmine-primary-color">
               <iconify-icon icon="tabler:chart-bar" class="rounded pr-1 text-xl font-medium"></iconify-icon>
@@ -43,7 +45,28 @@
           </ul>
       </div>
     <?php endif; ?>
-    <?php if(getOptions()->hotCategory == "1"): ?>
+    <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "LatestComments", true)): ?>
+    <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
+        <div class="flex flex-row items-center  jasmine-primary-color">
+            <iconify-icon icon="tabler:message" class="rounded pr-1 text-xl font-medium"></iconify-icon>
+            <span class="font-medium">最新评论</span>
+        </div>
+        <ul class="flex flex-col gap-y-3 px-1">
+            <?php $this->widget("Widget_Comments_Recent", [])->to($newComments); ?>
+            <?php if ($newComments->have()): ?>
+                <?php while ($newComments->next()): ?>
+                    <li>
+                        <a href="<?php $newComments->permalink(); ?>"
+                           title="<?php $newComments->excerpt(35, "..."); ?>"
+                           class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500">
+                            <?php echo $newComments->author; ?>: <?php $newComments->excerpt(35, "..."); ?></a>
+                    </li>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </ul>
+    </div>
+    <?php endif; ?>
+    <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "PopularCategories", false)): ?>
       <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
           <div class="flex flex-row items-center  jasmine-primary-color">
               <iconify-icon icon="tabler:briefcase" class="rounded pr-1 text-xl font-medium"></iconify-icon>
@@ -63,7 +86,7 @@
           </ul>
       </div>
     <?php endif; ?>
-    <?php if(getOptions()->hotTag != "0"): ?>
+    <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "PopularTags", true)): ?>
       <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
           <div class="flex flex-row items-center  jasmine-primary-color">
               <iconify-icon icon="tabler:bookmarks" class="rounded pr-1 text-xl font-medium"></iconify-icon>

@@ -109,7 +109,6 @@ function isShuoShuoType($cid)
 {
   $shuoshuoCategoryId = getOptions()->shuoshuoCategoryId;
   if (empty($shuoshuoCategoryId)) {
-    print_r($shuoshuoCategoryId);
     return false;
   }
   $db = getDb();

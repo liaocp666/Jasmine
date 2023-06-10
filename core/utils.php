@@ -139,8 +139,8 @@ function getCopyrightDate(): string
 
 /**
  * 获取评论头像
- * @package $isOwner 是否为作者
  * @param $mail 邮箱
+ * @package $isOwner 是否为作者
  */
 function getAvatarByMail($mail, $isOwner = false)
 {
@@ -192,6 +192,7 @@ function imageLazyLoad($content)
     '<img$1data-original$3="$4"$5 class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=">';
   return preg_replace($pattern, $replacement, $content);
 }
+
 /**
  * 判断插件是否可用 add by Meteor
  *
@@ -202,4 +203,29 @@ function isPluginAvailable($name)
   $plugins = Typecho_Plugin::export();
   $plugins = $plugins["activated"];
   return is_array($plugins) && array_key_exists($name, $plugins);
+}
+
+/**
+ * 获取选项值，无法获取则返回默认值数据
+ * @param $name     选项名
+ * @param $defaultValue 默认值
+ */
+function getOptionValueOrDefault($name, $defaultValue)
+{
+  return getOptions()->$name ? getOptions()->$name : $defaultValue;
+}
+
+/**
+ * 查找数组选项值，无法获取则返回默认值
+ * @param $optionName     名称
+ * @param $searchName   数组名
+ * @param $defaultValue 默认值
+ */
+function inArrayOptionValueOrDefault($optionName, $searchName, $defaultValue)
+{
+  if ($optionValue = getOptions()->$optionName) {
+    return in_array($searchName, $optionValue);
+  } else {
+    return $defaultValue;
+  }
 }

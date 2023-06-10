@@ -1,6 +1,7 @@
 <?php
 
 use Typecho\Common;
+use Typecho\Widget\Helper\Form\Element\Checkbox;
 use Typecho\Widget\Helper\Form\Element\Text;
 use Typecho\Widget\Helper\Form\Element\Textarea;
 use Typecho\Widget\Helper\Form\Element\Radio;
@@ -36,7 +37,7 @@ function themeConfig($form)
     ],
     "0",
     _t("选择主题颜色配置"),
-    _t("")
+    _t("默认厚黑配色")
   );
   $form->addInput($themeColor);
 
@@ -44,18 +45,12 @@ function themeConfig($form)
     "icon",
     null,
     null,
-    _t("站点 ICON 地址"),
+    _t("浏览器标签页图标"),
     _t("在这里填入一个图片 URL 地址, 以在浏览器标签栏显示一个 ICON，默认值为站点路径下 /favicon.ico")
   );
   $form->addInput($icon);
 
-  $logoUrl = new Text(
-    "logoUrl",
-    null,
-    null,
-    _t("站点 LOGO 地址"),
-    _t("在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO")
-  );
+  $logoUrl = new Text("logoUrl", null, null, _t("站点 LOGO 地址"), _t("填入图片地址, 用于显示站点 LOGO ，留空不显示"));
   $form->addInput($logoUrl);
 
   $logoText = new Text(
@@ -63,7 +58,7 @@ function themeConfig($form)
     null,
     null,
     _t("站点 LOGO 鼠标悬停时显示内容"),
-    _t("在这里填入一个文字, 以使鼠标悬停在网站标题 LOGO 时显示该文字，默认值为网站标题名")
+    _t("填入文字内容, 使鼠标悬停在网站标题 LOGO 时显示，留空则显示站点名称")
   );
   $form->addInput($logoText);
 
@@ -72,25 +67,25 @@ function themeConfig($form)
     null,
     null,
     "左边栏菜单",
-    '参考文档：<a href="https://github.com/liaocp666/Jasmine/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3#%E5%B7%A6%E8%BE%B9%E6%A0%8F%E8%8F%9C%E5%8D%95" target="_blank">《左边栏菜单》</a>'
+    '参考文档：<a href="https://www.liaocp.cn/270.html" target="_blank">《左边栏菜单》</a>'
   );
   $form->addInput($leftSidebarMenu);
 
   $switchDarkIconDesktop = new Text(
     "switchDarkIconDesktop",
     null,
-    null,
-    "桌面切换深浅模式按钮图标",
-    '参考：<a href="https://github.com/liaocp666/Jasmine/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3#%E5%B7%A6%E8%BE%B9%E6%A0%8F%E8%8F%9C%E5%8D%95" target="_blank">《左边栏菜单》</a>，填入一个icon值'
+    "tabler:sun-moon",
+    "切换暗黑模式按钮图标（大屏设备）",
+    '非必填，留空显示默认图标：tabler:sun-moon 。相关文档：<a href="https://www.liaocp.cn/270.html" target="_blank">《图标使用》</a>'
   );
   $form->addInput($switchDarkIconDesktop);
 
   $switchDarkIconPhone = new Text(
     "switchDarkIconPhone",
     null,
-    null,
-    "手机切换深浅模式按钮图标",
-    '参考：<a href="https://github.com/liaocp666/Jasmine/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3#%E5%B7%A6%E8%BE%B9%E6%A0%8F%E8%8F%9C%E5%8D%95" target="_blank">《左边栏菜单》</a>，填入一个icon值'
+    "tabler:sun-moon",
+    "切换深浅模式按钮图标（移动设备）",
+    '非必填，留空显示默认图标：tabler:sun-moon 。相关文档：<a href="https://www.liaocp.cn/270.html" target="_blank">《图标使用》</a>'
   );
   $form->addInput($switchDarkIconPhone);
 
@@ -105,12 +100,12 @@ function themeConfig($form)
     _t("")
   );
   $form->addInput($hotArticle);
-  
+
   $hotCategory = new Radio(
     "hotCategory",
     [
       "0" => _t("隐藏"),
-      "1" => _t("显示")
+      "1" => _t("显示"),
     ],
     "0",
     _t("选择是否显示热门分类"),
@@ -122,14 +117,14 @@ function themeConfig($form)
     "hotTag",
     [
       "0" => _t("隐藏"),
-      "1" => _t("显示")
+      "1" => _t("显示"),
     ],
     "1",
     _t("选择是否显示热门标签"),
     _t("")
   );
   $form->addInput($hotTag);
-  
+
   $middleTopCategoryIds = new Text(
     "middleTopCategoryIds",
     null,
@@ -158,17 +153,34 @@ function themeConfig($form)
   $form->addInput($stickyPost);
 
   /*   $pjaxLoadPage = new Radio(
-    "pjaxLoadPage",
+      "pjaxLoadPage",
+      [
+        "0" => _t("关闭"),
+        "1" => _t("开启"),
+      ],
+      "0",
+      _t("开启无刷新加载页面"),
+      _t("默认为关闭")
+    );
+    $form->addInput($pjaxLoadPage);
+   */
+
+  $sidebarRightWidget = new Checkbox(
+    "sidebarRightWidget",
     [
-      "0" => _t("关闭"),
-      "1" => _t("开启"),
+      "Author" => "作者信息",
+      "PopularArticles" => "热门文章",
+      "PopularCategories" => "热门分类",
+      "LatestComments" => "最新评论",
+      "PopularTags" => "热门标签",
+      "About" => "关于站长",
     ],
-    "0",
-    _t("开启无刷新加载页面"),
-    _t("默认为关闭")
+    ["Author", "PopularArticles", "LatestComments", "PopularTags", "About"],
+    _t("侧边栏显示"),
+    _t("默认显示作者信息，热门文章，最新评论，热门标签，关于站长")
   );
-  $form->addInput($pjaxLoadPage);
- */
+  $form->addInput($sidebarRightWidget);
+
   $authorAvatar = new Text("authorAvatar", null, null, "作者头像", "填写图片地址，用于显示右侧作者头像");
   $form->addInput($authorAvatar);
 
@@ -214,12 +226,6 @@ function themeConfig($form)
   $icpCode = new Text("icpCode", null, null, "ICP 备案号", "网站备案号");
   $form->addInput($icpCode);
 
-  $customFooterContent = new Textarea("customFooterContent", null, null, "自定义Footer内容", "直接放想要显示的html标签内容");
-  $form->addInput($customFooterContent);
-
-  $customFooterStyle = new Textarea("customFooterStyle", null, null, "自定义Footer样式", "直接放想要控制的CSS属性，.footer开头");
-  $form->addInput($customFooterStyle);
-  
   $customStyle = new Textarea("customStyle", null, null, "自定义样式", "不需要添加 &lt;style&gt; 标签");
   $form->addInput($customStyle);
 

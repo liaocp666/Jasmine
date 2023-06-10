@@ -12,7 +12,7 @@
         </a>
         <span class="jasmine-primary-bg text-white px-2 py-1 absolute w-full rounded top-[5px] left-[90px] w-max"
               style="display: none">
-                    <?php $this->options->logoText?$this->options->logoText():$this->options->title(); ?>
+                    <?php echo getOptionValueOrDefault("logoText", $this->options->title); ?>
                 </span>
     </div>
 <?php endif; ?>
