@@ -25,6 +25,7 @@ function themeConfig($form)
   echo '<br/><div id="jasmine-check-update" class="update-check message success">正在检查更新……</div>';
   echo '<script>var jasmineVersion = "' . getThemeVersion() . '"</script>';
   echo '<script src="' . Helper::options()->themeUrl . '/core/check_update.js"></script>';
+  echo "<style>.typecho-option-submit button{position: fixed;bottom: 10%;right: 20%;box-shadow: 0 12px 16px rgba(29,43,76,.12);}</style>";
 
   $themeColor = new Radio(
     "themeColor",
@@ -352,7 +353,7 @@ function backupThemeData()
   ?>
 
     </form>
-    <?php echo '<br/><div class="message error">请先保存设置，再创建备份！<br/><br/><form class="backup" action="?jasmine_backup" method="post">
+    <?php echo '<br/><div class="message error">请先点击右下角的保存设置按钮，创建备份！<br/><br/><form class="backup" action="?jasmine_backup" method="post">
     <input type="submit" name="type" class="btn primary" value="创建备份" />
     <input type="submit" name="type" class="btn primary" value="还原备份" />
     <input type="submit" name="type" class="btn primary" value="删除备份" /></form></div>';
