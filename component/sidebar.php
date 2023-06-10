@@ -23,60 +23,66 @@
             </ul>
         <?php endif; ?>
     </div>
-    <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
-        <div class="flex flex-row items-center  jasmine-primary-color">
-            <iconify-icon icon="tabler:chart-bar" class="rounded pr-1 text-xl font-medium"></iconify-icon>
-            <span class="font-medium">热门文章</span>
-        </div>
-        <ul class="flex flex-col gap-y-3 px-1">
-            <?php $posts = getHotPosts(); ?>
-            <?php if (!empty($posts)): ?>
-                <?php foreach ($posts as $post): ?>
-                    <li>
-                        <a href="<?php echo $post["permalink"]; ?>"
-                           class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500"
-                           title="<?php echo $post["title"]; ?>"><?php echo $post["title"]; ?></a>
-                    </li>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </ul>
-    </div>
-<div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
-        <div class="flex flex-row items-center  jasmine-primary-color">
-            <iconify-icon icon="tabler:briefcase" class="rounded pr-1 text-xl font-medium"></iconify-icon>
-            <span class="font-medium">热门分类</span>
-        </div>
-        <ul class="flex flex-wrap gap-y-2">
-            <?php $this->widget("Widget_Metas_Category_List", "ignoreZeroCount=1&limit=15")->to($categories); ?>
-            <?php if ($categories->have()): ?>
-                <?php while ($categories->next()): ?>
-                    <li>
-                        <a href="<?php $categories->permalink(); ?>"
-                           title="<?php $categories->name(); ?>"
-                           class=" dark:text-gray-400 text-sm rounded-full px-3 py-1 jasmine-primary-bg-hover hover:text-white"><?php $categories->name(); ?></a>
-                    </li>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </ul>
-    </div>
-    <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
-        <div class="flex flex-row items-center  jasmine-primary-color">
-            <iconify-icon icon="tabler:bookmarks" class="rounded pr-1 text-xl font-medium"></iconify-icon>
-            <span class="font-medium">热门标签</span>
-        </div>
-        <ul class="flex flex-wrap gap-y-2">
-            <?php $this->widget("Widget_Metas_Tag_Cloud", "ignoreZeroCount=1&limit=15")->to($tags); ?>
-            <?php if ($tags->have()): ?>
-                <?php while ($tags->next()): ?>
-                    <li>
-                        <a href="<?php $tags->permalink(); ?>"
-                           title="<?php $tags->name(); ?>"
-                           class=" dark:text-gray-400 text-sm rounded-full px-3 py-1 jasmine-primary-bg-hover hover:text-white"><?php $tags->name(); ?></a>
-                    </li>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </ul>
-    </div>
+    <?php if(getOptions()->hotArticle != "0"): ?>
+      <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
+          <div class="flex flex-row items-center  jasmine-primary-color">
+              <iconify-icon icon="tabler:chart-bar" class="rounded pr-1 text-xl font-medium"></iconify-icon>
+              <span class="font-medium">热门文章</span>
+          </div>
+          <ul class="flex flex-col gap-y-3 px-1">
+              <?php $posts = getHotPosts(); ?>
+              <?php if (!empty($posts)): ?>
+                  <?php foreach ($posts as $post): ?>
+                      <li>
+                          <a href="<?php echo $post["permalink"]; ?>"
+                             class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500"
+                             title="<?php echo $post["title"]; ?>"><?php echo $post["title"]; ?></a>
+                      </li>
+                  <?php endforeach; ?>
+              <?php endif; ?>
+          </ul>
+      </div>
+    <?php endif; ?>
+    <?php if(getOptions()->hotCategory == "1"): ?>
+      <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
+          <div class="flex flex-row items-center  jasmine-primary-color">
+              <iconify-icon icon="tabler:briefcase" class="rounded pr-1 text-xl font-medium"></iconify-icon>
+              <span class="font-medium">热门分类</span>
+          </div>
+          <ul class="flex flex-wrap gap-y-2">
+              <?php $this->widget("Widget_Metas_Category_List", "ignoreZeroCount=1&limit=15")->to($categories); ?>
+              <?php if ($categories->have()): ?>
+                  <?php while ($categories->next()): ?>
+                      <li>
+                          <a href="<?php $categories->permalink(); ?>"
+                             title="<?php $categories->name(); ?>"
+                             class=" dark:text-gray-400 text-sm rounded-full px-3 py-1 jasmine-primary-bg-hover hover:text-white"><?php $categories->name(); ?></a>
+                      </li>
+                  <?php endwhile; ?>
+              <?php endif; ?>
+          </ul>
+      </div>
+    <?php endif; ?>
+    <?php if(getOptions()->hotTag != "0"): ?>
+      <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
+          <div class="flex flex-row items-center  jasmine-primary-color">
+              <iconify-icon icon="tabler:bookmarks" class="rounded pr-1 text-xl font-medium"></iconify-icon>
+              <span class="font-medium">热门标签</span>
+          </div>
+          <ul class="flex flex-wrap gap-y-2">
+              <?php $this->widget("Widget_Metas_Tag_Cloud", "ignoreZeroCount=1&limit=15")->to($tags); ?>
+              <?php if ($tags->have()): ?>
+                  <?php while ($tags->next()): ?>
+                      <li>
+                          <a href="<?php $tags->permalink(); ?>"
+                             title="<?php $tags->name(); ?>"
+                             class=" dark:text-gray-400 text-sm rounded-full px-3 py-1 jasmine-primary-bg-hover hover:text-white"><?php $tags->name(); ?></a>
+                      </li>
+                  <?php endwhile; ?>
+              <?php endif; ?>
+          </ul>
+      </div>
+    <?php endif; ?>
     <div class="flex flex-col justify-start gap-x-3 gap-y-4 pb-12 mt-4">
         <div class="flex flex-row items-center  jasmine-primary-color">
             <iconify-icon icon="tabler:chart-arcs" class="rounded pr-1 text-xl font-medium"></iconify-icon>
