@@ -56,10 +56,10 @@
             <button onclick="jasmine.switchDark()">
               <?php if (getOptions()->switchDarkIconPhone): ?>
                 <iconify-icon icon="<?php $this->options->switchDarkIconPhone(); ?>"
-                              class="rounded px-2 py-1 text-2xl jasmine-primary-bg-hover hover:text-white"></iconify-icon>
+                              class="rounded px-3 py-2 text-lg"></iconify-icon>
               <?php else: ?>
                 <iconify-icon icon="tabler:sun-moon"
-                              class="rounded px-2 py-1 text-2xl jasmine-primary-bg-hover hover:text-white"></iconify-icon>
+                              class="rounded px-3 py-2 text-lg"></iconify-icon>
               <?php endif; ?>
             </button>
         </li>
