@@ -214,6 +214,12 @@ function themeConfig($form)
   $icpCode = new Text("icpCode", null, null, "ICP 备案号", "网站备案号");
   $form->addInput($icpCode);
 
+  $customFooterContent = new Textarea("customFooterContent", null, null, "自定义Footer内容", "直接放想要显示的html标签内容");
+  $form->addInput($customFooterContent);
+
+  $customFooterStyle = new Textarea("customFooterStyle", null, null, "自定义Footer样式", "直接放想要控制的CSS属性，.footer开头");
+  $form->addInput($customFooterStyle);
+  
   $customStyle = new Textarea("customStyle", null, null, "自定义样式", "不需要添加 &lt;style&gt; 标签");
   $form->addInput($customStyle);
 
