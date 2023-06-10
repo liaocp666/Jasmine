@@ -90,42 +90,6 @@ function themeConfig($form)
   );
   $form->addInput($switchDarkIconPhone);
 
-  $hotArticle = new Radio(
-    "hotArticle",
-    [
-      "0" => _t("隐藏"),
-      "1" => _t("显示"),
-    ],
-    "1",
-    _t("选择是否显示热门文章"),
-    _t("")
-  );
-  $form->addInput($hotArticle);
-
-  $hotCategory = new Radio(
-    "hotCategory",
-    [
-      "0" => _t("隐藏"),
-      "1" => _t("显示"),
-    ],
-    "0",
-    _t("选择是否显示热门分类"),
-    _t("")
-  );
-  $form->addInput($hotCategory);
-
-  $hotTag = new Radio(
-    "hotTag",
-    [
-      "0" => _t("隐藏"),
-      "1" => _t("显示"),
-    ],
-    "1",
-    _t("选择是否显示热门标签"),
-    _t("")
-  );
-  $form->addInput($hotTag);
-
   $middleTopCategoryIds = new Text(
     "middleTopCategoryIds",
     null,
