@@ -67,24 +67,24 @@
     </div>
     <?php endif; ?>
     <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "PopularCategories", false)): ?>
-      <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
-          <div class="flex flex-row items-center  jasmine-primary-color">
-              <iconify-icon icon="tabler:briefcase" class="rounded pr-1 text-xl font-medium"></iconify-icon>
-              <span class="font-medium">热门分类</span>
-          </div>
-          <ul class="flex flex-wrap gap-y-2">
-              <?php $this->widget("Widget_Metas_Category_List", "ignoreZeroCount=1&limit=15")->to($categories); ?>
-              <?php if ($categories->have()): ?>
-                  <?php while ($categories->next()): ?>
-                      <li>
-                          <a href="<?php $categories->permalink(); ?>"
-                             title="<?php $categories->name(); ?>"
-                             class=" dark:text-gray-400 text-sm rounded-full px-3 py-1 jasmine-primary-bg-hover hover:text-white"><?php $categories->name(); ?></a>
-                      </li>
-                  <?php endwhile; ?>
-              <?php endif; ?>
-          </ul>
-      </div>
+    <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
+        <div class="flex flex-row items-center  jasmine-primary-color">
+            <iconify-icon icon="tabler:briefcase" class="rounded pr-1 text-xl font-medium"></iconify-icon>
+            <span class="font-medium">热门分类</span>
+        </div>
+        <ul class="flex flex-wrap gap-y-2">
+            <?php $this->widget("Widget_Metas_Category_List", "ignoreZeroCount=1&limit=15")->to($categories); ?>
+            <?php if ($categories->have()): ?>
+                <?php while ($categories->next()): ?>
+                    <li>
+                        <a href="<?php $categories->permalink(); ?>"
+                            title="<?php $categories->name(); ?>"
+                            class=" dark:text-gray-400 text-sm rounded-full px-3 py-1 jasmine-primary-bg-hover hover:text-white"><?php $categories->name(); ?></a>
+                    </li>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </ul>
+    </div>
     <?php endif; ?>
     <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "PopularTags", true)): ?>
       <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
