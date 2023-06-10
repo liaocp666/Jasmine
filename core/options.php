@@ -40,12 +40,21 @@ function themeConfig($form)
   );
   $form->addInput($themeColor);
 
+  $icon = new Text(
+    "icon",
+    null,
+    null,
+    _t("站点 ICON 地址"),
+    _t("在这里填入一个图片 URL 地址, 以在浏览器标签栏显示一个 ICON，默认值为站点路径下 /favicon.ico")
+  );
+  $form->addInput($icon);
+
   $logoUrl = new Text(
     "logoUrl",
     null,
     null,
     _t("站点 LOGO 地址"),
-    _t("在这里填入一个图片 URL 地址, 以在网站标题前和浏览器标签栏加上一个 LOGO")
+    _t("在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO")
   );
   $form->addInput($logoUrl);
 
