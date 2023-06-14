@@ -106,6 +106,7 @@
           </ul>
       </div>
     <?php endif; ?>
+    <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "About", true)): ?>
     <div class="flex flex-col justify-start gap-x-3 gap-y-4 pb-12 mt-4">
         <div class="flex flex-row items-center  jasmine-primary-color">
             <iconify-icon icon="tabler:chart-arcs" class="rounded pr-1 text-xl font-medium"></iconify-icon>
@@ -168,4 +169,5 @@
             <?php endif; ?>
         </ul>
     </div>
+    <?php endif; ?>
 </div>
