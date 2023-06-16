@@ -6,7 +6,7 @@
  *
  * @package Jasmine
  * @author Kent Liao
- * @version 2.4.1
+ * @version 2.5.0
  * @link https://www.liaocp.cn/
  */
 if (!defined("__TYPECHO_ROOT_DIR__")) {
