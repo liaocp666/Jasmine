@@ -155,10 +155,19 @@ function getAvatarByMail($mail, $isOwner = false)
   $md5MailLower = md5($mailLower);
   $qqMail = str_replace("@qq.com", "", $mailLower);
   if (strstr($mailLower, "qq.com") && is_numeric($qqMail) && strlen($qqMail) < 11 && strlen($qqMail) > 4) {
-    return "https://thirdqq.qlogo.cn/g?b=qq&nk=" . $qqMail . "&s=100";
+    return getQQAvatar($qqMail);
   } else {
     return $gravatarsUrl . $md5MailLower . "?d=mm";
   }
+}
+
+/**
+ * 获取 QQ 头像
+ */
+function getQQAvatar ($qq) {
+  $url = 'https://s.p.qq.com/pub/get_face?img_type=3&uin=' . $qq;
+  $response = get_headers($url, 1)['Location'];
+  return str_replace('http://', 'https://', $response);
 }
 
 /**
