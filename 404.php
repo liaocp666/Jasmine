@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="markdown-body dark:!bg-[#161829] dark:!bg-[#0d1117] !text-neutral-900 dark:!text-gray-400" itemprop="articleBody">
-                    <p>我们找不到您想要的页面，返回首页</p> 
+                    <p>我们找不到您想要的页面，<a href="<?php $this->options->siteUrl(); ?>" title="返回首页">返回首页</a></p> 
                 </div>
             </div>
         </div>
