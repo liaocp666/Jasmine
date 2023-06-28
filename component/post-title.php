@@ -28,6 +28,7 @@
             <a href="<?php $this->permalink(); ?>" title="<?php $this->title(); ?>" class="w-[170px]">
                 <img src="<?php echo $thumbnail; ?>" alt="<?php $this->title(); ?>" width="130"
                      height="90"
+                     loading="lazy"
                      class="h-[130px] w-[170px] rounded object-cover"/>
             </a>
         <?php endif; ?>

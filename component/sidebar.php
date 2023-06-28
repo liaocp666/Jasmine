@@ -8,7 +8,7 @@
     <div class="flex flex-col gap-y-5 border-b border-stone-100 dark:border-neutral-600 pb-10">
         <div class="flex gap-x-3">
             <img src="<?php echo getAvatarByMail($this->author->mail, true); ?>"
-                 alt="<?php $this->author->screenName(); ?>"
+                 loading="lazy"
                  alt="<?php $this->author->screenName(); ?>" width="50" height="50"
                  class="rounded object-cover">
             <div class="flex flex-col justify-between">

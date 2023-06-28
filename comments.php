@@ -28,10 +28,12 @@ function threadedComments($comments, $options)
             <?php if ($comments->authorId == $comments->ownerId) { ?>
                 <img class="rounded w-[50px] h-[50px] object-cover" width="50" height="50"
                      src="<?php echo getAvatarByMail($comments->mail, true); ?>"
+                     loading="lazy"
                      alt="<?php $comments->author; ?>">
             <?php } else { ?>
                 <img class="rounded w-[50px] h-[50px] object-cover" width="50" height="50"
                      src="<?php echo getAvatarByMail($comments->mail); ?>"
+                     loading="lazy"
                      alt="<?php $comments->author; ?>">
             <?php } ?>
             <div class="flex flex-col w-full">
@@ -113,6 +115,7 @@ function threadedComments($comments, $options)
                             <?php if ($this->user->hasLogin()): ?>
                                 <img class="img-thumbnail rounded me-1" width="50" height="50"
                                      src="<?php echo getAvatarByMail($this->user->mail, true); ?>"
+                                     loading="lazy"
                                      alt="<?php $this->user->screenName(); ?>">
                                 <div class="flex flex-col">
                                     <span class=""><?php $this->user->screenName(); ?></span>

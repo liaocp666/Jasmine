@@ -26,7 +26,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
        Links_Plugin::output('<a href="{url}" target="_blank" title="{title}">
 							<div class=" flex gap-x-2 p-4 border border-stone-100 hover:border-stone-300 dark:border-neutral-600 rounded shadow">
 								<section class="w-14 h-14 min-w-fit min-h-fit">
-									<img src="{image}"class="w-14 h-14 min-w-fit min-h-fit rounded-full" />
+									<img src="{image}"class="w-14 h-14 min-w-fit min-h-fit rounded-full" loading="lazy"/>
 								</section>
 								<section class="flex flex-col justify-center gap-y-2">
 									<h4 class="text-sm ">{name}</h4>

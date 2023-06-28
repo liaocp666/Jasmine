@@ -19,6 +19,7 @@ if (null != $cids): ?>
                             alt="" width="130"
                             height="90"
                             alt="<?php $item->title(); ?>"
+                            loading="lazy"
                             class="h-[90px] w-[130px] rounded object-cover"/>
                     </a>
                 <?php endif; ?>

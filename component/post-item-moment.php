@@ -6,6 +6,7 @@
     <div class="flex flex-row gap-x-3 item-center">
         <img class="rounded object-cover w-[42px] h-[42px]" width="42" height="42"
              src="<?php echo getAvatarByMail($this->author->mail, true); ?>"
+             loading="lazy"
              alt="<?php $this->author->screenName(); ?>">
         <div class="flex flex-col justify-center">
             <span class=""><?php $this->author->screenName(); ?></span>
