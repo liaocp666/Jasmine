@@ -13,7 +13,7 @@
                 <div></div>
                 <?php $this->need("component/post-title.php"); ?>
                 <div class="markdown-body dark:!bg-[#161829] dark:!bg-[#0d1117] !text-neutral-900 dark:!text-gray-400" itemprop="articleBody">
-                    <?php $this->content(); ?>
+                    <?php echo handleContent($this->content);?>
                 </div>
                 <div class="flex flex-row gap-x-2 " id="post-tag">
                     <?php $this->tags(" ", true, ""); ?>

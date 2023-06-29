@@ -19,7 +19,7 @@ if (!defined("__TYPECHO_ROOT_DIR__")) {
 				<div></div>
 				<?php $this->need("component/post-title.php"); ?>
 				<div class="markdown-body dark:!bg-[#161829] dark:!bg-[#0d1117] !text-neutral-900 dark:!text-gray-400" itemprop="articleBody">
-				<?php $this->content(); ?>
+				<?php echo handleContent($this->content); ?>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 					<?php if (isPluginAvailable("Links")) {

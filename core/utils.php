@@ -155,7 +155,7 @@ function getAvatarByMail($mail, $isOwner = false)
   $md5MailLower = md5($mailLower);
   $qqMail = str_replace("@qq.com", "", $mailLower);
   if (strstr($mailLower, "qq.com") && is_numeric($qqMail) && strlen($qqMail) < 11 && strlen($qqMail) > 4) {
-    return getQQAvatar($qqMail);
+    return $gravatarsUrl . $md5MailLower . "?d=mm";
   } else {
     return $gravatarsUrl . $md5MailLower . "?d=mm";
   }
@@ -198,7 +198,7 @@ function imageLazyLoad($content)
 {
   $pattern = '/<img(.*?)src(.*?)=(.*?)"(.*?)">/i';
   $replacement =
-    '<img$1data-original$3="$4"$5 class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=">';
+    '<img$1src$3="$4"$5 loading="lazy">';
   return preg_replace($pattern, $replacement, $content);
 }
 
