@@ -14,6 +14,6 @@
         </div>
     </div>
     <div class="markdown-body !bg-stone-100 rounded p-5 relative dark:!bg-[#0d1117] !text-neutral-900 dark:!text-neutral-200" id="moment">
-        <?php echo handleContent($this->content);?>
+        <?php echo handleContent($this->content); ?>
     </div>
 </div>

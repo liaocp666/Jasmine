@@ -39,7 +39,7 @@
   }
 
   .jasmine-container {
-    @apply rounded bg-white dark:bg-[#161829];
+    @apply rounded bg-white dark:bg-[rgba(22,24,41,0.9)];
   }
 
   .jasmine-primary-color {
