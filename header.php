@@ -94,7 +94,7 @@
     ); ?>"/>
     <link rel="shoucut icon" href="<?php echo getOptionValueOrDefault("icon", $this->options->siteUrl . 'favicon.ico') ?>">
     <script src="https://cdn.staticfile.org/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
-    <script src="https://npm.elemecdn.com/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <script async src="https://npm.elemecdn.com/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
     <script src="<?php $this->options->themeUrl("/assets/dist/jasmine.iife.js?v=" . getThemeVersion()); ?>"></script>
     <style>
         <?php $this->options->customStyle(); ?>
