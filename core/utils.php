@@ -164,10 +164,11 @@ function getAvatarByMail($mail, $isOwner = false)
 /**
  * 获取 QQ 头像
  */
-function getQQAvatar ($qq) {
-  $url = 'https://s.p.qq.com/pub/get_face?img_type=3&uin=' . $qq;
-  $response = get_headers($url, 1)['Location'];
-  return str_replace('http://', 'https://', $response);
+function getQQAvatar($qq)
+{
+  $url = "https://s.p.qq.com/pub/get_face?img_type=3&uin=" . $qq;
+  $response = get_headers($url, 1)["Location"];
+  return str_replace("http://", "https://", $response);
 }
 
 /**
@@ -197,8 +198,7 @@ function handleContent($content)
 function imageLazyLoad($content)
 {
   $pattern = '/<img(.*?)src(.*?)=(.*?)"(.*?)">/i';
-  $replacement =
-    '<img$1src$3="$4"$5 loading="lazy">';
+  $replacement = '<img$1src$3="$4"$5 loading="lazy">';
   return preg_replace($pattern, $replacement, $content);
 }
 
