@@ -117,18 +117,17 @@ function themeConfig($form)
   );
   $form->addInput($stickyPost);
 
-  /*   $pjaxLoadPage = new Radio(
-      "pjaxLoadPage",
-      [
-        "0" => _t("关闭"),
-        "1" => _t("开启"),
-      ],
-      "0",
-      _t("开启无刷新加载页面"),
-      _t("默认为关闭")
-    );
-    $form->addInput($pjaxLoadPage);
-   */
+  $avatarWebsite = new Radio(
+    "avatarWebsite",
+    [
+      "gravatar" => _t("Gravatar"),
+      "qq" => _t("QQ 头像"),
+    ],
+    "gravatar",
+    _t("设置显示头像优先级"),
+    _t("默认通过邮箱，获取 Gravatar 头像")
+  );
+  $form->addInput($avatarWebsite);
 
   $sidebarRightWidget = new Checkbox(
     "sidebarRightWidget",

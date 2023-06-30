@@ -153,9 +153,13 @@ function getAvatarByMail($mail, $isOwner = false)
   $gravatarsUrl = "https://cravatar.cn/avatar/";
   $mailLower = strtolower($mail);
   $md5MailLower = md5($mailLower);
+  $avatarWebsite = getOptions()->avatarWebsite;
+  if (!isset($avatarWebsite) || $avatarWebsite == "gravatar") {
+    return $gravatarsUrl . $md5MailLower . "?d=mm";
+  }
   $qqMail = str_replace("@qq.com", "", $mailLower);
   if (strstr($mailLower, "qq.com") && is_numeric($qqMail) && strlen($qqMail) < 11 && strlen($qqMail) > 4) {
-    return $gravatarsUrl . $md5MailLower . "?d=mm";
+    return getQQAvatar($qqMail);
   } else {
     return $gravatarsUrl . $md5MailLower . "?d=mm";
   }
