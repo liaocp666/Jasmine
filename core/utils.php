@@ -201,9 +201,7 @@ function handleContent($content)
  */
 function imageLazyLoad($content)
 {
-  $pattern = '/<img(.*?)src(.*?)=(.*?)"(.*?)">/i';
-  $replacement = '<img$1src$3="$4"$5 loading="lazy">';
-  return preg_replace($pattern, $replacement, $content);
+  return preg_replace('/<img([^>]+)>/i', '<img$1 loading="lazy">', $content);
 }
 
 /**
