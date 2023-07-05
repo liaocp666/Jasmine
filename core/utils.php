@@ -201,7 +201,7 @@ function handleContent($content)
  */
 function imageLazyLoad($content)
 {
-  return preg_replace('/<img([^>]+)>/i', '<img$1 loading="lazy">', $content);
+  return preg_replace("/<img([^>]+)>/i", '<img$1 loading="lazy">', $content);
 }
 
 /**
