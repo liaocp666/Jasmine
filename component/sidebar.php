@@ -164,7 +164,7 @@
             <?php if ($this->options->icpCode): ?>
                 <li class="flex flex-row items-center gap-x-2">
                     <iconify-icon icon="tabler:id-badge-2" class="text-gray-800 dark:text-gray-300"></iconify-icon>
-                    <span class="text-sm "><?php $this->options->icpCode(); ?></span>
+                    <span class="text-sm "><a href="https://beian.miit.gov.cn/" target="_blank"><?php $this->options->icpCode(); ?></a></span>
                 </li>
             <?php endif; ?>
         </ul>
