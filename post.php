@@ -15,7 +15,7 @@
                 <div class="markdown-body dark:!bg-[#161829] dark:!bg-[#0d1117] !text-neutral-900 dark:!text-gray-400" itemprop="articleBody">
                     <?php echo handleContent($this->content);?>
                 </div>
-                <div class="flex flex-row gap-x-2 " id="post-tag">
+                <div class="flex flex-row gap-x-2 flex-wrap  gap-y-2" id="post-tag">
                     <?php $this->tags(" ", true, ""); ?>
                 </div>
                 <div class="border-b-2 border-stone-100 dark:border-neutral-600"></div>
