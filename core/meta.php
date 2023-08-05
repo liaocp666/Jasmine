@@ -31,10 +31,17 @@ class Jasmine_Meta_Row extends Rows
  */
 function isActiveMenu($self, $slug): string
 {
-  if ($self->is("category") || $self->is("post")) {
-    if ($self->category === $slug) {
-      return "jasmine-primary-bg shadow-lg !text-white";
-    }
+  $category = "";
+
+  if ($self->is("category")) {
+    $category = $self->getArchiveSlug();
+  } else if ($self->is("post")) {
+    $category = $self->category;
   }
+
+  if ($category === $slug) {
+    return "jasmine-primary-bg shadow-lg !text-white";
+  }
+
   return "";
 }
