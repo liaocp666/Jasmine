@@ -65,4 +65,12 @@
     color: var(--link-hover-color);
     @apply dark:text-neutral-200;
   }
+
+  .protected .text {
+    @apply col-span-3 rounded border border-[#ced4da] px-2 py-1 dark:border-black dark:!bg-[#0d1117] dark:!text-gray-400 md:col-span-1;
+  }
+
+  .protected .submit {
+    @apply ml-2 rounded bg-black px-2 py-1 text-white;
+  }
 }
