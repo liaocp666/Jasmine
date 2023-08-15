@@ -1,7 +1,7 @@
 {
   "name": "jasmine",
   "private": true,
-  "version": "2.5.3",
+  "version": "2.5.4",
   "description": "jasmine theme",
   "scripts": {
     "dev": "vite build --watch",
