@@ -39,6 +39,7 @@ Jasmine 是 Typecho 的一款主题。专为博客类网站开发，在简洁的
 * 无刷新跳转页面
 * 说说功能
 * 支持置顶文章显示
+* 文章阅读量显示
 * 支持评论 QQ 头像显示
 * 支持代码高亮
 * 支持随机文章跳转
@@ -54,6 +55,57 @@ Jasmine 是 Typecho 的一款主题。专为博客类网站开发，在简洁的
 ## 主题文档
 
 [Github](https://github.com/liaocp666/Jasmine/wiki) | [Gitee（国内）](https://gitee.com/LiaoChunping/Jasmine/wikis/pages)
+
+## 开发文档
+
+### 开发之前
+
+需要提前安装 [Node.js](https://nodejs.org/) ，然后依次执行下面命令：
+
+**安装 pnpm**
+
+```shell
+npm install -g pnpm
+```
+
+**安装依赖**
+
+```shell
+pnpm install
+```
+
+### 开发主题
+
+主题代码中不包含样式代码，运行下面命令，用于开发时监听文件变动，生成样式文件。
+
+> 使用 [Tailwind CSS](https://tailwindcss.com/) 样式框架
+
+```shell
+pnpm run dev
+```
+
+### 开发之后
+
+**格式化代码**
+
+```shell
+pnpm run lint
+pnpm run prettier
+```
+
+**构建主题**
+
+```shell
+pnpm run build
+```
+
+**打包主题**
+
+运行下面命令后，将在代码根目录生成 jasmine.zip 文件
+
+```shell
+bash release
+```
 
 ## 许可协议
 
