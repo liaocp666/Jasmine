@@ -129,6 +129,18 @@ function themeConfig($form)
   );
   $form->addInput($avatarWebsite);
 
+    $enablePostViews = new Radio(
+        "enablePostViews",
+        [
+            "1" => _t("开启"),
+            "0" => _t("关闭"),
+        ],
+        "0",
+        _t("启用文章浏览量"),
+        _t("默认关闭")
+    );
+    $form->addInput($enablePostViews);
+
   $sidebarRightWidget = new Checkbox(
     "sidebarRightWidget",
     [

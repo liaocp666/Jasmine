@@ -15,8 +15,10 @@
                     <span class=""> · </span>
                 <?php endif; ?>
                 <span class=""><?php echo getHumanizedDate($this->created); ?></span>
+                <?php if(getOptionValueOrDefault("enablePostViews", "0") === "1"): ?>
                 <span class=""> · </span>
                 <span class=""><?php echo getPostviews($this); ?></span>
+                <?php endif; ?>
             </div>
             <span class="hidden" itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <meta itemprop="url" content="<?php $this->author->permalink(); ?>"/>
