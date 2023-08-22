@@ -15,7 +15,7 @@
                     <span class=""> · </span>
                 <?php endif; ?>
                 <span class=""><?php echo getHumanizedDate($this->created); ?></span>
-                <?php if(getOptionValueOrDefault("enablePostViews", "0") === "1"): ?>
+                <?php if (getOptionValueOrDefault("enablePostViews", "0") === "1"): ?>
                 <span class=""> · </span>
                 <span class=""><?php echo getPostviews($this); ?></span>
                 <?php endif; ?>
