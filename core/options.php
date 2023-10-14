@@ -99,14 +99,14 @@ function themeConfig($form)
   );
   $form->addInput($middleTopCategoryIds);
 
-  $shuoshuoCategoryId = new Text(
-    "shuoshuoCategoryId",
+  $shuoshuoCategoryIds = new Text(
+    "shuoshuoCategoryIds",
     null,
     null,
     "说说分类",
-    "填入下列分类括号中的数字<br/>" . getCategoryies()
+    "填入下列分类括号中的数字，格式：数字 || 数字 || 数字 （中间使用两个竖杠分隔）<br/>" . getCategoryies()
   );
-  $form->addInput($shuoshuoCategoryId);
+  $form->addInput($shuoshuoCategoryIds);
 
   $stickyPost = new Text(
     "stickyPost",
