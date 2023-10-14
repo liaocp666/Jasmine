@@ -13,22 +13,26 @@ function getHotPosts($limit = 7)
 {
   $db = Typecho_Db::get();
   $options = Helper::options();
+  $query = $db
+  	->select("DISTINCT table.contents.cid, table.contents.*")
+  	->from("table.contents")
+  	->join("table.relationships", "table.contents.cid = table.relationships.cid")
+  	->join("table.metas", "table.metas.mid = table.relationships.mid")
+  	->where("table.metas.type = ?", "category")
+  	->where(
+  	  "table.contents.type = ? AND table.contents.status = ? AND table.contents.created < ?",
+  	  "post",
+  	  "publish",
+  	  $options->time
+  	)
+  	->order("table.contents.commentsNum", Typecho_Db::SORT_DESC)
+  	->limit($limit);
+  foreach (getShuoShuoCategoryIds() as $id) {
+    $query->where("table.relationships.mid <> ?", $id);
+  }
+
   $posts = $db->fetchAll(
-    $db
-      ->select("DISTINCT table.contents.cid, table.contents.*")
-      ->from("table.contents")
-      ->join("table.relationships", "table.contents.cid = table.relationships.cid")
-      ->join("table.metas", "table.metas.mid = table.relationships.mid")
-      ->where("table.relationships.mid <> ?", getOptions()->shuoshuoCategoryId)
-      ->where("table.metas.type = ?", "category")
-      ->where(
-        "table.contents.type = ? AND table.contents.status = ? AND table.contents.created < ?",
-        "post",
-        "publish",
-        $options->time
-      )
-      ->order("table.contents.commentsNum", Typecho_Db::SORT_DESC)
-      ->limit($limit),
+    $query,
     [Typecho_Widget::widget("Widget_Abstract_Contents"), "filter"]
   );
   return $posts;
@@ -107,16 +111,19 @@ class Widget_Post_Random extends Widget_Abstract_Contents
  */
 function isShuoShuoType($cid)
 {
-  $shuoshuoCategoryId = getOptions()->shuoshuoCategoryId;
-  if (empty($shuoshuoCategoryId)) {
+  $shuoshuoCategoryIds = getShuoShuoCategoryIds();
+  if (empty($shuoshuoCategoryIds)) {
     return false;
   }
   $db = getDb();
+  $query = $db
+    ->select()
+    ->from("table.relationships");
+  foreach ($shuoshuoCategoryIds as $id) {
+    $query->orWhere("table.relationships.cid = ? and table.relationships.mid = ?", $cid, $id);
+  }
   $row = $db->fetchRow(
-    $db
-      ->select()
-      ->from("table.relationships")
-      ->where("table.relationships.cid = ? and table.relationships.mid = ?", $cid, $shuoshuoCategoryId)
+    $query
   );
   return !empty($row);
 }

@@ -54,6 +54,20 @@ function getMiddleTopCategoryIds(): array
 }
 
 /**
+ * 获取说说分类
+ * @return array
+ */
+function getShuoShuoCategoryIds(): array
+{
+  $shuoshuoCategoryText = getOptions()->shuoshuoCategoryIds;
+  if (empty($shuoshuoCategoryText)) {
+    return [];
+  }
+  $shuoshuoCategoryIds = explode("||", strtr($shuoshuoCategoryText, " ", ""));
+  return $shuoshuoCategoryIds;
+}
+
+/**
  * 获取文章自定义字段
  * @param $cid            文章id
  * @param $filedNames     字段名
