@@ -16,9 +16,15 @@
                 <?php endif; ?>
                 <span class=""><?php echo getHumanizedDate($this->created); ?></span>
                 <?php if (getOptionValueOrDefault("enablePostViews", "0") === "1"): ?>
-                <span class=""> · </span>
-                <span class=""><?php echo getPostviews($this); ?></span>
+                    <span class=""> · </span>
+                    <span class=""><?php echo getPostviews($this); ?></span>
                 <?php endif; ?>
+                <?php if ($this->user->hasLogin()): ?>
+                    <span class=""> · </span>
+                    <span>
+                        <a href="<?php $this->options->adminUrl();?>write-<?php if ($this->is('post')): ?>post<?php else: ?>page<?php endif;?>.php?cid=<?php echo $this->cid; ?>" target="_self">编辑</a>
+                    </span>
+                <?php endif;?>
             </div>
             <span class="hidden" itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <meta itemprop="url" content="<?php $this->author->permalink(); ?>"/>
