@@ -149,11 +149,12 @@ function themeConfig($form)
       "PopularCategories" => "热门分类",
       "LatestComments" => "最新评论",
       "PopularTags" => "热门标签",
+      "SiteMap" => "网站地图",
       "About" => "关于站长",
     ],
-    ["Author", "PopularArticles", "LatestComments", "PopularTags", "About"],
+    ["Author", "PopularArticles", "LatestComments", "PopularTags", "SiteMap", "About"],
     _t("侧边栏显示"),
-    _t("默认显示作者信息，热门文章，最新评论，热门标签，关于站长")
+    _t("默认显示作者信息，热门文章，最新评论，热门标签，网站地图，关于站长")
   );
   $form->addInput($sidebarRightWidget);
 

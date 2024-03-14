@@ -106,6 +106,59 @@
           </ul>
       </div>
     <?php endif; ?>
+    <!--增加网站地图 start-->
+    <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "SiteMap", true)): ?>
+    <div class="flex flex-col justify-start gap-x-3 border-b border-stone-100 dark:border-neutral-600 gap-y-4 pb-12 mt-4">
+        <div class="flex flex-row items-center  jasmine-primary-color">
+            <iconify-icon icon="tabler:world" class="rounded pr-1 text-xl font-medium"></iconify-icon>
+            <span class="font-medium">网站地图</span>
+        </div>
+        <ul class="flex flex-col gap-y-3 px-1">
+            <?php if($this->user->hasLogin()): ?>
+                <li>
+                    <a href="<?php $this->options->adminUrl(); ?>"
+                       title="进入后台"
+                       class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500">
+                        <?php _e('进入后台'); ?> (<?php $this->user->screenName(); ?>)</a>
+                </li>
+                <li>
+                    <a href="<?php $this->options->logoutUrl(); ?>"
+                       title="退出"
+                       class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500">
+                        <?php _e('退出'); ?></a>
+                </li>
+            <?php else: ?>
+                <li>
+                    <a href="<?php $this->options->adminUrl('login.php'); ?>"
+                       title="登录"
+                       class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500">
+                        <?php _e('登录'); ?></a>
+                </li>
+            <?php endif; ?>
+            <li>
+                <a href="<?php $this->options->feedUrl(); ?>"
+                   title="文章 RSS"
+                   class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500">
+                    <?php _e('文章 RSS'); ?></a>
+            </li>
+            <li>
+                <a href="<?php $this->options->commentsFeedUrl(); ?>"
+                   title="评论 RSS"
+                   class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500">
+                    <?php _e('评论 RSS'); ?></a>
+            </li>
+            <?php if(array_key_exists('Sitemap', Typecho_Plugin::export()['activated'])): ?>
+                <li>
+                    <a href="<?php $this->options->siteUrl(); ?>sitemap.xml"
+                       title="Sitemap"
+                       class="line-clamp-2  text-sm dark:text-gray-400 jasmine-link-color-hover text-neutral-500">
+                        <?php _e('Sitemap'); ?></a>
+                </li>
+            <?php endif; ?>
+        </ul>
+    </div>
+    <!--增加网站地图 end-->
+    <?php endif; ?>
     <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "About", true)): ?>
     <div class="flex flex-col justify-start gap-x-3 gap-y-4 pb-12 mt-4">
         <div class="flex flex-row items-center  jasmine-primary-color">
