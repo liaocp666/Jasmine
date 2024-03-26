@@ -33,8 +33,24 @@ function isActiveMenu($self, $slug): string
 {
   $activeMenuClass = "jasmine-primary-bg shadow-lg !text-white";
 
-  if ($self->is("category") && $self->getArchiveSlug() === $slug) {
-    return $activeMenuClass;
+  if ($self->is("category")) {
+      $curSlug = $self->getArchiveSlug();
+      if($curSlug === $slug) {
+          return $activeMenuClass;
+      }
+      //判断父类
+      $db = Typecho_Db::get(); // 获取数据库对象
+      // 构造查询语句
+      $query = $db->select('A.slug')->from('table.metas as A')
+          ->join('table.metas as B','A.mid = B.parent')
+          ->where('B.slug = ?', $curSlug)->where('B.type = ?', 'category');
+      // 执行查询并获取结果
+      $row = $db->fetchRow($query);
+      if ($row) {
+          if ($row['slug'] === $slug) {
+              return $activeMenuClass;
+          }
+      }
   }
 
   if ($self->is("post") && in_array($slug, array_column($self->categories, "slug"))) {

@@ -99,6 +99,18 @@ function themeConfig($form)
   );
   $form->addInput($middleTopCategoryIds);
 
+   $enableDropdownMenu = new Radio(
+        "enableDropdownMenu",
+        [
+            "yes" => _t("开启"),
+            "no" => _t("关闭"),
+        ],
+        "yes",
+        _t("启用下拉菜单子分类"),
+        _t("默认开启")
+   );
+   $form->addInput($enableDropdownMenu);
+
   $shuoshuoCategoryId = new Text(
     "shuoshuoCategoryId",
     null,
@@ -132,10 +144,10 @@ function themeConfig($form)
   $enablePostViews = new Radio(
     "enablePostViews",
     [
-      "1" => _t("开启"),
-      "0" => _t("关闭"),
+      "yes" => _t("开启"),
+      "no" => _t("关闭"),
     ],
-    "0",
+    "no",
     _t("启用文章浏览量"),
     _t("默认关闭")
   );
@@ -202,7 +214,7 @@ function themeConfig($form)
 
   $icpCode = new Text("icpCode", null, null, "ICP 备案号", "网站备案号");
   $form->addInput($icpCode);
-
+  
   $customStyle = new Textarea("customStyle", null, null, "自定义样式", "不需要添加 &lt;style&gt; 标签");
   $form->addInput($customStyle);
 

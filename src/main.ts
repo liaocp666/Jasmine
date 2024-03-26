@@ -33,14 +33,20 @@ export function loadTheme() {
     (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
     document.documentElement.classList.add("dark");
+    if (typeof (window as any).CustomThemeCallback === 'function') {
+      (window as any).CustomThemeCallback.call(null,"dark");
+    }
   } else {
     document.documentElement.classList.remove("dark");
+    if (typeof (window as any).CustomThemeCallback === 'function') {
+      (window as any).CustomThemeCallback.call(null,"light");
+    }
   }
 }
 
 loadTheme();
 Prism.highlightAll();
-console.log("%c Jasmine ", "background:#000;color:#fff", "https://www.liaocp.cn/");
+console.log("%c Jasmine and Modify By XiaoA ", "background:#000;color:#fff", "https://www.xiaoa.me/");
 
 window.onload = () => {
   new StickySidebar("#sidebar-right", {
@@ -58,9 +64,30 @@ window.onload = () => {
     });
   });
 
+
+  // 获取菜单项和下拉菜单
+  // 获取所有菜单项
+  const menuItems = document.querySelectorAll('.dropdown-menu');
+  menuItems.forEach((menuItem) => {
+    // 获取当前菜单项的下拉菜单
+    const dropdownMenu = menuItem.querySelector('.dropdown-menu-item');
+
+    // 监听菜单项的鼠标悬停事件
+    menuItem.addEventListener('mouseenter', () => {
+      // 显示下拉菜单
+      dropdownMenu?.classList.remove('hidden');
+    });
+    // 监听菜单项的鼠标离开事件
+    menuItem.addEventListener('mouseleave', () => {
+      // 隐藏下拉菜单
+      dropdownMenu?.classList.add('hidden');
+    });
+  });
+
   document.querySelector("#mobile-menus-bg")?.addEventListener("click", () => {
     toggleMobileMenu();
   });
+
 };
 
 /**

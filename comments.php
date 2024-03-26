@@ -48,6 +48,11 @@ function threadedComments($comments, $options)
                             class="small  text-sm dark:text-gray-400"> <?php echo getHumanizedDate(
                               $comments->created
                             ); ?>
+                            <!-- 评论IP插件，使用用可显示地址 Start -->
+                            <?php if(array_key_exists('XQLocation', Typecho_Plugin::export()['activated'])): ?>
+                             - <?php XQLocation_Plugin::render($comments->ip); ?>
+                            <?php endif; ?>
+                            <!-- 评论IP插件，使用用可显示地址 End -->
                             </span>
                         <?php if ($comments->status == "waiting") { ?>
                             <span class="small dark:text-gray-300">

@@ -13,16 +13,36 @@
             </li>
             <?php $this->widget("Jasmine_Meta_Row")->to($categorys); ?>
             <?php if ($categorys->have()): ?>
-                <?php while ($categorys->next()): ?>
+                <?php while ($categorys->next()):
+                    $childs = [];
+                    if (getOptionValueOrDefault("enableDropdownMenu", "yes") === "yes") {
+                        // 判断是否有子分类
+                        $childs = $categorys->getAllChildren($categorys->mid);
+                    }
+                    if (count($childs) > 0): ?>
+                    <li class="relative dropdown-menu">
+                    <?php else: ?>
                     <li>
+                    <?php endif; ?>
                         <a href="<?php $categorys->permalink(); ?>"
                         title="<?php $categorys->name(); ?>"
-                        class="<?php echo isActiveMenu(
-                          $this,
-                          $categorys->slug
-                        ); ?>  rounded-full px-4 py-2 jasmine-primary-bg-hover hover:text-white hover:shadow-lg">
+                        class="<?php echo isActiveMenu($this,$categorys->slug);?> rounded-full px-4 py-2 jasmine-primary-bg-hover hover:text-white hover:shadow-lg">
                             <?php $categorys->name(); ?>
                         </a>
+                        <?php if (count($childs) > 0): ?>
+                            <ul class="dropdown-menu-item hidden absolute z-50 shadow-lg bg-white dark:bg-black rounded mt-2 py-1 w-32">
+                        <?php
+                            foreach ($childs as $childmid) {
+                                $child = $categorys->getCategory($childmid);
+                            ?>
+                            <li><a href="<?php echo $child['permalink']; ?>"
+                               title="<?php echo $child['name']; ?>"
+                                   class="rounded-full px-4 py-2 jasmine-primary-bg-hover hover:text-white hover:shadow-lg"><?php echo $child['name']; ?>
+                                </a>
+                            </li>
+                        <?php } ?>
+                            </ul>
+                        <?php endif; ?>
                     </li>
                 <?php endwhile; ?>
             <?php endif; ?>
@@ -89,7 +109,12 @@
             </li>
             <?php $this->widget("Jasmine_Meta_Row")->to($categorys); ?>
             <?php if ($categorys->have()): ?>
-                <?php while ($categorys->next()): ?>
+                <?php while ($categorys->next()):
+                    $childs = [];
+                    if (getOptionValueOrDefault("enableDropdownMenu", "yes") === "yes") {
+                        // 判断是否有子分类
+                        $childs = $categorys->getAllChildren($categorys->mid);
+                    } ?>
                     <li class="bg-white rounded w-full dark:bg-gray-700 ">
                         <a href="<?php $categorys->permalink(); ?>"
                         title="<?php $categorys->name(); ?>"
@@ -97,6 +122,19 @@
                             <?php $categorys->name(); ?>
                         </a>
                     </li>
+                    <?php if (count($childs) > 0) {
+                        foreach ($childs as $childmid) {
+                                $child = $categorys->getCategory($childmid);
+                            ?>
+                        <li class="bg-white rounded w-full dark:bg-gray-700">
+                            <a href="<?php echo $child['permalink']; ?>"
+                            title="<?php echo $child['name']; ?>"
+                            class="w-full block px-4 py-2">
+                                &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $child['name']; ?>
+                            </a>
+                        </li>
+                    <?php }
+                    } ?>
                 <?php endwhile; ?>
             <?php endif; ?>
         </ul>
