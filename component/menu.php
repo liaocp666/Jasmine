@@ -30,7 +30,7 @@
                             <?php $categorys->name(); ?>
                         </a>
                         <?php if (count($childs) > 0): ?>
-                            <ul class="dropdown-menu-item hidden absolute z-50 shadow-lg bg-white dark:bg-black rounded mt-2 py-1 w-32">
+                            <ul class="dropdown-menu-item hidden absolute z-50 shadow-lg rounded mt-2 py-1 w-32 bg-white dark:bg-[rgba(22,24,41,0.9)]">
                         <?php
                             foreach ($childs as $childmid) {
                                 $child = $categorys->getCategory($childmid);

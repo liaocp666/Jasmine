@@ -48,7 +48,7 @@ loadTheme();
 Prism.highlightAll();
 console.log("%c Jasmine and Modify By XiaoA ", "background:#000;color:#fff", "https://www.xiaoa.me/");
 
-window.onload = () => {
+window.addEventListener('load', function() {
   new StickySidebar("#sidebar-right", {
     innerWrapperSelector: ".sidebar__right__inner",
   });
@@ -63,7 +63,6 @@ window.onload = () => {
       span.classList.remove("!block");
     });
   });
-
 
   // 获取菜单项和下拉菜单
   // 获取所有菜单项
@@ -87,8 +86,7 @@ window.onload = () => {
   document.querySelector("#mobile-menus-bg")?.addEventListener("click", () => {
     toggleMobileMenu();
   });
-
-};
+});
 
 /**
  * 返回顶部
