@@ -2126,3 +2126,17 @@ pre[class*="language-"] {
 .style .token.string {
   background: hsla(0, 0%, 100%, 0) !important;
 }
+
+/*增加下拉菜单*/
+.dropdown-menu-item {
+  position: absolute;
+  top: 120%; /* 下拉菜单相对于菜单项底部定位 */
+  left: 0;
+  min-width: 120px; /* 最小宽度 */
+  z-index: 9999; /* 堆叠顺序 */
+}
+.dropdown-menu-item li {
+  list-style: none; /* 移除列表样式 */
+  margin: 0;
+  padding: 8px 12px; /* 上下内边距，左右内边距 */
+}
