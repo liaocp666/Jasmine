@@ -7,7 +7,7 @@
     "dev": "vite build --watch",
     "build": "tsc && vite build",
     "lint": "eslint ./src --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
-    "prettier": "prettier ./**/*.{js,ts,json,css,php} --write --plugin=@prettier/plugin-php"
+    "prettier": "prettier ./**/*.php --write --plugin=@prettier/plugin-php"
   },
   "keywords": [
     "jasmine",
