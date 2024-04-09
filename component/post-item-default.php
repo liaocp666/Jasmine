@@ -15,7 +15,7 @@
         <div class="dark:text-gray-400">
             <span class="jasmine-link-color"><?php $this->category("·", true, "无"); ?></span>
             <span> · <?php echo getHumanizedDate($this->created); ?></span>
-            <?php if (getOptionValueOrDefault("enablePostViews", "0") === "1"): ?>
+            <?php if (getOptionValueOrDefault("enablePostViews", "no") === "yes"): ?>
             <span> · <?php echo getPostviews($this); ?></span>
             <?php endif; ?>
         </div>

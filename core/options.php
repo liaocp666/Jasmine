@@ -99,6 +99,18 @@ function themeConfig($form)
   );
   $form->addInput($middleTopCategoryIds);
 
+   $enableDropdownMenu = new Radio(
+        "enableDropdownMenu",
+        [
+            "yes" => _t("开启"),
+            "no" => _t("关闭"),
+        ],
+        "yes",
+        _t("启用下拉菜单子分类"),
+        _t("默认开启")
+   );
+   $form->addInput($enableDropdownMenu);
+
   $shuoshuoCategoryId = new Text(
     "shuoshuoCategoryId",
     null,
@@ -132,14 +144,26 @@ function themeConfig($form)
   $enablePostViews = new Radio(
     "enablePostViews",
     [
-      "1" => _t("开启"),
-      "0" => _t("关闭"),
+      "yes" => _t("开启"),
+      "no" => _t("关闭"),
     ],
-    "0",
+    "no",
     _t("启用文章浏览量"),
     _t("默认关闭")
   );
   $form->addInput($enablePostViews);
+
+  $enablePostCopyright = new Radio(
+        "enablePostCopyright",
+        [
+            "yes" => _t("开启"),
+            "no" => _t("关闭"),
+        ],
+        "no",
+        _t("启用文章版权显示，转载文章请添加来源url到自定义copy_link字段"),
+        _t("默认关闭")
+    );
+    $form->addInput($enablePostCopyright);
 
   $sidebarRightWidget = new Checkbox(
     "sidebarRightWidget",
@@ -149,11 +173,12 @@ function themeConfig($form)
       "PopularCategories" => "热门分类",
       "LatestComments" => "最新评论",
       "PopularTags" => "热门标签",
+      "SiteMap" => "网站地图",
       "About" => "关于站长",
     ],
-    ["Author", "PopularArticles", "LatestComments", "PopularTags", "About"],
+    ["Author", "PopularArticles", "LatestComments", "PopularTags", "SiteMap", "About"],
     _t("侧边栏显示"),
-    _t("默认显示作者信息，热门文章，最新评论，热门标签，关于站长")
+    _t("默认显示作者信息，热门文章，最新评论，热门标签，网站地图，关于站长")
   );
   $form->addInput($sidebarRightWidget);
 
@@ -201,7 +226,7 @@ function themeConfig($form)
 
   $icpCode = new Text("icpCode", null, null, "ICP 备案号", "网站备案号");
   $form->addInput($icpCode);
-
+  
   $customStyle = new Textarea("customStyle", null, null, "自定义样式", "不需要添加 &lt;style&gt; 标签");
   $form->addInput($customStyle);
 

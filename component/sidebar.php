@@ -23,6 +23,42 @@
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
+        <!-- 网站登录和rss放到这里 -->
+        <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "SiteMap", true)): ?>
+        <ul class="flex flex-wrap gap-x-2 gap-y-2">
+            <li class="rounded py-1 px-2 dark:bg-black dark:text-neutral-400">
+                <a href="<?php $this->options->feedUrl(); ?>" title="文章 RSS">
+                    <iconify-icon icon="tabler:rss" class="text-gray-800 dark:text-gray-300"></iconify-icon></a>
+            </li>
+            <?php if($this->user->hasLogin()): ?>
+                <li class="rounded py-1 px-2 dark:bg-black dark:text-neutral-400">
+                    <a href="<?php $this->options->adminUrl(); ?>"
+                       title="进入后台">
+                        <iconify-icon icon="tabler:settings" class="text-gray-800 dark:text-gray-300"></iconify-icon></a>
+
+                </li>
+                <li class=" rounded py-1 px-2 dark:bg-black dark:text-neutral-400">
+                    <a href="<?php $this->options->logoutUrl(); ?>"
+                       title="退出">
+                        <iconify-icon icon="tabler:door-exit" class="text-gray-800 dark:text-gray-300"></iconify-icon></a>
+                </li>
+            <?php else: ?>
+                <li class="rounded py-1 px-2 dark:bg-black dark:text-neutral-400">
+                    <a href="<?php $this->options->adminUrl('login.php'); ?>"
+                       title="登录">
+                        <iconify-icon icon="tabler:settings" class="text-gray-800 dark:text-gray-300"></iconify-icon></a>
+
+                </li>
+            <?php endif; ?>
+            <?php if(array_key_exists('Sitemap', Typecho_Plugin::export()['activated'])): ?>
+                <li class="rounded py-1 px-2 dark:bg-black dark:text-neutral-400">
+                    <a href="<?php $this->options->siteUrl(); ?>sitemap.xml"
+                       title="Sitemap">
+                        <iconify-icon icon="tabler:sitemap" class="text-gray-800 dark:text-gray-300"></iconify-icon></a>
+                </li>
+            <?php endif; ?>
+        </ul>
+        <?php endif; ?>
     </div>
     <?php endif; ?>
     <?php if (inArrayOptionValueOrDefault("sidebarRightWidget", "PopularArticles", true)): ?>
