@@ -153,6 +153,18 @@ function themeConfig($form)
   );
   $form->addInput($enablePostViews);
 
+  $enablePostCopyright = new Radio(
+        "enablePostCopyright",
+        [
+            "yes" => _t("开启"),
+            "no" => _t("关闭"),
+        ],
+        "no",
+        _t("启用文章版权显示，转载文章请添加来源url到自定义copy_link字段"),
+        _t("默认关闭")
+    );
+    $form->addInput($enablePostCopyright);
+
   $sidebarRightWidget = new Checkbox(
     "sidebarRightWidget",
     [
