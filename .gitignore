@@ -29,3 +29,4 @@ dist
 jasmine
 jasmine.zip
 package-lock.json
+pnpm-lock.yaml
