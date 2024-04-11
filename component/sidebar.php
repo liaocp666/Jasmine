@@ -167,6 +167,12 @@
                     <span class="text-sm "><a href="https://beian.miit.gov.cn/" target="_blank"><?php $this->options->icpCode(); ?></a></span>
                 </li>
             <?php endif; ?>
+            <?php if ($this->options->moeIcpCode): ?>
+                <li class="flex flex-row items-center gap-x-2">
+                    <span class="icon-MOE text-gray-800 dark:text-gray-300"></span>
+                    <span class="text-sm "><a href="https://icp.gov.moe/?keyword=<?php $this->options->moeIcpCode(); ?>" target="_blank">萌ICP备<?php $this->options->moeIcpCode(); ?>号</a></span>
+                </li>
+            <?php endif; ?>
         </ul>
     </div>
     <?php endif; ?>
