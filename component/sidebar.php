@@ -169,7 +169,7 @@
             <?php endif; ?>
             <?php if ($this->options->moeIcpCode): ?>
                 <li class="flex flex-row items-center gap-x-2">
-                    <i style="width: 16px;height: 16px;background-size: cover;background-position: center;background-image: url(<?php $this->options->themeUrl("/assets/dist/moe-ico64.png?v=" . getThemeVersion()); ?>);"></i>
+                    <span class="icon-MOE text-gray-800 dark:text-gray-300"></span>
                     <span class="text-sm "><a href="https://icp.gov.moe/?keyword=<?php $this->options->moeIcpCode(); ?>" target="_blank">萌ICP备<?php $this->options->moeIcpCode(); ?>号</a></span>
                 </li>
             <?php endif; ?>

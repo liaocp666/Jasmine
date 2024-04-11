@@ -2126,3 +2126,32 @@ pre[class*="language-"] {
 .style .token.string {
   background: hsla(0, 0%, 100%, 0) !important;
 }
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('./font/icomoon.eot?n169zo');
+  src:  url('./font/icomoon.eot?n169zo#iefix') format('embedded-opentype'),
+    url('./font/icomoon.ttf?n169zo') format('truetype'),
+    url('./font/icomoon.woff?n169zo') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon-MOE {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-MOE:before {
+  content: "\e900";
+}
