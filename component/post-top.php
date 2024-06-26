@@ -11,7 +11,7 @@ if (null != $cids): ?>
         <?php foreach ($cids as $cid): ?>
             <?php $this->widget("Widget_Archive@jasmine" . $cid, "pageSize=1&type=post", "cid=" . $cid)->to($item); ?>
             <div class="flex lg:w-1/2 w-full flex-row">
-                <?php if ($thumbnail = getThumbnail($item->cid, "")): ?>
+                <?php if ($thumbnail = Utils::getFieldByPostId($item->cid, "thumbnail")): ?>
                     <a href="<?php $item->permalink(); ?>" title="<?php $item->title(); ?>" class="w-[130px] mr-3"
                        title="<?php $item->title(); ?>">
                         <img

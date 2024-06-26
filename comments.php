@@ -27,12 +27,12 @@ function threadedComments($comments, $options)
         <div class="flex w-full gap-x-2 grow">
             <?php if ($comments->authorId == $comments->ownerId) { ?>
                 <img class="rounded w-[50px] h-[50px] object-cover" width="50" height="50"
-                     src="<?php echo getAvatarByMail($comments->mail, true); ?>"
+                     src="<?php echo Utils::getAvatarByMail($comments->mail); ?>"
                      loading="lazy"
                      alt="<?php $comments->author; ?>">
             <?php } else { ?>
                 <img class="rounded w-[50px] h-[50px] object-cover" width="50" height="50"
-                     src="<?php echo getAvatarByMail($comments->mail); ?>"
+                     src="<?php echo Utils::getAvatarByMail($comments->mail); ?>"
                      loading="lazy"
                      alt="<?php $comments->author; ?>">
             <?php } ?>
@@ -45,9 +45,7 @@ function threadedComments($comments, $options)
                             <?php } ?>
                             </span>
                         <span
-                            class="small  text-sm dark:text-gray-400"> <?php echo getHumanizedDate(
-                              $comments->created
-                            ); ?>
+                            class="small  text-sm dark:text-gray-400"> <?php echo Utils::convertTimestamp($comments->created); ?>
                             </span>
                         <?php if ($comments->status == "waiting") { ?>
                             <span class="small dark:text-gray-300">
@@ -114,7 +112,7 @@ function threadedComments($comments, $options)
                         <div class="comments-curren-user flex gap-x-2">
                             <?php if ($this->user->hasLogin()): ?>
                                 <img class="img-thumbnail rounded me-1" width="50" height="50"
-                                     src="<?php echo getAvatarByMail($this->user->mail, true); ?>"
+                                     src="<?php echo Utils::getAvatarByMail($this->user->mail); ?>"
                                      loading="lazy"
                                      alt="<?php $this->user->screenName(); ?>">
                                 <div class="flex flex-col">

@@ -25,26 +25,6 @@ class Jasmine_Meta_Row extends Rows
 }
 
 /**
- * 判断当前是菜单否激活
- * @param $self
- * @return string
- */
-function isActiveMenu($self, $slug): string
-{
-  $activeMenuClass = "jasmine-primary-bg shadow-lg !text-white";
-
-  if ($self->is("category") && $self->getArchiveSlug() === $slug) {
-    return $activeMenuClass;
-  }
-
-  if ($self->is("post") && in_array($slug, array_column($self->categories, "slug"))) {
-    return $activeMenuClass;
-  }
-
-  return "";
-}
-
-/**
  * 获取阅读量
  * @param $archive
  * @return void

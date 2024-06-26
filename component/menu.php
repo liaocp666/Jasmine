@@ -17,7 +17,7 @@
                     <li>
                         <a href="<?php $categorys->permalink(); ?>"
                         title="<?php $categorys->name(); ?>"
-                        class="<?php echo isActiveMenu(
+                        class="<?php echo Utils::ifActiveMenuClass(
                           $this,
                           $categorys->slug
                         ); ?>  rounded-full px-4 py-2 jasmine-primary-bg-hover hover:text-white hover:shadow-lg">

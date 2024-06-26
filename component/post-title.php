@@ -14,7 +14,7 @@
                     <span class="jasmine-primary-color"><?php $this->category("·", true, "无"); ?></span>
                     <span class=""> · </span>
                 <?php endif; ?>
-                <span class=""><?php echo getHumanizedDate($this->created); ?></span>
+                <span class=""><?php echo Utils::convertTimestamp($this->created); ?></span>
                 <?php if (getOptionValueOrDefault("enablePostViews", "0") === "1"): ?>
                     <span class=""> · </span>
                     <span class=""><?php echo getPostviews($this); ?></span>
@@ -35,7 +35,7 @@
                     </a>
                 </span>
         </div>
-        <?php if ($thumbnail = getThumbnail($this->cid, "")): ?>
+        <?php if ($thumbnail = Utils::getFieldByPostId($this->cid, "thumbnail")): ?>
             <meta itemprop="image" content="<?php echo $thumbnail; ?>"/>
             <a href="<?php $this->permalink(); ?>" title="<?php $this->title(); ?>" class="w-[170px]">
                 <img src="<?php echo $thumbnail; ?>" alt="<?php $this->title(); ?>" width="130"
