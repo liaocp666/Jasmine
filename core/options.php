@@ -202,6 +202,9 @@ function themeConfig($form)
   $icpCode = new Text("icpCode", null, null, "ICP 备案号", "网站备案号");
   $form->addInput($icpCode);
 
+  $moeIcpCode = new Text("moeIcpCode", null, null, "萌国 ICP 备案号", "萌号");
+  $form->addInput($moeIcpCode);
+
   $customStyle = new Textarea("customStyle", null, null, "自定义样式", "不需要添加 &lt;style&gt; 标签");
   $form->addInput($customStyle);
 
