@@ -11,20 +11,20 @@
                   echo "jasmine-primary-bg shadow-lg !text-white";
                 } ?> text-black dark:text-white rounded-full px-4 py-2">首页</a>
             </li>
-            <?php $this->widget("Jasmine_Meta_Row")->to($categorys); ?>
-            <?php if ($categorys->have()): ?>
-                <?php while ($categorys->next()): ?>
+            <?php $categoryies = Utils::mainNavigation(); ?>
+            <?php if (!empty($categoryies)): ?>
+                <?php foreach($categoryies as $category): ?>
                     <li>
-                        <a href="<?php $categorys->permalink(); ?>"
-                        title="<?php $categorys->name(); ?>"
+                        <a href="<?php echo $category['permalink']; ?>"
+                        title="<?php echo $category['name']; ?>"
                         class="<?php echo Utils::ifActiveMenuClass(
                           $this,
-                          $categorys->slug
+                          $category['slug']
                         ); ?>  rounded-full px-4 py-2 jasmine-primary-bg-hover hover:text-white hover:shadow-lg">
-                            <?php $categorys->name(); ?>
+                            <?php echo $category['name']; ?>
                         </a>
                     </li>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
             <?php endif; ?>
         </ul>
         <ul class="nav flex items-center gap-x-3">
@@ -87,17 +87,17 @@
                 <a title="首页" href="<?php $this->options->siteUrl(); ?>"
                 class="w-full block px-4 py-2">首页</a>
             </li>
-            <?php $this->widget("Jasmine_Meta_Row")->to($categorys); ?>
-            <?php if ($categorys->have()): ?>
-                <?php while ($categorys->next()): ?>
+            <?php $categoryies = Utils::mainNavigation(); ?>
+            <?php if (!empty($categoryies)): ?>
+                <?php foreach($categoryies as $category): ?>
                     <li class="bg-white rounded w-full dark:bg-gray-700 ">
-                        <a href="<?php $categorys->permalink(); ?>"
-                        title="<?php $categorys->name(); ?>"
+                        <a href="<?php echo $category['permalink']; ?>"
+                        title="<?php echo $category['name']; ?>"
                         class="w-full block px-4 py-2">
-                            <?php $categorys->name(); ?>
+                            <?php echo $category['name']; ?>
                         </a>
                     </li>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
             <?php endif; ?>
         </ul>
         <ul class="flex flex-col items-center gap-y-3 w-full">

@@ -4,7 +4,10 @@ use Typecho\Common;
 use Typecho\Date;
 use Typecho\Db;
 use Typecho\I18n;
+use Typecho\Router;
 use Utils\Helper;
+use Typecho\Plugin;
+use Typecho\Cookie;
 
 class Utils
 {
@@ -95,7 +98,7 @@ class Utils
      */
     public static function isPluginAvailable($name)
     {
-        $plugins = Typecho_Plugin::export();
+        $plugins = Plugin::export();
         $plugins = $plugins["activated"];
         return is_array($plugins) && array_key_exists($name, $plugins);
     }
@@ -127,6 +130,95 @@ class Utils
             return $activeMenuClass;
         }
         return "";
+    }
+
+    /**
+     * 获取主菜单（头部）
+     * @return mixed|null
+     */
+    public static function mainNavigation() {
+        $db = Db::get();
+        $rows = $db->fetchAll(
+            $db->select()
+                ->from("table.metas")
+                ->where("type = 'category' and mid in (". implode(', ', self::getMiddleTopCategoryIds()) .")")
+        );
+        if (isset($rows)) {
+            foreach($rows as &$row) {
+                $row['permalink'] = Router::url('category', array('slug' => $row['slug']), Helper::options()->index);
+            }
+        }
+        return $rows;
+    }
+
+    /**
+     * 初始化页面浏览量<br/>
+     * 旧版主题更改了 table.contents 表结构，这种做法有些暴力，所以将其优化为往 table.files 表中添加名字为 views 的数据，记录浏览量
+     * 
+     * @param int $cid 内容ID
+     */
+    public static function convertOldPageViews($cid) {
+        $db = Db::get();
+        $fieldsViews = $db->fetchRow($db->select()->from("table.fields")->where("cid = ? and name = ?", $cid, 'views'));
+        $fieldsHasViews = !isset($fieldsViews);
+        if (!$fieldsHasViews) {
+            return;
+        }
+        $contentViews = $db->fetchRow($db->select()->from("table.contents")->where("cid = ?", $cid));
+        $contentHasViews = array_key_exists("views", $contentViews);
+        if (!$contentHasViews) {
+            return;
+        }
+        // 如果 table.contents 中含有 views 字段并且 table.fields 中不含有 name 为 views 的数据，转换数据
+        $cv = $contentViews['views'];
+        $db->query(
+            $db
+              ->insert("table.fields")
+              ->rows([
+                'cid'         => $cid,
+                'name'        => 'views',
+                'type'        => 'str',
+                'str_value'   => $cv,
+                'int_value'   => 0,
+                'float_value' => 0
+            ])
+        );
+    }
+
+    /**
+     * 获取浏览数量
+     * @param int $cid 内容ID
+     */
+    public static function pageViewsAddAndGet($cid) {
+        self::convertOldPageViews($cid);
+        $db = Db::get();
+        $fieldsViews = $db->fetchRow($db->select()->from("table.fields")->where("cid = ? and name = ?", $cid, 'views'));
+        $lastViews = isset($fieldsViews) ? $fieldsViews['str_value'] : '0';
+        $currentViews = (int) $lastViews + 1;
+        $cookie = Cookie::get("contents_views");
+        $cookie = $cookie ? explode(",", $cookie) : [];
+        if (!in_array($cid, $cookie)) {
+            $db->query(
+            $db
+                ->update("table.fields")
+                ->rows(["str_value" => $currentViews])
+                ->where("cid = ? and name = 'views'", $cid)
+            );
+        }
+        array_push($cookie, $cid);
+        $cookie = implode(",", $cookie);
+        Cookie::set("contents_views", $cookie);
+        return $currentViews == 0 ? '暂无浏览' : $currentViews . ' 次浏览';
+    }
+
+    /**
+     * 获取顶部分类
+     * //TODO 此方法后续可能被舍弃
+     * @return array
+     */
+    public static function getMiddleTopCategoryIds() {
+      $middleTopCategoryIds = Helper::options()->middleTopCategoryIds;
+      return array_map("intval", explode("||", strtr($middleTopCategoryIds, " ", "")));
     }
 
 }

@@ -17,7 +17,7 @@
                 <span class=""><?php echo Utils::convertTimestamp($this->created); ?></span>
                 <?php if (getOptionValueOrDefault("enablePostViews", "0") === "1"): ?>
                     <span class=""> · </span>
-                    <span class=""><?php echo getPostviews($this); ?></span>
+                    <span class=""><?php echo Utils::pageViewsAddAndGet($this->cid); ?></span>
                 <?php endif; ?>
                 <?php if ($this->user->hasLogin()): ?>
                     <span class=""> · </span>

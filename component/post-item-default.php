@@ -16,7 +16,7 @@
             <span class="jasmine-link-color"><?php $this->category("·", true, "无"); ?></span>
             <span> · <?php echo Utils::convertTimestamp($this->created); ?></span>
             <?php if (getOptionValueOrDefault("enablePostViews", "0") === "1"): ?>
-            <span> · <?php echo getPostviews($this); ?></span>
+            <span> · <?php echo Utils::pageViewsAddAndGet($this->cid); ?></span>
             <?php endif; ?>
         </div>
         <span class="hidden" itemprop="author" itemscope itemtype="https://schema.org/Person">

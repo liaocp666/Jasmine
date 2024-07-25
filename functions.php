@@ -2,6 +2,10 @@
   exit();
 }
 
+use Typecho\Db;
+use Typecho\Widget\Helper\Form\Element\Text;
+use Typecho\Widget\Helper\Form\Element\Textarea;
+
 error_reporting(E_ERROR);
 
 require_once "core/index.php";
@@ -30,9 +34,9 @@ function themeInit($archive)
 /**
  * 文章与独立页自定义字段
  */
-function themeFields(Typecho_Widget_Helper_Layout $layout)
+function themeFields($layout)
 {
-  $banner = new Typecho_Widget_Helper_Form_Element_Text(
+  $banner = new Text(
     "thumbnail",
     null,
     null,
@@ -40,7 +44,7 @@ function themeFields(Typecho_Widget_Helper_Layout $layout)
     _t("输入一个图片 url，作为缩略图显示在文章列表，没有则不显示")
   );
   $layout->addItem($banner);
-  $keyword = new Typecho_Widget_Helper_Form_Element_Textarea(
+  $keyword = new Textarea(
     "keyword",
     null,
     null,
@@ -48,7 +52,7 @@ function themeFields(Typecho_Widget_Helper_Layout $layout)
     _t("多个关键词用英文下逗号隔开")
   );
   $layout->addItem($keyword);
-  $description = new Typecho_Widget_Helper_Form_Element_Textarea(
+  $description = new Textarea(
     "description",
     null,
     null,
@@ -56,6 +60,14 @@ function themeFields(Typecho_Widget_Helper_Layout $layout)
     _t("简单一句话描述")
   );
   $layout->addItem($description);
+  $view = new Text(
+    "views",
+    null,
+    0,
+    _t("浏览量"),
+    _t("记录文章浏览次数")
+  );
+  $layout->addItem($view);
 }
 
 $custom_functions = __DIR__ . "/custom/functions.php";
