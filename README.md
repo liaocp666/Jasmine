@@ -18,8 +18,7 @@
 </div>
 
 > [!WARNING]
-> 2.5.5 版本代码：https://github.com/liaocp666/Jasmine/tree/2.x
-> ！！！下面为 2.5.5 版本内容！！！
+> 3.0.0 完善中……
 
 ## 项目说明
 

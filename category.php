@@ -1,6 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-$this->need('template-parts/header.php');
+$this->need('template-parts/Header.php');
 ?>
 <?php $this->need('template-parts/Left.php'); ?>
     <div class="col-md-12 col-lg-8" id="middle">

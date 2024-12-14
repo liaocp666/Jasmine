@@ -1,6 +1,8 @@
 <?php use Widget\Contents\Page\Rows;
 
-if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
+?>
 
 <nav class="navbar navbar-expand-lg border-bottom py-0 fw-medium sticky-top navbar-background border-light-subtle bg-body bg-opacity-75">
     <div class="container-fluid p-lg-4 px-4 py-3" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">

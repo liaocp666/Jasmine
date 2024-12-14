@@ -40,6 +40,7 @@ a {
 
 #left {
     min-height: 100vh;
+    z-index: 1030;
 }
 
 #left .nav-link {
@@ -236,19 +237,13 @@ a {
     padding-right: 1rem !important;
     padding-left: 1rem !important;
     border-radius: var(--bs-border-radius) !important;
-    opacity: 0;
 }
 
 #left .nav-item:hover .nav-item-title {
     display: block;
     background: var(--bg-left-bi-color);
     color: var(--left-bi-color);
-    opacity: 0.7;
     transition: all .15s ease-in-out;
-}
-
-.sub-category {
-
 }
 
 @media (max-width: 576px) {
