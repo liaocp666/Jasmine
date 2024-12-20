@@ -11,6 +11,7 @@
     <link href="<?php $this->options->themeUrl('assets/bootstrap/font/bootstrap-icons.min.css'); ?>" rel="stylesheet">
     <link href="<?php $this->options->themeUrl('assets/main/main.css'); ?>" rel="stylesheet"/>
     <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/highlight/github-dark-dimmed.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/ti/tabler-icons.min.css'); ?>">
     <link rel="shoucut icon" href="<?php echo $this->options->siteUrl . "favicon.ico"; ?>">
     <script src="<?php $this->options->themeUrl('assets/highlight/highlight.min.js'); ?>"></script>
     <?php $this->header('generator=&&pingback=&xmlrpc=&wlw='); ?>

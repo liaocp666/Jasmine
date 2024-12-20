@@ -3,8 +3,8 @@
 <div class="container-fluid p-4 mt-3 border-bottom border-light-subtle">
     <div class="row gap-2">
         <div class="col-12">
-            <div class="col-12 d-flex gap-1 align-content-center justify-content-start fw-medium">
-                <i class="bi bi-bar-chart-line"></i>
+            <div class="col-12 d-flex gap-1 align-content-center">
+                <i class="ti ti-chart-bar lh-base"></i>
                 <h6 class="lh-base">热门文章</h6>
             </div>
         </div>
@@ -14,7 +14,7 @@
                     <?php widget\HotPost::alloc()->to($hotPosts) ?>
                     <?php while ($hotPosts->next()): ?>
                         <li class="list-group-item p-0 border-0">
-                            <a href="<?php $hotPosts->permalink(); ?>" class="link-secondary"
+                            <a href="<?php $hotPosts->permalink(); ?>"
                                title="<?php $hotPosts->title(); ?>">
                                 <?php if ($hotPosts->fields->postType): ?>
                                     <?php if ('1' == $hotPosts->fields->postType): ?>

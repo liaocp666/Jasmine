@@ -7,11 +7,11 @@
 use Widget\Metas\Tag\Cloud;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-$this->need('template-parts/Header.php');
+$this->need('template-parts/header.php');
 ?>
-<?php $this->need('template-parts/Left.php'); ?>
+<?php $this->need('template-parts/left.php'); ?>
 <div class="col-md-12 col-lg-8" id="middle">
-    <?php $this->need('template-parts/Navbar.php'); ?>
+    <?php $this->need('template-parts/navbar.php'); ?>
     <div class="container-fluid p-4 d-flex flex-column row-gap-3">
         <div class="card border-0 py-3 col-12">
             <div class="d-flex column-gap-2">
@@ -36,6 +36,6 @@ $this->need('template-parts/Header.php');
         </div>
     </div>
 </div>
-<?php $this->need('template-parts/Right.php'); ?>
-<?php $this->need('template-parts/Footer.php'); ?>
+<?php $this->need('template-parts/right.php'); ?>
+<?php $this->need('template-parts/footer.php'); ?>
 

@@ -22,7 +22,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
                             ·
                             <?php $topUpPost->date(); ?>
                             ·
-                            <span class="text-danger fw-semibold">置顶</span>
+                            <span class="top-up-flag fw-semibold">置顶</span>
                         </small>
                     </p>
                 </div>

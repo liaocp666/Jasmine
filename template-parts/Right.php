@@ -11,18 +11,18 @@
         </div>
     </div>
     <div class="sticky-top">
-        <?php $this->need('template-parts/RightHotPost.php'); ?>
-        <?php $this->need('template-parts/RightLatestComment.php'); ?>
+        <?php $this->need('template-parts/right-hot-post.php'); ?>
+        <?php $this->need('template-parts/right-latest-comment.php'); ?>
         <?php if($this->is('post')): ?>
             <?php if ($this->fields->postType): ?>
                 <?php if ('1' == $this->fields->postType): ?>
-                    <?php $this->need('template-parts/RightRelatedPost.php'); ?>
+                    <?php $this->need('template-parts/right-related-post.php'); ?>
                 <?php endif; ?>
             <?php else: ?>
-                <?php $this->need('template-parts/RightRelatedPost.php'); ?>
+                <?php $this->need('template-parts/right-related-post.php'); ?>
             <?php endif; ?>
         <?php endif; ?>
-        <?php $this->need('template-parts/RightHotTag.php'); ?>
-        <?php $this->need('template-parts/RightLink.php'); ?>
+        <?php $this->need('template-parts/right-hot-tag.php'); ?>
+        <?php $this->need('template-parts/right-link.php'); ?>
     </div>
 </div>

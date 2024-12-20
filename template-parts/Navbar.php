@@ -22,9 +22,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="d-flex d-block d-lg-none">
             <a class="nav-link p-0 d-flex align-items-center justify-content-center" id="bd-theme"
                href="javascript:changeBsTheme()">
-                <i class="bi bi-sun px-3 py-1 rounded"></i>
+                <i class="ti ti-sun-moon px-3 py-1 rounded fs-5"></i>
             </a>
-            <button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="offcanvas" href="#mobile-navbar" role="button" aria-controls="mobile-navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
@@ -54,9 +54,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <ul class="nav column-gap-4 ms-auto d-none d-lg-block">
                 <li class="nav-item">
                     <form method="post" class="d-flex text-body-secondary">
-                        <a class="nav-link p-0 d-flex align-items-center justify-content-center"
+                        <a class="nav-link p-0 d-flex align-items-center justify-content-center px-2 py-2 rounded-circle" id="form-search-icon"
                            onclick="clickSearchIcon('search-input')" style="cursor: pointer;">
-                            <i class="bi bi-search"></i>
+                            <i class="ti ti-search"></i>
                         </a>
                         <input type="text" name="s" class="text border-0 px-1 text-body-secondary"
                                placeholder="输入关键字搜索" autocomplete="off" id="search-input"/>
@@ -66,10 +66,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         </div>
     </div>
 </nav>
-<div class="offcanvas offcanvas-start w-75" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-start w-75" tabindex="-1" id="mobile-navbar" aria-labelledby="mobile-navbarLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">导航</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title" id="mobile-navbarLabel">导航</h5>
+        <button type="button" class="btn-close lh-sm" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="ti ti-x"></i>
+        </button>
     </div>
     <div class="offcanvas-body">
         <div class="d-flex flex-column row-gap-4 align-content-between justify-content-between h-100">
@@ -93,18 +95,18 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 </div>
                 <form method="post" class="d-flex column-gap-2 text-body-secondary w-100">
                     <input type="text" name="s" class="form-control " placeholder="输入关键字搜索" autocomplete="off">
-                    <button class="btn btn-dark" type="submit"><i class="bi bi-search"></i></button>
+                    <button class="btn" type="submit"><i class="ti ti-search"></i></button>
                 </form>
             </div>
             <div class="d-flex column-gap-3 justify-content-between bg-secondary-subtle rounded py-2 px-3 flex-wrap">
                 <a href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title(); ?>">
-                    <i class="bi bi-house"></i>
+                    <i class="ti ti-home"></i>
                 </a>
                 <?php Rows::alloc()->to($pages); ?>
                 <?php while ($pages->next()): ?>
                     <?php if ($pages->fields->showPage): ?>
                         <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" aria-label="<?php $pages->title(); ?>">
-                            <?php $pages->fields->iconPage(); ?>
+                            <i class="ti ti-<?php $pages->fields->iconPage(); ?>"></i>
                         </a>
                     <?php endif; ?>
                 <?php endwhile; ?>

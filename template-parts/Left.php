@@ -21,7 +21,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
             <li class="nav-item d-flex justify-content-center position-relative">
                 <a class="nav-link p-0 d-flex align-items-center justify-content-center"
                    href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title() ?>">
-                    <i class="bi bi-house"></i>
+                    <i class="ti ti-home"></i>
                 </a>
                 <span class="position-absolute nav-item-title text-nowrap"><?php $this->options->title() ?></span>
             </li>
@@ -31,7 +31,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
                     <li class="nav-item d-flex justify-content-center position-relative">
                         <a class="nav-link p-0 d-flex align-items-center justify-content-center"
                            href="<?php $pages->permalink() ?>" title="<?php $pages->title() ?>">
-                            <?php $pages->fields->iconPage(); ?>
+                            <i class="ti ti-<?php $pages->fields->iconPage(); ?>"></i>
                         </a>
                         <span class="position-absolute nav-item-title text-nowrap"><?php $pages->title() ?></span>
                     </li>
@@ -42,13 +42,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
             <li class="nav-item d-flex justify-content-center position-relative">
                 <a class="nav-link p-0 d-flex align-items-center justify-content-center" id="bd-theme"
                    href="javascript:changeBsTheme()">
-                    <i class="bi bi-sun px-3 py-1 rounded"></i>
+                    <i class="ti ti-sun-moon px-3 py-1 rounded"></i>
                 </a>
                 <span class="position-absolute nav-item-title text-nowrap">切换模式</span>
             </li>
             <li class="nav-item d-flex justify-content-center position-relative">
                 <a class="nav-link p-0 d-flex align-items-center justify-content-center" href="#top">
-                    <i class="bi bi-arrow-up-circle px-3 py-1 rounded"></i>
+                    <i class="ti ti-chevrons-up px-3 py-1 rounded"></i>
                 </a>
                 <span class="position-absolute nav-item-title text-nowrap">返回顶部</span>
             </li>

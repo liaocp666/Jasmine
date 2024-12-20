@@ -6,7 +6,7 @@
 <div class="container text-body-tertiary">
     <div class="row">
         <div class="col-12">
-            <i class="bi bi-c-circle"></i> <?php $this->options->title() ?>. All Rights Reserved. <a href="https://www.sanji.one" rel="nofollow" target="_blank">Theme Jasmine by Kent Liao.</a>
+            <i class="ti ti-copyright"></i> <?php $this->options->title() ?>. All Rights Reserved. <a href="https://www.sanji.one" rel="nofollow" target="_blank">Theme Jasmine by Kent Liao.</a>
         </div>
         <div class="col-12">
             <?php $this->options->customFooter(); ?>

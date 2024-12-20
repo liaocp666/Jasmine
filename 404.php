@@ -9,11 +9,11 @@
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-$this->need('template-parts/Header.php');
+$this->need('template-parts/header.php');
 ?>
-<?php $this->need('template-parts/Left.php'); ?>
+<?php $this->need('template-parts/left.php'); ?>
     <div class="col-md-12 col-lg-8" id="middle">
-        <?php $this->need('template-parts/Navbar.php'); ?>
+        <?php $this->need('template-parts/navbar.php'); ?>
         <div class="container-fluid p-4 d-flex flex-column row-gap-5">
             <h2 class="post-title">404 - <?php _e('页面没找到'); ?></h2>
             <p><?php _e('你想查看的页面已被转移或删除了, 要不要搜索看看: '); ?></p>
@@ -23,5 +23,5 @@ $this->need('template-parts/Header.php');
             </form>
         </div>
     </div>
-<?php $this->need('template-parts/Right.php'); ?>
-<?php $this->need('template-parts/Footer.php'); ?>
+<?php $this->need('template-parts/right.php'); ?>
+<?php $this->need('template-parts/footer.php'); ?>

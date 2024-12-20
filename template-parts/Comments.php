@@ -54,7 +54,7 @@
                 </div>
             </form>
         </div>
-        <div class="row pt-4">
+        <div class="row pt-4" id="comment-list">
             <?php if ($comments->have()): ?>
 
                 <?php $comments->listComments(array(
