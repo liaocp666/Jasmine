@@ -29,10 +29,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </button>
         </div>
         <div class="collapse navbar-collapse pt-3 pt-lg-0 overflow-x-auto" id="navbarNav">
-            <ul class="navbar-nav column-gap-3 me-auto flex-lg-wrap flex-nowrap row-gap-2 list-group-horizontal"
+            <ul class="navbar-nav column-gap-5 me-auto flex-lg-wrap flex-nowrap list-group-horizontal"
                 id="navbarNavLeft">
                 <li class="nav-item">
-                    <a class="nav-link rounded-5 px-3 py-1 text-nowrap <?php echo $this->is('index') ? 'active' : '' ?>"
+                    <a class="nav-link px-0 py-0 text-nowrap <?php echo $this->is('index') ? 'active' : '' ?>"
                        href="<?php $this->options->siteUrl(); ?>" title="<?php $this->options->title(); ?>">
                         首页
                     </a>
@@ -42,7 +42,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 <?php while ($categoies->next()): ?>
                     <?php if (0 == $categoies->parent && $index <= $this->options->categoryNum): ?>
                         <li class="nav-item">
-                            <a class="nav-link rounded-5 px-3 py-1 text-nowrap <?php echo (!$this->is('index') && $categoies->slug == $this->archiveSlug) ? 'active' : '' ?> <?php echo postNavbarActive($this, $categoies->slug); ?>"
+                            <a class="nav-link px-0 py-0 text-nowrap <?php echo (!$this->is('index') && $categoies->slug == $this->archiveSlug) ? 'active' : '' ?> <?php echo postNavbarActive($this, $categoies->slug); ?>"
                                href="<?php $categoies->permalink(); ?>">
                                 <?php $categoies->name(); ?>
                             </a>

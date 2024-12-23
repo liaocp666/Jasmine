@@ -1,5 +1,5 @@
 :root, [data-bs-theme=dark] {
-    --bs-font-sans-serif: 'hm', sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --bs-font-sans-serif: "MiSans VF", sans-serif, "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     --bg-auto-rgb: 10, 12, 25;
     --link-color-rgba: 222, 226, 230, 0.8;
     --link-color-second-rgba: 222, 226, 230, .65;
@@ -10,7 +10,7 @@
 
 :root, [data-bs-theme=light] {
     --bg-auto-rgb: 245,245,244;
-    --bs-font-sans-serif: 'hm', sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --bs-font-sans-serif: "MiSans VF", sans-serif, "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     --link-color-rgba: 0, 0, 0, 1;
     --link-color-second-rgba: 0, 0, 0, .65;
     --primary-color-rgba: 13, 110, 253;
@@ -28,11 +28,6 @@
 
 html {
     scroll-padding-top: 120px;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -120,13 +115,12 @@ a:hover, a:focus, a:focus-visible {
     width: 150px;
 }
 
-#middle #search-input-mobile:focus, #middle #search-input-mobile:focus-visible {
-    outline: none;
-    width: 100px;
+#middle #navbarNavLeft .nav-link {
 }
 
 #middle .navbar-nav .active, #middle #navbarNavLeft .nav-link:hover {
     color: rgba(var(--primary-color-rgba));
+    box-shadow: 0 -6px 0 0 rgba(var(--primary-bg-rgba)) inset;
 }
 
 #middle .thumbnail {
@@ -188,12 +182,14 @@ a:hover, a:focus, a:focus-visible {
 
 #post-content a {
     color: rgba(var(--primary-color-rgba));
-    text-decoration: underline;
+    box-shadow: 0 -6px 0 0 rgba(var(--primary-bg-rgba)) inset;
+    transition: box-shadow 0.2s ease-in;
 }
 
 #post-content a:hover {
     color: rgba(var(--primary-color-rgba));
-    border-radius: var(--bs-border-radius) !important;
+    box-shadow: 0 -10px 0 0 rgba(var(--primary-bg-rgba)) inset;
+    transition: box-shadow 0.2s ease-in;
 }
 
 
@@ -288,13 +284,6 @@ a:hover, a:focus, a:focus-visible {
 
 #mobile-navbar .list-group-item.active {
     background: rgba(var(--primary-bg-rgba));
-}
-
-@media (max-width: 576px) {
-    #middle #search-input-mobile:focus, #middle #search-input-mobile:focus-visible {
-        outline: none;
-        width: 70px;
-    }
 }
 
 @media (min-width: 1400px) {

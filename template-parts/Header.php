@@ -6,9 +6,8 @@
     <meta charset="<?php $this->options->charset(); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php $this->archiveTitle('', '', ' | '); ?><?php $this->options->title(); ?><?php if ($this->is('index')): ?> | <?php $this->options->description() ?><?php endif; ?></title>
-    <link href="<?php $this->options->themeUrl('assets/hm/font.css'); ?>" rel="stylesheet">
+    <link href="<?php $this->options->themeUrl('assets/ms/font.css'); ?>" rel="stylesheet">
     <link href="<?php $this->options->themeUrl('assets/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet"/>
-    <link href="<?php $this->options->themeUrl('assets/bootstrap/font/bootstrap-icons.min.css'); ?>" rel="stylesheet">
     <link href="<?php $this->options->themeUrl('assets/main/main.css'); ?>" rel="stylesheet"/>
     <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/highlight/github-dark-dimmed.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/ti/tabler-icons.min.css'); ?>">

@@ -10,7 +10,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
         <article class="card border-0 py-3 col-12" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="d-flex column-gap-2 overflow-hidden">
                 <div class="card-body p-0 d-flex flex-column justify-content-between row-gap-1">
-                    <h3 class="card-title fs-4" itemprop="headline">
+                    <h3 class="card-title fs-4 fw-normal" itemprop="headline">
                         <a href="<?php $topUpPost->permalink(); ?>" title="<?php $topUpPost->title(); ?>" aria-label="<?php $topUpPost->title(); ?>">
                             <?php $topUpPost->title(); ?>
                         </a>

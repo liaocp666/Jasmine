@@ -22,7 +22,7 @@
                 <meta itemprop="image" content="<?php $this->fields->thumbnail(); ?>" />
             <?php endif; ?>
             <?php $this->need('template-parts/toc.php') ?>
-            <div id="post-content" class="lh-lg d-flex flex-column" itemprop="articleBody">
+            <div id="post-content" class="lh-lg" itemprop="articleBody">
                 <?php $this->content(); ?>
             </div>
             <?php if ($this->is('post')): ?>
