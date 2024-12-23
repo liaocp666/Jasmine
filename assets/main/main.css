@@ -121,6 +121,7 @@ a:hover, a:focus, a:focus-visible {
 #middle .navbar-nav .active, #middle #navbarNavLeft .nav-link:hover {
     color: rgba(var(--primary-color-rgba));
     box-shadow: 0 -6px 0 0 rgba(var(--primary-bg-rgba)) inset;
+    transition: all .25s ease-in-out;
 }
 
 #middle .thumbnail {
