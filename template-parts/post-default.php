@@ -29,9 +29,15 @@
                 <div class="tags align-content-center py-2">
                     <i class="ti ti-tags me-2"></i>&nbsp;<?php $this->tags('、', true, ''); ?>
                 </div>
-                <div class="d-flex row-gap-1 column-gap-1 bg-auto px-3 py-3 rounded text-dark-emphasis justify-content-between">
-                    <div>上一篇：<?php $this->thePrev('%s', _t('没有了')); ?></div>
-                    <div>下一篇：<?php $this->theNext('%s', _t('没有了')); ?></div>
+                <div class="bg-auto px-3 py-3 rounded text-dark-emphasis">
+                    <div class="row gap-3 gap-lg-0">
+                        <div class="col-lg-6 col-md-12">
+                            上一篇：<?php $this->thePrev('%s', _t('没有了')); ?>
+                        </div>
+                        <div class="col-lg-6 col-md-12 text-start text-lg-end">
+                            下一篇：<?php $this->theNext('%s', _t('没有了')); ?>
+                        </div>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>
