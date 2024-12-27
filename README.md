@@ -21,7 +21,7 @@ Jasmine 是一款精致的 Typecho 博客主题，界面在保持简洁的基础
 
 ## 文档
 
-### 使用步骤
+### 启用步骤
 
 1. 下载主题压缩包 [Jasmine.zip](https://github.com/liaocp666/Jasmine/releases/latest/download/jasmine.zip)
 2. 解压压缩包，将解压后的文件上传至 `usr/themes/` 目录下
