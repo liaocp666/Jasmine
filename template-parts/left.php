@@ -41,13 +41,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
         <ul class="nav flex-column nav-pills gap-0 row-gap-3 sticky-bottom bottom-0">
             <li class="nav-item d-flex justify-content-center position-relative">
                 <a class="nav-link p-0 d-flex align-items-center justify-content-center" id="bd-theme"
-                   href="javascript:changeBsTheme()">
+                   href="javascript:changeBsTheme()" title="切换模式">
                     <i class="ti ti-sun-moon px-3 py-1 rounded"></i>
                 </a>
                 <span class="position-absolute nav-item-title text-nowrap">切换模式</span>
             </li>
             <li class="nav-item d-flex justify-content-center position-relative">
-                <a class="nav-link p-0 d-flex align-items-center justify-content-center" href="#top">
+                <a class="nav-link p-0 d-flex align-items-center justify-content-center" href="#top" title="返回顶部">
                     <i class="ti ti-chevrons-up px-3 py-1 rounded"></i>
                 </a>
                 <span class="position-absolute nav-item-title text-nowrap">返回顶部</span>
