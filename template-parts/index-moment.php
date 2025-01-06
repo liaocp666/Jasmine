@@ -7,6 +7,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
         <div class="card-body p-0 d-flex justify-content-start row-gap-1 overflow-hidden">
             <a href="<?php $this->permalink(); ?>">
                 <img src="<?php echo Common::gravatarUrl($this->author->mail, 42, 'X', 'mm', $this->request->isSecure()) ?>"
+                     loading="lazy"
                      alt="<?php $this->author(); ?>" class="rounded float-start me-2">
             </a>
             <div class="d-flex flex-column row-gap-2 w-100">

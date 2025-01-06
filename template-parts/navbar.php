@@ -10,6 +10,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
            href="<?php $this->options->siteUrl(); ?>">
             <?php if ($this->options->logoUrl): ?>
                 <img src="<?php $this->options->logoUrl(); ?>" alt="<?php $this->options->title(); ?>" width="42"
+                     loading="lazy"
                      height="42"
                      class="d-inline-block align-text-top rounded"
                      itemscope itemtype="https://schema.org/ImageObject"
