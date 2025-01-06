@@ -26,8 +26,14 @@
 /*    --primary-bg-rgba: 0, 0, 0, .2;*/
 /*}*/
 
+
 html {
     scroll-padding-top: 120px;
+}
+
+*, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -239,6 +245,16 @@ a:hover, a:focus, a:focus-visible {
 
 #comments a:hover {
     color: rgba(var(--primary-color-rgba));
+}
+
+.comment-reply a {
+    color: rgba(var(--primary-color-rgba)) !important;
+    box-shadow: 0 -6px 0 0 rgba(var(--primary-bg-rgba)) inset;
+    transition: all .25s ease-in-out;
+}
+
+.comment-reply a:hover {
+    box-shadow: 0 -10px 0 0 rgba(var(--primary-bg-rgba)) inset;
 }
 
 .cancel-comment-reply {
