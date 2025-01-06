@@ -11,7 +11,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
                     <small class="align-content-center justify-content-center">
                         <?php $this->author(); ?>&nbsp;·&nbsp;<?php $this->date(); ?>
                     </small>
-                    <div class="card-text more moment-body p-3 rounded"><?php $this->content(); ?></div>
+                    <div class="card-text more moment-body p-3 rounded" id="post-content"><?php $this->content(); ?></div>
                 </div>
             </div>
         </div>
