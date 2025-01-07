@@ -14,8 +14,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
                 <small class="align-content-center justify-content-center">
                     <?php $this->author(); ?>&nbsp;·&nbsp;<?php $this->date(); ?>
                 </small>
-                <p class="card-text more p-3 rounded moment-body"><?php $this->excerpt(70, ''); ?>&nbsp;
-                    <a href="<?php $this->permalink(); ?>" class="d-inline-block"><span class="read-more">阅读全文</span></a>
+                <p class="card-text more p-3 rounded moment-body"><?php $this->excerpt(30, '……'); ?>&nbsp;
+                    <a href="<?php $this->permalink(); ?>" class="d-inline-block"><span class="read-more"><i class="ti ti-external-link"></i></span></a>
                 </p>
             </div>
         </div>
