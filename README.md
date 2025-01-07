@@ -1,6 +1,3 @@
-> [!WARNING]
-> 3.x 版本正在陆续完善中。
-
 # Jasmine
 
 Jasmine 是一款精致的 Typecho 博客主题，界面在保持简洁的基础之上，还拥有良好的文字阅读体验。
@@ -22,15 +19,13 @@ Jasmine 是一款精致的 Typecho 博客主题，界面在保持简洁的基础
 
 ## 安装主题
 
-1. 下载主题压缩包 [Jasmine](https://github.com/liaocp666/Jasmine/archive/refs/heads/main.zip)
-2. 解压压缩包，将解压后的文件上传至 `usr/themes/` 目录下
+1. 下载主题 [Jasmine](https://github.com/liaocp666/Jasmine/archive/refs/heads/main.zip)
+2. 解压下载文件，将解压后的文件夹重命名为`jasmine`，并上传至 `usr/themes/` 目录下
 3. 进入 Typecho 控制台，在外观中启用 Jasmine 主题
 
 ## 设置文档
 
 [Jasmine 主题设置文档](https://gitee.com/LiaoChunping/Jasmine/wikis/Home)
-
-> 旧版主题文档：[2.x-版本设置文档](2.x-版本设置文档)
 
 ## 交流反馈
 
