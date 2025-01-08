@@ -204,6 +204,7 @@ a:hover, a:focus, a:focus-visible {
     display: block;
     max-width: 100%;
     height: auto;
+    margin-bottom: 36px;
 }
 
 #post-content .tags {
@@ -282,10 +283,6 @@ a:hover, a:focus, a:focus-visible {
     border: 0;
 }
 
-#post-content h1 {
-    font-size: 2rem !important;
-}
-
 #right a {
     color: rgba(var(--link-color-second-rgba));
 }
@@ -306,5 +303,11 @@ a:hover, a:focus, a:focus-visible {
 @media (min-width: 1400px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: 1200px;
+    }
+    #post-content h1, #post-content h2, #post-content h3 {
+        display: inline-block;
+        font-size: 1.5rem!important;
+        box-shadow: 0 -10px 0 0 rgba(var(--primary-bg-rgba)) inset;
+        padding: 0 5px;
     }
 }

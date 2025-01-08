@@ -3,7 +3,7 @@
 <article class="card border-0 py-3 col-12 block" itemscope="itemscope" itemtype="http://schema.org/Article">
     <div class="d-flex column-gap-2 overflow-hidden">
         <div class="card-body p-0 d-flex flex-column justify-content-between row-gap-1">
-            <h3 class="card-title fs-4 fw-normal" itemprop="headline">
+            <h3 class="card-title fs-5 fw-normal" itemprop="headline">
                 <a href="<?php $this->permalink(); ?>"
                    title="<?php $this->title(); ?>"><?php $this->title(); ?></a>
             </h3>

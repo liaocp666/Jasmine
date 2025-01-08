@@ -3,7 +3,7 @@
 <article class="card border-0 py-3 col-12 border-bottom border-light-subtle mb-3 pb-4" id="post-article" itemscope="itemscope" itemtype="http://schema.org/Article">
     <div class="d-flex column-gap-2">
         <div class="card-body p-0 d-flex flex-column justify-content-between row-gap-1 overflow-hidden">
-            <h1 class="card-title fs-2" itemprop="headline"><?php $this->title(); ?></h1>
+            <h1 class="card-title fs-3" itemprop="headline"><?php $this->title(); ?></h1>
             <p class="card-text pb-3">
                 <small class="text-body-tertiary">
                     <?php if ($this->is('post')): ?>
