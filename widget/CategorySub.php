@@ -11,7 +11,7 @@ class CategorySub extends Rows {
      */
     public function execute()
     {
-        $this->pushAll($this->getRows($this->getChildIds($this->parameter->parent)));
+        $this->stack = $this->getCategories($this->getAllChildren($this->parameter->parent));
     }
 
 }
