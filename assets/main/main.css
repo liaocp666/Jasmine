@@ -300,14 +300,18 @@ a:hover, a:focus, a:focus-visible {
     background: rgba(var(--primary-bg-rgba));
 }
 
+#post-content h1, #post-content h2, #post-content h3 {
+    display: inline-block;
+    box-shadow: 0 -10px 0 0 rgba(var(--primary-bg-rgba)) inset;
+    padding: 0 3px;
+    font-size: calc(1.275rem + .3vw)!important
+}
+
 @media (min-width: 1400px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: 1200px;
     }
     #post-content h1, #post-content h2, #post-content h3 {
-        display: inline-block;
         font-size: 1.5rem!important;
-        box-shadow: 0 -10px 0 0 rgba(var(--primary-bg-rgba)) inset;
-        padding: 0 5px;
     }
 }
