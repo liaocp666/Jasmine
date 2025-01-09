@@ -17,24 +17,7 @@ class TopUpContent extends Recent
     {
         $this->parameter->setDefault(['pageSize' => 7]);
 
-        $this->db->fetchAll($this->select(
-            'table.contents.cid',
-            'table.contents.title',
-            'table.contents.slug',
-            'table.contents.created',
-            'table.contents.modified',
-            'table.contents.text',
-            'table.contents.type',
-            'table.contents.status',
-            'table.contents.commentsNum',
-            'table.contents.allowComment',
-            'table.contents.allowPing',
-            'table.contents.allowFeed',
-            'table.contents.template',
-            'table.contents.password',
-            'table.contents.authorId',
-            'table.contents.parent',
-        )
+        $this->db->fetchAll($this->select()
             ->join('table.fields', 'table.contents.cid=table.fields.cid')
             ->where('table.fields.name = ?', 'topUp')
             ->where('table.fields.str_value = ?', '1')
