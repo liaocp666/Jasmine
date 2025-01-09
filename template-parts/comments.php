@@ -20,20 +20,18 @@
                     <?php else: ?>
                         <div class="col-md-4">
                             <input type="text" class="form-control" placeholder="昵称" name="author" id="author"
-                                   value="<?php $this->remember('author'); ?>" required
+                                   required
                             />
                         </div>
                         <div class="col-md-4">
                             <input type="email" class="form-control" placeholder="邮箱"
                                    name="mail" id="mail"
-                                   value="<?php $this->remember('mail'); ?>"
                                    <?php if ($this->options->commentsRequireMail): ?>required<?php endif; ?>
                             />
                         </div>
                         <div class="col-md-4">
                             <input type="url" class="form-control"
                                    name="url" id="url"
-                                   value="<?php $this->remember('url'); ?>"
                                    <?php if ($this->options->commentsRequireUrl): ?>required<?php endif; ?>
                                    placeholder="网址<?php if (!$this->options->commentsRequireUrl): ?><?php _e('（选填）'); ?><?php endif; ?>"
                             />

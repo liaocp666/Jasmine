@@ -70,6 +70,25 @@ function generateToc() {
     })
 }
 
+function commentRemember(name, elName) {
+    let value = "";
+    let nameEQ = name + "=";
+    let cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.includes(nameEQ)) {
+            value = cookie.substring(nameEQ.length, cookie.length);
+        }
+    }
+    if (value == "" || !value.includes('=')) {
+        return false;
+    }
+    document.getElementById(elName).value = decodeURIComponent(value.split('=')[1])
+}
+
 window.addEventListener('DOMContentLoaded', function () {
     generateToc();
     hljs.highlightAll();
@@ -83,4 +102,7 @@ window.addEventListener('DOMContentLoaded', function () {
     tablegroups.forEach(function (tbody) {
         tbody.classList.add('table-group-divider');
     });
+    commentRemember("remember_author", "author")
+    commentRemember("remember_mail", "mail")
+    commentRemember("remember_url", "url")
 })
