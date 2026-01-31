@@ -25,14 +25,14 @@ case "$COMMAND" in
 
     SRC_DIR="theme"
     DEST_DIR="Jasmine"
-    OUTPUT_FILE="Jasmine-theme-$(date +%Y%m%d-%H%M%S).zip"
+    OUTPUT_FILE="Jasmine.zip"
 
     # 检查源目录是否存在
     if [[ ! -d "$SRC_DIR" ]]; then
       echo "错误：目录 $SRC_DIR 不存在！"
       exit 1
     fi
-
+    rm -rf $OUTPUT_FILE
     # 创建目标目录（如果不存在）
     mkdir -p "$DEST_DIR"
 
@@ -58,7 +58,7 @@ case "$COMMAND" in
       echo "请安装 zip 工具（例如：brew install zip / apt install zip）"
       exit 1
     fi
-
+    rm -rf $DEST_DIR
     echo "打包完成：${OUTPUT_FILE}"
     echo "文件大小：$(du -h "$OUTPUT_FILE" | cut -f1)"
     ;;
