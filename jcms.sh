@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# 文件名建议： jcms.sh
 # 使用方式：
 #   ./jcms.sh up
 #   ./jcms.sh down
