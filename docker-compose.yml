@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  typecho:
+    # 使用 1.3.0 + php.3 + apache 环境
+    image: joyqi/typecho:1.3.0-php8.2-apache
+    # 容器名字
+    container_name: typecho-dev
+    restart: unless-stopped
+    # 本地访问用 http://localhost
+    ports:
+      - "80:80"
+    volumes:
+      - ./theme:/app/usr/themes/Jasmine
+      - ./.typecho:/app
+    environment:
+      - TYPECHO_SITE_URL=http://localhost:8080
+      - PHP_TZ=Asia/Shanghai
+    depends_on:
+      - db
+
+  db:
+    # 数据库镜像，mariadb
+    image: mariadb:10.11
+    container_name: typecho-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123456
+      MYSQL_DATABASE: typecho
+      MYSQL_USER: typecho
+      MYSQL_PASSWORD: jasmine
+    volumes:
+      - ./.db:/var/lib/mysql
+    # 兼容旧版 PHP 驱动
+    command: --default-authentication-plugin=mysql_native_password
+
+volumes:
+  typecho-data:
+  db-data:

@@ -1,6 +1,6 @@
 <?php
 
-namespace widget;
+namespace theme\widget;
 
 use Widget\Metas\Category\Rows;
 

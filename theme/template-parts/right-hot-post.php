@@ -11,7 +11,7 @@
         <div class="col-12">
             <div class="text-body-secondary" style="line-height: 32px">
                 <ul class="list-group list-group-flush">
-                    <?php widget\HotPost::alloc()->to($hotPosts) ?>
+                    <?php \theme\widget\HotPost::alloc()->to($hotPosts) ?>
                     <?php while ($hotPosts->next()): ?>
                         <li class="list-group-item p-0 border-0">
                             <a href="<?php $hotPosts->permalink(); ?>"

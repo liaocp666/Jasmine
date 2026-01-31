@@ -1,4 +1,4 @@
-<?php use widget\CategorySub;
+<?php use theme\widget\CategorySub;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php if($this->pageRow['mid']): ?>

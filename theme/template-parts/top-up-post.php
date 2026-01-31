@@ -1,6 +1,6 @@
 <?php
 
-use widget\TopUpContent;
+use theme\widget\TopUpContent;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
