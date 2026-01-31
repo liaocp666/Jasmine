@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   typecho:
     # 使用 1.3.0 + php.3 + apache 环境
