@@ -1,9 +1,9 @@
 <?php use theme\widget\CategorySub;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php if($this->pageRow['mid']): ?>
-    <?php CategorySub::alloc(['parent' => $this->pageRow['mid']])->to($categoies) ?>
-    <?php echo $categoies -> treeViewCategories();?>
+
+<?php if(!empty($this->categories[0]['mid'])): ?>
+    <?php CategorySub::alloc(['parentId' => $this->categories[0]['mid']])->to($categoies) ?>
     <?php if ($categoies->have()): ?>
         <div class="card border-0 py-1 col-12">
             <div class="d-flex flex-wrap row-gap-2 column-gap-3 sub-category">
