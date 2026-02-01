@@ -1,16 +1,14 @@
 <?php
 /**
- * Jasmine，一款精致的Typecho博客主题。
- * <br/>
- * 预览地址：<a href="https://www.liaocp.cn" target="_blank">时光散记</a>
- * 文档地址：<a href="https://github.com/liaocp666/Jasmine/wiki"target="_blank">地址1</a> | <a href="https://gitee.com/LiaoChunping/Jasmine/wikis/Home"target="_blank">地址2</a>
- * 下载地址：<a href="https://github.com/liaocp666/Jasmine/archive/refs/heads/main.zip"target="_blank">地址1</a> | <a href="https://gitee.com/LiaoChunping/Jasmine/repository/archive/main.zip"target="_blank">地址2</a>
+ * <p>黑白之间，留白生诗。简至奢侈，静若自持。<p/>
+ *
+ * <a href="https://gitee.com/LiaoChunping/Jasmine/wikis/Home"target="_blank">文档</a> | <a href="https://gitee.com/LiaoChunping/Jasmine/repository/archive/main.zip"target="_blank">下载</a>
  * QQ   群：<a href="https://qm.qq.com/cgi-bin/qm/qr?k=oXM0EmLxXmgKfE1UDRlBY-g7Rkrx30oL&jump_from=webapi&authKey=uQdwWraveNKYBm/BQs88WXkNagEUr9tCkf/gbdQ9FasOviKYVhUd/wUME0q0AtnI" target="_blank">539165194</a>
  *
  *
  * @package Jasmine
  * @author Kent Liao
- * @version 3.0.0
+ * @version 3.1.0
  * @link https://www.liaocp.cn
  */
 
