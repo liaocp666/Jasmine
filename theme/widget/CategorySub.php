@@ -3,13 +3,13 @@
 namespace theme\widget;
 
 use Widget\Base\Metas;
-use Widget\Base\TreeTrait;
-use Widget\Metas\Category\InitTreeRowsTrait;
 
+/**
+ * deprecated
+ * since 3.1.0
+ */
 class CategorySub extends Metas {
 
-    use InitTreeRowsTrait;
-    use TreeTrait;
 
 
     /**
@@ -17,9 +17,7 @@ class CategorySub extends Metas {
      */
     public function execute(): void
     {
-        $this->parameter->setDefault(['parentId' => '0']);
-        $parentId = $this->parameter->parentId;
-        $this->pushAll($this->getRows($this->getChildIds($parentId)));
+
     }
 
 }
